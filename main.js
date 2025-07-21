@@ -1,6 +1,15 @@
 //Obtém de ./pokedex.js
 const pokedex = JSON.parse(pokedexDados);
 
+//Redimensionamento
+onresize = (event) => {
+    let vh = window.innerHeight * 0.01;
+    let vw = window.innerWidth * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    document.documentElement.style.setProperty('--vw', `${vw}px`);
+}
+
+
 //Embaralha uma lista
 function embaralhar(lista) {
     for (let i = lista.length - 1; i > 0; i--) {

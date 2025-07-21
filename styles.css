@@ -21,16 +21,16 @@
 body {
     margin: 0;
     /*Tamanho da scrollbar*/
-    --scroll: calc(100vw - 100%);
-    width: calc(100vw - var(--scroll));
-    height: 100vh;
+    --scroll: calc(100 * var(--vw, 1vw) - 100%);
+    width: calc(100 * var(--vw, 1vw) - var(--scroll));
+    height: calc(100 * var(--vh, 1vh));
 
     /*BACKGROUND TRANSPARENTE ESCURO*/
     & div#background {
         background-color: var(--background);
         position: fixed;
-        width: 100vw;
-        height: 100vh;
+        width: calc(100 * var(--vw, 1vw));
+        height: calc(100 * var(--vh, 1vh));
         top: 0;
         left: 0;
         visibility: hidden;
@@ -38,7 +38,7 @@ body {
 
     & nav#modos_de_jogo {
         /*Considerar também o scroll*/
-        width: calc(100vw - 20px - var(--scroll));
+        width: calc(100 * var(--vw, 1vw) - 20px - var(--scroll));
         height: 50px;
         padding: 0 10px;
         background-color: var(--vermelho);
@@ -78,7 +78,7 @@ body {
             display: grid;
             grid-template-rows: 60px repeat(3, minmax(0, 1fr));
             grid-template-columns: repeat(4, minmax(0, 1fr));
-            width: 80vw;
+            width: calc(80 * var(--vw, 1vw));
             padding: 10px 0;
             height: calc(100% - 20px);
 
@@ -171,7 +171,7 @@ body {
         }
 
         & div#menu {
-            width: 15vw;
+            width: calc(15 * var(--vw, 1vw));
 
             & div#mini-menu {
                 display: flex;
@@ -234,11 +234,11 @@ body {
             box-sizing: border-box;
             position: fixed;
             visibility: hidden;
-            top: 10vh;
-            left: min(30vw, calc(calc(100vw - 400px) / 2));
+            top: calc(10 * var(--vh, 1vh));
+            left: min(calc(30 * var(--vw, 1vw)), calc(calc(100var(--vw, 1vw) - 400px) / 2));
             min-width: 400px;
-            width: 40vw;
-            height: 80vh;
+            width: calc(40 * var(--vw, 1vw));
+            height: calc(80 * var(--vh, 1vh));
             display: flex;
             flex-direction: column;
             background-color: var(--cinza);
@@ -421,8 +421,8 @@ body {
 
         & div#pokedoku {
             height: calc(100% - 130px);
-            max-height: 90vw;
-            width: 90vw;
+            max-height: calc(90 * var(--vw, 1vw));
+            width: calc(90 * var(--vw, 1vw));
 
             & div.celula {
                 &.celula-header p {
@@ -454,7 +454,7 @@ body {
         }
 
         & div#menu {
-            width: 100vw;
+            width: calc(100 * var(--vw, 1vw));
             height: 130px;
 
             div#mini-menu {
@@ -473,11 +473,11 @@ body {
         }
 
         & div.popup {
-            top: 10vh;
-            left: min(30vw, calc(calc(100vw - 300px) / 2));
+            top: calc(10 * var(--vh, 1vh));
+            left: min(calc(30 * var(--vw, 1vw)), calc(calc(100var(--vw, 1vw) - 300px) / 2));
             min-width: 300px;
-            width: 40vw;
-            height: 80vh;
+            width: 40var(--vw, 1vw);
+            height: 80var(--vh, 1vh);
 
             & ul#resultados li p.texto-resultado {
                 font-size: 12px;
@@ -491,18 +491,18 @@ body {
 @media only screen and (max-height: 1000px) and (max-width: 500px) and (orientation: portrait) {
     body {
         & nav#modos_de_jogo {
-            height: 10vh;
+            height: calc(10 * var(--vh, 1vh));
         }
 
         & div#conteudo {
             flex-direction: column;
             justify-content: space-evenly;
-            height: calc(90vh - 20px);
+            height: calc(90 * var(--vh, 1vh) - 20px);
 
             & div#pokedoku {
                 height: calc(100% - 130px);
-                max-height: 90vw;
-                width: 90vw;
+                max-height: calc(90 * var(--vw, 1vw));
+                width: calc(90 * var(--vw, 1vw));
 
                 & div.celula {
                     &.celula-header p {
@@ -533,7 +533,7 @@ body {
             }
 
             & div#menu {
-                width: 100vw;
+                width: calc(100 * var(--vw, 1vw));
                 height: 130px;
 
                 div#mini-menu {
@@ -547,12 +547,12 @@ body {
             }
 
             & div.popup {
-                top: max(10vh, calc(calc(100vh - 500px)/2));
-                left: min(30vw, calc(calc(100vw - 350px) / 2));
+                top: max(calc(10 * var(--vh, 1vh)), calc(calc(100 * var(--vh, 1vh) - 450px)/2));
+                left: min(calc(30 * var(--vw, 1vw)), calc(calc(100 * var(--vw, 1vw) - 350px) / 2));
                 min-width: 350px;
-                width: 40vw;
-                height: 80vh;
-                max-height: 500px;
+                width: calc(40 * var(--vw, 1vw));
+                height: calc(80 * var(--vh, 1vh));
+                max-height: 450px;
 
                 & ul#resultados li p.texto-resultado {
                     font-size: 12px;
