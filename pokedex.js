@@ -23227,7 +23227,7 @@ const pokedexDados = `[
             "GALAR",
             "DUALTYPE"
         ],
-        "imagem": "https://img.pokemondb.net/artwork/large/indeedee.jpg"
+        "imagem": "https://img.pokemondb.net/artwork/large/indeedee-male.jpg"
     },
     {
         "id": 1041,

@@ -67,6 +67,28 @@ const imagensDosTipos = {
 var focoAtual;
 var tentativas = 0;
 
+//Seta as cores
+function setarCorDoNomeDoPokemon(vitoria) {
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            let corFundo;
+            let corTexto;
+            if (vitoria) {
+                let nomeDaCor = tentativas === 9 ? "verde" : "amarelo";
+                corFundo = getComputedStyle(document.querySelector(':root')).getPropertyValue("--" + nomeDaCor);
+                corTexto = "black";
+            }
+            else {
+                corFundo = "black";
+                corTexto = "white";
+            }
+            //Define as cores
+            document.querySelector(`#D${i + 1}${j + 1} p`).style["background-color"] = corFundo;
+            document.querySelector(`#D${i + 1}${j + 1} p`).style["color"] = corTexto;
+        }
+    }
+}
+
 function novoJogo(modoDificil) {
     //Reseta os campos
     atualizarTentativas(0);
@@ -75,6 +97,8 @@ function novoJogo(modoDificil) {
     document.querySelectorAll("#pokedoku .celula-header").forEach(e => e.innerHTML = "");
     document.querySelectorAll("#pokedoku p.nome-pokemon").forEach(e => { e.innerHTML = ""; e.style.color = "white" });
     document.querySelectorAll("#pokedoku img.imagem-poke-celula").forEach(e => { e.src = ""; e.style.visibility = "hidden" });
+    //Volta as cores dos nomes
+    setarCorDoNomeDoPokemon(false);
     //Ativa todas as células novamente
     document.querySelectorAll("#pokedoku div.celula-tentativa").forEach(e => e.classList.remove("inativo"));
     //Procura uma matriz 3x3 com respostas
@@ -134,6 +158,8 @@ function reiniciarJogo() {
     document.getElementById("pesquisa_pokemon").value = "";
     document.querySelectorAll("#pokedoku p.nome-pokemon").forEach(e => { e.innerHTML = ""; e.style.color = "white" });
     document.querySelectorAll("#pokedoku img.imagem-poke-celula").forEach(e => { e.src = ""; e.style.visibility = "hidden" });
+    //Volta as cores dos nomes
+    setarCorDoNomeDoPokemon();
     //Ativa todas as células novamente
     document.querySelectorAll("#pokedoku div.celula-tentativa").forEach(e => e.classList.remove("inativo"));
 }
@@ -185,9 +211,9 @@ function mostrarResultadosDaPesquisa() {
 
 
 //Tenta adivinhar
-function chutarPokemon(id, atualizarTentativa) {
+function chutarPokemon(id, chuteEmulado) {
     //Aumenta o numero de tentativas;
-    if (atualizarTentativa !== false) atualizarTentativas(tentativas + 1);
+    if (!chuteEmulado) atualizarTentativas(tentativas + 1);
     //Obtém o pokémon
     let pokemon = obterPokemonPorId(id);
     //Obtém possíveis respostas
@@ -222,6 +248,16 @@ function chutarPokemon(id, atualizarTentativa) {
     //Ativa a célula
     document.getElementById(focoAtual).classList.add("inativo");
     focoAtual = "";
+
+    //Se o usuário acertou todos
+    let acertouTodas = true;
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            if (!document.getElementById(`D${i + 1}${j + 1}`).classList.contains("inativo")) acertouTodas = false;
+        }
+    }
+    //Muda todos os textos para verde ou amarelo ou reseta
+    setarCorDoNomeDoPokemon(acertouTodas && !chuteEmulado);
 }
 //Mostra a quantidade de respostas possíveis para cada célula
 function alternarDificuldade(acao) {
@@ -246,7 +282,7 @@ function revelarJogo() {
             //Sorteia uma
             let idDaResposta = respostasValidas[escolher(respostasValidas)].id;
             //Emula um chute, mas não considera tentativas
-            chutarPokemon(idDaResposta, false);
+            chutarPokemon(idDaResposta, true);
         }
     }
 }
