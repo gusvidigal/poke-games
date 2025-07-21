@@ -235,7 +235,7 @@ body {
             position: fixed;
             visibility: hidden;
             top: calc(10 * var(--vh, 1vh));
-            left: min(calc(30 * var(--vw, 1vw)), calc(calc(100var(--vw, 1vw) - 400px) / 2));
+            left: min(calc(30 * var(--vw, 1vw)), calc(calc(100 * var(--vw, 1vw) - 400px) / 2));
             min-width: 400px;
             width: calc(40 * var(--vw, 1vw));
             height: calc(80 * var(--vh, 1vh));
@@ -474,10 +474,10 @@ body {
 
         & div.popup {
             top: calc(10 * var(--vh, 1vh));
-            left: min(calc(30 * var(--vw, 1vw)), calc(calc(100var(--vw, 1vw) - 300px) / 2));
+            left: min(calc(30 * var(--vw, 1vw)), calc(calc(100 * var(--vw, 1vw) - 300px) / 2));
             min-width: 300px;
-            width: 40var(--vw, 1vw);
-            height: 80var(--vh, 1vh);
+            width: calc(40 * var(--vw, 1vw));
+            height: calc(80 * var(--vh, 1vh));
 
             & ul#resultados li p.texto-resultado {
                 font-size: 12px;
