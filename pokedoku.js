@@ -105,7 +105,7 @@ function novoJogo(modoDificil) {
             let nome = nomesCols[i];
             if (Object.keys(imagensDosTipos).includes(nome)) {
                 let imagem = imagensDosTipos[nome];
-                document.querySelector(`#C${i + 1}`).innerHTML = `<img src=${imagem}>`;
+                document.querySelector(`#C${i + 1}`).innerHTML = `<img alt="${nome}" src=${imagem}>`;
             } else document.querySelector(`#C${i + 1}`).innerHTML = `<p>${nome}</p>`;
         }
         let nomesRows = rows.map(i => indexes[i]);
@@ -114,7 +114,7 @@ function novoJogo(modoDificil) {
             let nome = nomesRows[i];
             if (Object.keys(imagensDosTipos).includes(nome)) {
                 let imagem = imagensDosTipos[nome];
-                document.querySelector(`#R${i + 1}`).innerHTML = `<img src=${imagem}>`;
+                document.querySelector(`#R${i + 1}`).innerHTML = `<img alt="${nome}" src=${imagem}>`;
             } else document.querySelector(`#R${i + 1}`).innerHTML = `<p>${nome}</p>`;
         }
         //Atribui o id da matriz em cada célula e insere a dificuldade
