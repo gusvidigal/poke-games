@@ -539,10 +539,12 @@ body {
 
                 div#mini-menu {
                     flex-direction: row;
+                    flex-wrap: wrap;
+                    row-gap: 10px;
 
                     & button {
-                        width: 70px;
-                        font-size: 9px;
+                        width: 60px;
+                        font-size: 10px;
                     }
                 }
             }
