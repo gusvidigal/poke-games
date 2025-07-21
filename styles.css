@@ -1,0 +1,487 @@
+/*CORES*/
+:root {
+    --cinza: #8d8c85;
+    --cinza-escuro: #2a2a27;
+    --vermelho: #f62c13;
+    --vermelho-escuro: #931a0b;
+    --amarelo: #f6d21b;
+    --amarelo-escuro: #AC9312;
+    --branco: #eceade;
+    --background: #2a2a27e0;
+    --preto-claro: rgb(26, 26, 26);
+    --vermelho-forte: red;
+}
+
+/*TEXTO*/
+.texto {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+body {
+    margin: 0;
+    /*Tamanho da scrollbar*/
+    --scroll: calc(100vw - 100%);
+    width: calc(100vw - var(--scroll));
+    height: 100vh;
+
+    /*BACKGROUND TRANSPARENTE ESCURO*/
+    & div#background {
+        background-color: var(--background);
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+    }
+
+    & nav#modos_de_jogo {
+        /*Considerar também o scroll*/
+        width: calc(100vw - 20px - var(--scroll));
+        height: 50px;
+        padding: 0 10px;
+        background-color: var(--vermelho);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        & div.botao_nav {
+            height: calc(100% - 5px);
+            width: 200px;
+            border-width: 0 0 5px 0;
+            border-color: var(--vermelho-escuro);
+            border-style: solid;
+            text-align: center;
+            align-content: center;
+            color: white;
+
+            &:hover {
+                cursor: pointer;
+                background-color: var(--vermelho-escuro);
+                border-color: var(--cinza);
+            }
+        }
+    }
+
+    & div#conteudo {
+        padding: 10px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: calc(100%);
+        /*20 padding + 50 do nav */
+        height: calc(100% - 70px);
+
+        & div#pokedoku {
+            display: grid;
+            grid-template-rows: 60px repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            width: 80vw;
+            height: 500px;
+
+            & div.celula {
+                /*CÉLULAS*/
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: calc(100% - 2px);
+                width: calc(100% - 2px);
+
+                & p {
+                    margin: 0;
+                }
+
+                &.celula-header {
+                    background-color: var(--vermelho);
+                    justify-content: center;
+
+                    & img,
+                    & p {
+                        width: calc(100% - 20px);
+                        margin: 10px;
+                    }
+
+                    & img {
+                        max-width: 200px;
+                        max-height: 40px;
+                    }
+
+                    & p {
+                        font-size: 23px;
+                        line-height: 30px;
+                        height: 30px;
+                        text-align: center;
+                    }
+                }
+
+
+                &.celula-tentativa:not(.inativo):hover {
+                    cursor: pointer;
+                    background-color: var(--cinza);
+                }
+
+                &.celula-tentativa {
+                    position: relative;
+
+                    & div.container-imagem-poke {
+                        /*Menos 10 da margem*/
+                        width: calc(100% - 10px);
+                        /*Menos 30 do p e 10 da margem*/
+                        height: calc(100% - 40px);
+                        margin: 5px;
+
+                        & img.imagem-poke-celula {
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            object-fit: contain;
+                            visibility: hidden;
+                        }
+                    }
+
+                    & p.nome-pokemon {
+                        background-color: black;
+                        color: white;
+                        font-size: 15px;
+                        line-height: 30px;
+                        height: 30px;
+                        width: 100%;
+                        text-align: center;
+                        overflow: hidden;
+                    }
+
+                    & div.dificuldade {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        border-width: 0 0 2px 2px;
+                        border-style: solid;
+                        width: 30px;
+                        height: 30px;
+                        visibility: hidden;
+                        align-content: center;
+                        text-align: center;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+
+        & div#menu {
+            width: 15vw;
+
+            & div#mini-menu {
+                display: flex;
+                flex-direction: column;
+                width: calc(100% - 40px);
+                margin: 10px 0;
+                padding: 0 20px;
+                justify-content: space-around;
+
+                & button {
+                    margin: 5px 0;
+                    height: 50px;
+                    border: 2px solid black;
+                    border-radius: 10px;
+                    background-color: var(--branco);
+
+                    &:hover {
+                        background-color: var(--cinza);
+                        cursor: pointer;
+                    }
+
+                    &#comecar_novo_jogo {
+                        background-color: black;
+                        color: white;
+
+                        &:hover {
+                            background-color: var(--preto-claro);
+                        }
+                    }
+
+                    &#modo_dificil {
+                        background-color: var(--vermelho-forte);
+                        color: white;
+
+                        &:hover {
+                            background-color: var(--vermelho);
+                        }
+                    }
+                }
+            }
+
+            & div#estatisticas {
+                display: flex;
+                flex-direction: column;
+                padding: 0 20px;
+                text-align: center;
+
+                & p {
+                    margin: 0;
+                }
+
+                & span {
+                    font-weight: normal;
+                }
+            }
+        }
+
+        & div.popup {
+            /*Incluir borda e padding*/
+            box-sizing: border-box;
+            position: fixed;
+            visibility: hidden;
+            top: 10vh;
+            left: min(30vw, calc(calc(100vw - 400px) / 2));
+            min-width: 400px;
+            width: 40vw;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--cinza);
+            padding: 10px;
+            z-index: 1;
+            border: 3px solid black;
+            border-radius: 2px;
+
+            & p:not(.texto-resultado) {
+                text-align: center;
+                margin: 5px 0 10px 0;
+            }
+
+            & input#pesquisa_pokemon {
+                height: 30px;
+                font-size: 15px;
+                line-height: 30px;
+                padding: 0 8px;
+                color: var(--cinza-escuro);
+                border: 1px solid black;
+                /*16 de padding e 2 da borda*/
+                width: calc(100% - 18px);
+            }
+
+            & ul#resultados {
+                width: calc(100% - 6px);
+                background-color: white;
+                overflow: auto;
+                border: 3px solid black;
+                border-radius: 2px;
+                margin: 10px 0 0 0;
+                padding: 5px 0;
+                flex-grow: 1;
+
+                & li {
+                    display: flex;
+                    flex-direction: row;
+                    width: calc(100% - 20px);
+                    height: 60px;
+                    padding: 0 10px;
+
+                    & img.imagem-poke-lista {
+                        background-color: white;
+                        width: 60px;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+
+                    & p.texto-resultado {
+                        margin: 0;
+                        padding: 5px 10px;
+                        font-size: 15px;
+                        line-height: 20px;
+                        flex-grow: 1;
+                        height: calc(100% - 10px);
+                        align-content: center;
+
+                        & span.descricao {
+                            color: var(--cinza-escuro);
+                        }
+                    }
+
+                    &:hover {
+                        background-color: var(--cinza);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*RESPONSIVIDADE*/
+
+@media screen and (max-width: 1000px) and (orientation: landscape) {
+    body div#conteudo {
+        flex-direction: column;
+
+        & div#pokedoku {
+            height: calc(100% - 130px);
+
+            & div.celula {
+                &.celula-header p {
+                    font-size: 19px;
+                }
+
+                &.celula-tentativa p.nome-pokemon {
+                    font-size: 12px;
+                    line-height: 30px;
+                    height: 30px;
+                }
+
+            }
+        }
+
+        & div#menu {
+            width: 100vw;
+            height: 130px;
+
+            div#mini-menu {
+                flex-direction: row;
+
+                & button {
+                    width: 150px;
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 800px) and (orientation: landscape) {
+    body div#conteudo {
+        & div#pokedoku {
+            & div.celula {
+
+                &.celula-header p {
+                    font-size: 16px;
+                }
+
+                &.celula-tentativa div.dificuldade {
+                    width: 25px;
+                    height: 25px;
+                    font-size: 15px;
+                }
+            }
+        }
+
+        & div#menu div#mini-menu {
+            & button {
+                width: 120px;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) and (orientation: landscape) {
+    body div#conteudo {
+        & div#pokedoku {
+            grid-template-rows: 40px repeat(3, minmax(0, 1fr));
+            height: 350px;
+
+            & div.celula {
+                &.celula-header p {
+                    font-size: 12px;
+                }
+
+                &.celula-tentativa {
+                    & div.container-imagem-poke {
+                        height: calc(100% - 35px);
+                    }
+
+                    & p.nome-pokemon {
+                        height: 25px;
+                        line-height: 25px;
+                        font-size: 10px;
+                    }
+
+                    & div.dificuldade {
+                        width: 20px;
+                        height: 20px;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        & div#menu div#mini-menu {
+            & button {
+                width: 90px;
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (orientation: portrait) {
+    body div#conteudo {
+        flex-direction: column;
+        justify-content: start;
+
+        & div#pokedoku {
+            height: calc(100% - 130px);
+            max-height: 90vw;
+            width: 90vw;
+
+            & div.celula {
+                &.celula-header p {
+                    font-size: 10px;
+                    margin: 5px;
+                }
+
+                &.celula-tentativa {
+                    & div.container-imagem-poke {
+                        height: calc(100% - 46px);
+                    }
+
+                    & p.nome-pokemon {
+                        height: 36px;
+                        line-height: 18px;
+                        font-size: 10px;
+                        padding: 0 2px;
+                        width: calc(100% - 4px);
+                    }
+
+                    & div.dificuldade {
+                        width: 20px;
+                        height: 20px;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        & div#menu {
+            width: 100vw;
+            height: 130px;
+
+            div#mini-menu {
+                flex-direction: row;
+
+                & button {
+                    width: 70px;
+                    font-size: 10px;
+                }
+            }
+
+            div#estatisticas {
+                font-size: 10px;
+            }
+        }
+
+        & div.popup {
+            top: 10vh;
+            left: min(30vw, calc(calc(100vw - 300px) / 2));
+            min-width: 300px;
+            width: 40vw;
+            height: 80vh;
+            & ul#resultados li p.texto-resultado {
+                font-size: 12px;
+                line-height: 15px;
+            }
+        }
+
+    }
+}

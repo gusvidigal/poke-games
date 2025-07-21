@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pokémon Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script src="pokedex.js"></script>
+<script src="matriz.js"></script>
+<script src="main.js"></script>
+<script src="pokedoku.js"></script>
+
+<body onload="novoJogo()">
+    <nav id="modos_de_jogo">
+        <div class="botao_nav texto">POKÉDOKU 3X3</div>
+    </nav>
+    <div id="conteudo">
+        <div id="pokedoku">
+            <div class="celula"></div>
+            <div class="celula celula-header celula-header-row texto" id="C1">
+            </div>
+            <div class="celula celula-header celula-header-row texto" id="C2">
+            </div>
+            <div class="celula celula-header celula-header-row texto" id="C3">
+            </div>
+            <div class="celula celula-header celula-header-col texto" id="R1">
+            </div>
+            <div id="D11" class="celula celula-tentativa" onclick="mostrarPesquisa(this.id)">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="">
+                </div>
+                <p class="nome-pokemon texto"></p>
+                <div class="dificuldade texto"></div>
+            </div>
+            <div id="D12" class="celula celula-tentativa" onclick="mostrarPesquisa(this.id)">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="">
+                </div>
+                <p class="nome-pokemon texto"></p>
+                <div class="dificuldade texto"></div>
+            </div>
+            <div id="D13" class="celula celula-tentativa" onclick="mostrarPesquisa(this.id)">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="">
+                </div>
+                <p class="nome-pokemon texto"></p>
+                <div class="dificuldade texto"></div>
+            </div>
+            <div class="celula celula-header celula-header-col texto" id="R2">
+            </div>
+            <div id="D21" class="celula celula-tentativa" onclick="mostrarPesquisa(this.id)">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="">
+                </div>
+                <p class="nome-pokemon texto"></p>
+                <div class="dificuldade texto"></div>
+            </div>
+            <div id="D22" class="celula celula-tentativa" onclick="mostrarPesquisa(this.id)">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="">
+                </div>
+                <p class="nome-pokemon texto"></p>
+                <div class="dificuldade texto"></div>
+            </div>
+            <div id="D23" class="celula celula-tentativa" onclick="mostrarPesquisa(this.id)">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="">
+                </div>
+                <p class="nome-pokemon texto"></p>
+                <div class="dificuldade texto"></div>
+            </div>
+            <div class="celula celula-header celula-header-col texto" id="R3">
+            </div>
+            <div id="D31" class="celula celula-tentativa" onclick="mostrarPesquisa(this.id)">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="">
+                </div>
+                <p class="nome-pokemon texto"></p>
+                <div class="dificuldade texto"></div>
+            </div>
+            <div id="D32" class="celula celula-tentativa" onclick="mostrarPesquisa(this.id)">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="">
+                </div>
+                <p class="nome-pokemon texto"></p>
+                <div class="dificuldade texto"></div>
+            </div>
+            <div id="D33" class="celula celula-tentativa" onclick="mostrarPesquisa(this.id)">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="">
+                </div>
+                <p class="nome-pokemon texto"></p>
+                <div class="dificuldade texto"></div>
+            </div>
+        </div>
+        <div id="menu">
+            <div id="mini-menu">
+                <button id="comecar_novo_jogo" class="texto" onclick="novoJogo()">Começar Novo Jogo</button>
+                <button class="texto" onclick="reiniciarJogo()">Reiniciar</button>
+                <button class="texto" id="botao_dificuldade" onclick="alternarDificuldade(true)">Mostrar Dificuldade</button>
+                <button class="texto" onclick="revelarJogo()">Revelar Possível Tabuleiro</button>
+                <button id="modo_dificil" class="texto" onclick="novoJogo(true)">MODO DIFÍCIL</button>
+            </div>
+            <div id="estatisticas">
+                <div id="tentativas"><p class="texto">Tentativas:</br><span>0</span></p></div>
+            </div>
+        </div>
+        <div id="background" onclick="fecharPesquisa()"></div>
+        <div id="popup_pesquisa" class="popup">
+            <p class="texto">SEARCH POKÉMON</p>
+            <input class="texto" type="text" id="pesquisa_pokemon" value="" oninput="mostrarResultadosDaPesquisa()">
+            <ul id="resultados">
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
