@@ -79,7 +79,8 @@ body {
             grid-template-rows: 60px repeat(3, minmax(0, 1fr));
             grid-template-columns: repeat(4, minmax(0, 1fr));
             width: 80vw;
-            height: 500px;
+            padding: 10px 0;
+            height: calc(100% - 20px);
 
             & div.celula {
                 /*CÉLULAS*/
@@ -312,13 +313,9 @@ body {
 
 /*RESPONSIVIDADE*/
 
-@media screen and (max-width: 1000px) and (orientation: landscape) {
+@media only screen and (max-width: 1000px) and (orientation: landscape) {
     body div#conteudo {
-        flex-direction: column;
-
         & div#pokedoku {
-            height: calc(100% - 130px);
-
             & div.celula {
                 &.celula-header p {
                     font-size: 19px;
@@ -334,22 +331,26 @@ body {
         }
 
         & div#menu {
-            width: 100vw;
-            height: 130px;
 
             div#mini-menu {
-                flex-direction: row;
+                padding: 0 10px;
+                width: calc(100% - 20px);
 
                 & button {
-                    width: 150px;
+                    font-size: 12px;
                 }
+            }
+
+            div#estatisticas {
+                padding: 0 10px;
+                font-size: 12px;
             }
         }
 
     }
 }
 
-@media screen and (max-width: 800px) and (orientation: landscape) {
+@media only screen and (max-width: 800px) and (orientation: landscape) {
     body div#conteudo {
         & div#pokedoku {
             & div.celula {
@@ -368,14 +369,13 @@ body {
 
         & div#menu div#mini-menu {
             & button {
-                width: 120px;
-                font-size: 12px;
+                font-size: 10px;
             }
         }
     }
 }
 
-@media screen and (max-width: 650px) and (orientation: landscape) {
+@media only screen and (max-width: 650px) and (orientation: landscape) {
     body div#conteudo {
         & div#pokedoku {
             grid-template-rows: 40px repeat(3, minmax(0, 1fr));
@@ -408,14 +408,13 @@ body {
 
         & div#menu div#mini-menu {
             & button {
-                width: 90px;
                 font-size: 10px;
             }
         }
     }
 }
 
-@media screen and (orientation: portrait) {
+@media only screen and (orientation: portrait) {
     body div#conteudo {
         flex-direction: column;
         justify-content: start;
@@ -427,7 +426,8 @@ body {
 
             & div.celula {
                 &.celula-header p {
-                    font-size: 10px;
+                    font-size: 18px;
+                    width: calc(100% - 10px);
                     margin: 5px;
                 }
 
@@ -461,13 +461,14 @@ body {
                 flex-direction: row;
 
                 & button {
-                    width: 70px;
-                    font-size: 10px;
+                    margin: 0 5px;
+                    width: 150px;
+                    font-size: 12px;
+                    color: black;
                 }
             }
-
             div#estatisticas {
-                font-size: 10px;
+                font-size: 20px;
             }
         }
 
@@ -477,11 +478,88 @@ body {
             min-width: 300px;
             width: 40vw;
             height: 80vh;
+
             & ul#resultados li p.texto-resultado {
                 font-size: 12px;
                 line-height: 15px;
             }
         }
 
+    }
+}
+
+@media only screen and (max-height: 1000px) and (max-width: 500px) and (orientation: portrait) {
+    body {
+        & nav#modos_de_jogo {
+            height: 10vh;
+        }
+
+        & div#conteudo {
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: calc(90vh - 20px);
+
+            & div#pokedoku {
+                height: calc(100% - 130px);
+                max-height: 90vw;
+                width: 90vw;
+
+                & div.celula {
+                    &.celula-header p {
+                        font-size: 10px;
+                        margin: 5px;
+                    }
+
+                    &.celula-tentativa {
+                        & div.container-imagem-poke {
+                            height: calc(100% - 46px);
+                        }
+
+                        & p.nome-pokemon {
+                            height: 36px;
+                            line-height: 18px;
+                            font-size: 10px;
+                            padding: 0 2px;
+                            width: calc(100% - 4px);
+                        }
+
+                        & div.dificuldade {
+                            width: 20px;
+                            height: 20px;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+
+            & div#menu {
+                width: 100vw;
+                height: 130px;
+
+                div#mini-menu {
+                    flex-direction: row;
+
+                    & button {
+                        width: 70px;
+                        font-size: 9px;
+                    }
+                }
+            }
+
+            & div.popup {
+                top: max(10vh, calc(calc(100vh - 500px)/2));
+                left: min(30vw, calc(calc(100vw - 350px) / 2));
+                min-width: 350px;
+                width: 40vw;
+                height: 80vh;
+                max-height: 500px;
+
+                & ul#resultados li p.texto-resultado {
+                    font-size: 12px;
+                    line-height: 15px;
+                }
+            }
+
+        }
     }
 }
