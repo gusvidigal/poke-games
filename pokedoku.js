@@ -66,6 +66,7 @@ const imagensDosTipos = {
 //Dados
 var focoAtual;
 var tentativas = 0;
+var modoSingle = false;
 
 //Seta as cores
 function setarCorDoNomeDoPokemon(vitoria) {
@@ -89,7 +90,10 @@ function setarCorDoNomeDoPokemon(vitoria) {
     }
 }
 
-function novoJogo(modoDificil) {
+function novoJogo(modo) {
+    modoSingle = false;
+    if (modo === "single") modoSingle = true;
+
     //Reseta os campos
     atualizarTentativas(0);
     alternarDificuldade(false);
@@ -103,8 +107,20 @@ function novoJogo(modoDificil) {
     document.querySelectorAll("#pokedoku div.celula-tentativa").forEach(e => e.classList.remove("inativo"));
     //Procura uma matriz 3x3 com respostas
     while (1) {
+
         //Sorteia indexes
         let keys = embaralhar(Object.keys(indexes)).map(Number);
+        let pokemonEscolhido;
+        if (modo === "single") {
+            //No modo single, um pokémon responde todas as respostas
+            let pokemonsPossiveis = [];
+            for (const poke of pokedex) {
+                if (poke.matches.length >= 6) pokemonsPossiveis.push(poke);
+            }
+            //Sorteia um
+            pokemonEscolhido = pokemonsPossiveis[escolher(pokemonsPossiveis)];
+            keys = embaralhar(pokemonEscolhido.matches).map(nome => Number(Object.values(indexes).indexOf(nome)));
+        }
         let cols = [keys[0], keys[1], keys[2]];
         let rows = [keys[3], keys[4], keys[5]];
         //Verifica se a matriz é válida
@@ -112,7 +128,8 @@ function novoJogo(modoDificil) {
         let flag = 0;
         for (let r of rows) {
             for (let c of cols) {
-                if (matriz[r][c].length === 0 || (modoDificil && matriz[r][c].length > 3)) {
+                //No modo difícil, não pode haver células com mais de 3 respostas
+                if (matriz[r][c].length === 0 || (modo === "dificil" && matriz[r][c].length > 3)) {
                     flag = 1;
                     break;
                 } else if (matriz[r][c].length === 1) contagem1ModoDificil++;
@@ -121,7 +138,7 @@ function novoJogo(modoDificil) {
         }
         //No modo difícil, é garantido que, no mínimo, 5 categorias tenham apenas uma resposta
         //Adicionalmente, todas as categorias possuem 3 ou menos respostas
-        if (flag === 1 || (modoDificil && contagem1ModoDificil < 5)) continue;
+        if (flag === 1 || (modo === "dificil" && contagem1ModoDificil < 5)) continue;
         //Insere nos espaços
         let nomesCols = cols.map(i => indexes[i]);
         for (let i = 0; i < 3; i++) {
@@ -144,6 +161,11 @@ function novoJogo(modoDificil) {
         //Atribui o id da matriz em cada célula e insere a dificuldade
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
+                //Se for modo single, inclui o id da resposta
+                if (modoSingle)
+                    document.querySelector(`#D${i + 1}${j + 1}`).setAttribute("data-single", pokemonEscolhido.id);
+                else
+                    document.querySelector(`#D${i + 1}${j + 1}`).setAttribute("data-single", "");
                 document.querySelector(`#D${i + 1}${j + 1}`).setAttribute("data-matriz", `${rows[i]}.${cols[j]}`);
                 document.querySelector(`#D${i + 1}${j + 1} div.dificuldade`).innerHTML = matriz[rows[i]][cols[j]].length;
             }
@@ -280,7 +302,11 @@ function revelarJogo() {
             let [row, col] = document.getElementById(focoAtual).dataset.matriz.split(".");
             let respostasValidas = matriz[row][col];
             //Sorteia uma
-            let idDaResposta = respostasValidas[escolher(respostasValidas)].id;
+            //Mas se for modo single, obtém da célula
+            let idDaResposta;
+            idDaResposta = respostasValidas[escolher(respostasValidas)].id;
+            if (modoSingle)
+                idDaResposta = Number(document.querySelector(`#D11`).dataset.single);
             //Emula um chute, mas não considera tentativas
             chutarPokemon(idDaResposta, true);
         }
