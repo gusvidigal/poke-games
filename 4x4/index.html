@@ -5,29 +5,31 @@
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="height=device-height">
     <title>Pokémon Games</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
-<script src="pokedex.js"></script>
-<script src="matriz.js"></script>
-<script src="funcoes.js"></script>
-<script src="pokedoku.js"></script>
+<script src="../pokedex.js"></script>
+<script src="../matriz.js"></script>
+<script src="../funcoes.js"></script>
+<script src="../pokedoku.js"></script>
 
-<body onload="aoCarregarAPagina('pokedoku-3x3')">
+<body onload="aoCarregarAPagina('pokedoku-4x4')">
     <nav id="menu">
-        <div class="botao_nav fonte-negrito"><a href="../Site/2x2/index.html">2X2</a></div>
-        <div class="botao_nav fonte-negrito ativo"><a href="index.html">3X3</a></div>
-        <div class="botao_nav fonte-negrito"><a href="../Site/4x4/index.html">4X4</a></div>
-        <div class="botao_nav fonte-negrito"><a href="../Site/single/index.html">SINGLE</a></div>
-        <div class="botao_nav fonte-negrito"><a href="../Site/single/index.html">Changelog</a></div>
+        <div class="botao_nav fonte-negrito"><a href="../2x2/index.html">2X2</a></div>
+        <div class="botao_nav fonte-negrito"><a href="../index.html">3X3</a></div>
+        <div class="botao_nav fonte-negrito ativo"><a href="index.html">4X4</a></div>
+        <div class="botao_nav fonte-negrito"><a href="../single/index.html">SINGLE</a></div>
+        <div class="botao_nav fonte-negrito"><a href="../changelog.html">Changelog</a></div>
     </nav>
     <div class="pagina-do-tabuleiro">
-        <div id="pokedoku-3x3" class="tabuleiro">
+        <div id="pokedoku-4x4" class="tabuleiro">
             <div class="celula"></div>
             <div class="celula celula-header celula-header-row fonte-negrito C1">
             </div>
             <div class="celula celula-header celula-header-row fonte-negrito C2">
             </div>
             <div class="celula celula-header celula-header-row fonte-negrito C3">
+            </div>
+            <div class="celula celula-header celula-header-row fonte-negrito C4">
             </div>
             <div class="celula celula-header celula-header-col fonte-negrito R1">
             </div>
@@ -46,6 +48,13 @@
                 <div class="dificuldade fonte-negrito invisivel"></div>
             </div>
             <div class="D13 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D13')">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula invisivel" src="">
+                </div>
+                <p class="nome-pokemon fonte-negrito"></p>
+                <div class="dificuldade fonte-negrito invisivel"></div>
+            </div>
+            <div class="D14 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D14')">
                 <div class="container-imagem-poke">
                     <img class="imagem-poke-celula invisivel" src="">
                 </div>
@@ -75,6 +84,13 @@
                 <p class="nome-pokemon fonte-negrito"></p>
                 <div class="dificuldade fonte-negrito invisivel"></div>
             </div>
+            <div class="D24 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D24')">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula invisivel" src="">
+                </div>
+                <p class="nome-pokemon fonte-negrito"></p>
+                <div class="dificuldade fonte-negrito invisivel"></div>
+            </div>
             <div class="celula celula-header celula-header-col fonte-negrito R3">
             </div>
             <div class="D31 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D31')">
@@ -92,6 +108,43 @@
                 <div class="dificuldade fonte-negrito invisivel"></div>
             </div>
             <div class="D33 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D33')">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula invisivel" src="">
+                </div>
+                <p class="nome-pokemon fonte-negrito"></p>
+                <div class="dificuldade fonte-negrito invisivel"></div>
+            </div>
+            <div class="D34 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D34')">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula invisivel" src="">
+                </div>
+                <p class="nome-pokemon fonte-negrito"></p>
+                <div class="dificuldade fonte-negrito invisivel"></div>
+            </div>
+            <div class="celula celula-header celula-header-col fonte-negrito R4">
+            </div>
+            <div class="D41 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D41')">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula invisivel" src="">
+                </div>
+                <p class="nome-pokemon fonte-negrito"></p>
+                <div class="dificuldade fonte-negrito invisivel"></div>
+            </div>
+            <div class="D42 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D42')">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula invisivel" src="">
+                </div>
+                <p class="nome-pokemon fonte-negrito"></p>
+                <div class="dificuldade fonte-negrito invisivel"></div>
+            </div>
+            <div class="D43 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D43')">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula invisivel" src="">
+                </div>
+                <p class="nome-pokemon fonte-negrito"></p>
+                <div class="dificuldade fonte-negrito invisivel"></div>
+            </div>
+            <div class="D44 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D44')">
                 <div class="container-imagem-poke">
                     <img class="imagem-poke-celula invisivel" src="">
                 </div>

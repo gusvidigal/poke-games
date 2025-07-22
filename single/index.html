@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="height=device-height">
     <title>Pokémon Games</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
-<script src="pokedex.js"></script>
-<script src="matriz.js"></script>
-<script src="funcoes.js"></script>
-<script src="pokedoku.js"></script>
+<script src="../pokedex.js"></script>
+<script src="../matriz.js"></script>
+<script src="../funcoes.js"></script>
+<script src="../pokedoku.js"></script>
 
-<body onload="aoCarregarAPagina('pokedoku-3x3')">
+<body onload="aoCarregarAPagina('pokedoku-single')">
     <nav id="menu">
-        <div class="botao_nav fonte-negrito"><a href="../Site/2x2/index.html">2X2</a></div>
-        <div class="botao_nav fonte-negrito ativo"><a href="index.html">3X3</a></div>
-        <div class="botao_nav fonte-negrito"><a href="../Site/4x4/index.html">4X4</a></div>
-        <div class="botao_nav fonte-negrito"><a href="../Site/single/index.html">SINGLE</a></div>
-        <div class="botao_nav fonte-negrito"><a href="../Site/single/index.html">Changelog</a></div>
+        <div class="botao_nav fonte-negrito"><a href="../2x2/index.html">2X2</a></div>
+        <div class="botao_nav fonte-negrito"><a href="../index.html">3X3</a></div>
+        <div class="botao_nav fonte-negrito"><a href="../4x4/index.html">4X4</a></div>
+        <div class="botao_nav fonte-negrito ativo"><a href="index.html">SINGLE</a></div>
+        <div class="botao_nav fonte-negrito"><a href="../changelog.html">Changelog</a></div>
     </nav>
     <div class="pagina-do-tabuleiro">
-        <div id="pokedoku-3x3" class="tabuleiro">
+        <div id="pokedoku-single" class="tabuleiro">
             <div class="celula"></div>
             <div class="celula celula-header celula-header-row fonte-negrito C1">
             </div>
@@ -102,11 +102,7 @@
         <div id="menu">
             <div id="mini-menu">
                 <button id="comecar_novo_jogo" class="fonte-negrito" onclick="novoJogo()">Começar Novo Jogo</button>
-                <button class="fonte-negrito" onclick="reiniciarJogo()">Reiniciar</button>
-                <button class="fonte-negrito" id="botao_dificuldade" onclick="alternarDificuldade(true)">Mostrar
-                    Dificuldade</button>
                 <button class="fonte-negrito" onclick="revelarTabuleiro()">Revelar Possível Tabuleiro</button>
-                <button id="modo_dificil" class="fonte-negrito" onclick="novoJogo(true)">MODO DIFÍCIL</button>
             </div>
             <div id="estatisticas">
                 <div id="tentativas">

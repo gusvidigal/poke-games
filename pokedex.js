@@ -1,4 +1,4 @@
-const pokedexDados = `[
+const pokedexEmString = `[
     {
         "id": 1,
         "num": 1,
@@ -22592,7 +22592,7 @@ const pokedexDados = `[
             "GALAR",
             "DUALTYPE"
         ],
-        "imagem": "https://img.pokemondb.net/artwork/large/toxtricity.jpg"
+        "imagem": "https://img.pokemondb.net/artwork/large/toxtricity-amped.jpg"
     },
     {
         "id": 1012,
