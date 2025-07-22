@@ -555,7 +555,7 @@ body {
 }
 
 
-/*REDIMENSIONAMENTO HORIZONTAL*/
+/*REDIMENSIONAMENTO HORIZONTAL E VERTICAL*/
 @media only screen and (max-width: 1300px) {
     body {
         & div.pagina-do-tabuleiro {
@@ -608,7 +608,6 @@ body {
         }
     }
 }
-
 @media only screen and (max-width: 1000px) {
     body {
         & div.pagina-do-tabuleiro {
@@ -640,7 +639,21 @@ body {
         }
     }
 }
+@media only screen and (max-height: 700px) {
+    body div.pagina-do-tabuleiro {
+        & div#menu {
+            div#mini-menu {
+                row-gap: 5px;
 
+                & button {
+                    font-size: 12px;
+                    height: 55px;
+                }
+            }
+        }
+
+    }
+}
 @media only screen and (max-width: 700px) {
     body {
 
@@ -679,7 +692,6 @@ body {
         }
     }
 }
-
 @media only screen and (max-width: 600px) {
     body {
         & div.pagina-do-tabuleiro {
@@ -704,7 +716,6 @@ body {
         }
     }
 }
-
 @media only screen and (max-width: 550px) {
     body {
         & nav#menu div.botao_nav a {
@@ -719,33 +730,6 @@ body {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-/*REDIMENSIONAMENTO VERTICAL*/
-@media only screen and (max-height: 700px) {
-    body div.pagina-do-tabuleiro {
-        & div#menu {
-            div#mini-menu {
-                row-gap: 5px;
-
-                & button {
-                    font-size: 12px;
-                    height: 55px;
-                }
-            }
-        }
-
-    }
-}
-
 @media only screen and (max-height: 500px) {
     body div.pagina-do-tabuleiro {
         & div.tabuleiro {
@@ -765,5 +749,15 @@ body {
             }
         }
 
+    }
+}
+@media only screen and (max-width: 400px) {
+    body {
+
+        & div.pagina-do-tabuleiro div#menu div#mini-menu button {
+            width: 50px;
+            padding: 0 1px;
+            font-size: 8px;
+        }
     }
 }
