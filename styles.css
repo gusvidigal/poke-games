@@ -33,6 +33,115 @@
     display: none;
 }
 
+/* ANIMAÇÃO DO RIBBON */
+@keyframes rainbow {
+    0% {
+        background-color: #ff4d4d;
+    }
+
+    /* bright red */
+    5% {
+        background-color: #ff914d;
+    }
+
+    /* orange */
+    10% {
+        background-color: #ffc04d;
+    }
+
+    /* golden */
+    15% {
+        background-color: #ffeb3b;
+    }
+
+    /* yellow */
+    20% {
+        background-color: #d4ff4d;
+    }
+
+    /* lime */
+    25% {
+        background-color: #90ee90;
+    }
+
+    /* light green */
+    30% {
+        background-color: #00e676;
+    }
+
+    /* vivid green */
+    35% {
+        background-color: #00ffc8;
+    }
+
+    /* turquoise */
+    40% {
+        background-color: #00e5ff;
+    }
+
+    /* sky blue */
+    45% {
+        background-color: #2196f3;
+    }
+
+    /* blue */
+    50% {
+        background-color: #3f51b5;
+    }
+
+    /* indigo */
+    55% {
+        background-color: #673ab7;
+    }
+
+    /* deep purple */
+    60% {
+        background-color: #9c27b0;
+    }
+
+    /* purple */
+    65% {
+        background-color: #e040fb;
+    }
+
+    /* orchid */
+    70% {
+        background-color: #f06292;
+    }
+
+    /* rose */
+    75% {
+        background-color: #ec407a;
+    }
+
+    /* deep pink */
+    80% {
+        background-color: #ff6f61;
+    }
+
+    /* coral */
+    85% {
+        background-color: #f44336;
+    }
+
+    /* red accent */
+    90% {
+        background-color: #ff4081;
+    }
+
+    /* pink accent */
+    95% {
+        background-color: #ff80ab;
+    }
+
+    /* vivid pastel pink */
+    100% {
+        background-color: #ff4d4d;
+    }
+
+    /* loop to red */
+}
+
 body {
     margin: 0;
     /*Tamanho da scrollbar*/
@@ -203,6 +312,29 @@ body {
                             display: block;
                             object-fit: contain;
                         }
+
+                        & span.ribbon-tentativas {
+                            top: -20px;
+                            right: -20px;
+                            transform: rotate(35deg);
+                            font-size: 30px;
+
+                            position: absolute;
+                            text-align: center;
+                            align-content: center;
+                            width: 60px;
+                            height: 40px;
+                            border-radius: 25px;
+                            z-index: 1;
+
+                            &.ribbon-verde {
+                                background-color: var(--verde);
+                            }
+
+                            &.ribbon-amarelo {
+                                background-color: var(--amarelo);
+                            }
+                        }
                     }
 
                     & p.nome-pokemon {
@@ -214,6 +346,15 @@ body {
                         width: 100%;
                         text-align: center;
                         overflow: hidden;
+
+                        &.rainbow {
+                            color: black;
+                            animation: rainbow 3s linear 0s infinite normal;
+                        }
+
+                        &.erro {
+                            color: var(--vermelho);
+                        }
                     }
 
                     & div.dificuldade {
@@ -608,6 +749,7 @@ body {
         }
     }
 }
+
 @media only screen and (max-width: 1000px) {
     body {
         & div.pagina-do-tabuleiro {
@@ -639,6 +781,7 @@ body {
         }
     }
 }
+
 @media only screen and (max-height: 700px) {
     body div.pagina-do-tabuleiro {
         & div#menu {
@@ -654,6 +797,7 @@ body {
 
     }
 }
+
 @media only screen and (max-width: 700px) {
     body {
 
@@ -692,6 +836,7 @@ body {
         }
     }
 }
+
 @media only screen and (max-width: 600px) {
     body {
         & div.pagina-do-tabuleiro {
@@ -716,6 +861,7 @@ body {
         }
     }
 }
+
 @media only screen and (max-width: 550px) {
     body {
         & nav#menu div.botao_nav a {
@@ -730,6 +876,7 @@ body {
         }
     }
 }
+
 @media only screen and (max-height: 500px) {
     body div.pagina-do-tabuleiro {
         & div.tabuleiro {
@@ -751,6 +898,7 @@ body {
 
     }
 }
+
 @media only screen and (max-width: 400px) {
     body {
 

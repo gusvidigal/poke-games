@@ -7,18 +7,19 @@
     <title>Pokémon Games</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
-<script src="../pokedex.js"></script>
-<script src="../matriz.js"></script>
+<script src="../dados.js"></script>
 <script src="../funcoes.js"></script>
-<script src="../pokedoku.js"></script>
+<script src="../setup.js"></script>
+<script src="../pkdk-edit-html.js"></script>
+<script src="../pkdk.js"></script>
 
-<body onload="aoCarregarAPagina('pokedoku-2x2')">
+<body onload="setup('pokedoku-2x2')">
     <nav id="menu">
-        <div class="botao_nav fonte-negrito ativo"><a href="index.html">2X2</a></div>
+        <div class="botao_nav fonte-negrito ativo"><a href="../2x2/index.html">2X2</a></div>
         <div class="botao_nav fonte-negrito"><a href="../index.html">3X3</a></div>
         <div class="botao_nav fonte-negrito"><a href="../4x4/index.html">4X4</a></div>
         <div class="botao_nav fonte-negrito"><a href="../single/index.html">SINGLE</a></div>
-        <div class="botao_nav fonte-negrito"><a href="../changelog.html">Changelog</a></div>
+        <div class="botao_nav fonte-negrito"><a href="../changelog/index.html">Changelog</a></div>
     </nav>
     <div class="pagina-do-tabuleiro">
         <div id="pokedoku-2x2" class="tabuleiro">
@@ -32,6 +33,7 @@
             <div class="D11 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D11')">
                 <div class="container-imagem-poke">
                     <img class="imagem-poke-celula invisivel" src="">
+                    <span class="ribbon-tentativas invisivel fonte-negrito"></span>
                 </div>
                 <p class="nome-pokemon fonte-negrito"></p>
                 <div class="dificuldade fonte-negrito invisivel"></div>
@@ -39,6 +41,7 @@
             <div class="D12 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D12')">
                 <div class="container-imagem-poke">
                     <img class="imagem-poke-celula invisivel" src="">
+                    <span class="ribbon-tentativas invisivel fonte-negrito"></span>
                 </div>
                 <p class="nome-pokemon fonte-negrito"></p>
                 <div class="dificuldade fonte-negrito invisivel"></div>
@@ -48,6 +51,7 @@
             <div class="D21 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D21')">
                 <div class="container-imagem-poke">
                     <img class="imagem-poke-celula invisivel" src="">
+                    <span class="ribbon-tentativas invisivel fonte-negrito"></span>
                 </div>
                 <p class="nome-pokemon fonte-negrito"></p>
                 <div class="dificuldade fonte-negrito invisivel"></div>
@@ -55,6 +59,7 @@
             <div class="D22 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D22')">
                 <div class="container-imagem-poke">
                     <img class="imagem-poke-celula invisivel" src="">
+                    <span class="ribbon-tentativas invisivel fonte-negrito"></span>
                 </div>
                 <p class="nome-pokemon fonte-negrito"></p>
                 <div class="dificuldade fonte-negrito invisivel"></div>
@@ -63,7 +68,7 @@
         <div id="menu">
             <div id="mini-menu">
                 <button id="comecar_novo_jogo" class="fonte-negrito" onclick="novoJogo()">Começar Novo Jogo</button>
-                <button class="fonte-negrito" onclick="reiniciarJogo()">Reiniciar</button>
+                <button class="fonte-negrito" onclick="removerRespostas()">Reiniciar</button>
                 <button class="fonte-negrito" id="botao_dificuldade" onclick="alternarDificuldade(true)">Mostrar
                     Dificuldade</button>
                 <button class="fonte-negrito" onclick="revelarTabuleiro()">Revelar Possível Tabuleiro</button>
