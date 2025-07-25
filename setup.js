@@ -4,9 +4,8 @@ var matriz;
 var modoDeJogo;
 var focoAtual;
 
-
-//Função ao carregar a página do jogo
-function setup(tabuleiro) {
+//Função ao carregar a página do pokedoku
+function setupPokedoku(tabuleiro) {
     //Obtém de ./pokedex.js
     pokedex = JSON.parse(pokedexEmString);
     //Obtém de ./matriz.js

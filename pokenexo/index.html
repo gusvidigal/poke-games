@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="height=device-height">
+    <title>Pokénections</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles-pokenexo.css">
+</head>
+<script src="../dados.js"></script>
+<script src="../funcoes.js"></script>
+<script src="../setup.js"></script>
+<script src="../pokenexo-edit-html.js"></script>
+<script src="../pokenexo.js"></script>
+
+<body onload="">
+    <nav id="menu">
+        <div class="botao_nav fonte-negrito ativo"><a href="../pokenexo/index.html">Pokénections</a></div>
+        <div class="botao_nav fonte-negrito"><a href="../2x2/index.html">2X2</a></div>
+        <div class="botao_nav fonte-negrito"><a href="../index.html">3X3</a></div>
+        <div class="botao_nav fonte-negrito"><a href="../4x4/index.html">4X4</a></div>
+        <div class="botao_nav fonte-negrito"><a href="../single/index.html">SINGLE</a></div>
+        <div class="botao_nav fonte-negrito"><a href="../about/index.html">About</a></div>
+    </nav>
+    <div class="pagina-do-tabuleiro">
+        <div id="menu">
+            <button id="dica" class="fonte-negrito" onclick="">Dica</button>
+            <div id="tentativas">
+                <p class="fonte-negrito">Tentativas:</br><span>0</span></p>
+            </div>
+        </div>
+        <div id="pokenexo" class="tabuleiro">
+            <div class="D11 celula" onclick="">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="https://img.pokemondb.net/artwork/large/kyurem-black.jpg">
+                </div>
+                <p class="nome-pokemon fonte-negrito">KYUREM - Black Kyurem</p>
+            </div>
+            <div class="D12 celula" onclick="">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="https://img.pokemondb.net/artwork/large/registeel.jpg">
+                </div>
+                <p class="nome-pokemon fonte-negrito">REGISTEEL</p>
+            </div>
+            <div class="D13 celula" onclick="">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="https://img.pokemondb.net/artwork/large/regirock.jpg">
+                </div>
+                <p class="nome-pokemon fonte-negrito">REGIROCK</p>
+            </div>
+            <div class="D14 celula" onclick="">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="https://img.pokemondb.net/artwork/large/heliolisk.jpg">
+                </div>
+                <p class="nome-pokemon fonte-negrito">HELIOLISK</p>
+            </div>
+            <div class="D21 celula" onclick="">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="https://img.pokemondb.net/artwork/large/unown.jpg">
+                    <span class="ribbon-tentativas fonte-negrito"></span>
+                </div>
+                <p class="nome-pokemon fonte-negrito">UNOWN</p>
+            </div>
+            <div class="D22 celula" onclick="">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="https://img.pokemondb.net/artwork/large/kyurem-white.jpg">
+                </div>
+                <p class="nome-pokemon fonte-negrito">KYUREM - White Kyurem</p>
+            </div>
+            <div class="D23 celula" onclick="">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="https://img.pokemondb.net/artwork/large/articuno.jpg">
+                </div>
+                <p class="nome-pokemon fonte-negrito">ARTICUNO</p>
+            </div>
+            <div class="D24 celula" onclick="">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="https://img.pokemondb.net/artwork/large/regice.jpg">
+                </div>
+                <p class="nome-pokemon fonte-negrito">REGICE</p>
+            </div>
+            <div class="D31 celula" onclick="">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="https://img.pokemondb.net/artwork/large/politoed.jpg">
+                </div>
+                <p class="nome-pokemon fonte-negrito">POLITOED</p>
+            </div>
+            <div class="D32 celula" onclick="">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="https://img.pokemondb.net/artwork/large/regigigas.jpg">
+                </div>
+                <p class="nome-pokemon fonte-negrito">REGIGIGAS</p>
+            </div>
+            <div class="D33 celula" onclick="">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="https://img.pokemondb.net/artwork/large/whimsicott.jpg">
+                </div>
+                <p class="nome-pokemon fonte-negrito">WHIMSICOTT</p>
+            </div>
+            <div class="D34 celula" onclick="">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="https://img.pokemondb.net/artwork/large/regidrago.jpg">
+                </div>
+                <p class="nome-pokemon fonte-negrito">REGIDRAGO</p>
+            </div>
+            <div class="D41 celula" onclick="">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="https://img.pokemondb.net/artwork/large/glastrier.jpg">
+                </div>
+                <p class="nome-pokemon fonte-negrito">GLASTRIER</p>
+            </div>
+            <div class="D42 celula" onclick="">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="https://img.pokemondb.net/artwork/large/tauros-paldean-combat.jpg ">
+                </div>
+                <p class="nome-pokemon fonte-negrito">TAUROS - Combat Breed</p>
+            </div>
+            <div class="D43 celula" onclick="">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="https://img.pokemondb.net/artwork/large/bellossom.jpg">
+                </div>
+                <p class="nome-pokemon fonte-negrito">BELLOSSOM</p>
+            </div>
+            <div class="D44 celula" onclick="">
+                <div class="container-imagem-poke">
+                    <img class="imagem-poke-celula" src="https://img.pokemondb.net/artwork/large/zekrom.jpg">
+                </div>
+                <p class="nome-pokemon fonte-negrito">ZEKROM</p>
+            </div>
+        </div>
+        <div id="background" class="invisivel"></div>
+    </div>
+</body>
+
+</html>

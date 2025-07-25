@@ -1,0 +1,371 @@
+@import url('styles.css');
+/*ESSE ARQUIVO TEM PRECEDENCIA MAIOR*/
+body {
+    & div.pagina-do-tabuleiro {
+        padding: 10px;
+        width: calc(100% - 20px);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        & div.tabuleiro {
+            display: grid;
+
+            width: calc(100% - 40px);
+            padding: 20px 20px 40px 20px;
+            aspect-ratio: 3 / 2;
+
+            &#pokedoku-2x2 {
+                max-width: 600px;
+                grid-template-rows: repeat(3, minmax(0, 1fr));
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+
+                & div.celula.celula-header p {
+                    font-size: clamp(0.85rem, 0.2rem + 2.9 * var(--vw, 1vw), 1.5rem);
+                }
+
+                & div.celula.celula-tentativa p.nome-pokemon {
+                    font-size: clamp(0.4rem, 0.009rem + 1.74 * var(--vw, 1vw), 0.9rem);
+                    line-height: clamp(0.4rem, 0.009rem + 1.74 * var(--vw, 1vw), 0.9rem);
+                }
+            }
+
+            &#pokedoku-3x3,
+            &#pokedoku-single {
+                max-width: 700px;
+                grid-template-rows: repeat(4, minmax(0, 1fr));
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+
+                /* 0.65rem = 360px MINIMO 1.10rem = 720px IDEAL */
+                & div.celula.celula-header p {
+                    font-size: clamp(0.65rem, 0.2rem + 2 * var(--vw, 1vw), 1.5rem);
+                }
+
+                & div.celula.celula-tentativa p.nome-pokemon {
+                    font-size: clamp(0.25rem, -0.02rem + 1.21 * var(--vw, 1vw), 0.6rem);
+                    line-height: clamp(0.25rem, -0.02rem + 1.21 * var(--vw, 1vw), 0.6rem);
+                }
+            }
+
+            &#pokedoku-4x4 {
+                max-width: 750px;
+                grid-template-rows: repeat(5, minmax(0, 1fr));
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+
+                & div.celula.celula-header p {
+                    /* 0.5rem = 360px MINIMO; 1.75rem = 1440px IDEAL */
+                    font-size: clamp(0.5rem, 0.08rem + 1.8 * var(--vw, 1vw), 1.2rem);
+                }
+
+                & div.celula.celula-tentativa p.nome-pokemon {
+                    font-size: clamp(0.25rem, -0.02rem + 1.21 * var(--vw, 1vw), 0.6rem);
+                    line-height: clamp(0.25rem, -0.02rem + 1.21 * var(--vw, 1vw), 0.6rem);
+                }
+            }
+
+            & div.celula {
+                /*CÉLULAS*/
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: calc(100% - 2px);
+                width: calc(100% - 2px);
+
+                & p {
+                    margin: 0;
+                }
+
+                &.celula-header {
+                    background-color: var(--vermelho);
+                    justify-content: center;
+
+                    /*Ancorado em width do div pai: 250px*/
+                    & img,
+                    & p {
+                        width: 92%;
+                        padding: 4%;
+                    }
+
+                    & img {
+                        max-width: 200px;
+                        max-height: 40px;
+                    }
+
+                    & p {
+                        line-height: 30px;
+                        height: 60px;
+                        text-align: center;
+                        align-content: center;
+                        overflow: hidden;
+                    }
+                }
+
+
+                &.celula-tentativa:not(.inativo):hover {
+                    cursor: pointer;
+                    background-color: var(--cinza);
+                }
+
+                &.celula-tentativa {
+                    position: relative;
+
+                    & div.container-imagem-poke {
+                        /*Menos 10 da margem*/
+                        width: calc(100% - 10px);
+                        /*Menos 10 da margem*/
+                        height: calc(75% - 10px);
+                        margin: 5px;
+
+                        & img.imagem-poke-celula {
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            object-fit: contain;
+                        }
+
+                        & span.ribbon-tentativas {
+                            font-size: 30px;
+
+                            display: none;
+
+                            position: absolute;
+                            text-align: center;
+                            align-content: center;
+                            width: calc(100%/5);
+                            height: calc(100%/4.5);
+                            top: -20px;
+                            right: -20px;
+                            border-radius: 25px;
+                            z-index: 1;
+
+                            &.ribbon-verde {
+                                background-color: var(--verde);
+                            }
+
+                            &.ribbon-amarelo {
+                                background-color: var(--amarelo);
+                            }
+                        }
+                    }
+
+                    & p.nome-pokemon {
+                        background-color: black;
+                        color: white;
+
+                        height: 25%;
+                        width: calc(100% - 10px);
+                        padding: 0 5px;
+
+                        text-align: center;
+                        align-content: center;
+                        overflow: hidden;
+
+                        &.rainbow {
+                            color: black;
+                            animation: rainbow 3s linear 0s infinite normal;
+                        }
+
+                        &.erro {
+                            color: var(--vermelho);
+                        }
+                    }
+
+                    & div.dificuldade {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        border-width: 0 0 2px 2px;
+                        border-style: solid;
+                        font-size: clamp(0.45rem, 0.02rem + 1.9 * var(--vw, 1vw), 1rem);
+                        width: 20%;
+                        aspect-ratio: 1 / 1;
+                        align-content: center;
+                        text-align: center;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+
+        & div#menu {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            height: 100px;
+
+            & div#mini-menu {
+                display: flex;
+                column-gap: 15px;
+                flex-direction: row;
+
+                padding: 0 20px;
+                width: calc(100% - 40px);
+
+                align-items: center;
+                justify-content: center;
+
+                & button {
+                    flex: 1 1 0;
+                    width: 0;
+                    max-width: 150px;
+                    height: 45px;
+                    /*BASEADO NA LINHA (ALTURA = 360PX)*/
+                    /* 0.4rem = 360px MINIMO; 1rem = 1566px IDEAL - em coluna */
+                    font-size: clamp(0.4rem, 0.22rem + 0.79 * var(--vw, 1vw), 0.8rem);
+
+                    padding: 1px 5px;
+                    border: 2px solid black;
+                    border-radius: 10px;
+
+                    background-color: var(--branco);
+
+                    &:hover {
+                        background-color: var(--cinza);
+                        cursor: pointer;
+                    }
+
+                    &#comecar_novo_jogo {
+                        background-color: black;
+                        color: white;
+
+                        &:hover {
+                            background-color: var(--preto-claro);
+                        }
+                    }
+
+                    &#modo_dificil {
+                        background-color: var(--vermelho);
+                        color: white;
+
+                        &:hover {
+                            background-color: var(--vermelho-forte);
+                        }
+                    }
+                }
+            }
+
+            & div#estatisticas {
+
+                /* 0.8rem = 360px MINIMO; 1rem = 720px IDEAL */
+                font-size: clamp(0.8rem, 0.1rem + 2.7 * var(--vw, 1vw), 1.3rem);
+                display: flex;
+                flex-direction: column;
+                /*Baseado em 20px para 1000w*/
+                padding: 0 calc(2 * var(--vw, 1vw));
+                text-align: center;
+
+                & p {
+                    margin: 0;
+                }
+
+                & span {
+                    font-weight: normal;
+                }
+            }
+        }
+
+        & div.popup {
+            /*Incluir borda e padding*/
+            box-sizing: border-box;
+            position: fixed;
+
+            top: max(calc(12.5 * var(--vh, 1vh)), calc(calc(100 * var(--vh, 1vh) - 500px) / 2));
+            left: min(calc(30 * var(--vw, 1vw)), calc(calc(100 * var(--vw, 1vw) - 350px) / 2));
+
+            min-width: 350px;
+            width: calc(40 * var(--vw, 1vw));
+            height: calc(75 * var(--vh, 1vh));
+            max-height: 500px;
+
+            display: flex;
+            flex-direction: column;
+            background-color: var(--cinza);
+            padding: 10px;
+            z-index: 1;
+            border: 3px solid black;
+            border-radius: 2px;
+
+            & p:not(.fonte-negrito-resultado) {
+                text-align: center;
+                margin: 5px 0 10px 0;
+            }
+
+            & input#pesquisa_pokemon {
+                height: 30px;
+                font-size: 15px;
+                line-height: 30px;
+                padding: 0 8px;
+                color: var(--cinza-escuro);
+                border: 1px solid black;
+                /*16 de padding e 2 da borda*/
+                width: calc(100% - 18px);
+            }
+
+            & ul#resultados {
+                width: calc(100% - 6px);
+                background-color: white;
+                overflow: auto;
+                border: 3px solid black;
+                border-radius: 2px;
+                margin: 10px 0 0 0;
+                padding: 5px 0;
+                flex-grow: 1;
+
+                & li {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    width: calc(100% - 20px);
+                    height: 60px;
+                    padding: 0 10px;
+
+                    & img.imagem-poke-lista {
+                        background-color: white;
+                        width: 60px;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+
+                    & p.fonte-negrito-resultado {
+                        margin: 0;
+                        padding: 5px 10px;
+                        font-size: 15px;
+                        line-height: 20px;
+                        flex-grow: 1;
+                        height: calc(100% - 10px);
+                        align-content: center;
+
+                        & span.descricao {
+                            color: var(--cinza-escuro);
+                        }
+                    }
+
+                    & button {
+                        height: 45px;
+                        border: 2px solid var(--vermelho);
+                        border-radius: 5px;
+                        background-color: var(--vermelho);
+
+                        &:hover {
+                            background-color: var(--vermelho-escuro);
+                            border-color: var(--vermelho-escuro);
+                            cursor: pointer;
+                            color: white;
+
+                        }
+                    }
+
+                    &:hover {
+                        background-color: var(--cinza);
+                    }
+                }
+            }
+        }
+    }
+}

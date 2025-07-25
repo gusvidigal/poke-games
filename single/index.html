@@ -4,22 +4,24 @@
 <head>
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="height=device-height">
-    <title>Pokémon Games</title>
+    <title>Pokédoku single mode</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles-pokedoku.css">
 </head>
 <script src="../dados.js"></script>
 <script src="../funcoes.js"></script>
 <script src="../setup.js"></script>
-<script src="../pkdk-edit-html.js"></script>
-<script src="../pkdk.js"></script>
+<script src="../pokedoku-edit-html.js"></script>
+<script src="../pokedoku.js"></script>
 
-<body onload="setup('pokedoku-single')">
+<body onload="setupPokedoku('pokedoku-single')">
     <nav id="menu">
+        <div class="botao_nav fonte-negrito"><a href="../pokenexo/index.html">Pokénections</a></div>
         <div class="botao_nav fonte-negrito"><a href="../2x2/index.html">2X2</a></div>
         <div class="botao_nav fonte-negrito"><a href="../index.html">3X3</a></div>
         <div class="botao_nav fonte-negrito"><a href="../4x4/index.html">4X4</a></div>
         <div class="botao_nav fonte-negrito ativo"><a href="../single/index.html">SINGLE</a></div>
-        <div class="botao_nav fonte-negrito"><a href="../changelog/index.html">Changelog</a></div>
+        <div class="botao_nav fonte-negrito"><a href="../about/index.html">About</a></div>
     </nav>
     <div class="pagina-do-tabuleiro">
         <div id="pokedoku-single" class="tabuleiro">
@@ -102,8 +104,8 @@
         </div>
         <div id="menu">
             <div id="mini-menu">
-                <button id="comecar_novo_jogo" class="fonte-negrito" onclick="novoJogo()">Começar Novo Jogo</button>
-                <button class="fonte-negrito" onclick="revelarTabuleiro()">Revelar Possível Tabuleiro</button>
+                <button id="comecar_novo_jogo" class="fonte-negrito" onclick="novoJogo()">Start New Game</button>
+                <button class="fonte-negrito" onclick="revelarTabuleiro()">Reveal Board</button>
             </div>
             <div id="estatisticas">
                 <div id="tentativas">

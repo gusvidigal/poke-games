@@ -90,14 +90,14 @@ function alternarDificuldade(acao) {
     let textoBotao;
     if (acao) {
         delClasseDeElemento(`#${modoDeJogo} div.dificuldade`, "invisivel", true);
-        textoBotao = "Esconder";
+        textoBotao = "Hide";
     }
     else {
         addClasseAElemento(`#${modoDeJogo} div.dificuldade`, "invisivel", true);
-        textoBotao = "Mostrar";
+        textoBotao = "Show";
     }
     //Muda a função do botão
-    setarAtributoEmHTML("#botao_dificuldade", "innerHTML", `${textoBotao} Dificuldade`);
+    setarAtributoEmHTML("#botao_dificuldade", "innerHTML", `${textoBotao} Total Answers`);
     //Não funciona se trocar por setarAtributoEmHTML()
     document.getElementById("botao_dificuldade").setAttribute("onclick", `alternarDificuldade(${!acao})`);
 }
