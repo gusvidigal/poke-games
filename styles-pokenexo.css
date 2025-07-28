@@ -39,10 +39,11 @@ body {
             }
 
             & div#tentativas,
-            & div#dicas {
+            & div#dicas,
+            & div#pokenexo-data {
 
-                /* 0.8rem = 360px MINIMO; 1rem = 720px IDEAL */
-                font-size: clamp(0.8rem, 0.1rem + 2.7 * var(--vw, 1vw), 1.3rem);
+                font-size: clamp(0.8rem, -0.147rem + 4.210 * var(--vw, 1vw), 1.3rem);
+                width: 150px;
                 display: flex;
                 flex-direction: column;
                 text-align: center;
@@ -79,8 +80,9 @@ body {
             & div.celula {
                 background-color: white;
                 border: 2px solid var(--vermelho);
-                border-radius: 6px;
+                border-radius: 10px;
                 position: relative;
+                overflow: hidden;
                 /*CÉLULAS*/
                 display: flex;
                 flex-direction: column;
@@ -139,7 +141,7 @@ body {
             & div.categoria {
                 background-color: var(--vermelho);
                 border: 2px solid var(--vermelho);
-                border-radius: 6px;
+                border-radius: 10px;
                 grid-column-end: span 4;
                 display: flex;
                 flex-direction: column;
@@ -213,21 +215,10 @@ body {
             padding: 10px;
             width: calc(100% - 20px);
 
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-
             & div#menu {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-
                 width: calc(100%);
                 max-width: 520px;
                 padding: 15px 0 10px 0;
-                height: clamp(25px, 10px + 4.16 * var(--vw, 1vw), 40px);
             }
 
             & div.tabuleiro {
@@ -238,7 +229,6 @@ body {
 
                 & div.celula {
                     border-width: 1px;
-                    border-radius: 3px;
                     /*CÉLULAS*/
                     height: calc(100% - 2px);
                     width: calc(100% - 2px);
@@ -268,7 +258,6 @@ body {
 
                 & div.categoria {
                     border-width: 1px;
-                    border-radius: 3px;
                 }
             }
         }
