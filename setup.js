@@ -8,9 +8,10 @@ var celulasSelecionadasPokenexo = [];
 
 //Função ao carregar a página do pokedoku
 function setupPokedoku(tabuleiro) {
-    //Obtém de ./_dados.js
+    //Obtém de ./dados.js
     pokedex = JSON.parse(pokedexEmString);
     matriz = JSON.parse(matrizEmString);
+    pokenexo = respostasPokenexo[0];
     modoDeJogoPokedoku = tabuleiro;
 
     //Determinar vh e vw para dispositivos mobile
@@ -139,10 +140,9 @@ function setupPokedoku(tabuleiro) {
 
 //Função ao carregar a página do pokenexo
 function setupPokenexo() {
-    //Obtém de ./_dados.js
+    //Obtém de ./dados.js
     pokedex = JSON.parse(pokedexEmString);
-    //Obtém de ./_respostas-pokenexo.ks
-    pokenexo = respostasPokenexoEmString[0];
+    pokenexo = respostasPokenexo[0];
 
     //Determinar vh e vw para dispositivos mobile
     onresize = () => {
