@@ -2,10 +2,10 @@
 //Inicia um novo jogo
 function novoJogo(modoDificil) {
     //Se nunca tiver sido iniciado antes, seta como iniciado
-    if (gameData(modoDeJogo).iniciado === false) {
-        let data = gameData(modoDeJogo);
+    if (gameData(modoDeJogoPokedoku).iniciado === false) {
+        let data = gameData(modoDeJogoPokedoku);
         data.iniciado = true;
-        setGameData(modoDeJogo, data);
+        setGameData(modoDeJogoPokedoku, data);
     }
 
     //Limpa os campos
@@ -20,7 +20,7 @@ function novoJogo(modoDificil) {
 
         //Sorteia indexes
         let keys = embaralhar(Object.keys(indexes)).map(Number);
-        if (modoDeJogo === "pokedoku-single") {
+        if (modoDeJogoPokedoku === "pokedoku-single") {
             //No modo single, apenas um pokémon responde todas as respostas
             let pokemonsPossiveis = [];
             for (const poke of pokedex) {
@@ -31,8 +31,8 @@ function novoJogo(modoDificil) {
             keys = embaralhar(pokemonEscolhido.matches).map(nome => Number(Object.values(indexes).indexOf(nome)));
         }
         //Adiciona nas listas de linhas e colunas
-        for (let i = 0; i < infosDoJogo[modoDeJogo].rows + infosDoJogo[modoDeJogo].cols; i++) {
-            if (i < infosDoJogo[modoDeJogo].cols) cols.push(keys[i]);
+        for (let i = 0; i < infosDoJogo[modoDeJogoPokedoku].rows + infosDoJogo[modoDeJogoPokedoku].cols; i++) {
+            if (i < infosDoJogo[modoDeJogoPokedoku].cols) cols.push(keys[i]);
             else rows.push(keys[i]);
         }
         //Verifica se a matriz é válida
@@ -41,7 +41,7 @@ function novoJogo(modoDificil) {
         for (let r of rows) {
             for (let c of cols) {
                 //No modo difícil, não pode haver células com mais de 3 respostas
-                if (matriz[r][c].length === 0 || (modoDificil && matriz[r][c].length > infosDoJogo[modoDeJogo].permissividade_modo_dificil)) {
+                if (matriz[r][c].length === 0 || (modoDificil && matriz[r][c].length > infosDoJogo[modoDeJogoPokedoku].permissividade_modo_dificil)) {
                     flag = 1;
                     break;
                 } else if (matriz[r][c].length === 1) contagem1ModoDificil++;
@@ -50,26 +50,26 @@ function novoJogo(modoDificil) {
         }
         //No modo difícil, limite_modo_dificil células só têm uma resposta possível
         //Adicionalmente, todas as células possuem permissividade_modo_possível respostas no máximo
-        if (flag === 1 || (modoDificil && contagem1ModoDificil < infosDoJogo[modoDeJogo].limite_modo_dificil))
+        if (flag === 1 || (modoDificil && contagem1ModoDificil < infosDoJogo[modoDeJogoPokedoku].limite_modo_dificil))
             continue;
         break;
     }
 
     //Atribui o jogo atual no localStorage do navegador
-    let data = gameData(modoDeJogo);
+    let data = gameData(modoDeJogoPokedoku);
     data.linhas = copiar(rows);
     data.colunas = copiar(cols);
     //Atribui o pokemon escolhido
     if (pokemonEscolhido) {
         data.respostaCorreta = pokemonEscolhido.id;
     }
-    setGameData(modoDeJogo, data);
+    setGameData(modoDeJogoPokedoku, data);
 
 
     //Insere nos espaços das linhas e das colunas
-    inserirHeadersNoTabuleiro(modoDeJogo);
+    inserirHeadersNoTabuleiro(modoDeJogoPokedoku);
     //Insere as dificuldades
-    inserirDificuldadesNoTabuleiro(modoDeJogo);
+    inserirDificuldadesNoTabuleiro(modoDeJogoPokedoku);
 }
 
 
@@ -78,7 +78,7 @@ function novoJogo(modoDificil) {
 //Mostra o popup de pesquisa
 function mostrarPopupDePesquisa(idDoFoco) {
     //Se a célula estiver inativa, para
-    if (elementoTemClasse(`#${modoDeJogo} .${idDoFoco}`, "inativo")) return;
+    if (elementoTemClasse(`#${modoDeJogoPokedoku} .${idDoFoco}`, "inativo")) return;
     //Ativa o background e o popup
     delClasseDeElemento("#background", "invisivel");
     delClasseDeElemento("#popup_pesquisa", "invisivel");
@@ -86,7 +86,7 @@ function mostrarPopupDePesquisa(idDoFoco) {
     setarAtributoEmHTML("#resultados", "innerHTML");
     setarAtributoEmHTML("#pesquisa_pokemon", "value");
     document.getElementById("pesquisa_pokemon").focus();
-    focoAtual = idDoFoco;
+    focoAtualPokedoku = idDoFoco;
 }
 //Fecha o popup de pesquisa
 function fecharPopupDePesquisa() {
@@ -129,30 +129,30 @@ function mostrarResultadosDaPesquisa() {
 //Tenta adivinhar
 function chutarPokemon(id, chuteEmulado) {
 
-    let numeroLinha = Number(focoAtual[1]) - 1;
-    let numeroColuna = Number(focoAtual[2]) - 1;
+    let numeroLinha = Number(focoAtualPokedoku[1]) - 1;
+    let numeroColuna = Number(focoAtualPokedoku[2]) - 1;
 
     //Aumenta o numero de tentativas;
     if (!chuteEmulado) {
         //Tentativas gerais
-        atualizarNumeroDeTentativas(gameData(modoDeJogo).tentativas + 1);
+        atualizarTentativasPokenexo(gameData(modoDeJogoPokedoku).tentativas + 1);
         //Tentativas da célula, se não for modo single
-        if (modoDeJogo !== "pokedoku-single") {
-            let data = gameData(modoDeJogo);
+        if (modoDeJogoPokedoku !== "pokedoku-single") {
+            let data = gameData(modoDeJogoPokedoku);
             data.celulas[numeroLinha][numeroColuna].tentativas += 1;
-            setGameData(modoDeJogo, data);
+            setGameData(modoDeJogoPokedoku, data);
         }
     }
     //Obtém o pokémon
     let pokemon = obterPokemonPorId(id);
     //Obtém possíveis respostas
-    let row = gameData(modoDeJogo).linhas[numeroLinha];
-    let col = gameData(modoDeJogo).colunas[numeroColuna];
+    let row = gameData(modoDeJogoPokedoku).linhas[numeroLinha];
+    let col = gameData(modoDeJogoPokedoku).colunas[numeroColuna];
     let respostasValidas = matriz[row][col];
     //Se é modo single, só tem uma resposta
     let chuteValido = false;
-    if (modoDeJogo === "pokedoku-single") {
-        let respostaCorreta = gameData(modoDeJogo).respostaCorreta;
+    if (modoDeJogoPokedoku === "pokedoku-single") {
+        let respostaCorreta = gameData(modoDeJogoPokedoku).respostaCorreta;
         if (respostaCorreta === id) chuteValido = true;
     } else {
         //Verifica se é resposta válida
@@ -170,37 +170,37 @@ function chutarPokemon(id, chuteEmulado) {
     //Se o chute for inválido
     if (!chuteValido) {
         //Mostra o X no nome
-        setarCoresDoNomeDoPokemon("erro", focoAtual);
-        document.querySelector(`#${modoDeJogo} .${focoAtual} p`).innerHTML += "X";
+        setarCoresDoNomeDoPokemon("erro", focoAtualPokedoku);
+        document.querySelector(`#${modoDeJogoPokedoku} .${focoAtualPokedoku} p`).innerHTML += "X";
         return;
     }
     //Insere pokémon e nome
-    let data = gameData(modoDeJogo);
+    let data = gameData(modoDeJogoPokedoku);
     //Coloca o pokemon na célula e a inativa
     //Se for modo single, insere em todos
-    if (modoDeJogo === "pokedoku-single") {
-        for (let i = 0; i < infosDoJogo[modoDeJogo].rows; i++) {
-            for (let j = 0; j < infosDoJogo[modoDeJogo].cols; j++) {
-                delClasseDeElemento(`#${modoDeJogo} .D${i + 1}${j + 1} p`, "erro");
+    if (modoDeJogoPokedoku === "pokedoku-single") {
+        for (let i = 0; i < infosDoJogo[modoDeJogoPokedoku].rows; i++) {
+            for (let j = 0; j < infosDoJogo[modoDeJogoPokedoku].cols; j++) {
+                delClasseDeElemento(`#${modoDeJogoPokedoku} .D${i + 1}${j + 1} p`, "erro");
                 inserirPokemonNaCelula(`D${i + 1}${j + 1}`, pokemon);
             }
         }
         //Insere no localStorage
         data.resposta = pokemon.id;
     } else {
-        delClasseDeElemento(`#${modoDeJogo} .${focoAtual} p`, "erro");
-        inserirPokemonNaCelula(focoAtual, pokemon);
+        delClasseDeElemento(`#${modoDeJogoPokedoku} .${focoAtualPokedoku} p`, "erro");
+        inserirPokemonNaCelula(focoAtualPokedoku, pokemon);
         //Insere no localStorage
         data.celulas[numeroLinha][numeroColuna].resposta = pokemon.id;
     }
-    setGameData(modoDeJogo, data);
-    focoAtual = "";
+    setGameData(modoDeJogoPokedoku, data);
+    focoAtualPokedoku = "";
 
     //Se o usuário acertou todos
     let acertouTodas = true;
-    for (let i = 0; i < infosDoJogo[modoDeJogo].rows; i++) {
-        for (let j = 0; j < infosDoJogo[modoDeJogo].cols; j++) {
-            if (!elementoTemClasse(`#${modoDeJogo} .D${i + 1}${j + 1}`, "inativo")) acertouTodas = false;
+    for (let i = 0; i < infosDoJogo[modoDeJogoPokedoku].rows; i++) {
+        for (let j = 0; j < infosDoJogo[modoDeJogoPokedoku].cols; j++) {
+            if (!elementoTemClasse(`#${modoDeJogoPokedoku} .D${i + 1}${j + 1}`, "inativo")) acertouTodas = false;
         }
     }
     if (acertouTodas && !chuteEmulado) tabuleiroCompletado();
@@ -211,16 +211,16 @@ function revelarTabuleiro() {
     //Limpa o tabuleiro
     removerRespostas();
     //Itera sobre todas as células
-    for (let i = 0; i < infosDoJogo[modoDeJogo].rows; i++) {
-        for (let j = 0; j < infosDoJogo[modoDeJogo].cols; j++) {
+    for (let i = 0; i < infosDoJogo[modoDeJogoPokedoku].rows; i++) {
+        for (let j = 0; j < infosDoJogo[modoDeJogoPokedoku].cols; j++) {
             //Obtém as respostas válidas
-            let row = gameData(modoDeJogo).linhas[i];
-            let col = gameData(modoDeJogo).colunas[j];
+            let row = gameData(modoDeJogoPokedoku).linhas[i];
+            let col = gameData(modoDeJogoPokedoku).colunas[j];
             let respostasValidas = matriz[row][col];
             //Sorteia uma. Mas se for modo single, obtém da célula
             let idDaResposta;
-            if (modoDeJogo === "pokedoku-single")
-                idDaResposta = gameData(modoDeJogo).respostaCorreta;
+            if (modoDeJogoPokedoku === "pokedoku-single")
+                idDaResposta = gameData(modoDeJogoPokedoku).respostaCorreta;
             else
                 idDaResposta = respostasValidas[escolher(respostasValidas)].id;
             //Insere o pokémon na célula
@@ -233,9 +233,9 @@ function revelarTabuleiro() {
 //Vitória do tabuleiro - preencheu tudo
 function tabuleiroCompletado() {
     //Muda no localStorage
-    let data = gameData(modoDeJogo);
+    let data = gameData(modoDeJogoPokedoku);
     data.vitoria = true;
-    setGameData(modoDeJogo, data);
+    setGameData(modoDeJogoPokedoku, data);
     //Muda todos os textos para arco-íris
     setarCoresDoNomeDoPokemon("rainbow");
     //Mostra os ribbons

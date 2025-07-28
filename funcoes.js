@@ -118,6 +118,14 @@ function copiar(lista) {
     for (const item of lista) copia.push(item);
     return copia;
 }
+//Verifica se duas listas são iguais
+function listasSaoIguais(lista1, lista2) {
+    if (lista1.length !== lista2.length) return false;
+    for (let item of lista1) {
+        if (!lista2.includes(item)) return false;
+    }
+    return true;
+}
 
 
 

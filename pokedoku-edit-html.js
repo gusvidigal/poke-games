@@ -1,46 +1,46 @@
 //Atualiza o número de tentativas
-function atualizarNumeroDeTentativas(numero) {
+function atualizarTentativasPokenexo(numero) {
     if (numero !== undefined) {
         //Muda as tentativas
-        let data = gameData(modoDeJogo);
+        let data = gameData(modoDeJogoPokedoku);
         data.tentativas = numero;
-        setGameData(modoDeJogo, data);
+        setGameData(modoDeJogoPokedoku, data);
     }
-    setarAtributoEmHTML(`#tentativas span`, "innerHTML", String(gameData(modoDeJogo).tentativas));
+    setarAtributoEmHTML(`#tentativas span`, "innerHTML", String(gameData(modoDeJogoPokedoku).tentativas));
 }
 //Seta as cores
 function setarCoresDoNomeDoPokemon(cor, idCelula) {
     if (!idCelula) {
-        for (let i = 0; i < infosDoJogo[modoDeJogo].rows; i++) {
-            for (let j = 0; j < infosDoJogo[modoDeJogo].cols; j++) {
+        for (let i = 0; i < infosDoJogo[modoDeJogoPokedoku].rows; i++) {
+            for (let j = 0; j < infosDoJogo[modoDeJogoPokedoku].cols; j++) {
                 switch (cor) {
                     case "rainbow":
-                        addClasseAElemento(`#${modoDeJogo} .D${i + 1}${j + 1} p`, "rainbow");
-                        delClasseDeElemento(`#${modoDeJogo} .D${i + 1}${j + 1} p`, "erro");
+                        addClasseAElemento(`#${modoDeJogoPokedoku} .D${i + 1}${j + 1} p`, "rainbow");
+                        delClasseDeElemento(`#${modoDeJogoPokedoku} .D${i + 1}${j + 1} p`, "erro");
                         break;
                     case "erro":
-                        addClasseAElemento(`#${modoDeJogo} .D${i + 1}${j + 1} p`, "erro");
-                        delClasseDeElemento(`#${modoDeJogo} .D${i + 1}${j + 1} p`, "rainbow");
+                        addClasseAElemento(`#${modoDeJogoPokedoku} .D${i + 1}${j + 1} p`, "erro");
+                        delClasseDeElemento(`#${modoDeJogoPokedoku} .D${i + 1}${j + 1} p`, "rainbow");
                         break;
                     default:
-                        delClasseDeElemento(`#${modoDeJogo} .D${i + 1}${j + 1} p`, "rainbow");
-                        delClasseDeElemento(`#${modoDeJogo} .D${i + 1}${j + 1} p`, "erro");
+                        delClasseDeElemento(`#${modoDeJogoPokedoku} .D${i + 1}${j + 1} p`, "rainbow");
+                        delClasseDeElemento(`#${modoDeJogoPokedoku} .D${i + 1}${j + 1} p`, "erro");
                 }
             }
         }
     } else {
         switch (cor) {
             case "rainbow":
-                addClasseAElemento(`#${modoDeJogo} .${idCelula} p`, "rainbow");
-                delClasseDeElemento(`#${modoDeJogo} .${idCelula} p`, "erro");
+                addClasseAElemento(`#${modoDeJogoPokedoku} .${idCelula} p`, "rainbow");
+                delClasseDeElemento(`#${modoDeJogoPokedoku} .${idCelula} p`, "erro");
                 break;
             case "erro":
-                addClasseAElemento(`#${modoDeJogo} .${idCelula} p`, "erro");
-                delClasseDeElemento(`#${modoDeJogo} .${idCelula} p`, "rainbow");
+                addClasseAElemento(`#${modoDeJogoPokedoku} .${idCelula} p`, "erro");
+                delClasseDeElemento(`#${modoDeJogoPokedoku} .${idCelula} p`, "rainbow");
                 break;
             default:
-                delClasseDeElemento(`#${modoDeJogo} .${idCelula} p`, "rainbow");
-                delClasseDeElemento(`#${modoDeJogo} .${idCelula} p`, "erro");
+                delClasseDeElemento(`#${modoDeJogoPokedoku} .${idCelula} p`, "rainbow");
+                delClasseDeElemento(`#${modoDeJogoPokedoku} .${idCelula} p`, "erro");
         }
     }
 }
@@ -48,14 +48,14 @@ function setarCoresDoNomeDoPokemon(cor, idCelula) {
 //Insere pokémon na célula
 function inserirPokemonNaCelula(celula, pokemon) {
     //Insere pokémon e nome
-    delClasseDeElemento(`#${modoDeJogo} .${celula} img.imagem-poke-celula`, "invisivel");
-    setarAtributoEmHTML(`#${modoDeJogo} .${celula} img.imagem-poke-celula`, "src", pokemon.imagem);
+    delClasseDeElemento(`#${modoDeJogoPokedoku} .${celula} img.imagem-poke-celula`, "invisivel");
+    setarAtributoEmHTML(`#${modoDeJogoPokedoku} .${celula} img.imagem-poke-celula`, "src", pokemon.imagem);
     let nomePokemonFormatado = pokemon.nome.toUpperCase();
     if (pokemon.desc !== "") nomePokemonFormatado += " - " + camelCase(pokemon.desc);
-    setarAtributoEmHTML(`#${modoDeJogo} .${celula} p`, "innerHTML", nomePokemonFormatado);
+    setarAtributoEmHTML(`#${modoDeJogoPokedoku} .${celula} p`, "innerHTML", nomePokemonFormatado);
 
     //Inativa a célula
-    addClasseAElemento(`#${modoDeJogo} .${celula}`, "inativo");
+    addClasseAElemento(`#${modoDeJogoPokedoku} .${celula}`, "inativo");
 }
 
 //Adiciona nomes nas linhas e colunas
@@ -86,14 +86,14 @@ function inserirHeadersNoTabuleiro(idDoTabuleiro) {
 //Mostra a quantidade de respostas possíveis para cada célula
 function alternarDificuldade(acao) {
     //Se for pokedoku-single, para
-    if (modoDeJogo === "pokedoku-single") return;
+    if (modoDeJogoPokedoku === "pokedoku-single") return;
     let textoBotao;
     if (acao) {
-        delClasseDeElemento(`#${modoDeJogo} div.dificuldade`, "invisivel", true);
+        delClasseDeElemento(`#${modoDeJogoPokedoku} div.dificuldade`, "invisivel", true);
         textoBotao = "Hide";
     }
     else {
-        addClasseAElemento(`#${modoDeJogo} div.dificuldade`, "invisivel", true);
+        addClasseAElemento(`#${modoDeJogoPokedoku} div.dificuldade`, "invisivel", true);
         textoBotao = "Show";
     }
     //Muda a função do botão
@@ -106,37 +106,37 @@ function alternarDificuldade(acao) {
 function inserirDificuldadesNoTabuleiro(idDoTabuleiro) {
     let linhas = gameData(idDoTabuleiro).linhas;
     let colunas = gameData(idDoTabuleiro).colunas;
-    for (let i = 0; i < infosDoJogo[modoDeJogo].rows; i++) {
-        for (let j = 0; j < infosDoJogo[modoDeJogo].cols; j++) {
-            setarAtributoEmHTML(`#${modoDeJogo} .D${i + 1}${j + 1} div.dificuldade`, "innerHTML", matriz[linhas[i]][colunas[j]].length);
+    for (let i = 0; i < infosDoJogo[modoDeJogoPokedoku].rows; i++) {
+        for (let j = 0; j < infosDoJogo[modoDeJogoPokedoku].cols; j++) {
+            setarAtributoEmHTML(`#${modoDeJogoPokedoku} .D${i + 1}${j + 1} div.dificuldade`, "innerHTML", matriz[linhas[i]][colunas[j]].length);
         }
     }
 }
 //Mostra os ribbons
 function alternarRibbonsDeVitoria(acao) {
     //Se for pokedoku-single, para
-    if (modoDeJogo === "pokedoku-single") return;
+    if (modoDeJogoPokedoku === "pokedoku-single") return;
     if (acao) {
-        delClasseDeElemento(`#${modoDeJogo} span.ribbon-tentativas`, "invisivel", true);
-        for (let i = 0; i < infosDoJogo[modoDeJogo].rows; i++) {
-            for (let j = 0; j < infosDoJogo[modoDeJogo].cols; j++) {
-                let tentativas = gameData(modoDeJogo).celulas[i][j].tentativas;
+        delClasseDeElemento(`#${modoDeJogoPokedoku} span.ribbon-tentativas`, "invisivel", true);
+        for (let i = 0; i < infosDoJogo[modoDeJogoPokedoku].rows; i++) {
+            for (let j = 0; j < infosDoJogo[modoDeJogoPokedoku].cols; j++) {
+                let tentativas = gameData(modoDeJogoPokedoku).celulas[i][j].tentativas;
                 //Acertou em mais de uma tentativa
                 if (tentativas > 1) {
-                    addClasseAElemento(`#${modoDeJogo} .D${i + 1}${j + 1} .ribbon-tentativas`, "ribbon-amarelo");
-                    delClasseDeElemento(`#${modoDeJogo} .D${i + 1}${j + 1} .ribbon-tentativas`, "ribbon-verde");
+                    addClasseAElemento(`#${modoDeJogoPokedoku} .D${i + 1}${j + 1} .ribbon-tentativas`, "ribbon-amarelo");
+                    delClasseDeElemento(`#${modoDeJogoPokedoku} .D${i + 1}${j + 1} .ribbon-tentativas`, "ribbon-verde");
                 }
                 else {
                     //Acertou em uma tentativa
-                    addClasseAElemento(`#${modoDeJogo} .D${i + 1}${j + 1} .ribbon-tentativas`, "ribbon-verde");
-                    delClasseDeElemento(`#${modoDeJogo} .D${i + 1}${j + 1} .ribbon-tentativas`, "ribbon-amarelo");
+                    addClasseAElemento(`#${modoDeJogoPokedoku} .D${i + 1}${j + 1} .ribbon-tentativas`, "ribbon-verde");
+                    delClasseDeElemento(`#${modoDeJogoPokedoku} .D${i + 1}${j + 1} .ribbon-tentativas`, "ribbon-amarelo");
                 }
-                setarAtributoEmHTML(`#${modoDeJogo} .D${i + 1}${j + 1} .ribbon-tentativas`, "innerHTML", tentativas);
+                setarAtributoEmHTML(`#${modoDeJogoPokedoku} .D${i + 1}${j + 1} .ribbon-tentativas`, "innerHTML", tentativas);
             }
         }
     }
     else {
-        addClasseAElemento(`#${modoDeJogo} span.ribbon-tentativas`, "invisivel", true);
+        addClasseAElemento(`#${modoDeJogoPokedoku} span.ribbon-tentativas`, "invisivel", true);
     }
 }
 
@@ -146,20 +146,20 @@ function removerRespostas() {
     //Remove campo da pesquisa
     setarAtributoEmHTML("#pesquisa_pokemon", "value");
     //Remove nomes de pokémon
-    setarAtributoEmHTML(`#${modoDeJogo} p.nome-pokemon`, "innerHTML", "", true);
+    setarAtributoEmHTML(`#${modoDeJogoPokedoku} p.nome-pokemon`, "innerHTML", "", true);
     //Volta as cores dos nomes
     setarCoresDoNomeDoPokemon();
     //Remove imagens de pokémon
-    setarAtributoEmHTML(`#${modoDeJogo} img.imagem-poke-celula`, "src", "", true);
-    addClasseAElemento(`#${modoDeJogo} img.imagem-poke-celula`, "invisivel", true);
+    setarAtributoEmHTML(`#${modoDeJogoPokedoku} img.imagem-poke-celula`, "src", "", true);
+    addClasseAElemento(`#${modoDeJogoPokedoku} img.imagem-poke-celula`, "invisivel", true);
     //Ativa todas as células novamente
-    delClasseDeElemento(`#${modoDeJogo} div.celula-tentativa`, "inativo", true);
+    delClasseDeElemento(`#${modoDeJogoPokedoku} div.celula-tentativa`, "inativo", true);
     //Remove ribbons de vitória
     alternarRibbonsDeVitoria(false);
 
     //Reseta localStorage
-    let data = gameData(modoDeJogo);
-    if (modoDeJogo !== "pokedoku-single") {
+    let data = gameData(modoDeJogoPokedoku);
+    if (modoDeJogoPokedoku !== "pokedoku-single") {
         for (let i = 0; i < data.celulas.length; i++) {
             for (let j = 0; j < data.celulas[i].length; j++) {
                 data.celulas[i][j].resposta = 0;
@@ -172,33 +172,33 @@ function removerRespostas() {
     }
     data.tentativas = 0;
     data.vitoria = false;
-    setGameData(modoDeJogo, data);
+    setGameData(modoDeJogoPokedoku, data);
     //Atualiza número de tentativas
-    atualizarNumeroDeTentativas();
+    atualizarTentativasPokenexo();
 }
 //Reseta o tabuleiro, limpando o jogo
 function limparTabuleiro() {
     //Remove campo da pesquisa
     setarAtributoEmHTML("#pesquisa_pokemon", "value");
     //Remove nomes de pokémon
-    setarAtributoEmHTML(`#${modoDeJogo} p.nome-pokemon`, "innerHTML", "", true);
+    setarAtributoEmHTML(`#${modoDeJogoPokedoku} p.nome-pokemon`, "innerHTML", "", true);
     //Volta as cores dos nomes
     setarCoresDoNomeDoPokemon();
     //Remove imagens de pokémon
-    setarAtributoEmHTML(`#${modoDeJogo} img.imagem-poke-celula`, "src", "", true);
-    addClasseAElemento(`#${modoDeJogo} img.imagem-poke-celula`, "invisivel", true);
+    setarAtributoEmHTML(`#${modoDeJogoPokedoku} img.imagem-poke-celula`, "src", "", true);
+    addClasseAElemento(`#${modoDeJogoPokedoku} img.imagem-poke-celula`, "invisivel", true);
     //Ativa todas as células novamente
-    delClasseDeElemento(`#${modoDeJogo} div.celula-tentativa`, "inativo", true);
+    delClasseDeElemento(`#${modoDeJogoPokedoku} div.celula-tentativa`, "inativo", true);
     //Limpa os headers
-    setarAtributoEmHTML(`#${modoDeJogo} .celula-header`, "innerHTML", "", true);
+    setarAtributoEmHTML(`#${modoDeJogoPokedoku} .celula-header`, "innerHTML", "", true);
     //Remove as dificuldades
     alternarDificuldade(false);
     //Remove ribbons de vitória
     alternarRibbonsDeVitoria(false);
 
     //Reseta localStorage
-    let data = gameData(modoDeJogo);
-    if (modoDeJogo !== "pokedoku-single") {
+    let data = gameData(modoDeJogoPokedoku);
+    if (modoDeJogoPokedoku !== "pokedoku-single") {
         for (let i = 0; i < data.celulas.length; i++) {
             for (let j = 0; j < data.celulas[i].length; j++) {
                 data.celulas[i][j].resposta = 0;
@@ -214,7 +214,7 @@ function limparTabuleiro() {
     data.linhas.length = 0;
     data.colunas.length = 0;
     data.vitoria = false;
-    setGameData(modoDeJogo, data);
+    setGameData(modoDeJogoPokedoku, data);
     //Atualiza número de tentativas
-    atualizarNumeroDeTentativas();
+    atualizarTentativasPokenexo();
 }
