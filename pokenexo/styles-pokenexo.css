@@ -223,7 +223,8 @@ body {
 	body div#page-content {
 		& div#board-page {
 			& div#menu,
-			& div#pokenexo {
+			& div#pokenexo,
+			& div#game-resume {
 				max-width: none;
 			}
 		}
