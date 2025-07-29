@@ -28,6 +28,18 @@ body {
 		justify-content: space-around;
 		align-items: center;
 
+		& div#game-resume {
+			width: calc(100%);
+			max-width: 520px;
+			padding: 15px 0 5px 0;
+			word-wrap: break-word;
+			text-align: center;
+			align-content: center;
+			& p {
+				margin: 0;
+			}
+		}
+
 		& div#menu {
 			display: flex;
 			flex-direction: row;
@@ -37,7 +49,7 @@ body {
 
 			width: calc(100%);
 			max-width: 520px;
-			padding: 15px 0 5px 0;
+			padding: 5px 0;
 			height: clamp(35px, 16.05px + 5.26 * var(--vw, 1vw), 45px);
 
 			& button {
@@ -65,16 +77,6 @@ body {
 					margin: 0;
 				}
 			}
-		}
-
-
-		& div#game-resume {
-			width: calc(100%);
-			max-width: 520px;
-			padding: 15px 0 5px 0;
-			word-wrap: break-word;
-			text-align: center;
-			align-content: center;
 		}
 
 		& div.tabuleiro {
