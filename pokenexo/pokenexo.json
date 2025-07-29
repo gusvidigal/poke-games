@@ -113,5 +113,28 @@
                 "pokemon": [170, 121, 635, 517]
             }
         ]
+    },
+    {
+        "id": 6,
+        "data": "2025/07/29",
+        "ordem-inicial": [9, 5, 13, 15, 4, 14, 3, 8, 10, 2, 0, 11, 12, 1, 7, 6],
+        "respostas": [
+            {
+                "desc": "Grass-Dark Type Pokémon",
+                "pokemon": [410, 1083, 345, 1063]
+            },
+            {
+                "desc": "Fish Pokémon",
+                "pokemon": [158, 558, 1159, 727]
+            },
+            {
+                "desc": "Have Branched Evolutions",
+                "pokemon": [351, 335, 58, 106]
+            },
+            {
+                "desc": "Appear On Game Titles ['Let's Go, Pikachu/Eevee!', 'Legends: Arceus', 'Togepi's Great Adventure']",
+                "pokemon": [33, 179, 229, 606]
+            }
+        ]
     }
 ]
