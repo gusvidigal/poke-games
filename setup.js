@@ -25,6 +25,7 @@ function definirJogoDoPokenexo(idDoPokenexo) {
 }
 //Setup do localStorage
 function setupLocalStorage() {
+
     //Define as estatísticas
     if (!gameData("stats")) {
         let statsData = {
@@ -132,10 +133,10 @@ function setupLocalStorage() {
 }
 
 //Função ao carregar a página do pokedoku
-function setupPokedoku(tabuleiro) {
+async function setupPokedoku(tabuleiro) {
     //Obtém de ./dados.js
-    pokedex = JSON.parse(pokedexEmString);
-    matriz = JSON.parse(matrizEmString);
+    pokedex = await getJSON("/pokedex.json");
+    matriz = await getJSON("/matriz.json")
     modoDeJogoPokedoku = tabuleiro;
 
     //Determinar vh e vw para dispositivos mobile
@@ -149,7 +150,7 @@ function setupPokedoku(tabuleiro) {
     setupLocalStorage()
 
     //Atualiza as tentativas
-    atualizarTentativasPokenexo();
+    atualizarTentativasPokedoku();
     //Inicia um jogo se não tiver sido iniciado antes
     if (gameData(modoDeJogoPokedoku).iniciado === false)
         novoJogo();
@@ -195,9 +196,9 @@ function setupPokedoku(tabuleiro) {
 }
 
 //Função ao carregar a página do pokenexo
-function setupPokenexo(idDoPokenexo) {
+async function setupPokenexo(idDoPokenexo) {
     //Obtém de ./dados.js
-    pokedex = JSON.parse(pokedexEmString);
+    pokedex = await getJSON("/pokedex.json");
     //Obtém o pokenexo desejado
     pokenexo = obterPokenexoPorId(idDoPokenexo);
 
@@ -214,7 +215,7 @@ function setupPokenexo(idDoPokenexo) {
     //Cria o pokenexo, caso não tenha sido criado
     definirJogoDoPokenexo(idDoPokenexo);
     //Atualiza as tentativas e as dicas
-    atualizarTentativasPokenexo();
+    atualizarTentativasPokedoku();
     atualizarDicasPokenexo();
 
     //Insere no tabuleiro
@@ -244,10 +245,19 @@ function setupPokenexo(idDoPokenexo) {
         //Insere a categoria no tabuleiro
         inserirCategoriaNoTabuleiro(i);
     }
+    //Adiciona células selecionadas
+    for (let poke of pokenexoData(idDoPokenexo).selecionados) {
+        document.querySelectorAll(".celula").forEach(celula => {
+            if (celula.dataset.poke === String(poke)) {
+                celula.classList.add("celula-selecionada");
+            }
+        })
+    }
 
     //Redimensiona todos os nomes de Pokémon
 
 }
+
 //Ao carregar a página de estatísticas
 function setupStats() {
     //Cria os dados, caso não tenham sido criadas

@@ -140,7 +140,7 @@ function chutarPokemon(id, chuteEmulado) {
     //Aumenta o numero de tentativas;
     if (!chuteEmulado) {
         //Tentativas gerais
-        atualizarTentativasPokenexo(gameData(modoDeJogoPokedoku).tentativas + 1);
+        atualizarTentativasPokedoku(gameData(modoDeJogoPokedoku).tentativas + 1);
         //Tentativas da célula, se não for modo single
         if (modoDeJogoPokedoku !== "pokedoku-single") {
             let data = gameData(modoDeJogoPokedoku);

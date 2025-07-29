@@ -1,5 +1,5 @@
 //Atualiza o número de tentativas
-function atualizarTentativasPokenexo(numero) {
+function atualizarTentativasPokedoku(numero) {
     if (numero !== undefined) {
         //Muda as tentativas
         let data = gameData(modoDeJogoPokedoku);
@@ -174,7 +174,7 @@ function removerRespostas() {
     data.vitoria = false;
     setGameData(modoDeJogoPokedoku, data);
     //Atualiza número de tentativas
-    atualizarTentativasPokenexo();
+    atualizarTentativasPokedoku();
 }
 //Reseta o tabuleiro, limpando o jogo
 function limparTabuleiro() {
@@ -216,5 +216,5 @@ function limparTabuleiro() {
     data.vitoria = false;
     setGameData(modoDeJogoPokedoku, data);
     //Atualiza número de tentativas
-    atualizarTentativasPokenexo();
+    atualizarTentativasPokedoku();
 }

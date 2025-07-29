@@ -28,7 +28,7 @@ function removerCelulasSelecionadas() {
     delClasseDeElemento("#pokenexo .celula", "celula-selecionada", true);
 }
 //Atualiza o número de tentativas
-function atualizarTentativasPokenexo(numero) {
+function atualizarTentativasPokedoku(numero) {
     if (numero !== undefined) {
         //Muda as tentativas
         let data = gameData("pokenexo");

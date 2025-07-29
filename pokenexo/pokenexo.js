@@ -6,7 +6,7 @@ function realizarTentativa() {
     statsData.tentativas.pokenexo += 1;
     setGameData("stats", statsData);
     //Aumenta o número de tentativas
-    atualizarTentativasPokenexo(pokenexoData(pokenexo.id).tentativas + 1);
+    atualizarTentativasPokedoku(pokenexoData(pokenexo.id).tentativas + 1);
     //Aguarda propositalmente
     setTimeout(function () {
         //Verifica se a tentativa foi válida

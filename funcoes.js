@@ -131,7 +131,12 @@ function listasSaoIguais(lista1, lista2) {
     }
     return true;
 }
-
+//Realiza um fetch e obtém um JSON
+async function getJSON(arquivo) {
+  let objeto = await fetch(arquivo);
+  let json = await objeto.json();
+  return json;
+}
 
 
 //FUNÇÕES DE POKÉMON
