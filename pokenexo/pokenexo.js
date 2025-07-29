@@ -91,7 +91,7 @@ function pokenexoConcluido() {
     statsData["jogos-concluidos"].totais += 1;
     statsData["jogos-concluidos"].pokenexo += 1;
     //Se foi de primeira
-    if (gameData("pokenexo").tentativas === 4) {
+    if (pokenexoData(pokenexo.id).tentativas === 4) {
         statsData.pokenexo["de-primeira"] += 1;
     }
     setGameData("stats", statsData);
