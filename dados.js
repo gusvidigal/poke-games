@@ -114,24 +114,7 @@ const respostasPokenexo = [
     },
     {
         "id": 2,
-        "ordem-inicial": [
-            1,
-            15,
-            7,
-            3,
-            2,
-            9,
-            10,
-            8,
-            14,
-            0,
-            6,
-            11,
-            13,
-            4,
-            5,
-            12
-        ],
+        "ordem-inicial": [1, 15, 7, 3, 2, 9, 10, 8, 14, 0, 6, 11, 13, 4, 5, 12],
         "respostas": [
             {
                 "desc": "Start With Worldwide Companies (Meta, Intel, Apple, Shell)",
@@ -152,25 +135,25 @@ const respostasPokenexo = [
         ]
     },
     {
-    "id": 3,
-    "ordem-inicial": [ 1, 15, 7, 3, 2, 9, 10, 8, 14, 0, 6, 11, 13, 4, 5, 12 ],
-    "respostas": [
-        {
-            "desc": "Electric-Flying Pokémon",
-            "pokemon": [194, 712, 587, 771]
-        },
-        {
-            "desc": "Have Galarian Forms",
-            "pokemon": [192, 113, 684, 68]
-        },
-        {
-            "desc": "Have Long Beaks",
-            "pokemon": [196, 1007, 884, 706]
-        },
-        {
-            "desc": "Related To Giovanni (Team Rocket)",
-            "pokemon": [71, 201, 43, 150]
-        }
-    ]
-}
+        "id": 3,
+        "ordem-inicial": [1, 15, 7, 3, 2, 9, 10, 8, 14, 0, 6, 11, 13, 4, 5, 12],
+        "respostas": [
+            {
+                "desc": "Electric-Flying Pokémon",
+                "pokemon": [194, 712, 587, 771]
+            },
+            {
+                "desc": "Have Galarian Forms",
+                "pokemon": [192, 113, 684, 68]
+            },
+            {
+                "desc": "Have Long Beaks",
+                "pokemon": [196, 1007, 884, 706]
+            },
+            {
+                "desc": "Related To Giovanni (Team Rocket)",
+                "pokemon": [71, 201, 43, 150]
+            }
+        ]
+    }
 ];
