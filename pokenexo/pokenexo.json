@@ -159,5 +159,28 @@
                 "pokemon": [956, 289, 175, 683]
             }
         ]
+    },
+    {
+        "id": 8,
+        "data": "2025/07/29",
+        "ordem-inicial": [10, 15, 7, 11, 5, 14, 12, 0, 9, 1, 13, 3, 4, 2, 6, 8],
+        "respostas": [
+            {
+                "desc": "Fighting Pokémon",
+                "pokemon": [357, 891, 765, 1162]
+            },
+            {
+                "desc": "Evolve By Trading",
+                "pokemon": [847, 297, 428, 99]
+            },
+            {
+                "desc": "Have Yellow Rings",
+                "pokemon": [624, 869, 253, 425]
+            },
+            {
+                "desc": "Contains Another Pokémon In Their Names [Klang, Muk, Abra, Mew]",
+                "pokemon": [726, 929, 85, 201]
+            }
+        ]
     }
 ]
