@@ -135,8 +135,8 @@ function setupLocalStorage() {
 //Função ao carregar a página do pokedoku
 async function setupPokedoku(tabuleiro) {
     //Obtém de ./dados.js
-    pokedex = await getJSON("/pokedex.json");
-    matriz = await getJSON("/matriz.json")
+    pokedex = await getJSON("pokedex.json");
+    matriz = await getJSON("matriz.json")
     modoDeJogoPokedoku = tabuleiro;
 
     //Determinar vh e vw para dispositivos mobile
@@ -198,14 +198,7 @@ async function setupPokedoku(tabuleiro) {
 //Função ao carregar a página do pokenexo
 async function setupPokenexo(idDoPokenexo) {
     //Obtém de ./dados.js
-    const currentScript = document.currentScript || document.querySelector('script[src*="setup.js"]');
-    const scriptPath = currentScript.src; // Full URL to main.js
-    const basePath = scriptPath.substring(0, scriptPath.lastIndexOf('/') + 1);
-    const dataPath = basePath + 'pokedex.json';
-    console.log(currentScript);
-    console.log(scriptPath);
-    console.log(basePath);
-    pokedex = await getJSON(dataPath);
+    pokedex = await getJSON("pokedex.json");
     //Obtém o pokenexo desejado
     pokenexo = obterPokenexoPorId(idDoPokenexo);
 

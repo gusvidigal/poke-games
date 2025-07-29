@@ -133,9 +133,13 @@ function listasSaoIguais(lista1, lista2) {
 }
 //Realiza um fetch e obtém um JSON
 async function getJSON(arquivo) {
-  let objeto = await fetch(arquivo);
-  let json = await objeto.json();
-  return json;
+    let elementoDoScript = document.currentScript || document.querySelector('script[src*="setup.js"]');
+    let fonteDoScript = elementoDoScript.src;
+    let diretorioBase = fonteDoScript.substring(0, fonteDoScript.lastIndexOf('/') + 1);
+    //Faz o fetch
+    let objeto = await fetch(diretorioBase + arquivo);
+    let json = await objeto.json();
+    return json;
 }
 
 
