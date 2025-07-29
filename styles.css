@@ -2,15 +2,19 @@
 :root {
 	--cinza: #8d8c85;
 	--cinza-escuro: #2a2a27;
+
 	--vermelho: #f62c13;
-	--vermelho-escuro: #931a0b;
-	--amarelo: #f6d21b;
-	--amarelo-escuro: #ac9312;
+	--verde: #13f62c;
+	--amarelo: #f69e13;
+	--vermelho-escuro: #ac1e0d;
+	--verde-escuro: #0dac1e;
+	--amarelo-escuro: #ac6e0d;
+
 	--branco: #eceade;
 	--background: #2a2a27e0;
 	--preto-claro: rgb(26, 26, 26);
 	--vermelho-forte: red;
-	--verde: #adf61b;
+	
 	--pokenexo-verde: #3aac4a;
 	--pokenexo-laranja: #e25822;
 	--pokenexo-azul: #245ca6;

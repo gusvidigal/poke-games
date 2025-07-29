@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "data": "27/07/2025",
+        "data": "2025/07/27",
         "ordem-inicial": [1, 15, 7, 3, 2, 9, 10, 8, 14, 0, 6, 11, 13, 4, 5, 12],
         "respostas": [
             {
@@ -24,7 +24,7 @@
     },
     {
         "id": 2,
-        "data": "28/07/2025",
+        "data": "2025/07/28",
         "ordem-inicial": [1, 15, 7, 3, 2, 9, 10, 8, 14, 0, 6, 11, 13, 4, 5, 12],
         "respostas": [
             {
@@ -47,7 +47,7 @@
     },
     {
         "id": 3,
-        "data": "29/07/2025",
+        "data": "2025/07/29",
         "ordem-inicial": [1, 15, 7, 3, 2, 9, 10, 8, 14, 0, 6, 11, 13, 4, 5, 12],
         "respostas": [
             {
@@ -70,7 +70,7 @@
     },
     {
         "id": 4,
-        "data": "29/07/2025",
+        "data": "2025/07/29",
         "ordem-inicial": [3, 11, 1, 15, 13, 10, 9, 0, 2, 4, 12, 7, 8, 6, 14, 5],
         "respostas": [
             {
@@ -88,6 +88,29 @@
             {
                 "desc": "Mistreated as Mythic/Legendaries",
                 "pokemon": [442, 1185, 971, 200]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "data": "2025/07/29",
+        "ordem-inicial": [3, 11, 1, 15, 13, 10, 9, 0, 2, 4, 12, 7, 8, 6, 14, 5],
+        "respostas": [
+            {
+                "desc": "Starters",
+                "pokemon": [608, 1084, 205, 321]
+            },
+            {
+                "desc": "Evolved Using Fire Stone",
+                "pokemon": [183, 51, 79, 628]
+            },
+            {
+                "desc": "Fire Pokémon Of Unova",
+                "pokemon": [611, 734, 607, 627]
+            },
+            {
+                "desc": "Pokémon Caught By Ash",
+                "pokemon": [170, 121, 635, 517]
             }
         ]
     }

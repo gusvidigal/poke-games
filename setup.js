@@ -266,6 +266,31 @@ async function setupPokenexo(idDoPokenexo) {
     //Redimensiona todos os nomes de Pokémon
 
 }
+//Ao carregar a página de previous games
+async function setupPreviousGames() {
+    //Setup do localStorage
+    setupLocalStorage();
+    //Adiciona os links
+    let listaDePokenexo = await getJSON("pokenexo/pokenexo.json");
+    //Ordem decrescente
+    for (let i = listaDePokenexo.length - 1; i >= 0; i--) {
+        let pokenexo = listaDePokenexo[i];
+        let pokenexoData = gameData("pokenexo").jogos[String(pokenexo.id)];
+
+        let classe = "";
+        //Se o jogo já tiver sido iniciado
+        if (pokenexoData) {
+            classe = "iniciado"
+            if (pokenexoData.vitoria) classe = "concluido";
+        }
+        //Se for o mais recente, é o daily
+        let link = `../previous#${pokenexo.id}`;
+        if (i === listaDePokenexo.length - 1) link = "../daily/";
+        //Formata o texto
+        let textoBotao = `<a href="${link}" class="${classe}">${pokenexo.data} #${pokenexo.id}</a>`
+        document.querySelector("#previous-games").innerHTML += textoBotao;
+    }
+}
 
 //Ao carregar a página de estatísticas
 function setupStats() {

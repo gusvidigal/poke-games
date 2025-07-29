@@ -153,6 +153,7 @@ function obterPokemonPorId(id) {
 }
 //Pega um pokenexo por ID
 async function obterPokenexoPorId(id) {
+    id = Number(id);
     //Obtém a lista dos pokénexos
     let listaPokenexo = await getJSON("pokenexo/pokenexo.json");
     for (const pokenexo of listaPokenexo) {

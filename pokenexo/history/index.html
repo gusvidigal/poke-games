@@ -9,8 +9,12 @@
 </head>
 <script src="../../dados.js"></script>
 <script src="../../funcoes.js"></script>
+<script src="../../setup.js"></script>
+<script src="../pokenexo-edit-html.js"></script>
+<script src="../pokenexo.js"></script>
 
-<body>
+
+<body onload="setupPreviousGames()">
     <nav id="nav-menu">
         <div class="nav-item bold-font-text"><a href="../">Menu</a></div>
         <div class="nav-item bold-font-text"><a href="../daily/">Daily</a></div>
@@ -19,9 +23,7 @@
     <div id="page-content">
         <div id="main-page" class="font-text">
             <h1>Previous Games</h1>
-            <div id="games" class="bold-font-text">
-                <a href="">Daily Game</a>
-                <a href="">Previous Games</a>
+            <div id="previous-games" class="bold-font-text">
             </div>
         </div>
     </div>
