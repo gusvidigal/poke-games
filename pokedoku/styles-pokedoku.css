@@ -1,9 +1,27 @@
-@import url('styles.css');
 /*ESSE ARQUIVO TEM PRECEDENCIA MAIOR*/
 body {
-    & div.pagina-do-tabuleiro {
-        padding: 10px;
-        width: calc(100% - 20px);
+    & div#main-page {
+        & div#games {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            width: 75%;
+            & a {
+                width: 100%;
+                aspect-ratio: 4 / 1;
+                border-radius: 10px;
+                background-color: var(--vermelho);
+                text-decoration: none;
+                color: white;
+                text-align: center;
+                align-content: center;
+            }
+        }
+    }
+
+    & div#board-page {
+        width: calc(100%);
 
         display: flex;
         flex-direction: column;
@@ -13,9 +31,9 @@ body {
         & div.tabuleiro {
             display: grid;
 
-            width: calc(100% - 40px);
-            padding: 20px 20px 40px 20px;
-            aspect-ratio: 3 / 2;
+            width: calc(100%);
+            padding: 0 0 20px 0;
+            aspect-ratio: 1 / 1;
 
             &#pokedoku-2x2 {
                 max-width: 600px;
@@ -27,8 +45,8 @@ body {
                 }
 
                 & div.celula.celula-tentativa p.nome-pokemon {
-                    font-size: clamp(0.4rem, 0.009rem + 1.74 * var(--vw, 1vw), 0.9rem);
-                    line-height: clamp(0.4rem, 0.009rem + 1.74 * var(--vw, 1vw), 0.9rem);
+                    font-size: clamp(0.54rem, -0.10rem + 2.83 * var(--vw, 1vw), 1rem);
+                    line-height: clamp(0.54rem, -0.10rem + 2.83 * var(--vw, 1vw), 1rem);
                 }
             }
 
@@ -44,8 +62,8 @@ body {
                 }
 
                 & div.celula.celula-tentativa p.nome-pokemon {
-                    font-size: clamp(0.25rem, -0.02rem + 1.21 * var(--vw, 1vw), 0.6rem);
-                    line-height: clamp(0.25rem, -0.02rem + 1.21 * var(--vw, 1vw), 0.6rem);
+                    font-size: clamp(0.4rem, 0.18rem + 0.98 * var(--vw, 1vw), 0.65rem);
+                    line-height: clamp(0.4rem, 0.18rem + 0.98 * var(--vw, 1vw), 0.65rem);
                 }
             }
 
@@ -60,8 +78,8 @@ body {
                 }
 
                 & div.celula.celula-tentativa p.nome-pokemon {
-                    font-size: clamp(0.25rem, -0.02rem + 1.21 * var(--vw, 1vw), 0.6rem);
-                    line-height: clamp(0.25rem, -0.02rem + 1.21 * var(--vw, 1vw), 0.6rem);
+                    font-size: clamp(0.3rem, 0.05rem + 1.09 * var(--vw, 1vw), 0.58rem);
+                    line-height: clamp(0.3rem, 0.05rem + 1.09 * var(--vw, 1vw), 0.58rem);
                 }
             }
 
@@ -291,7 +309,7 @@ body {
             border: 3px solid black;
             border-radius: 2px;
 
-            & p:not(.fonte-negrito-resultado) {
+            & p:not(.bold-ft-resultado) {
                 text-align: center;
                 margin: 5px 0 10px 0;
             }
@@ -332,7 +350,7 @@ body {
                         object-fit: contain;
                     }
 
-                    & p.fonte-negrito-resultado {
+                    & p.bold-ft-resultado {
                         margin: 0;
                         padding: 5px 10px;
                         font-size: 15px;

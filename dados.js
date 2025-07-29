@@ -133347,5 +133347,44 @@ const respostasPokenexo = [
                 "pokemon": [969, 761, 693, 414],
             }
         ]
+    },
+    {
+        "id": 2,
+        "ordem-inicial": [
+            1,
+            15,
+            7,
+            3,
+            2,
+            9,
+            10,
+            8,
+            14,
+            0,
+            6,
+            11,
+            13,
+            4,
+            5,
+            12
+        ],
+        "respostas": [
+            {
+                "desc": "Start With Worldwide Companies (Meta, Intel, Apple, Shell)",
+                "pokemon": [461, 980, 1004, 123],
+            },
+            {
+                "desc": "Final Stage Steel Pokémon",
+                "pokemon": [490, 1139, 462, 845],
+            },
+            {
+                "desc": "Have Evolutions Introduced In Sinnoh",
+                "pokemon": [153, 112, 276, 370],
+            },
+            {
+                "desc": "Can Learn HM Surf",
+                "pokemon": [46, 355, 517, 368],
+            }
+        ]
     }
 ];

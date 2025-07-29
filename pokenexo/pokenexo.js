@@ -1,5 +1,10 @@
 //Realiza uma tentativa do pokenexo
 function realizarTentativa() {
+    //Altera estatísticas
+    let statsData = stats();
+    statsData.tentativas.totais += 1;
+    statsData.tentativas.pokenexo += 1;
+    setStats(statsData);
     //Aumenta o número de tentativas
     atualizarTentativasPokenexo(gameData("pokenexo").tentativas + 1);
     //Aguarda propositalmente
@@ -57,8 +62,8 @@ function formatarCategoria(indiceDaCategoria) {
     }
     let texto = `
 <div class="categoria categoria-${gameData("pokenexo").acertados.indexOf(indiceDaCategoria) + 1} ${cor}">
-    <p class="nome-categoria fonte-negrito">${resposta.desc.toUpperCase()}</p>
-    <p class="pokemon-categoria fonte">${textoPokemon}</p>
+    <p class="nome-categoria bold-font-text">${resposta.desc.toUpperCase()}</p>
+    <p class="pokemon-categoria font-text">${textoPokemon}</p>
 </div>`
     return texto;
 }
@@ -79,6 +84,15 @@ function mostrarAcerto(indiceDaCategoria) {
 }
 //Função a ser executada na vitória
 function pokenexoConcluido() {
+    //Altera estatísticas
+    let statsData = stats();
+    statsData["jogos-concluidos"].totais += 1;
+    statsData["jogos-concluidos"].pokenexo += 1;
+    //Se foi de primeira
+    if (gameData("pokenexo").tentativas === 4) {
+        statsData.pokenexo["de-primeira"] += 1;
+    }
+    setStats(statsData);
     //Seta o jogo como completado
     let data = gameData("pokenexo");
     data.vitoria = true;

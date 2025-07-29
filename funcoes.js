@@ -76,6 +76,14 @@ function gameData(jogo) {
 function setGameData(jogo, data) {
     definirNoLocalStorage(jogo, JSON.stringify(data));
 }
+//Obtém as estatísticas
+function stats() {
+    return obterDoLocalStorage("stats", JSON.parse);
+}
+//Altera as estatísticas
+function setStats(statsData) {
+    definirNoLocalStorage("stats", JSON.stringify(statsData));
+}
 
 
 

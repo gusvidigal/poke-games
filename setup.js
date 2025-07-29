@@ -6,6 +6,52 @@ var modoDeJogoPokedoku;
 var focoAtualPokedoku;
 var celulasSelecionadasPokenexo = [];
 
+//Define as estatísticas
+function criarStats() {
+    if (!stats() || stats().identificador !== 3) {
+        let statsData = {
+            "identificador": 3,
+            "jogos-gerados": {
+                "totais": 0,
+                "pokedoku": {
+                    "pokedoku-2x2": 0,
+                    "pokedoku-3x3": 0,
+                    "pokedoku-4x4": 0,
+                    "pokedoku-single": 0,
+                },
+            },
+            "jogos-concluidos": {
+                "totais": 0,
+                "pokenexo": 0,
+                "pokedoku": {
+                    "pokedoku-2x2": 0,
+                    "pokedoku-3x3": 0,
+                    "pokedoku-4x4": 0,
+                    "pokedoku-single": 0,
+                },
+            },
+            "tentativas": {
+                "totais": 0,
+                "pokenexo": 0,
+                "pokedoku": {
+                    "pokedoku-2x2": 0,
+                    "pokedoku-3x3": 0,
+                    "pokedoku-4x4": 0,
+                    "pokedoku-single": 0,
+                },
+            },
+            "dicas": {
+                "totais": 0,
+                "pokenexo": 0,
+            },
+            "pokenexo": {
+                "de-primeira": 0,
+            }
+        }
+        setStats(statsData);
+    }
+}
+
 //Função ao carregar a página do pokedoku
 function setupPokedoku(tabuleiro) {
     //Obtém de ./dados.js
@@ -21,7 +67,8 @@ function setupPokedoku(tabuleiro) {
         document.documentElement.style.setProperty('--vh', `${vh}px`);
         document.documentElement.style.setProperty('--vw', `${vw}px`);
     }
-
+    //Cria os dados das estatísticas, caso não tenham sido criadas
+    criarStats();
     //Cria os dados no localStorage, caso não tenham sido criados
     switch (tabuleiro) {
         case "pokedoku-2x2":
@@ -142,7 +189,7 @@ function setupPokedoku(tabuleiro) {
 function setupPokenexo() {
     //Obtém de ./dados.js
     pokedex = JSON.parse(pokedexEmString);
-    pokenexo = respostasPokenexo[0];
+    pokenexo = respostasPokenexo[1];
 
     //Determinar vh e vw para dispositivos mobile
     onresize = () => {
@@ -152,10 +199,12 @@ function setupPokenexo() {
         document.documentElement.style.setProperty('--vw', `${vw}px`);
     }
 
+    //Cria os dados das estatísticas, caso não tenham sido criadas
+    criarStats();
     //Cria os dados no localStorage, caso não tenham sido criados
-    if (obterDoLocalStorage("pokenexo") === null || gameData("pokenexo").id !== 1) {
+    if (obterDoLocalStorage("pokenexo") === null || gameData("pokenexo").id !== 2) {
         let gamedata = {
-            "id": 1,
+            "id": 2,
             "acertados": [],
             "tentativas": 0,
             "dicas": 0,
@@ -198,4 +247,22 @@ function setupPokenexo() {
 
     //Redimensiona todos os nomes de Pokémon
 
+}
+//Ao carregar a página de estatísticas
+function setupStats() {
+    //Cria os dados das estatísticas, caso não tenham sido criadas
+    criarStats();
+    //Obtém todos os elementos a serem substituídos
+    document.querySelectorAll("#main-page p.value").forEach(elemento => {
+        if (elemento.dataset.json) {
+            let caminhos = elemento.dataset.json.split(".");
+            //Obtém o valor do atributo
+            let statsData = stats();
+            for (let referencia of caminhos) {
+                statsData = statsData[referencia];
+            }
+            //Substitui
+            elemento.innerHTML = statsData;
+        }
+    })
 }
