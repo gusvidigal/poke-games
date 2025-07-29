@@ -76,14 +76,11 @@ function gameData(jogo) {
 function setGameData(jogo, data) {
     definirNoLocalStorage(jogo, JSON.stringify(data));
 }
-//Obtém as estatísticas
-function stats() {
-    return obterDoLocalStorage("stats", JSON.parse);
+//Obtém os dados de um pokenexo
+function pokenexoData(idDoJogo) {
+    return gameData("pokenexo").jogos[String(idDoJogo)];
 }
-//Altera as estatísticas
-function setStats(statsData) {
-    definirNoLocalStorage("stats", JSON.stringify(statsData));
-}
+
 
 
 
@@ -142,6 +139,13 @@ function listasSaoIguais(lista1, lista2) {
 function obterPokemonPorId(id) {
     for (const pokemon of pokedex) {
         if (pokemon.id === id) return pokemon;
+    }
+    return null;
+}
+//Pega um pokenexo por ID
+function obterPokenexoPorId(id) {
+    for (const pokenexo of respostasPokenexo) {
+        if (pokenexo.id === id) return pokenexo;
     }
     return null;
 }

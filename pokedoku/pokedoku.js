@@ -2,10 +2,10 @@
 //Inicia um novo jogo
 function novoJogo(modoDificil) {
     //Adiciona nas estatísticas
-    let statsData = stats();
+    let statsData = gameData("stats");
     statsData["jogos-gerados"].totais += 1;
     statsData["jogos-gerados"].pokedoku[modoDeJogoPokedoku] += 1;
-    setStats(statsData);
+    setGameData("stats", statsData);
     //Se nunca tiver sido iniciado antes, seta como iniciado
     if (gameData(modoDeJogoPokedoku).iniciado === false) {
         let data = gameData(modoDeJogoPokedoku);
@@ -104,10 +104,10 @@ function formatarResultadoDaPesquisa(pokemon) {
     let texto = `
 <li class="item-resultado">
     <img class="imagem-poke-lista" src="${pokemon.imagem}">
-    <p class="bold-ft bold-ft-resultado" >${pokemon.nome.toUpperCase()}<br>
+    <p class="bold-font-text bold-font-text-resultado" >${pokemon.nome.toUpperCase()}<br>
         <span class="descricao">${camelCase(pokemon.desc)}</span>
     </p>
-    <button class="bold-ft" onclick="chutarPokemon(${pokemon.id})">Selecionar</button>
+    <button class="bold-font-text" onclick="chutarPokemon(${pokemon.id})">Selecionar</button>
 </li>`;
     return texto;
 }
@@ -238,10 +238,10 @@ function revelarTabuleiro() {
 //Vitória do tabuleiro - preencheu tudo
 function tabuleiroCompletado() {
     //Altera estatísticas
-    let statsData = stats();
+    let statsData = gameData("stats");
     statsData["jogos-concluidos"].totais += 1;
     statsData["jogos-concluidos"].pokedoku[modoDeJogoPokedoku] += 1;
-    setStats(statsData);
+    setGameData("stats", statsData);
     //Muda no localStorage
     let data = gameData(modoDeJogoPokedoku);
     data.vitoria = true;

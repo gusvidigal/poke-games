@@ -309,7 +309,7 @@ body {
             border: 3px solid black;
             border-radius: 2px;
 
-            & p:not(.bold-ft-resultado) {
+            & p:not(.bold-font-text-resultado) {
                 text-align: center;
                 margin: 5px 0 10px 0;
             }
@@ -350,7 +350,7 @@ body {
                         object-fit: contain;
                     }
 
-                    & p.bold-ft-resultado {
+                    & p.bold-font-text-resultado {
                         margin: 0;
                         padding: 5px 10px;
                         font-size: 15px;

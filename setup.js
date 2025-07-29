@@ -4,11 +4,29 @@ var matriz;
 var pokenexo;
 var modoDeJogoPokedoku;
 var focoAtualPokedoku;
-var celulasSelecionadasPokenexo = [];
 
-//Define as estatísticas
-function criarStats() {
-    if (!stats() || stats().identificador !== 3) {
+//Setup do pokenexo
+function definirJogoDoPokenexo(idDoPokenexo) {
+    idDoPokenexo = String(idDoPokenexo);
+    let data = gameData("pokenexo");
+    //Se não estiver nos dados
+    if (!data.jogos[idDoPokenexo]) {
+        data.jogos[idDoPokenexo] = {
+            "acertados": [],
+            "selecionados": [],
+            "dicas": [],
+            "tentativas": 0,
+            "n-dicas": 0,
+            "string-tentativas": "",
+            "vitoria": false
+        }
+        definirNoLocalStorage("pokenexo", JSON.stringify(data));
+    }
+}
+//Setup do localStorage
+function setupLocalStorage() {
+    //Define as estatísticas
+    if (!gameData("stats") || gameData("stats").identificador !== 3) {
         let statsData = {
             "identificador": 3,
             "jogos-gerados": {
@@ -48,7 +66,69 @@ function criarStats() {
                 "de-primeira": 0,
             }
         }
-        setStats(statsData);
+        setGameData("stats", statsData);
+    }
+    //Define os modos de jogo
+    if (obterDoLocalStorage("pokedoku-2x2") === null) {
+        let data = {
+            "linhas": [],
+            "colunas": [],
+            "celulas": [
+                [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }],
+                [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }]
+            ],
+            "tentativas": 0,
+            "iniciado": false,
+            "vitoria": false
+        }
+        definirNoLocalStorage("pokedoku-2x2", JSON.stringify(data));
+    }
+    if (obterDoLocalStorage("pokedoku-3x3") === null) {
+        let data = {
+            "linhas": [],
+            "colunas": [],
+            "celulas": [
+                [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }],
+                [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }],
+                [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }],
+            ],
+            "tentativas": 0,
+            "iniciado": false,
+            "vitoria": false
+        }
+        definirNoLocalStorage("pokedoku-3x3", JSON.stringify(data));
+    }
+    if (obterDoLocalStorage("pokedoku-4x4") === null) {
+        let data = {
+            "linhas": [],
+            "colunas": [],
+            "celulas": [
+                [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }],
+                [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }],
+                [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }],
+                [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }],
+            ],
+            "tentativas": 0,
+            "iniciado": false,
+            "vitoria": false
+        }
+        definirNoLocalStorage("pokedoku-4x4", JSON.stringify(data));
+    }
+    if (obterDoLocalStorage("pokedoku-single") === null) {
+        let data = {
+            "linhas": [],
+            "colunas": [],
+            "resposta": 0,
+            "respostaCorreta": 0,
+            "tentativas": 0,
+            "iniciado": false,
+            "vitoria": false
+        };
+        definirNoLocalStorage("pokedoku-single", JSON.stringify(data));
+    }
+    if (obterDoLocalStorage("pokenexo") === null) {
+        let data = { "jogos": {} };
+        definirNoLocalStorage("pokenexo", JSON.stringify(data));
     }
 }
 
@@ -57,7 +137,6 @@ function setupPokedoku(tabuleiro) {
     //Obtém de ./dados.js
     pokedex = JSON.parse(pokedexEmString);
     matriz = JSON.parse(matrizEmString);
-    pokenexo = respostasPokenexo[0];
     modoDeJogoPokedoku = tabuleiro;
 
     //Determinar vh e vw para dispositivos mobile
@@ -67,77 +146,8 @@ function setupPokedoku(tabuleiro) {
         document.documentElement.style.setProperty('--vh', `${vh}px`);
         document.documentElement.style.setProperty('--vw', `${vw}px`);
     }
-    //Cria os dados das estatísticas, caso não tenham sido criadas
-    criarStats();
-    //Cria os dados no localStorage, caso não tenham sido criados
-    switch (tabuleiro) {
-        case "pokedoku-2x2":
-            if (obterDoLocalStorage("pokedoku-2x2") === null) {
-                let gamedata = {
-                    "linhas": [],
-                    "colunas": [],
-                    "celulas": [
-                        [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }],
-                        [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }]
-                    ],
-                    "tentativas": 0,
-                    "iniciado": false,
-                    "vitoria": false
-                }
-                definirNoLocalStorage("pokedoku-2x2", JSON.stringify(gamedata));
-            }
-            break;
-        case "pokedoku-3x3":
-            if (obterDoLocalStorage("pokedoku-3x3") === null) {
-                let gamedata = {
-                    "linhas": [],
-                    "colunas": [],
-                    "celulas": [
-                        [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }],
-                        [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }],
-                        [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }],
-                    ],
-                    "tentativas": 0,
-                    "iniciado": false,
-                    "vitoria": false
-                }
-                definirNoLocalStorage("pokedoku-3x3", JSON.stringify(gamedata));
-            }
-            break;
-        case "pokedoku-4x4":
-            if (obterDoLocalStorage("pokedoku-4x4") === null) {
-                let gamedata = {
-                    "linhas": [],
-                    "colunas": [],
-                    "celulas": [
-                        [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }],
-                        [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }],
-                        [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }],
-                        [{ "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }, { "tentativas": 0, "resposta": 0 }],
-                    ],
-                    "tentativas": 0,
-                    "iniciado": false,
-                    "vitoria": false
-                }
-                definirNoLocalStorage("pokedoku-4x4", JSON.stringify(gamedata));
-            }
-            break;
-        case "pokedoku-single":
-            if (obterDoLocalStorage("pokedoku-single") === null) {
-                let gamedata = {
-                    "linhas": [],
-                    "colunas": [],
-                    "resposta": 0,
-                    "respostaCorreta": 0,
-                    "tentativas": 0,
-                    "iniciado": false,
-                    "vitoria": false
-                };
-                definirNoLocalStorage("pokedoku-single", JSON.stringify(gamedata));
-            }
-            break;
-    }
-
+    //Cria os dados, caso não tenham sido criadas
+    setupLocalStorage()
 
     //Atualiza as tentativas
     atualizarTentativasPokenexo();
@@ -186,10 +196,11 @@ function setupPokedoku(tabuleiro) {
 }
 
 //Função ao carregar a página do pokenexo
-function setupPokenexo() {
+function setupPokenexo(idDoPokenexo) {
     //Obtém de ./dados.js
     pokedex = JSON.parse(pokedexEmString);
-    pokenexo = respostasPokenexo[1];
+    //Obtém o pokenexo desejado
+    pokenexo = obterPokenexoPorId(idDoPokenexo);
 
     //Determinar vh e vw para dispositivos mobile
     onresize = () => {
@@ -199,20 +210,10 @@ function setupPokenexo() {
         document.documentElement.style.setProperty('--vw', `${vw}px`);
     }
 
-    //Cria os dados das estatísticas, caso não tenham sido criadas
-    criarStats();
-    //Cria os dados no localStorage, caso não tenham sido criados
-    if (obterDoLocalStorage("pokenexo") === null || gameData("pokenexo").id !== 2) {
-        let gamedata = {
-            "id": 2,
-            "acertados": [],
-            "tentativas": 0,
-            "dicas": 0,
-            "string-tentativas": "",
-            "vitoria": false
-        }
-        definirNoLocalStorage("pokenexo", JSON.stringify(gamedata));
-    }
+    //Cria os dados, caso não tenham sido criadas
+    setupLocalStorage()
+    //Cria o pokenexo, caso não tenha sido criado
+    definirJogoDoPokenexo(idDoPokenexo);
     //Atualiza as tentativas e as dicas
     atualizarTentativasPokenexo();
     atualizarDicasPokenexo();
@@ -239,7 +240,7 @@ function setupPokenexo() {
         contador++;
     }
     //Adiciona as categorias já concluídas
-    let categoriasConcluidas = gameData("pokenexo").acertados;
+    let categoriasConcluidas = pokenexoData(idDoPokenexo).acertados;
     for (let i of categoriasConcluidas) {
         //Insere a categoria no tabuleiro
         inserirCategoriaNoTabuleiro(i);
@@ -250,14 +251,14 @@ function setupPokenexo() {
 }
 //Ao carregar a página de estatísticas
 function setupStats() {
-    //Cria os dados das estatísticas, caso não tenham sido criadas
-    criarStats();
+    //Cria os dados, caso não tenham sido criadas
+    setupLocalStorage()
     //Obtém todos os elementos a serem substituídos
     document.querySelectorAll("#main-page p.value").forEach(elemento => {
         if (elemento.dataset.json) {
             let caminhos = elemento.dataset.json.split(".");
             //Obtém o valor do atributo
-            let statsData = stats();
+            let statsData = gameData("stats");
             for (let referencia of caminhos) {
                 statsData = statsData[referencia];
             }

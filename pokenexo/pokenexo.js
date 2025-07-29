@@ -1,12 +1,12 @@
 //Realiza uma tentativa do pokenexo
 function realizarTentativa() {
     //Altera estatísticas
-    let statsData = stats();
+    let statsData = gameData("stats");
     statsData.tentativas.totais += 1;
     statsData.tentativas.pokenexo += 1;
-    setStats(statsData);
+    setGameData("stats", statsData);
     //Aumenta o número de tentativas
-    atualizarTentativasPokenexo(gameData("pokenexo").tentativas + 1);
+    atualizarTentativasPokenexo(pokenexoData(pokenexo.id).tentativas + 1);
     //Aguarda propositalmente
     setTimeout(function () {
         //Verifica se a tentativa foi válida
@@ -14,7 +14,7 @@ function realizarTentativa() {
         let contador = 0;
         for (; contador < 4; contador++) {
             let resposta = pokenexo.respostas[contador].pokemon;
-            if (listasSaoIguais(resposta, celulasSelecionadasPokenexo)) {
+            if (listasSaoIguais(resposta, pokenexoData(pokenexo.id).selecionados)) {
                 respostaCorreta = true;
                 break;
             }
@@ -23,7 +23,9 @@ function realizarTentativa() {
         //Limpa o tabuleiro
         removerCelulasSelecionadas();
         //Limpa a lista
-        celulasSelecionadasPokenexo.length = 0;
+        let data = gameData("pokenexo");
+        data.jogos[String(pokenexo.id)].selecionados.length = 0;
+        setGameData("pokenexo", data);
 
         //Se a resposta estiver incorreta, para
         if (!respostaCorreta) return;
@@ -61,7 +63,7 @@ function formatarCategoria(indiceDaCategoria) {
             break;
     }
     let texto = `
-<div class="categoria categoria-${gameData("pokenexo").acertados.indexOf(indiceDaCategoria) + 1} ${cor}">
+<div class="categoria categoria-${pokenexoData(pokenexo.id).acertados.indexOf(indiceDaCategoria) + 1} ${cor}">
     <p class="nome-categoria bold-font-text">${resposta.desc.toUpperCase()}</p>
     <p class="pokemon-categoria font-text">${textoPokemon}</p>
 </div>`
@@ -70,14 +72,14 @@ function formatarCategoria(indiceDaCategoria) {
 
 //Realiza as funções de adivinhar corretamente
 function mostrarAcerto(indiceDaCategoria) {
-    //Adiciona o acerto no gamedata
+    //Adiciona o acerto no data
     let data = gameData("pokenexo");
-    data.acertados.push(indiceDaCategoria);
+    data.jogos[pokenexo.id].acertados.push(indiceDaCategoria);
     setGameData("pokenexo", data);
     //Insere a categoria
     inserirCategoriaNoTabuleiro(indiceDaCategoria);
     //Se for o último acerto
-    if (gameData("pokenexo").acertados.length === 4) {
+    if (pokenexoData(pokenexo.id).acertados.length === 4) {
         //Determina a vitória
         pokenexoConcluido();
     }
@@ -85,16 +87,16 @@ function mostrarAcerto(indiceDaCategoria) {
 //Função a ser executada na vitória
 function pokenexoConcluido() {
     //Altera estatísticas
-    let statsData = stats();
+    let statsData = gameData("stats");
     statsData["jogos-concluidos"].totais += 1;
     statsData["jogos-concluidos"].pokenexo += 1;
     //Se foi de primeira
     if (gameData("pokenexo").tentativas === 4) {
         statsData.pokenexo["de-primeira"] += 1;
     }
-    setStats(statsData);
+    setGameData("stats", statsData);
     //Seta o jogo como completado
     let data = gameData("pokenexo");
-    data.vitoria = true;
+    data.jogos[pokenexo.id].vitoria = true;
     setGameData("pokenexo", data);
 }

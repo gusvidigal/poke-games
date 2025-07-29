@@ -5,14 +5,18 @@ function alternarCelula(idDaCelula) {
     if (celula.classList.contains("celula-selecionada")) {
         celula.classList.remove("celula-selecionada");
         //Remove da lista de seleção
-        let indice = celulasSelecionadasPokenexo.indexOf(Number(celula.dataset.poke));
-        celulasSelecionadasPokenexo.splice(indice, 1);
+        let indice = pokenexoData(pokenexo.id).selecionados.indexOf(Number(celula.dataset.poke));
+        let data = gameData("pokenexo");
+        data.jogos[String(pokenexo.id)].selecionados.splice(indice, 1);
+        setGameData("pokenexo", data);
     } else {
         celula.classList.add("celula-selecionada");
         //Adiciona na lista de seleção
-        celulasSelecionadasPokenexo.push(Number(celula.dataset.poke))
+        let data = gameData("pokenexo");
+        data.jogos[String(pokenexo.id)].selecionados.push(Number(celula.dataset.poke));
+        setGameData("pokenexo", data);
         //Verifica se selecionou quatro
-        if (celulasSelecionadasPokenexo.length >= 4) {
+        if (pokenexoData(pokenexo.id).selecionados.length >= 4) {
             //Realiza uma tentativa
             realizarTentativa();
         }
@@ -28,20 +32,20 @@ function atualizarTentativasPokenexo(numero) {
     if (numero !== undefined) {
         //Muda as tentativas
         let data = gameData("pokenexo");
-        data.tentativas = numero;
+        data.jogos[String(pokenexo.id)].tentativas = numero;
         setGameData("pokenexo", data);
     }
-    setarAtributoEmHTML(`#tentativas span`, "innerHTML", String(gameData("pokenexo").tentativas));
+    setarAtributoEmHTML(`#tentativas span`, "innerHTML", String(pokenexoData(pokenexo.id).tentativas));
 }
 //Atualiza o número de dicas
 function atualizarDicasPokenexo(numero) {
     if (numero !== undefined) {
         //Muda as tentativas
         let data = gameData("pokenexo");
-        data.dicas = numero;
+        data.jogos[String(pokenexo.id)]["n-dicas"] = numero;
         setGameData("pokenexo", data);
     }
-    setarAtributoEmHTML(`#dicas span`, "innerHTML", String(gameData("pokenexo").dicas));
+    setarAtributoEmHTML(`#dicas span`, "innerHTML", String(pokenexoData(pokenexo.id)["n-dicas"]));
 }
 //Insere a categoria no tabuleiro
 function inserirCategoriaNoTabuleiro(indiceDaCategoria) {
