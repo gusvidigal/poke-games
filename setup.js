@@ -26,9 +26,8 @@ function definirJogoDoPokenexo(idDoPokenexo) {
 //Setup do localStorage
 function setupLocalStorage() {
     //Define as estatísticas
-    if (!gameData("stats") || gameData("stats").identificador !== 3) {
+    if (!gameData("stats")) {
         let statsData = {
-            "identificador": 3,
             "jogos-gerados": {
                 "totais": 0,
                 "pokedoku": {
@@ -126,7 +125,7 @@ function setupLocalStorage() {
         };
         definirNoLocalStorage("pokedoku-single", JSON.stringify(data));
     }
-    if (obterDoLocalStorage("pokenexo") === null) {
+    if (obterDoLocalStorage("pokenexo") === null || !gameData("pokenexo").jogos) {
         let data = { "jogos": {} };
         definirNoLocalStorage("pokenexo", JSON.stringify(data));
     }
