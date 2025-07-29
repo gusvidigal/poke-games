@@ -51,7 +51,6 @@ body {
 				background-color: var(--branco);
 
 				&:hover {
-					background-color: var(--cinza);
 					cursor: pointer;
 				}
 			}
