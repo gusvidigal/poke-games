@@ -221,9 +221,10 @@ async function setupPokenexo(idDoPokenexo) {
     setupLocalStorage()
     //Cria o pokenexo, caso não tenha sido criado
     definirJogoDoPokenexo(idDoPokenexo);
-    //Atualiza as tentativas e as dicas
-    atualizarTentativasPokedoku();
+    //Atualiza as tentativas, as dicas e o resumo
+    atualizarTentativasPokenexo();
     atualizarDicasPokenexo();
+    atualizarResumoPokenexo();
 
     //Insere no tabuleiro
     //Obtém todos os pokémon das respostas
@@ -262,7 +263,6 @@ async function setupPokenexo(idDoPokenexo) {
     }
     //Adiciona dados no menu
     document.querySelector("#pokenexo-data p").innerHTML = `<span>#${pokenexo.id}</span> ${pokenexo.data}`;
-
     //Redimensiona todos os nomes de Pokémon
 
 }

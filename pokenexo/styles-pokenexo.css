@@ -67,6 +67,16 @@ body {
 			}
 		}
 
+
+		& div#game-resume {
+			width: calc(100%);
+			max-width: 520px;
+			padding: 15px 0 5px 0;
+			word-wrap: break-word;
+			text-align: center;
+			align-content: center;
+		}
+
 		& div.tabuleiro {
 			display: grid;
 			grid-gap: 2px;
@@ -117,6 +127,7 @@ body {
 				& p.nome-pokemon {
 					margin: 0;
 					background-color: var(--vermelho);
+					color: white;
 
 					flex-grow: 1;
 					width: calc(100% - 10px);
@@ -135,6 +146,7 @@ body {
 					border-color: var(--pokenexo-selecionado);
 
 					& p.nome-pokemon {
+						color: black;
 						background-color: var(--pokenexo-selecionado);
 					}
 				}
@@ -210,7 +222,8 @@ body {
 @media screen and (orientation: portrait) {
 	body div#page-content {
 		& div#board-page {
-			& div#menu, & div#pokenexo {
+			& div#menu,
+			& div#pokenexo {
 				max-width: none;
 			}
 		}

@@ -6,7 +6,7 @@ function realizarTentativa() {
     statsData.tentativas.pokenexo += 1;
     setGameData("stats", statsData);
     //Aumenta o número de tentativas
-    atualizarTentativasPokedoku(pokenexoData(pokenexo.id).tentativas + 1);
+    atualizarTentativasPokenexo(pokenexoData(pokenexo.id).tentativas + 1);
     //Aguarda propositalmente
     setTimeout(function () {
         //Verifica se a tentativa foi válida
@@ -28,7 +28,11 @@ function realizarTentativa() {
         setGameData("pokenexo", data);
 
         //Se a resposta estiver incorreta, para
-        if (!respostaCorreta) return;
+        if (!respostaCorreta) {
+            //Adiciona na string tentativa
+            atualizarResumoPokenexo("x", true);
+            return;
+        }
         //Se estiver correta, inativa as células
         mostrarAcerto(contador);
     }, 500);
@@ -78,6 +82,8 @@ function mostrarAcerto(indiceDaCategoria) {
     setGameData("pokenexo", data);
     //Insere a categoria
     inserirCategoriaNoTabuleiro(indiceDaCategoria);
+    //Adiciona na string tentativa
+    atualizarResumoPokenexo(indiceDaCategoria, true);
     //Se for o último acerto
     if (pokenexoData(pokenexo.id).acertados.length === 4) {
         //Determina a vitória

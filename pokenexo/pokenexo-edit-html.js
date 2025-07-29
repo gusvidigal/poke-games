@@ -28,7 +28,7 @@ function removerCelulasSelecionadas() {
     delClasseDeElemento("#pokenexo .celula", "celula-selecionada", true);
 }
 //Atualiza o número de tentativas
-function atualizarTentativasPokedoku(numero) {
+function atualizarTentativasPokenexo(numero) {
     if (numero !== undefined) {
         //Muda as tentativas
         let data = gameData("pokenexo");
@@ -46,6 +46,39 @@ function atualizarDicasPokenexo(numero) {
         setGameData("pokenexo", data);
     }
     setarAtributoEmHTML(`#dicas span`, "innerHTML", String(pokenexoData(pokenexo.id)["n-dicas"]));
+}
+//Atualiza o resumo do jogo
+function atualizarResumoPokenexo(texto, adicionarTexto) {
+    if (texto !== undefined) {
+        //Muda as tentativas
+        let data = gameData("pokenexo");
+        //Se é para substituir
+        if (!adicionarTexto) {
+            data.jogos[String(pokenexo.id)]["string-tentativas"] = texto;
+        } else {
+            let emoji;
+            switch (texto) {
+                case 0:
+                    emoji = "🟩";
+                    break;
+                case 1:
+                    emoji = "🟦";
+                    break;
+                case 2:
+                    emoji = "🟧";
+                    break;
+                case 3:
+                    emoji = "🟥";
+                    break;
+                case "x":
+                    emoji = "❌";
+                    break;
+            }
+            data.jogos[String(pokenexo.id)]["string-tentativas"] += emoji;
+        }
+        setGameData("pokenexo", data);
+    }
+    setarAtributoEmHTML(`#game-resume p span`, "innerHTML", String(pokenexoData(pokenexo.id)["string-tentativas"]));
 }
 //Insere a categoria no tabuleiro
 function inserirCategoriaNoTabuleiro(indiceDaCategoria) {
