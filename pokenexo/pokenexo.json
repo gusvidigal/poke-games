@@ -1,0 +1,94 @@
+[
+    {
+        "id": 1,
+        "data": "27/07/2025",
+        "ordem-inicial": [1, 15, 7, 3, 2, 9, 10, 8, 14, 0, 6, 11, 13, 4, 5, 12],
+        "respostas": [
+            {
+                "desc": "Dragons of Unova",
+                "pokemon": [747, 735, 760, 689]
+            },
+            {
+                "desc": "Have Two Arms",
+                "pokemon": [682, 648, 162, 89]
+            },
+            {
+                "desc": "Mythic Pokémon",
+                "pokemon": [477, 204, 316, 606]
+            },
+            {
+                "desc": "Their Names Start With 'Z'",
+                "pokemon": [969, 761, 693, 414]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "data": "28/07/2025",
+        "ordem-inicial": [1, 15, 7, 3, 2, 9, 10, 8, 14, 0, 6, 11, 13, 4, 5, 12],
+        "respostas": [
+            {
+                "desc": "Start With Worldwide Companies (Meta, Intel, Apple, Shell)",
+                "pokemon": [461, 980, 1004, 123]
+            },
+            {
+                "desc": "Final Stage Steel Pokémon",
+                "pokemon": [490, 1139, 462, 845]
+            },
+            {
+                "desc": "Have Evolutions Introduced In Sinnoh",
+                "pokemon": [153, 112, 276, 370]
+            },
+            {
+                "desc": "Can Learn HM Surf",
+                "pokemon": [46, 355, 517, 368]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "data": "29/07/2025",
+        "ordem-inicial": [1, 15, 7, 3, 2, 9, 10, 8, 14, 0, 6, 11, 13, 4, 5, 12],
+        "respostas": [
+            {
+                "desc": "Electric-Flying Pokémon",
+                "pokemon": [194, 712, 587, 771]
+            },
+            {
+                "desc": "Have Galarian Forms",
+                "pokemon": [192, 113, 684, 68]
+            },
+            {
+                "desc": "Have Long Beaks",
+                "pokemon": [196, 1007, 884, 706]
+            },
+            {
+                "desc": "Related To Giovanni (Team Rocket)",
+                "pokemon": [71, 201, 43, 150]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "data": "29/07/2025",
+        "ordem-inicial": [3, 11, 1, 15, 13, 10, 9, 0, 2, 4, 12, 7, 8, 6, 14, 5],
+        "respostas": [
+            {
+                "desc": "Related To Pigs",
+                "pokemon": [403, 613, 1091, 612]
+            },
+            {
+                "desc": "Found In Safari Zones",
+                "pokemon": [260, 295, 636, 803]
+            },
+            {
+                "desc": "Have Counterparts",
+                "pokemon": [388, 390, 951, 41]
+            },
+            {
+                "desc": "Mistreated as Mythic/Legendaries",
+                "pokemon": [442, 1185, 971, 200]
+            }
+        ]
+    }
+]

@@ -152,8 +152,10 @@ function obterPokemonPorId(id) {
     return null;
 }
 //Pega um pokenexo por ID
-function obterPokenexoPorId(id) {
-    for (const pokenexo of respostasPokenexo) {
+async function obterPokenexoPorId(id) {
+    //Obtém a lista dos pokénexos
+    let listaPokenexo = await getJSON("pokenexo/pokenexo.json");
+    for (const pokenexo of listaPokenexo) {
         if (pokenexo.id === id) return pokenexo;
     }
     return null;

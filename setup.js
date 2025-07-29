@@ -199,8 +199,15 @@ async function setupPokedoku(tabuleiro) {
 async function setupPokenexo(idDoPokenexo) {
     //Obtém de ./dados.js
     pokedex = await getJSON("pokedex.json");
+    //Se não tiver o id, quer dizer que é a versão diária
+    if (!idDoPokenexo) {
+        let listaDePokenexo = await getJSON("pokenexo/pokenexo.json");
+        let maisRecente = listaDePokenexo[listaDePokenexo.length - 1];
+        //Obtém o último
+        idDoPokenexo = maisRecente.id;
+    }
     //Obtém o pokenexo desejado
-    pokenexo = obterPokenexoPorId(idDoPokenexo);
+    pokenexo = await obterPokenexoPorId(idDoPokenexo);
 
     //Determinar vh e vw para dispositivos mobile
     onresize = () => {
@@ -253,6 +260,8 @@ async function setupPokenexo(idDoPokenexo) {
             }
         })
     }
+    //Adiciona dados no menu
+    document.querySelector("#pokenexo-data p").innerHTML = `<span>#${pokenexo.id}</span> ${pokenexo.data}`;
 
     //Redimensiona todos os nomes de Pokémon
 

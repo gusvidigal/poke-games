@@ -50,16 +50,16 @@ function formatarCategoria(indiceDaCategoria) {
     let cor = "";
     switch (indiceDaCategoria) {
         case 0:
-            cor = "laranja";
+            cor = "verde";
             break;
         case 1:
-            cor = "vermelho";
-            break;
-        case 2:
             cor = "azul";
             break;
+        case 2:
+            cor = "laranja";
+            break;
         case 3:
-            cor = "verde";
+            cor = "vermelho";
             break;
     }
     let texto = `
