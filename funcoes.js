@@ -161,3 +161,22 @@ async function obterPokenexoPorId(id) {
     }
     return null;
 }
+//Retorna a cor correspondente à categoria
+function obterCorDaCategoria(indiceDaCategoria) {
+    let cor;
+    switch (indiceDaCategoria) {
+        case 0:
+            cor = "verde";
+            break;
+        case 1:
+            cor = "azul";
+            break;
+        case 2:
+            cor = "laranja";
+            break;
+        case 3:
+            cor = "vermelho";
+            break;
+    }
+    return cor;
+}

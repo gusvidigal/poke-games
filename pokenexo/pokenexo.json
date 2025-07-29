@@ -136,5 +136,28 @@
                 "pokemon": [33, 179, 229, 606]
             }
         ]
+    },
+    {
+        "id": 7,
+        "data": "2025/07/29",
+        "ordem-inicial": [15, 11, 10, 5, 1, 0, 14, 13, 12, 9, 8, 6, 3, 2, 7, 4],
+        "respostas": [
+            {
+                "desc": "Can Megaevolve",
+                "pokemon": [436, 475, 385, 645]
+            },
+            {
+                "desc": "Related To Songs/Dances",
+                "pokemon": [53, 541, 781, 892]
+            },
+            {
+                "desc": "Have More Than One Individual",
+                "pokemon": [519, 1101, 138, 904]
+            },
+            {
+                "desc": "Not Obvious Flying Pokémon",
+                "pokemon": [956, 289, 175, 683]
+            }
+        ]
     }
 ]

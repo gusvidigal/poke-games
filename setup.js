@@ -223,7 +223,7 @@ async function setupPokenexo(idDoPokenexo) {
     definirJogoDoPokenexo(idDoPokenexo);
     //Atualiza as tentativas, as dicas e o resumo
     atualizarTentativasPokenexo();
-    atualizarDicasPokenexo();
+    //atualizarDicasPokenexo();
     atualizarResumoPokenexo();
 
     //Insere no tabuleiro
@@ -277,17 +277,29 @@ async function setupPreviousGames() {
         let pokenexo = listaDePokenexo[i];
         let pokenexoData = gameData("pokenexo").jogos[String(pokenexo.id)];
 
-        let classe = "";
+        let estado = "";
+        let marcadores = "";
         //Se o jogo já tiver sido iniciado
         if (pokenexoData) {
-            classe = "iniciado"
-            if (pokenexoData.vitoria) classe = "concluido";
+            //Obtém classe
+            if (pokenexoData.vitoria) estado = "concluido";
+            else if (pokenexoData["string-tentativas"].length > 0) estado = "iniciado";
+            //Obtém marcadores
+            let acertadosCopia = copiar(pokenexoData.acertados);
+            for (let categoriaAcertada of acertadosCopia.sort()) {
+                let cor = obterCorDaCategoria(categoriaAcertada);
+                marcadores += `<div class="marcador ${cor}"></div>`
+            }
         }
         //Se for o mais recente, é o daily
         let link = `../previous#${pokenexo.id}`;
         if (i === listaDePokenexo.length - 1) link = "../daily/";
         //Formata o texto
-        let textoBotao = `<a href="${link}" class="${classe}">${pokenexo.data} #${pokenexo.id}</a>`
+        let textoBotao = `
+<div class="${estado} previous-game-button">
+    <a href="${link}">${pokenexo.data} #${pokenexo.id}</a>
+    <div class="marcadores">${marcadores}</div>
+</div>`
         document.querySelector("#previous-games").innerHTML += textoBotao;
     }
 }

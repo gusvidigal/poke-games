@@ -35,7 +35,7 @@ function realizarTentativa() {
         }
         //Se estiver correta, inativa as células
         mostrarAcerto(contador);
-    }, 500);
+    }, 150);
 }
 //Formata o grupo de células a ser mostrado
 function formatarCategoria(indiceDaCategoria) {
@@ -51,21 +51,7 @@ function formatarCategoria(indiceDaCategoria) {
         textoPokemon += nomePokemonFormatado;
     }
     //Formata a cor
-    let cor = "";
-    switch (indiceDaCategoria) {
-        case 0:
-            cor = "verde";
-            break;
-        case 1:
-            cor = "azul";
-            break;
-        case 2:
-            cor = "laranja";
-            break;
-        case 3:
-            cor = "vermelho";
-            break;
-    }
+    let cor = obterCorDaCategoria(indiceDaCategoria);
     let texto = `
 <div class="categoria categoria-${pokenexoData(pokenexo.id).acertados.indexOf(indiceDaCategoria) + 1} ${cor}">
     <p class="nome-categoria bold-font-text">${resposta.desc.toUpperCase()}</p>

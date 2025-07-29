@@ -14,7 +14,7 @@
 	--background: #2a2a27e0;
 	--preto-claro: rgb(26, 26, 26);
 	--vermelho-forte: red;
-	
+
 	--pokenexo-verde: #3aac4a;
 	--pokenexo-laranja: #e25822;
 	--pokenexo-azul: #245ca6;
@@ -113,6 +113,26 @@
 	100% {
 		background-color: #ff4d4d;
 	}
+}
+
+.verde {
+	background-color: var(--pokenexo-verde);
+	border-color: var(--pokenexo-verde);
+}
+
+.vermelho {
+	background-color: var(--pokenexo-vermelho);
+	border-color: var(--pokenexo-vermelho);
+}
+
+.azul {
+	background-color: var(--pokenexo-azul);
+	border-color: var(--pokenexo-azul);
+}
+
+.laranja {
+	background-color: var(--pokenexo-laranja);
+	border-color: var(--pokenexo-laranja);
 }
 
 body {

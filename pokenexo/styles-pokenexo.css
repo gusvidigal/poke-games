@@ -24,15 +24,58 @@ body {
 			gap: 10px;
 			justify-content: center;
 			width: 75%;
-			& a {
+
+			& div.previous-game-button {
+				position: relative;
+				display: flex;
+				flex-direction: row;
 				width: 100%;
 				aspect-ratio: 4 / 1;
 				border-radius: 10px;
-				text-decoration: none;
-				color: white;
-				text-align: center;
-				align-content: center;
 				background-color: var(--vermelho);
+				overflow: hidden;
+
+				& a {
+					width: 100%;
+					height: 100%;
+					text-align: center;
+					align-content: center;
+					text-decoration: none;
+					color: white;
+				}
+				/*
+				& div.daily {
+					background-color: var(--vermelho);
+					position: absolute;
+					color: white;
+					text-align: center;
+					align-content: center;
+					rotate: -45deg;
+					top: 10px;
+					left: -48px;
+					width: 150px;
+					height: 25px;
+					border-width: 5px 0;
+					border-style: solid;
+					border-color: var(--vermelho-escuro);
+				}*/
+				& div.marcadores {
+					position: absolute;
+					display: flex;
+					flex-direction: row;
+					top: 0;
+					right: 0;
+					z-index: 1;
+					width: 28px;
+					height: 100%;
+					justify-content: end;
+
+					& div.marcador {
+						width: 7px;
+						height: 100%;
+					}
+				}
+
 				&.iniciado {
 					background-color: var(--amarelo);
 					color: black;
@@ -180,8 +223,6 @@ body {
 			}
 
 			& div.categoria {
-				background-color: var(--vermelho);
-				border: 2px solid var(--vermelho);
 				border-radius: 10px;
 				grid-column-end: span 4;
 				display: flex;
@@ -219,26 +260,6 @@ body {
 
 				&.categoria-4 {
 					grid-row-start: 4;
-				}
-
-				&.verde {
-					background-color: var(--pokenexo-verde);
-					border-color: var(--pokenexo-verde);
-				}
-
-				&.vermelho {
-					background-color: var(--pokenexo-vermelho);
-					border-color: var(--pokenexo-vermelho);
-				}
-
-				&.azul {
-					background-color: var(--pokenexo-azul);
-					border-color: var(--pokenexo-azul);
-				}
-
-				&.laranja {
-					background-color: var(--pokenexo-laranja);
-					border-color: var(--pokenexo-laranja);
 				}
 			}
 		}
