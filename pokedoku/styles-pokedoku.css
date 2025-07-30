@@ -278,26 +278,9 @@ body {
             }
         }
 
-        & div.popup {
-            /*Incluir borda e padding*/
-            box-sizing: border-box;
-            position: fixed;
+        & div.popup#popup_pesquisa {
 
-            top: max(calc(12.5 * var(--vh, 1vh)), calc(calc(100 * var(--vh, 1vh) - 500px) / 2));
-            left: min(calc(30 * var(--vw, 1vw)), calc(calc(100 * var(--vw, 1vw) - 350px) / 2));
-
-            min-width: 350px;
-            width: calc(40 * var(--vw, 1vw));
-            height: calc(75 * var(--vh, 1vh));
-            max-height: 500px;
-
-            display: flex;
-            flex-direction: column;
             background-color: var(--cinza);
-            padding: 10px;
-            z-index: 1;
-            border: 3px solid black;
-            border-radius: 2px;
 
             & p:not(.bold-font-text-resultado) {
                 text-align: center;

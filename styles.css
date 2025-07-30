@@ -204,7 +204,7 @@ body {
 	& nav#main-menu {
 		position: sticky;
 		top: 0;
-		z-index: 2;      
+		z-index: 2;
 		/*Considerar também o scroll*/
 		width: calc(100 * var(--vw, 1vw) - 20px - var(--scroll));
 		height: 60px;
@@ -244,23 +244,44 @@ body {
 			}
 		}
 	}
+
+	& div.popup {
+		/*Incluir borda e padding*/
+		box-sizing: border-box;
+		position: fixed;
+		background-color: white;
+
+		top: max(10%, calc(50% - 250px));
+		left: max(5%, calc(50% - 250px));
+		width: 90%;
+		max-width: 500px;
+		height: 80%;
+		max-height: 500px;
+
+		display: flex;
+		flex-direction: column;
+		padding: 10px;
+		z-index: 3;
+		border: 2px solid black;
+		border-radius: 10px;
+		overflow: auto;
+	}
 }
 
 @media screen and (orientation: portrait) {
-	body div#page-content {
-		& div#main-page {
-			width: 100%;
+	body {
+		& div#page-content div#main-page,
+		& div.popup {
+			width: calc(100% - 20px);
+			left: 10px;
 			max-width: none;
 		}
+
 	}
 }
 @media screen and (orientation: portrait) and (min-width: 600px) {
 	body div#page-content {
 		width: calc(100% - 40px);
 		padding: 0 20px;
-		& div#main-page {
-			width: 100%;
-			max-width: none;
-		}
 	}
 }

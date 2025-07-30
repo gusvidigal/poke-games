@@ -84,6 +84,10 @@ body {
 					background-color: var(--verde);
 					color: black;
 				}
+				&.rainbow {
+					animation: rainbow 3s linear 0s infinite normal;
+					color: black;
+				}
 			}
 		}
 	}
@@ -98,9 +102,9 @@ body {
 
 		& div#game-resume {
 			width: calc(100%);
-			max-width: 520px;
-			padding: 15px 0 5px 0;
-			word-wrap: break-word;
+			max-width: 500px;
+			padding: 15px 0 0 0;
+			word-break: break-all;
 			text-align: center;
 			align-content: center;
 			& p {
@@ -112,13 +116,13 @@ body {
 			display: flex;
 			flex-direction: row;
 			gap: 5px;
-			align-items: center;
+			align-items: end;
 			justify-content: space-between;
 
 			width: calc(100%);
-			max-width: 520px;
-			padding: 5px 0;
-			height: clamp(35px, 16.05px + 5.26 * var(--vw, 1vw), 45px);
+			max-width: 500px;
+			padding: 10px 0;
+			height: 22px;
 
 			& button {
 				height: 80%;
@@ -138,11 +142,22 @@ body {
 			& div#tentativas,
 			& div#dicas,
 			& div#pokenexo-data {
-				font-size: clamp(0.8rem, -0.147rem + 4.21 * var(--vw, 1vw), 1.3rem);
+				font-size: 1.2rem;
 				text-align: center;
 
 				& p {
 					margin: 0;
+				}
+			}
+			& div#info {
+				width: 22px;
+				height: 22px;
+				font-size: 11px;
+				line-height: 11px;
+				text-align: center;
+				align-content: center;
+				&:hover {
+					cursor: pointer;
 				}
 			}
 		}
@@ -156,7 +171,7 @@ body {
 			aspect-ratio: 1 / 1;
 
 			&#pokenexo {
-				max-width: 520px;
+				max-width: 500px;
 				grid-template-rows: repeat(4, minmax(0, 1fr));
 				grid-template-columns: repeat(4, minmax(0, 1fr));
 
@@ -263,6 +278,18 @@ body {
 					grid-row-start: 4;
 				}
 			}
+		}
+	}
+
+	& div.popup#popup_pokenexo {
+		text-align: center;
+		align-content: center;
+		& h1 {
+			margin: 0;
+			padding: 0 0 10px 0;
+		}
+		& p {
+			margin: 0;
 		}
 	}
 }

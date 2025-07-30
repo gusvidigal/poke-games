@@ -95,3 +95,15 @@ function inserirCategoriaNoTabuleiro(indiceDaCategoria) {
     //Insere a categoria no tabuleiro
     document.getElementById("pokenexo").innerHTML += formatarCategoria(indiceDaCategoria);
 }
+//Alterna o estado do popup do pokénexo
+function alternarPopupPokenexo() {
+    if (elementoTemClasse("#popup_pokenexo", "invisivel")) {
+        //Ativa o background e o popup
+        delClasseDeElemento("#background", "invisivel");
+        delClasseDeElemento("#popup_pokenexo", "invisivel");
+    } else {
+        //Ativa o background e o popup
+        addClasseAElemento("#background", "invisivel");
+        addClasseAElemento("#popup_pokenexo", "invisivel");
+    }
+}

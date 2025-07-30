@@ -263,7 +263,23 @@ async function setupPokenexo(idDoPokenexo) {
     }
     //Adiciona dados no menu
     document.querySelector("#pokenexo-data p").innerHTML = `<span>#${pokenexo.id}</span> ${pokenexo.data}`;
-    //Redimensiona todos os nomes de Pokémon
+    //Se for especial
+    if (pokenexo.especial) {
+        //Adiciona ícone
+        let icone = `
+<div id="info" onclick="alternarPopupPokenexo()">
+    <span class="fa-stack fa-fw">
+        <i class="fa fa-circle fa-stack-2x fa-fw"></i>
+        <i class="fa fa-info fa-stack-1x fa-inverse fa-fw"></i>
+    </span>
+</div>`;
+        document.getElementById("menu").innerHTML += icone;
+        //Adiciona texto
+        document.querySelector("#popup_pokenexo h1").innerHTML = `Pokénections ${pokenexo.data} #${pokenexo.id}`;
+        document.querySelector("#popup_pokenexo p").innerHTML = pokenexo.mensagem.replaceAll(`\n`, "<br>");
+        //Adiciona popup ao onload
+        document.querySelector("body").onload = alternarPopupPokenexo();
+    }
 
 }
 //Ao carregar a página de previous games
@@ -278,6 +294,7 @@ async function setupPreviousGames() {
         let pokenexoData = gameData("pokenexo").jogos[String(pokenexo.id)];
 
         let estado = "";
+        let especial = "";
         let marcadores = "";
         //Se o jogo já tiver sido iniciado
         if (pokenexoData) {
@@ -294,12 +311,15 @@ async function setupPreviousGames() {
         //Se for o mais recente, é o daily
         let link = `../previous#${pokenexo.id}`;
         if (i === listaDePokenexo.length - 1) link = "../daily/";
+
+        if (pokenexo.especial) especial = "rainbow";
+
         //Formata o texto
         let textoBotao = `
-<div class="${estado} previous-game-button">
+<div class="${estado} ${especial} previous-game-button">
     <a href="${link}">${pokenexo.data}<br>#${pokenexo.id}</a>
     <div class="marcadores">${marcadores}</div>
-</div>`
+</div>`;
         document.querySelector("#previous-games").innerHTML += textoBotao;
     }
 }

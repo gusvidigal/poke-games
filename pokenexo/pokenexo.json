@@ -186,6 +186,8 @@
     {
         "id": 9,
         "data": "2025/07/29",
+        "especial": false,
+        "mensagem": "",
         "ordem-inicial": [0, 5, 3, 15, 8, 10, 1, 7, 14, 2, 11, 12, 4, 13, 9, 6],
         "respostas": [
             {
@@ -203,6 +205,31 @@
             {
                 "desc": "Related to Pokéballs [Such as GS Ball]",
                 "pokemon": [136, 134, 715, 316]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "especial": true,
+        "mensagem": "I am delighted to note that Pokénections has reached its 10th edition! It's been 10 amazing boards, some quite hard to swallow, a few so hard that you may even throw your phone through the window when, after 64 tries, you discover that the category has NOTHING TO DO with appearances...\n\nAnd Pokénection after Pokénection you kept returning to /daily to have a five-minute break from your routine. Thank you so much for that! You really inspire me to develop even more interesting games.\n\nTouched by this feeling, I present to you the first (of many) POKÉNECTION SPECIAL EDITION, which will be themed. The 10th edition is related to my favorite region: Kalos! Dazzling cities filled with style, mysteries and fanciness (except for Quilladin).\n\nI hope you enjoy the 10th Pokénection. Please stay tuned for further announcements!\n\n- Vidigal",
+        "data": "2025/07/30",
+        "ordem-inicial": [7, 8, 10, 3, 5, 9, 1, 6, 13, 15, 11, 0, 14, 12, 4, 2],
+        "respostas": [
+            {
+                "desc": "Monotype Pokémon",
+                "pokemon": [829, 862, 787, 811]
+            },
+            {
+                "desc": "Have Yellow Eyes",
+                "pokemon": [791, 857, 799, 849]
+            },
+            {
+                "desc": "Owned By Champion Diantha",
+                "pokemon": [834, 836, 838, 853]
+            },
+            {
+                "desc": "Appear On 'Volcanion And The Mechanical Marvel' Movie Poster",
+                "pokemon": [871, 822, 784, 865]
             }
         ]
     }
