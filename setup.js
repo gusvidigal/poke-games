@@ -299,7 +299,10 @@ async function setupPreviousGames() {
         //Se o jogo já tiver sido iniciado
         if (pokenexoData) {
             //Obtém classe
-            if (pokenexoData.vitoria) estado = "concluido";
+            if (pokenexoData.vitoria) {
+                estado = "concluido";
+                if (pokenexo.especial) especial = "rainbow";
+            }
             else if (pokenexoData["string-tentativas"].length > 0) estado = "iniciado";
             //Obtém marcadores
             let acertadosCopia = copiar(pokenexoData.acertados);
@@ -312,7 +315,6 @@ async function setupPreviousGames() {
         let link = `../previous#${pokenexo.id}`;
         if (i === listaDePokenexo.length - 1) link = "../daily/";
 
-        if (pokenexo.especial) especial = "rainbow";
 
         //Formata o texto
         let textoBotao = `
