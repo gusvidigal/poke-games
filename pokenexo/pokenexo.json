@@ -182,5 +182,28 @@
                 "pokemon": [726, 929, 85, 201]
             }
         ]
+    },
+    {
+        "id": 9,
+        "data": "2025/07/29",
+        "ordem-inicial": [0, 5, 3, 15, 8, 10, 1, 7, 14, 2, 11, 12, 4, 13, 9, 6],
+        "respostas": [
+            {
+                "desc": "Have Paradox versions on Pokémon Scarlet",
+                "pokemon": [53, 716, 257, 764]
+            },
+            {
+                "desc": "Have Paradox versions on Pokémon Violet",
+                "pokemon": [767, 765, 296, 288]
+            },
+            {
+                "desc": "Have four feet",
+                "pokemon": [632, 779, 604, 631]
+            },
+            {
+                "desc": "Related to Pokéballs [Such as GS Ball]",
+                "pokemon": [136, 134, 715, 316]
+            }
+        ]
     }
 ]

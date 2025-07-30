@@ -201,6 +201,20 @@ body {
 			}
 		}
 	}
+	& nav#main-menu {
+		position: sticky;
+		top: 0;
+		z-index: 2;      
+		/*Considerar também o scroll*/
+		width: calc(100 * var(--vw, 1vw) - 20px - var(--scroll));
+		height: 60px;
+		padding: 10px 10px 0 10px;
+		& a {
+			height: 100%;
+			font-size: 2rem;
+			text-align: center;
+		}
+	}
 
 	& div#page-content {
 		display: flex;

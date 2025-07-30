@@ -297,7 +297,7 @@ async function setupPreviousGames() {
         //Formata o texto
         let textoBotao = `
 <div class="${estado} previous-game-button">
-    <a href="${link}">${pokenexo.data} #${pokenexo.id}</a>
+    <a href="${link}">${pokenexo.data}<br>#${pokenexo.id}</a>
     <div class="marcadores">${marcadores}</div>
 </div>`
         document.querySelector("#previous-games").innerHTML += textoBotao;

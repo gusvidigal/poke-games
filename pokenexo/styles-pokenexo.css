@@ -227,7 +227,9 @@ body {
 				grid-column-end: span 4;
 				display: flex;
 				flex-direction: column;
+				row-gap: 5px;
 				justify-content: center;
+				padding: 10px;
 
 				& p {
 					color: white;
@@ -235,15 +237,14 @@ body {
 					align-content: center;
 					overflow: hidden;
 					margin: 0;
-					padding: clamp(4px, -3.58px + 2.1 * var(--vw, 1vw), 8px) 0;
 				}
 
 				& p.nome-categoria {
-					font-size: clamp(1rem, 0.052rem + 0.263 * var(--1vw, 1vw), 1.5rem);
+					font-size: clamp(0.75rem, 0.25rem + 2.22 * var(--vw, 1vw), 1rem);
 				}
 
 				& p.pokemon-categoria {
-					font-size: clamp(0.9rem, 0.71rem + 0.052 * var(--1vw, 1vw), 1rem);
+					font-size: clamp(0.9rem, 0.20rem + 3.11 * var(--vw, 1vw), 1.25rem);
 				}
 
 				&.categoria-1 {

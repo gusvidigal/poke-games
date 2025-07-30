@@ -78,7 +78,7 @@ function atualizarResumoPokenexo(texto, adicionarTexto) {
         }
         setGameData("pokenexo", data);
     }
-    setarAtributoEmHTML(`#game-resume p span`, "innerHTML", String(pokenexoData(pokenexo.id)["string-tentativas"]));
+    setarAtributoEmHTML(`#game-resume p`, "innerHTML", String(pokenexoData(pokenexo.id)["string-tentativas"]));
 }
 //Insere a categoria no tabuleiro
 function inserirCategoriaNoTabuleiro(indiceDaCategoria) {

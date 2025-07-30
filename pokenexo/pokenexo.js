@@ -44,18 +44,17 @@ function formatarCategoria(indiceDaCategoria) {
     //Formata o texto dos pokémon
     for (let i = 0; i < 4; i++) {
         let pokemon = obterPokemonPorId(resposta.pokemon[i]);
-        let nomePokemonFormatado = camelCase(pokemon.nome);
-        if (pokemon.desc !== "") nomePokemonFormatado += " - " + camelCase(pokemon.desc);
-        if (i < 3) nomePokemonFormatado += ", ";
+        if (pokemon.desc !== "") pokemon.nome += " - " + pokemon.desc;
+        if (i < 3) pokemon.nome += ", ";
         //Adiciona no texto
-        textoPokemon += nomePokemonFormatado;
+        textoPokemon += pokemon.nome;
     }
     //Formata a cor
     let cor = obterCorDaCategoria(indiceDaCategoria);
     let texto = `
 <div class="categoria categoria-${pokenexoData(pokenexo.id).acertados.indexOf(indiceDaCategoria) + 1} ${cor}">
-    <p class="nome-categoria bold-font-text">${resposta.desc.toUpperCase()}</p>
-    <p class="pokemon-categoria font-text">${textoPokemon}</p>
+    <p class="nome-categoria bold-font-text">${resposta.desc}</p>
+    <p class="pokemon-categoria font-text">${textoPokemon.toUpperCase()}</p>
 </div>`
     return texto;
 }
