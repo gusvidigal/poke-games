@@ -93,16 +93,11 @@ body {
 	}
 
 	& div#board-page {
-		width: calc(100%);
-
-		display: flex;
-		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
 
 		& div#game-resume {
-			width: calc(100%);
-			max-width: 500px;
+			width: 100%;
 			padding: 15px 0 0 0;
 			word-break: break-all;
 			text-align: center;
@@ -119,8 +114,7 @@ body {
 			align-items: end;
 			justify-content: space-between;
 
-			width: calc(100%);
-			max-width: 500px;
+			width: 100%;
 			padding: 10px 0;
 			height: 22px;
 
@@ -161,121 +155,121 @@ body {
 				}
 			}
 		}
+		& div.ar1-1 {
+			width: 100%;
 
-		& div.tabuleiro {
-			display: grid;
-			grid-gap: 2px;
+			& div.tabuleiro {
+				display: grid;
+				grid-gap: 2px;
 
-			width: calc(100%);
-			padding: 0;
-			aspect-ratio: 1 / 1;
+				width: calc(100%);
 
-			&#pokenexo {
-				max-width: 500px;
-				grid-template-rows: repeat(4, minmax(0, 1fr));
-				grid-template-columns: repeat(4, minmax(0, 1fr));
+				&#pokenexo {
+					grid-template-rows: repeat(4, minmax(0, 1fr));
+					grid-template-columns: repeat(4, minmax(0, 1fr));
 
-				& div.celula p.nome-pokemon {
-					font-size: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
-					line-height: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
-				}
-			}
-
-			& div.celula {
-				background-color: white;
-				border: 2px solid var(--vermelho);
-				border-radius: 10px;
-				position: relative;
-				overflow: hidden;
-				/*CÉLULAS*/
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				height: calc(100% - 4px);
-				width: calc(100% - 4px);
-
-				& div.container-imagem-poke {
-					/*Menos 10 do padding*/
-					width: calc(100% - 10px);
-					/*Menos 10 do padding*/
-					height: calc(75% - 10px);
-					padding: 5px;
-
-					& img.imagem-poke-celula {
-						width: 100%;
-						height: 100%;
-						display: block;
-						object-fit: contain;
+					& div.celula p.nome-pokemon {
+						font-size: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
+						line-height: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
 					}
 				}
 
-				& p.nome-pokemon {
-					margin: 0;
-					background-color: var(--vermelho);
-					color: white;
-
-					flex-grow: 1;
-					width: calc(100% - 10px);
-					padding: 0 5px;
-
-					text-align: center;
-					align-content: center;
+				& div.celula {
+					background-color: white;
+					border: 2px solid var(--vermelho);
+					border-radius: 10px;
+					position: relative;
 					overflow: hidden;
-				}
+					/*CÉLULAS*/
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					height: calc(100% - 4px);
+					width: calc(100% - 4px);
 
-				&:hover {
-					cursor: pointer;
-				}
+					& div.container-imagem-poke {
+						/*Menos 10 do padding*/
+						width: calc(100% - 10px);
+						/*Menos 10 do padding*/
+						height: calc(75% - 10px);
+						padding: 5px;
 
-				&.celula-selecionada {
-					border-color: var(--pokenexo-selecionado);
+						& img.imagem-poke-celula {
+							width: 100%;
+							height: 100%;
+							display: block;
+							object-fit: contain;
+						}
+					}
 
 					& p.nome-pokemon {
-						color: black;
-						background-color: var(--pokenexo-selecionado);
+						margin: 0;
+						background-color: var(--vermelho);
+						color: white;
+
+						flex-grow: 1;
+						width: calc(100% - 10px);
+						padding: 0 5px;
+
+						text-align: center;
+						align-content: center;
+						overflow: hidden;
+					}
+
+					&:hover {
+						cursor: pointer;
+					}
+
+					&.celula-selecionada {
+						border-color: var(--pokenexo-selecionado);
+
+						& p.nome-pokemon {
+							color: black;
+							background-color: var(--pokenexo-selecionado);
+						}
 					}
 				}
-			}
 
-			& div.categoria {
-				border-radius: 10px;
-				grid-column-end: span 4;
-				display: flex;
-				flex-direction: column;
-				row-gap: 5px;
-				justify-content: center;
-				padding: 10px;
+				& div.categoria {
+					border-radius: 10px;
+					grid-column-end: span 4;
+					display: flex;
+					flex-direction: column;
+					row-gap: 5px;
+					justify-content: center;
+					padding: 10px;
 
-				& p {
-					color: white;
-					text-align: center;
-					align-content: center;
-					overflow: hidden;
-					margin: 0;
-				}
+					& p {
+						color: white;
+						text-align: center;
+						align-content: center;
+						overflow: hidden;
+						margin: 0;
+					}
 
-				& p.nome-categoria {
-					font-size: clamp(0.75rem, 0.25rem + 2.22 * var(--vw, 1vw), 1rem);
-				}
+					& p.nome-categoria {
+						font-size: clamp(0.75rem, 0.25rem + 2.22 * var(--vw, 1vw), 1rem);
+					}
 
-				& p.pokemon-categoria {
-					font-size: clamp(0.9rem, 0.20rem + 3.11 * var(--vw, 1vw), 1.25rem);
-				}
+					& p.pokemon-categoria {
+						font-size: clamp(0.9rem, 0.20rem + 3.11 * var(--vw, 1vw), 1.25rem);
+					}
 
-				&.categoria-1 {
-					grid-row-start: 1;
-				}
+					&.categoria-1 {
+						grid-row-start: 1;
+					}
 
-				&.categoria-2 {
-					grid-row-start: 2;
-				}
+					&.categoria-2 {
+						grid-row-start: 2;
+					}
 
-				&.categoria-3 {
-					grid-row-start: 3;
-				}
+					&.categoria-3 {
+						grid-row-start: 3;
+					}
 
-				&.categoria-4 {
-					grid-row-start: 4;
+					&.categoria-4 {
+						grid-row-start: 4;
+					}
 				}
 			}
 		}
@@ -298,11 +292,7 @@ body {
 @media screen and (orientation: portrait) {
 	body div#page-content {
 		& div#board-page {
-			& div#menu,
-			& div#pokenexo,
-			& div#game-resume {
-				max-width: none;
-			}
+			max-width: none;
 		}
 	}
 }

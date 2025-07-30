@@ -46,6 +46,17 @@
 	flex-direction: row;
 	column-gap: 5px;
 }
+.ar1-1 {
+	position: relative;
+	padding-top: 100%;
+	&>* {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+	}
+}
 
 
 /* ANIMAÇÃO DO RIBBON */
@@ -214,6 +225,14 @@ body {
 			font-size: 2rem;
 			text-align: center;
 		}
+	}
+	& div#board-page {
+		width: 100%;
+		max-width: 520px;
+		width: calc(100%);
+
+		display: flex;
+		flex-direction: column;
 	}
 
 	& div#page-content {
