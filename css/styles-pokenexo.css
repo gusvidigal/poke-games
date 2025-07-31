@@ -1,0 +1,318 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body div#main-page div#games {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  width: 75%;
+}
+body div#main-page div#games a {
+  width: 100%;
+  aspect-ratio: 4/1;
+  border-radius: 10px;
+  background-color: #f62c13;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  align-content: center;
+}
+body div#main-page div#previous-games {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  width: 75%;
+}
+body div#main-page div#previous-games div.previous-game-button {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  aspect-ratio: 4/1;
+  border-radius: 10px;
+  background-color: #f62c13;
+  overflow: hidden;
+  /*
+  & div.daily {
+  	background-color: $c-red;
+  	position: absolute;
+  	color: white;
+  	text-align: center;
+  	align-content: center;
+  	rotate: -45deg;
+  	top: 10px;
+  	left: -48px;
+  	width: 150px;
+  	height: 25px;
+  	border-width: 5px 0;
+  	border-style: solid;
+  	border-color: $c-red-d;
+  }*/
+}
+body div#main-page div#previous-games div.previous-game-button a {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  align-content: center;
+  text-decoration: none;
+  color: white;
+}
+body div#main-page div#previous-games div.previous-game-button div.marcadores {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 28px;
+  height: 100%;
+  justify-content: end;
+}
+body div#main-page div#previous-games div.previous-game-button div.marcadores div.marcador {
+  width: 7px;
+  height: 100%;
+}
+body div#main-page div#previous-games div.previous-game-button.iniciado {
+  background-color: #f69e13;
+  color: black;
+}
+body div#main-page div#previous-games div.previous-game-button.concluido {
+  background-color: #13f62c;
+  color: black;
+}
+body div#main-page div#previous-games div.previous-game-button.rainbow {
+  animation: rainbow 3s linear 0s infinite normal;
+  color: black;
+}
+body div#board-page {
+  justify-content: space-around;
+  align-items: center;
+}
+body div#board-page div#game-resume {
+  width: 100%;
+  padding: 15px 0 0 0;
+  word-break: break-all;
+  text-align: center;
+  align-content: center;
+}
+body div#board-page div#menu {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: end;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 0;
+  height: 22px;
+}
+body div#board-page div#menu button {
+  height: 80%;
+  aspect-ratio: 2/1;
+  padding: 1px 5px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #eceade;
+}
+body div#board-page div#menu button:hover {
+  cursor: pointer;
+}
+body div#board-page div#menu div#tentativas, body div#board-page div#menu div#dicas, body div#board-page div#menu div#pokenexo-data {
+  font-size: 1.2rem;
+  text-align: center;
+}
+body div#board-page div#menu div#info {
+  width: 22px;
+  height: 22px;
+  font-size: 11px;
+  line-height: 11px;
+  text-align: center;
+  align-content: center;
+}
+body div#board-page div#menu div#info:hover {
+  cursor: pointer;
+}
+body div#board-page div.ar1-1 {
+  width: 100%;
+}
+body div#board-page div.ar1-1 div.tabuleiro {
+  display: grid;
+  grid-gap: 2px;
+  width: 100%;
+}
+body div#board-page div.ar1-1 div.tabuleiro#pokenexo {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+body div#board-page div.ar1-1 div.tabuleiro#pokenexo div.celula p.nome-pokemon {
+  font-size: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
+  line-height: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
+}
+body div#board-page div.ar1-1 div.tabuleiro div.celula {
+  background-color: white;
+  border: 2px solid #f62c13;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  /*CÉLULAS*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100% - 4px);
+  width: calc(100% - 4px);
+}
+body div#board-page div.ar1-1 div.tabuleiro div.celula div.container-imagem-poke {
+  /*Menos 10 do padding*/
+  width: calc(100% - 10px);
+  /*Menos 10 do padding*/
+  height: calc(75% - 10px);
+  padding: 5px;
+}
+body div#board-page div.ar1-1 div.tabuleiro div.celula div.container-imagem-poke img.imagem-poke-celula {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+body div#board-page div.ar1-1 div.tabuleiro div.celula p.nome-pokemon {
+  background-color: #f62c13;
+  color: white;
+  flex-grow: 1;
+  width: calc(100% - 10px);
+  padding: 0 5px;
+  text-align: center;
+  align-content: center;
+  overflow: hidden;
+}
+body div#board-page div.ar1-1 div.tabuleiro div.celula:hover {
+  cursor: pointer;
+}
+body div#board-page div.ar1-1 div.tabuleiro div.celula.celula-selecionada {
+  border-color: #69d2ff;
+}
+body div#board-page div.ar1-1 div.tabuleiro div.celula.celula-selecionada p.nome-pokemon {
+  color: black;
+  background-color: #69d2ff;
+}
+body div#board-page div.ar1-1 div.tabuleiro div.categoria {
+  border-radius: 10px;
+  grid-column-end: span 4;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  justify-content: center;
+  padding: 10px;
+}
+body div#board-page div.ar1-1 div.tabuleiro div.categoria p {
+  color: white;
+  text-align: center;
+  align-content: center;
+  overflow: hidden;
+}
+body div#board-page div.ar1-1 div.tabuleiro div.categoria p.nome-categoria {
+  font-size: clamp(0.75rem, 0.25rem + 2.22 * var(--vw, 1vw), 1rem);
+}
+body div#board-page div.ar1-1 div.tabuleiro div.categoria p.pokemon-categoria {
+  font-size: clamp(0.9rem, 0.2rem + 3.11 * var(--vw, 1vw), 1.25rem);
+}
+body div#board-page div.ar1-1 div.tabuleiro div.categoria.categoria-1 {
+  grid-row-start: 1;
+}
+body div#board-page div.ar1-1 div.tabuleiro div.categoria.categoria-2 {
+  grid-row-start: 2;
+}
+body div#board-page div.ar1-1 div.tabuleiro div.categoria.categoria-3 {
+  grid-row-start: 3;
+}
+body div#board-page div.ar1-1 div.tabuleiro div.categoria.categoria-4 {
+  grid-row-start: 4;
+}
+body div.popup#popup_pokenexo {
+  text-align: center;
+  align-content: center;
+}
+body div.popup#popup_pokenexo h1 {
+  padding: 0 0 10px 0;
+}
+
+/*Diminuição de bordas e paddings*/
+@media screen and (orientation: portrait) {
+  body div#page-content div#board-page {
+    max-width: none;
+  }
+}
+@media screen and (max-width: 550px) {
+  body div#board-page div.tabuleiro div.celula {
+    border-width: 1px;
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+  }
+  body div#board-page div.tabuleiro div.celula div.container-imagem-poke {
+    width: calc(100% - 2px);
+    height: calc(75% - 2px);
+    padding: 1px;
+  }
+  body div#board-page div.tabuleiro div.celula div.container-imagem-poke img.imagem-poke-celula {
+    width: 100%;
+    height: 100%;
+  }
+  body div#board-page div.tabuleiro div.celula p.nome-pokemon {
+    width: calc(100% - 2px);
+    padding: 0 1px;
+  }
+  body div#board-page div.tabuleiro div.categoria {
+    border-width: 1px;
+  }
+}/*# sourceMappingURL=styles-pokenexo.css.map */

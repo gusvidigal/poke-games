@@ -1,33 +1,32 @@
+@import 'variables';
+@import 'reset';
+@import 'mixins';
+
+//This file overwrites previous ones
 body {
     & div#page-content div#about {
 
         & h1 {
             text-align: center;
             text-decoration: underline;
-            text-decoration-color: var(--vermelho);
-            margin: 0;
+            text-decoration-color: $c-red;
         }
 
         & h2 {
             text-align: center;
-            margin: 0;
         }
 
         & p {
             text-align: center;
-            margin: 0;
 
             &.subtitulo {
             }
         }
 
         & ul {
-            padding: 0;
-            margin: 0;
             list-style-type: none;
 
             & li {
-                padding: 0;
                 text-align: center;
 
                 & span.icone,
@@ -38,7 +37,7 @@ body {
                 }
 
                 & span.pokebola {
-                    color: var(--vermelho);
+                    color: $c-red;
                 }
 
                 & span.data {

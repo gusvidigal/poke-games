@@ -1,8 +1,13 @@
+@import 'variables';
+@import 'reset';
+@import 'mixins';
+
+//This file overwrites previous ones
 body {
     & div#page-content div#main-page {
 
         & .section {
-            border: 2px solid var(--vermelho);
+            border: 2px solid $c-red;
             margin: 5px 0;
             width: calc(100% - 4px);
             border-radius: 10px;
@@ -11,18 +16,16 @@ body {
             overflow: hidden;
 
             &.main-section {
-                border-color: var(--amarelo);
+                border-color: $c-yellow;
                 & h2 {
-                    background-color: var(--amarelo);
-                    border-color: var(--amarelo);
+                    background-color: $c-yellow;
+                    border-color: $c-yellow;
                 }
             }
             & h2 {
-                margin: 0;
-                padding: 0;
                 text-align: center;
-                background-color: var(--vermelho);
-                border-color: var(--vermelho);
+                background-color: $c-red;
+                border-color: $c-red;
                 border-style: solid;
                 border-width: 0 0 2px 0;
             }
@@ -38,7 +41,6 @@ body {
                     justify-content: space-between;
                     & p {
                         padding: 0;
-                        margin: 0;
 
                         &.label {
                             text-align: left;
@@ -52,10 +54,8 @@ body {
             }
             & .sub-section {
                 & h3 {
-                    margin: 0;
-                    padding: 0;
                     text-align: center;
-                    border-color: var(--vermelho);
+                    border-color: $c-red;
                     border-style: solid;
                     border-width: 2px 0;
                 }

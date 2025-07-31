@@ -1,4 +1,8 @@
-/*ESSE ARQUIVO TEM PRECEDENCIA MAIOR*/
+@import 'variables';
+@import 'reset';
+@import 'mixins';
+
+//This file overwrites previous ones
 body {
     & div#main-page {
         & div#games {
@@ -11,7 +15,7 @@ body {
                 width: 100%;
                 aspect-ratio: 4 / 1;
                 border-radius: 10px;
-                background-color: var(--vermelho);
+                background-color: $c-red;
                 text-decoration: none;
                 color: white;
                 text-align: center;
@@ -86,13 +90,8 @@ body {
                 align-items: center;
                 height: calc(100% - 2px);
                 width: calc(100% - 2px);
-
-                & p {
-                    margin: 0;
-                }
-
                 &.celula-header {
-                    background-color: var(--vermelho);
+                    background-color: $c-red;
                     justify-content: center;
 
                     /*Ancorado em width do div pai: 250px*/
@@ -138,7 +137,7 @@ body {
                             object-fit: contain;
                         }
 
-                        & span.ribbon-tentativas {
+                        /*& span.ribbon-tentativas {
                             font-size: 30px;
 
                             display: none;
@@ -154,13 +153,13 @@ body {
                             z-index: 1;
 
                             &.ribbon-verde {
-                                background-color: var(--verde);
+                                background-color: $c-green;
                             }
 
                             &.ribbon-amarelo {
-                                background-color: var(--amarelo);
+                                background-color: $c-yellow;
                             }
-                        }
+                        }*/
                     }
 
                     & p.nome-pokemon {
@@ -181,7 +180,7 @@ body {
                         }
 
                         &.erro {
-                            color: var(--vermelho);
+                            color: $c-red;
                         }
                     }
 
@@ -236,7 +235,7 @@ body {
                     border: 2px solid black;
                     border-radius: 10px;
 
-                    background-color: var(--branco);
+                    background-color: $c-white;
 
                     &:hover {
                         cursor: pointer;
@@ -248,7 +247,7 @@ body {
                     }
 
                     &#modo_dificil {
-                        background-color: var(--vermelho);
+                        background-color: $c-red;
                         color: white;
                     }
                 }
@@ -264,10 +263,6 @@ body {
                 padding: 0 calc(2 * var(--vw, 1vw));
                 text-align: center;
 
-                & p {
-                    margin: 0;
-                }
-
                 & span {
                     font-weight: normal;
                 }
@@ -276,7 +271,7 @@ body {
 
         & div.popup#popup_pesquisa {
 
-            background-color: var(--cinza);
+            background-color: $c-grey;
 
             & p:not(.bold-font-text-resultado) {
                 text-align: center;
@@ -288,7 +283,7 @@ body {
                 font-size: 15px;
                 line-height: 30px;
                 padding: 0 8px;
-                color: var(--cinza-escuro);
+                color: $c-grey-d;
                 border: 1px solid black;
                 /*16 de padding e 2 da borda*/
                 width: calc(100% - 18px);
@@ -320,7 +315,6 @@ body {
                     }
 
                     & p.bold-font-text-resultado {
-                        margin: 0;
                         padding: 5px 10px;
                         font-size: 15px;
                         line-height: 20px;
@@ -329,15 +323,15 @@ body {
                         align-content: center;
 
                         & span.descricao {
-                            color: var(--cinza-escuro);
+                            color: $c-grey-d;
                         }
                     }
 
                     & button {
                         height: 45px;
-                        border: 2px solid var(--vermelho);
+                        border: 2px solid $c-red;
                         border-radius: 5px;
-                        background-color: var(--vermelho);
+                        background-color: $c-red;
 
                         &:hover {
                             cursor: pointer;

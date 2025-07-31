@@ -311,15 +311,11 @@ async function setupPreviousGames() {
                 marcadores += `<div class="marcador ${cor}"></div>`
             }
         }
-        //Se for o mais recente, é o daily
-        let link = `../previous#${pokenexo.id}`;
-        if (i === listaDePokenexo.length - 1) link = "../daily/";
-
 
         //Formata o texto
         let textoBotao = `
 <div class="${estado} ${especial} previous-game-button">
-    <a href="${link}">${pokenexo.data}<br>#${pokenexo.id}</a>
+    <a href="../previous#${pokenexo.id}">${pokenexo.data}<br>#${pokenexo.id}</a>
     <div class="marcadores">${marcadores}</div>
 </div>`;
         document.querySelector("#previous-games").innerHTML += textoBotao;
