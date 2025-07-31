@@ -307,5 +307,30 @@
                 "pokemon": [252, 279, 338, 747]
             }
         ]
+    },
+    {
+        "id": 14,
+        "especial": false,
+        "mensagem": "",
+        "data": "2025/07/31",
+        "ordem-inicial": [11, 4, 0, 9, 12, 6, 1, 14, 5, 3, 8, 13, 10, 2, 7, 15],
+        "respostas": [
+            {
+                "desc": "Second stage early birds",
+                "pokemon": [873, 492, 883, 22]
+            },
+            {
+                "desc": "Evolve by Dusk Stone",
+                "pokemon": [733, 816, 254, 257]
+            },
+            {
+                "desc": "Distinct number of tails",
+                "pokemon": [591, 49, 1177, 1194]
+            },
+            {
+                "desc": "Pokémon with unknown genders",
+                "pokemon": [111, 363, 840, 1198]
+            }
+        ]
     }
 ]
