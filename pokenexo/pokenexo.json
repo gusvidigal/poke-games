@@ -267,11 +267,11 @@
         "respostas": [
             {
                 "desc": "Related to seeds",
-                "pokemon": [246, 501, 1105, 663]
+                "pokemon": [343, 501, 1105, 663]
             },
             {
                 "desc": "Have leaves",
-                "pokemon": [343, 242, 440, 510]
+                "pokemon": [246, 242, 440, 510]
             },
             {
                 "desc": "Pikachu clones",
@@ -280,6 +280,31 @@
             {
                 "desc": "Blue tails",
                 "pokemon": [388, 411, 429, 574]
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "especial": false,
+        "mensagem": "",
+        "data": "2025/07/31",
+        "ordem-inicial": [10, 11, 8, 0, 13, 2, 5, 6, 14, 4, 9, 7, 15, 1, 12, 3],
+        "respostas": [
+            {
+                "desc": "Dualtype Bug Pokémon",
+                "pokemon": [514, 1014, 271, 953]
+            },
+            {
+                "desc": "Have multiple versions",
+                "pokemon": [805, 405, 510, 781]
+            },
+            {
+                "desc": "Gender based evolution",
+                "pokemon": [916, 515, 513, 582]
+            },
+            {
+                "desc": "Green shinies",
+                "pokemon": [252, 279, 338, 747]
             }
         ]
     }
