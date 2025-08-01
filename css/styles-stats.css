@@ -62,22 +62,20 @@ a {
   text-decoration: none;
 }
 
-h2 {
+div.page-content h2 {
   border-width: 0 0 2px 0;
   border-style: solid;
   border-color: #f62c13;
   text-align: center;
   background-color: #f62c13;
 }
-
-h3 {
+div.page-content h3 {
   border-width: 2px 0 2px 0;
   border-style: solid;
   border-color: #f62c13;
   text-align: center;
 }
-
-.stats--section {
+div.page-content .stats--section {
   display: flex;
   row-gap: 0px;
   flex-direction: column;
@@ -89,8 +87,7 @@ h3 {
   width: calc(100% - 4px);
   overflow: hidden;
 }
-
-.stats--main-section {
+div.page-content .stats--main-section {
   display: flex;
   row-gap: 0px;
   flex-direction: column;
@@ -103,18 +100,17 @@ h3 {
   overflow: hidden;
   border-color: #f69e13;
 }
-.stats--main-section h2 {
+div.page-content .stats--main-section h2 {
   background-color: #f69e13;
   border-color: #f69e13;
 }
-
-.stats--sect-content {
+div.page-content .stats--sect-content {
   display: flex;
   row-gap: 5px;
   flex-direction: column;
   padding: 5px 0;
 }
-.stats--sect-content .stats--line {
+div.page-content .stats--sect-content .stats--line {
   display: flex;
   -moz-column-gap: 0px;
        column-gap: 0px;
@@ -122,9 +118,9 @@ h3 {
   justify-content: space-between;
   padding: 0 5px;
 }
-.stats--sect-content .stats--line p.stats--label {
+div.page-content .stats--sect-content .stats--line p.stats--label {
   text-align: left;
 }
-.stats--sect-content .stats--line p.stats--value {
+div.page-content .stats--sect-content .stats--line p.stats--value {
   text-align: right;
 }/*# sourceMappingURL=styles-stats.css.map */

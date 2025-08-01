@@ -5,7 +5,7 @@
 
 //This file overwrites previous ones
 body {
-    div#main-page {
+    div.page--stretch {
         div#games {
             @include m.flex(column, 10px, $justifyContent: center);
             width: 75%;

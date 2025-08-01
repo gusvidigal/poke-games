@@ -63,14 +63,14 @@ a {
   text-decoration: none;
 }
 
-body div#main-page div#games {
+body div.page--stretch div#games {
   display: flex;
   row-gap: 10px;
   flex-direction: column;
   justify-content: center;
   width: 75%;
 }
-body div#main-page div#games a {
+body div.page--stretch div#games a {
   width: 100%;
   aspect-ratio: 4/1;
   border-radius: 10px;
@@ -79,14 +79,14 @@ body div#main-page div#games a {
   text-align: center;
   align-content: center;
 }
-body div#main-page div#previous-games {
+body div.page--stretch div#previous-games {
   display: flex;
   row-gap: 10px;
   flex-direction: column;
   justify-content: center;
   width: 75%;
 }
-body div#main-page div#previous-games div.previous-game-button {
+body div.page--stretch div#previous-games div.previous-game-button {
   display: flex;
   -moz-column-gap: 0px;
        column-gap: 0px;
@@ -98,14 +98,14 @@ body div#main-page div#previous-games div.previous-game-button {
   background-color: #f62c13;
   overflow: hidden;
 }
-body div#main-page div#previous-games div.previous-game-button a {
+body div.page--stretch div#previous-games div.previous-game-button a {
   width: 100%;
   height: 100%;
   text-align: center;
   align-content: center;
   color: white;
 }
-body div#main-page div#previous-games div.previous-game-button div.markers {
+body div.page--stretch div#previous-games div.previous-game-button div.markers {
   display: flex;
   -moz-column-gap: 0px;
        column-gap: 0px;
@@ -118,19 +118,19 @@ body div#main-page div#previous-games div.previous-game-button div.markers {
   width: 28px;
   height: 100%;
 }
-body div#main-page div#previous-games div.previous-game-button div.markers div.marcador {
+body div.page--stretch div#previous-games div.previous-game-button div.markers div.marcador {
   width: 7px;
   height: 100%;
 }
-body div#main-page div#previous-games div.previous-game-button.iniciado {
+body div.page--stretch div#previous-games div.previous-game-button.iniciado {
   background-color: #f69e13;
   color: black;
 }
-body div#main-page div#previous-games div.previous-game-button.concluido {
+body div.page--stretch div#previous-games div.previous-game-button.concluido {
   background-color: #13f62c;
   color: black;
 }
-body div#main-page div#previous-games div.previous-game-button.rainbow {
+body div.page--stretch div#previous-games div.previous-game-button.rainbow {
   animation: rainbow 3s linear 0s infinite normal;
   color: black;
 }

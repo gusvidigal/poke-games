@@ -135,6 +135,17 @@ a {
   font-weight: bold;
 }
 
+.bolder {
+  font-weight: bolder;
+}
+.bolder * {
+  font-weight: bolder;
+}
+
+.red {
+  color: #f62c13;
+}
+
 .invisivel {
   visibility: hidden;
   display: none;
@@ -270,7 +281,7 @@ body div.page-content {
   padding: 10px;
   width: calc(100% - 20px);
 }
-body div.page-content div#main-page {
+body div.page-content div.page--stretch {
   display: flex;
   row-gap: 0px;
   flex-direction: column;
@@ -279,13 +290,13 @@ body div.page-content div#main-page {
   width: 100%;
   max-width: 500px;
 }
-body div.page-content div#main-page * {
+body div.page-content div.page--stretch * {
   text-align: center;
 }
-body div.page-content div#main-page h1 {
+body div.page-content div.page--stretch h1 {
   width: 100%;
 }
-body div.page-content div#main-page p {
+body div.page-content div.page--stretch p {
   width: 100%;
 }
 
@@ -405,7 +416,7 @@ body div.page-content div#main-page p {
 }
 
 @media screen and (orientation: portrait) {
-  body div.page-content div#main-page,
+  body div.page-content div.page--stretch,
   body .popup {
     width: calc(100% - 20px);
     left: 10px;

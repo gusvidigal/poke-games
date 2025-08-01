@@ -3,45 +3,47 @@
 @use 'mixins' as m;
 @use 'functions' as f;
 
-h2 {
-    @include m.border-create(0 0 2px 0, solid, v.$c-red);
-    text-align: center;
-    background-color: v.$c-red;
-}
-
-h3 {
-    @include m.border-create(2px 0, solid, v.$c-red);
-    text-align: center;
-}
-
-.stats--section {
-    @include m.stats--section;
-}
-
-.stats--main-section {
-    @include m.stats--section;
-    border-color: v.$c-yellow;
-
+div.page-content {
     h2 {
-        background-color: v.$c-yellow;
-        border-color: v.$c-yellow;
+        @include m.border-create(0 0 2px 0, solid, v.$c-red);
+        text-align: center;
+        background-color: v.$c-red;
     }
-}
 
-.stats--sect-content {
-    @include m.flex(column, 5px);
-    padding: 5px 0;
+    h3 {
+        @include m.border-create(2px 0, solid, v.$c-red);
+        text-align: center;
+    }
 
-    .stats--line {
-        @include m.flex(row, $justifyContent: space-between);
-        padding: 0 5px;
+    .stats--section {
+        @include m.stats--section;
+    }
 
-        p.stats--label {
-            text-align: left;
+    .stats--main-section {
+        @include m.stats--section;
+        border-color: v.$c-yellow;
+
+        h2 {
+            background-color: v.$c-yellow;
+            border-color: v.$c-yellow;
         }
+    }
 
-        p.stats--value {
-            text-align: right;
+    .stats--sect-content {
+        @include m.flex(column, 5px);
+        padding: 5px 0;
+
+        .stats--line {
+            @include m.flex(row, $justifyContent: space-between);
+            padding: 0 5px;
+
+            p.stats--label {
+                text-align: left;
+            }
+
+            p.stats--value {
+                text-align: right;
+            }
         }
     }
 }

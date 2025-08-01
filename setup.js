@@ -327,7 +327,7 @@ function setupStats() {
     //Cria os dados, caso não tenham sido criadas
     setupLocalStorage()
     //Obtém todos os elementos a serem substituídos
-    document.querySelectorAll("#main-page .stats--value").forEach(elemento => {
+    document.querySelectorAll(".page--stretch .stats--value").forEach(elemento => {
         if (elemento.dataset.json) {
             let caminhos = elemento.dataset.json.split(".");
             //Obtém o valor do atributo

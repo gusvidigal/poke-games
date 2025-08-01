@@ -94,6 +94,14 @@
 	@include m.inheritance(font-weight, bold);
 }
 
+.bolder {
+	@include m.inheritance(font-weight, bolder);
+}
+
+.red {
+	color: v.$c-red;
+}
+
 .invisivel {
 	visibility: hidden;
 	display: none;
@@ -227,7 +235,7 @@ body {
 		padding: 10px;
 		width: calc(100% - 20px);
 
-		div#main-page {
+		div.page--stretch {
 			@include m.flex(column, $alignItems: center);
 			@include m.inheritance(text-align, center);
 			width: 100%;
@@ -340,7 +348,7 @@ body {
 @media screen and (orientation: portrait) {
 	body {
 
-		div.page-content div#main-page,
+		div.page-content div.page--stretch,
 		.popup {
 			width: calc(100% - 20px);
 			left: 10px;

@@ -3,35 +3,10 @@
 @use 'mixins' as m;
 @use 'functions' as f;
 
-//This file overwrites previous ones
-body {
-    div.page-content div#about {
-        @include m.inheritance(text-align, center);
+div.page-content {
+    @include m.inheritance(text-align, center);
 
-        h1 {
-            text-decoration: underline v.$c-red;
-        }
-
-        ul {
-            list-style-type: none;
-
-            li {
-
-                .icone,
-                .data {
-
-                    display: block;
-                    width: 100%;
-                }
-
-                .pokebola {
-                    color: v.$c-red;
-                }
-
-                .data {
-                    font-weight: bolder;
-                }
-            }
-        }
+    h1 {
+        text-decoration: underline v.$c-red;
     }
 }
