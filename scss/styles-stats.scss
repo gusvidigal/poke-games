@@ -14,7 +14,7 @@ body {
             width: calc(100% - 4px);
             overflow: hidden;
 
-            .main-section {
+            &.main-section {
                 border-color: v.$c-yellow;
 
                 h2 {
@@ -40,11 +40,11 @@ body {
                     p {
                         padding: 0;
 
-                        .label {
+                        &.label {
                             text-align: left;
                         }
 
-                        .value {
+                        &.value {
                             text-align: right;
                         }
                     }

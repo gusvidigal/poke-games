@@ -122,15 +122,15 @@ body div#main-page div#previous-games div.previous-game-button div.markers div.m
   width: 7px;
   height: 100%;
 }
-body div#main-page div#previous-games div.previous-game-button .iniciado {
+body div#main-page div#previous-games div.previous-game-button.iniciado {
   background-color: #f69e13;
   color: black;
 }
-body div#main-page div#previous-games div.previous-game-button .concluido {
+body div#main-page div#previous-games div.previous-game-button.concluido {
   background-color: #13f62c;
   color: black;
 }
-body div#main-page div#previous-games div.previous-game-button .rainbow {
+body div#main-page div#previous-games div.previous-game-button.rainbow {
   animation: rainbow 3s linear 0s infinite normal;
   color: black;
 }
@@ -195,11 +195,11 @@ body div#board-page div.ar1-1 div.tabuleiro {
   grid-gap: 2px;
   width: 100%;
 }
-body div#board-page div.ar1-1 div.tabuleiro #pokenexo {
+body div#board-page div.ar1-1 div.tabuleiro#pokenexo {
   grid-template-rows: repeat(4, minmax(0, 1fr));
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
-body div#board-page div.ar1-1 div.tabuleiro #pokenexo div.celula p.nome-pokemon {
+body div#board-page div.ar1-1 div.tabuleiro#pokenexo div.celula p.nome-pokemon {
   font-size: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
   line-height: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
 }
@@ -272,16 +272,16 @@ body div#board-page div.ar1-1 div.tabuleiro div.categoria p.nome-categoria {
 body div#board-page div.ar1-1 div.tabuleiro div.categoria p.pokemon-categoria {
   font-size: clamp(0.9rem, 0.2rem + 3.11 * var(--vw, 1vw), 1.25rem);
 }
-body div#board-page div.ar1-1 div.tabuleiro div.categoria .categoria-1 {
+body div#board-page div.ar1-1 div.tabuleiro div.categoria.categoria-1 {
   grid-row-start: 1;
 }
-body div#board-page div.ar1-1 div.tabuleiro div.categoria .categoria-2 {
+body div#board-page div.ar1-1 div.tabuleiro div.categoria.categoria-2 {
   grid-row-start: 2;
 }
-body div#board-page div.ar1-1 div.tabuleiro div.categoria .categoria-3 {
+body div#board-page div.ar1-1 div.tabuleiro div.categoria.categoria-3 {
   grid-row-start: 3;
 }
-body div#board-page div.ar1-1 div.tabuleiro div.categoria .categoria-4 {
+body div#board-page div.ar1-1 div.tabuleiro div.categoria.categoria-4 {
   grid-row-start: 4;
 }
 body div.popup#popup_pokenexo {

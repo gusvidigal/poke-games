@@ -55,17 +55,17 @@ body {
 					}
 				}
 
-				.iniciado {
+				&.iniciado {
 					background-color: v.$c-yellow;
 					color: black;
 				}
 
-				.concluido {
+				&.concluido {
 					background-color: v.$c-green;
 					color: black;
 				}
 
-				.rainbow {
+				&.rainbow {
 					animation: rainbow 3s linear 0s infinite normal;
 					color: black;
 				}
@@ -128,7 +128,7 @@ body {
 
 				width: calc(100%);
 
-				#pokenexo {
+				&#pokenexo {
 					grid-template-rows: repeat(4, minmax(0, 1fr));
 					grid-template-columns: repeat(4, minmax(0, 1fr));
 
@@ -206,19 +206,19 @@ body {
 						font-size: clamp(0.9rem, 0.20rem + 3.11 * var(--vw, 1vw), 1.25rem);
 					}
 
-					.categoria-1 {
+					&.categoria-1 {
 						grid-row-start: 1;
 					}
 
-					.categoria-2 {
+					&.categoria-2 {
 						grid-row-start: 2;
 					}
 
-					.categoria-3 {
+					&.categoria-3 {
 						grid-row-start: 3;
 					}
 
-					.categoria-4 {
+					&.categoria-4 {
 						grid-row-start: 4;
 					}
 				}

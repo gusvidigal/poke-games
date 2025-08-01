@@ -74,10 +74,10 @@ body div#page-content div#main-page .section {
   width: calc(100% - 4px);
   overflow: hidden;
 }
-body div#page-content div#main-page .section .main-section {
+body div#page-content div#main-page .section.main-section {
   border-color: #f69e13;
 }
-body div#page-content div#main-page .section .main-section h2 {
+body div#page-content div#main-page .section.main-section h2 {
   background-color: #f69e13;
   border-color: #f69e13;
 }
@@ -105,10 +105,10 @@ body div#page-content div#main-page .section .content-section .line {
 body div#page-content div#main-page .section .content-section .line p {
   padding: 0;
 }
-body div#page-content div#main-page .section .content-section .line p .label {
+body div#page-content div#main-page .section .content-section .line p.label {
   text-align: left;
 }
-body div#page-content div#main-page .section .content-section .line p .value {
+body div#page-content div#main-page .section .content-section .line p.value {
   text-align: right;
 }
 body div#page-content div#main-page .section .sub-section h3 {

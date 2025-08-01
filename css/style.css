@@ -232,11 +232,11 @@ body nav#nav-menu div.nav-item a {
   text-align: center;
   align-content: center;
 }
-body nav#nav-menu div.nav-item .ativo {
+body nav#nav-menu div.nav-item.ativo {
   background-color: white;
   border-color: black;
 }
-body nav#nav-menu div.nav-item .ativo a {
+body nav#nav-menu div.nav-item.ativo a {
   color: black;
 }
 body nav#main-menu {

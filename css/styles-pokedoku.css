@@ -89,44 +89,41 @@ body div#board-page div.tabuleiro {
   padding: 0 0 20px 0;
   aspect-ratio: 1/1;
 }
-body div#board-page div.tabuleiro #pokedoku-2x2 {
+body div#board-page div.tabuleiro#pokedoku-2x2 {
   max-width: 600px;
   grid-template-rows: repeat(3, minmax(0, 1fr));
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-body div#board-page div.tabuleiro #pokedoku-2x2 div.celula.celula-header p {
+body div#board-page div.tabuleiro#pokedoku-2x2 div.celula.celula-header p {
   font-size: clamp(0.85rem, 0.2rem + 2.9 * var(--vw, 1vw), 1.5rem);
 }
-body div#board-page div.tabuleiro #pokedoku-2x2 div.celula.celula-tentativa p.nome-pokemon {
+body div#board-page div.tabuleiro#pokedoku-2x2 div.celula.celula-tentativa p.nome-pokemon {
   font-size: clamp(0.54rem, -0.1rem + 2.83 * var(--vw, 1vw), 1rem);
   line-height: clamp(0.54rem, -0.1rem + 2.83 * var(--vw, 1vw), 1rem);
 }
-body div#board-page div.tabuleiro #pokedoku-3x3,
-body div#board-page div.tabuleiro #pokedoku-single {
+body div#board-page div.tabuleiro#pokedoku-3x3, body div#board-page div.tabuleiro#pokedoku-single {
   max-width: 700px;
   grid-template-rows: repeat(4, minmax(0, 1fr));
   grid-template-columns: repeat(4, minmax(0, 1fr));
   /* 0.65rem = 360px MINIMO 1.10rem = 720px IDEAL */
 }
-body div#board-page div.tabuleiro #pokedoku-3x3 div.celula.celula-header p,
-body div#board-page div.tabuleiro #pokedoku-single div.celula.celula-header p {
+body div#board-page div.tabuleiro#pokedoku-3x3 div.celula.celula-header p, body div#board-page div.tabuleiro#pokedoku-single div.celula.celula-header p {
   font-size: clamp(0.65rem, 0.2rem + 2 * var(--vw, 1vw), 1.5rem);
 }
-body div#board-page div.tabuleiro #pokedoku-3x3 div.celula.celula-tentativa p.nome-pokemon,
-body div#board-page div.tabuleiro #pokedoku-single div.celula.celula-tentativa p.nome-pokemon {
+body div#board-page div.tabuleiro#pokedoku-3x3 div.celula.celula-tentativa p.nome-pokemon, body div#board-page div.tabuleiro#pokedoku-single div.celula.celula-tentativa p.nome-pokemon {
   font-size: clamp(0.4rem, 0.18rem + 0.98 * var(--vw, 1vw), 0.65rem);
   line-height: clamp(0.4rem, 0.18rem + 0.98 * var(--vw, 1vw), 0.65rem);
 }
-body div#board-page div.tabuleiro #pokedoku-4x4 {
+body div#board-page div.tabuleiro#pokedoku-4x4 {
   max-width: 750px;
   grid-template-rows: repeat(5, minmax(0, 1fr));
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
-body div#board-page div.tabuleiro #pokedoku-4x4 div.celula.celula-header p {
+body div#board-page div.tabuleiro#pokedoku-4x4 div.celula.celula-header p {
   /* 0.5rem = 360px MINIMO; 1.75rem = 1440px IDEAL */
   font-size: clamp(0.5rem, 0.08rem + 1.8 * var(--vw, 1vw), 1.2rem);
 }
-body div#board-page div.tabuleiro #pokedoku-4x4 div.celula.celula-tentativa p.nome-pokemon {
+body div#board-page div.tabuleiro#pokedoku-4x4 div.celula.celula-tentativa p.nome-pokemon {
   font-size: clamp(0.3rem, 0.05rem + 1.09 * var(--vw, 1vw), 0.58rem);
   line-height: clamp(0.3rem, 0.05rem + 1.09 * var(--vw, 1vw), 0.58rem);
 }
@@ -140,47 +137,47 @@ body div#board-page div.tabuleiro div.celula {
   height: calc(100% - 2px);
   width: calc(100% - 2px);
 }
-body div#board-page div.tabuleiro div.celula .celula-header {
+body div#board-page div.tabuleiro div.celula.celula-header {
   background-color: #f62c13;
   /*Ancorado em width do div pai: 250px*/
 }
-body div#board-page div.tabuleiro div.celula .celula-header img,
-body div#board-page div.tabuleiro div.celula .celula-header p {
+body div#board-page div.tabuleiro div.celula.celula-header img,
+body div#board-page div.tabuleiro div.celula.celula-header p {
   width: 92%;
   padding: 4%;
 }
-body div#board-page div.tabuleiro div.celula .celula-header img {
+body div#board-page div.tabuleiro div.celula.celula-header img {
   max-width: 200px;
   max-height: 40px;
 }
-body div#board-page div.tabuleiro div.celula .celula-header p {
+body div#board-page div.tabuleiro div.celula.celula-header p {
   line-height: 30px;
   height: 60px;
   text-align: center;
   align-content: center;
   overflow: hidden;
 }
-body div#board-page div.tabuleiro div.celula .celula-tentativa:not(.inativo) :hover {
+body div#board-page div.tabuleiro div.celula.celula-tentativa:not(.inativo) :hover {
   cursor: pointer;
 }
-body div#board-page div.tabuleiro div.celula .celula-tentativa {
+body div#board-page div.tabuleiro div.celula.celula-tentativa {
   position: relative;
 }
-body div#board-page div.tabuleiro div.celula .celula-tentativa div.container-imagem-poke {
+body div#board-page div.tabuleiro div.celula.celula-tentativa div.container-imagem-poke {
   /*Menos 10 da margem*/
   width: calc(100% - 10px);
   /*Menos 10 da margem*/
   height: calc(75% - 10px);
   margin: 5px;
 }
-body div#board-page div.tabuleiro div.celula .celula-tentativa div.container-imagem-poke img.imagem-poke-celula {
+body div#board-page div.tabuleiro div.celula.celula-tentativa div.container-imagem-poke img.imagem-poke-celula {
   width: 100%;
   height: 100%;
   display: block;
   -o-object-fit: contain;
      object-fit: contain;
 }
-body div#board-page div.tabuleiro div.celula .celula-tentativa p.nome-pokemon {
+body div#board-page div.tabuleiro div.celula.celula-tentativa p.nome-pokemon {
   background-color: black;
   color: white;
   height: 25%;
@@ -190,14 +187,14 @@ body div#board-page div.tabuleiro div.celula .celula-tentativa p.nome-pokemon {
   align-content: center;
   overflow: hidden;
 }
-body div#board-page div.tabuleiro div.celula .celula-tentativa p.nome-pokemon .rainbow {
+body div#board-page div.tabuleiro div.celula.celula-tentativa p.nome-pokemon.rainbow {
   color: black;
   animation: rainbow 3s linear 0s infinite normal;
 }
-body div#board-page div.tabuleiro div.celula .celula-tentativa p.nome-pokemon .erro {
+body div#board-page div.tabuleiro div.celula.celula-tentativa p.nome-pokemon.erro {
   color: #f62c13;
 }
-body div#board-page div.tabuleiro div.celula .celula-tentativa div.dificuldade {
+body div#board-page div.tabuleiro div.celula.celula-tentativa div.dificuldade {
   position: absolute;
   top: 0;
   right: 0;
