@@ -4,8 +4,8 @@
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Pokédoku 2x2</title>
-    <link rel="stylesheet" href="../../css/styles-pokedoku.css">
     <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/styles-pokedoku.css">
 </head>
 <script src="../../dados.js"></script>
 <script src="../../funcoes.js"></script>
@@ -21,17 +21,17 @@
         <div class="nav-item bold"><a href="../4x4/">4X4</a></div>
         <div class="nav-item bold"><a href="../single/">SINGLE</a></div>
     </nav>
-    <div id="page-content">
+    <div class="page-content">
         <div id="board-page">
             <div id="pokedoku-2x2" class="tabuleiro">
                 <div class="celula"></div>
-                <div class="celula celula-header bold C1">
+                <div class="pd--header-cell bold C1">
                 </div>
-                <div class="celula celula-header bold C2">
+                <div class="pd--header-cell bold C2">
                 </div>
-                <div class="celula celula-header bold R1">
+                <div class="pd--header-cell bold R1">
                 </div>
-                <div class="D11 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D11')">
+                <div class="D11 pd--try-cell" onclick="mostrarPopupDePesquisa('D11')">
                     <div class="container-imagem-poke">
                         <img class="imagem-poke-celula invisivel" src="">
                         <span class="ribbon-tentativas invisivel bold"></span>
@@ -39,7 +39,7 @@
                     <p class="nome-pokemon bold"></p>
                     <div class="dificuldade bold invisivel"></div>
                 </div>
-                <div class="D12 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D12')">
+                <div class="D12 pd--try-cell" onclick="mostrarPopupDePesquisa('D12')">
                     <div class="container-imagem-poke">
                         <img class="imagem-poke-celula invisivel" src="">
                         <span class="ribbon-tentativas invisivel bold"></span>
@@ -47,9 +47,9 @@
                     <p class="nome-pokemon bold"></p>
                     <div class="dificuldade bold invisivel"></div>
                 </div>
-                <div class="celula celula-header bold R2">
+                <div class="pd--header-cell bold R2">
                 </div>
-                <div class="D21 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D21')">
+                <div class="D21 pd--try-cell" onclick="mostrarPopupDePesquisa('D21')">
                     <div class="container-imagem-poke">
                         <img class="imagem-poke-celula invisivel" src="">
                         <span class="ribbon-tentativas invisivel bold"></span>
@@ -57,7 +57,7 @@
                     <p class="nome-pokemon bold"></p>
                     <div class="dificuldade bold invisivel"></div>
                 </div>
-                <div class="D22 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D22')">
+                <div class="D22 pd--try-cell" onclick="mostrarPopupDePesquisa('D22')">
                     <div class="container-imagem-poke">
                         <img class="imagem-poke-celula invisivel" src="">
                         <span class="ribbon-tentativas invisivel bold"></span>

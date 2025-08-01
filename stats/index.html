@@ -4,8 +4,8 @@
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Pokégames</title>
-    <link rel="stylesheet" href="../css/styles-stats.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styles-stats.css">
 </head>
 <script src="../dados.js"></script>
 <script src="../funcoes.js"></script>
@@ -18,111 +18,111 @@
         <div class="nav-item bold ativo"><a href="../stats/">Stats</a></div>
         <div class="nav-item bold"><a href="../about/">About</a></div>
     </nav>
-    <div id="page-content">
+    <div class="page-content">
         <div id="main-page">
             <h1>Statistics</h1>
-            <div class="section main-section" id="stats-gerais">
+            <div class="stats--main-section">
                 <h2>General</h2>
-                <div class="content-section">
-                    <div class="line">
-                        <p class="label bold">Started Games</p>
-                        <p class="value" data-json="jogos-gerados.totais"></p>
+                <div class="stats--sect-content">
+                    <div class="stats--line">
+                        <p class="stats--label bold">Started Games</p>
+                        <p class="stats--value" data-json="jogos-gerados.totais"></p>
                     </div>
-                    <div class="line">
-                        <p class="label bold">Finished Games</p>
-                        <p class="value" data-json="jogos-concluidos.totais"></p>
+                    <div class="stats--line">
+                        <p class="stats--label bold">Finished Games</p>
+                        <p class="stats--value" data-json="jogos-concluidos.totais"></p>
                     </div>
-                    <div class="line">
-                        <p class="label bold">Total Attempts</p>
-                        <p class="value" data-json="tentativas.totais"></p>
+                    <div class="stats--line">
+                        <p class="stats--label bold">Total Attempts</p>
+                        <p class="stats--value" data-json="tentativas.totais"></p>
                     </div>
                 </div>
             </div>
-            <div class="section" id="stats-pokedoku">
+            <div class="stats--section">
                 <h2>Pokédoku</h2>
-                <div class="sub-section">
+                <div>
                     <h3>2x2</h3>
-                    <div class="content-section">
-                        <div class="line">
-                            <p class="label bold">Started Games</p>
-                            <p class="value" data-json="jogos-gerados.pokedoku.pokedoku-2x2"></p>
+                    <div class="stats--sect-content">
+                        <div class="stats--line">
+                            <p class="stats--label bold">Started Games</p>
+                            <p class="stats--value" data-json="jogos-gerados.pokedoku.pokedoku-2x2"></p>
                         </div>
-                        <div class="line">
-                            <p class="label bold">Finished Games</p>
-                            <p class="value" data-json="jogos-concluidos.pokedoku.pokedoku-2x2"></p>
+                        <div class="stats--line">
+                            <p class="stats--label bold">Finished Games</p>
+                            <p class="stats--value" data-json="jogos-concluidos.pokedoku.pokedoku-2x2"></p>
                         </div>
-                        <div class="line">
-                            <p class="label bold">Total Attempts</p>
-                            <p class="value" data-json="tentativas.pokedoku.pokedoku-2x2"></p>
+                        <div class="stats--line">
+                            <p class="stats--label bold">Total Attempts</p>
+                            <p class="stats--value" data-json="tentativas.pokedoku.pokedoku-2x2"></p>
                         </div>
                     </div>
                 </div>
-                <div class="sub-section">
+                <div>
                     <h3>3x3</h3>
-                    <div class="content-section">
-                        <div class="line">
-                            <p class="label bold">Started Games</p>
-                            <p class="value" data-json="jogos-gerados.pokedoku.pokedoku-3x3"></p>
+                    <div class="stats--sect-content">
+                        <div class="stats--line">
+                            <p class="stats--label bold">Started Games</p>
+                            <p class="stats--value" data-json="jogos-gerados.pokedoku.pokedoku-3x3"></p>
                         </div>
-                        <div class="line">
-                            <p class="label bold">Finished Games</p>
-                            <p class="value" data-json="jogos-concluidos.pokedoku.pokedoku-3x3"></p>
+                        <div class="stats--line">
+                            <p class="stats--label bold">Finished Games</p>
+                            <p class="stats--value" data-json="jogos-concluidos.pokedoku.pokedoku-3x3"></p>
                         </div>
-                        <div class="line">
-                            <p class="label bold">Total Attempts</p>
-                            <p class="value" data-json="tentativas.pokedoku.pokedoku-3x3"></p>
+                        <div class="stats--line">
+                            <p class="stats--label bold">Total Attempts</p>
+                            <p class="stats--value" data-json="tentativas.pokedoku.pokedoku-3x3"></p>
                         </div>
                     </div>
                 </div>
-                <div class="sub-section">
+                <div>
                     <h3>4x4</h3>
-                    <div class="content-section">
-                        <div class="line">
-                            <p class="label bold">Started Games</p>
-                            <p class="value" data-json="jogos-gerados.pokedoku.pokedoku-4x4"></p>
+                    <div class="stats--sect-content">
+                        <div class="stats--line">
+                            <p class="stats--label bold">Started Games</p>
+                            <p class="stats--value" data-json="jogos-gerados.pokedoku.pokedoku-4x4"></p>
                         </div>
-                        <div class="line">
-                            <p class="label bold">Finished Games</p>
-                            <p class="value" data-json="jogos-concluidos.pokedoku.pokedoku-4x4"></p>
+                        <div class="stats--line">
+                            <p class="stats--label bold">Finished Games</p>
+                            <p class="stats--value" data-json="jogos-concluidos.pokedoku.pokedoku-4x4"></p>
                         </div>
-                        <div class="line">
-                            <p class="label bold">Total Attempts</p>
-                            <p class="value" data-json="tentativas.pokedoku.pokedoku-4x4"></p>
+                        <div class="stats--line">
+                            <p class="stats--label bold">Total Attempts</p>
+                            <p class="stats--value" data-json="tentativas.pokedoku.pokedoku-4x4"></p>
                         </div>
                     </div>
                 </div>
-                <div class="sub-section">
+                <div>
                     <h3>Single</h3>
-                    <div class="content-section">
-                        <div class="line">
-                            <p class="label bold">Started Games</p>
-                            <p class="value" data-json="jogos-gerados.pokedoku.pokedoku-single"></p>
+                    <div class="stats--sect-content">
+                        <div class="stats--line">
+                            <p class="stats--label bold">Started Games</p>
+                            <p class="stats--value" data-json="jogos-gerados.pokedoku.pokedoku-single"></p>
                         </div>
-                        <div class="line">
-                            <p class="label bold">Finished Games</p>
-                            <p class="value" data-json="jogos-concluidos.pokedoku.pokedoku-single"></p>
+                        <div class="stats--line">
+                            <p class="stats--label bold">Finished Games</p>
+                            <p class="stats--value" data-json="jogos-concluidos.pokedoku.pokedoku-single"></p>
                         </div>
-                        <div class="line">
-                            <p class="label bold">Total Attempts</p>
-                            <p class="value" data-json="tentativas.pokedoku.pokedoku-single"></p>
+                        <div class="stats--line">
+                            <p class="stats--label bold">Total Attempts</p>
+                            <p class="stats--value" data-json="tentativas.pokedoku.pokedoku-single"></p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="section" id="stats-pokenexo">
+            <div class="stats--section">
                 <h2>Pokénections</h2>
-                <div class="content-section">
-                    <div class="line">
-                        <p class="label bold">Finished Games</p>
-                        <p class="value" data-json="jogos-concluidos.pokenexo"></p>
+                <div class="stats--sect-content">
+                    <div class="stats--line">
+                        <p class="stats--label bold">Finished Games</p>
+                        <p class="stats--value" data-json="jogos-concluidos.pokenexo"></p>
                     </div>
-                    <div class="line">
-                        <p class="label bold">Total Attempts</p>
-                        <p class="value" data-json="tentativas.pokenexo"></p>
+                    <div class="stats--line">
+                        <p class="stats--label bold">Total Attempts</p>
+                        <p class="stats--value" data-json="tentativas.pokenexo"></p>
                     </div>
-                    <div class="line">
-                        <p class="label bold">First-Tries</p>
-                        <p class="value" data-json="pokenexo.de-primeira"></p>
+                    <div class="stats--line">
+                        <p class="stats--label bold">First-Tries</p>
+                        <p class="stats--value" data-json="pokenexo.de-primeira"></p>
                     </div>
                 </div>
             </div>

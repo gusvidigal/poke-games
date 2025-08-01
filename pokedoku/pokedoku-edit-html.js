@@ -155,7 +155,7 @@ function removerRespostas() {
     setarAtributoEmHTML(`#${modoDeJogoPokedoku} img.imagem-poke-celula`, "src", "", true);
     addClasseAElemento(`#${modoDeJogoPokedoku} img.imagem-poke-celula`, "invisivel", true);
     //Ativa todas as células novamente
-    delClasseDeElemento(`#${modoDeJogoPokedoku} div.celula-tentativa`, "inativo", true);
+    delClasseDeElemento(`#${modoDeJogoPokedoku} .pd--try-cell`, "inativo", true);
     //Remove ribbons de vitória
     //alternarRibbonsDeVitoria(false);
 
@@ -190,9 +190,9 @@ function limparTabuleiro() {
     setarAtributoEmHTML(`#${modoDeJogoPokedoku} img.imagem-poke-celula`, "src", "", true);
     addClasseAElemento(`#${modoDeJogoPokedoku} img.imagem-poke-celula`, "invisivel", true);
     //Ativa todas as células novamente
-    delClasseDeElemento(`#${modoDeJogoPokedoku} div.celula-tentativa`, "inativo", true);
+    delClasseDeElemento(`#${modoDeJogoPokedoku} .pd--try-cell`, "inativo", true);
     //Limpa os headers
-    setarAtributoEmHTML(`#${modoDeJogoPokedoku} .celula-header`, "innerHTML", "", true);
+    setarAtributoEmHTML(`#${modoDeJogoPokedoku} .pd--header-cell`, "innerHTML", "", true);
     //Remove as dificuldades
     alternarDificuldade(false);
     //Remove ribbons de vitória

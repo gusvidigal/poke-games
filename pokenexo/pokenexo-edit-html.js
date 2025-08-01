@@ -2,15 +2,15 @@
 function alternarCelula(idDaCelula) {
     let celula = document.querySelector(`.${idDaCelula}`);
     //Se já estiver sido selecionada, remove a seleção
-    if (celula.classList.contains("celula-selecionada")) {
-        celula.classList.remove("celula-selecionada");
+    if (celula.classList.contains("pn--selected-cell")) {
+        celula.classList.remove("pn--selected-cell");
         //Remove da lista de seleção
         let indice = pokenexoData(pokenexo.id).selecionados.indexOf(Number(celula.dataset.poke));
         let data = gameData("pokenexo");
         data.jogos[String(pokenexo.id)].selecionados.splice(indice, 1);
         setGameData("pokenexo", data);
     } else {
-        celula.classList.add("celula-selecionada");
+        celula.classList.add("pn--selected-cell");
         //Adiciona na lista de seleção
         let data = gameData("pokenexo");
         data.jogos[String(pokenexo.id)].selecionados.push(Number(celula.dataset.poke));
@@ -25,7 +25,7 @@ function alternarCelula(idDaCelula) {
 //Limpa o tabuleiro
 function removerCelulasSelecionadas() {
     //Para cada célula, remove a seleção
-    delClasseDeElemento("#pokenexo .celula", "celula-selecionada", true);
+    delClasseDeElemento("#pokenexo .celula", "pn--selected-cell", true);
 }
 //Atualiza o número de tentativas
 function atualizarTentativasPokenexo(numero) {
@@ -97,13 +97,13 @@ function inserirCategoriaNoTabuleiro(indiceDaCategoria) {
 }
 //Alterna o estado do popup do pokénexo
 function alternarPopupPokenexo() {
-    if (elementoTemClasse("#popup_pokenexo", "invisivel")) {
+    if (elementoTemClasse(".special-message-popup", "invisivel")) {
         //Ativa o background e o popup
         delClasseDeElemento("#background", "invisivel");
-        delClasseDeElemento("#popup_pokenexo", "invisivel");
+        delClasseDeElemento(".special-message-popup", "invisivel");
     } else {
         //Ativa o background e o popup
         addClasseAElemento("#background", "invisivel");
-        addClasseAElemento("#popup_pokenexo", "invisivel");
+        addClasseAElemento(".special-message-popup", "invisivel");
     }
 }

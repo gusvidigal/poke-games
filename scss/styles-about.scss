@@ -5,7 +5,7 @@
 
 //This file overwrites previous ones
 body {
-    div#page-content div#about {
+    div.page-content div#about {
         @include m.inheritance(text-align, center);
 
         h1 {
@@ -17,18 +17,18 @@ body {
 
             li {
 
-                span.icone,
-                span.data {
+                .icone,
+                .data {
 
                     display: block;
                     width: 100%;
                 }
 
-                span.pokebola {
+                .pokebola {
                     color: v.$c-red;
                 }
 
-                span.data {
+                .data {
                     font-weight: bolder;
                 }
             }

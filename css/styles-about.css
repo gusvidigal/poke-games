@@ -62,27 +62,27 @@ a {
   text-decoration: none;
 }
 
-body div#page-content div#about {
+body div.page-content div#about {
   text-align: center;
 }
-body div#page-content div#about * {
+body div.page-content div#about * {
   text-align: center;
 }
-body div#page-content div#about h1 {
+body div.page-content div#about h1 {
   -webkit-text-decoration: underline #f62c13;
           text-decoration: underline #f62c13;
 }
-body div#page-content div#about ul {
+body div.page-content div#about ul {
   list-style-type: none;
 }
-body div#page-content div#about ul li span.icone,
-body div#page-content div#about ul li span.data {
+body div.page-content div#about ul li .icone,
+body div.page-content div#about ul li .data {
   display: block;
   width: 100%;
 }
-body div#page-content div#about ul li span.pokebola {
+body div.page-content div#about ul li .pokebola {
   color: #f62c13;
 }
-body div#page-content div#about ul li span.data {
+body div.page-content div#about ul li .data {
   font-weight: bolder;
 }/*# sourceMappingURL=styles-about.css.map */

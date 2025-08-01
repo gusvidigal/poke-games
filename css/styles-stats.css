@@ -62,7 +62,22 @@ a {
   text-decoration: none;
 }
 
-body div#page-content div#main-page .section {
+h2 {
+  border-width: 0 0 2px 0;
+  border-style: solid;
+  border-color: #f62c13;
+  text-align: center;
+  background-color: #f62c13;
+}
+
+h3 {
+  border-width: 2px 0 2px 0;
+  border-style: solid;
+  border-color: #f62c13;
+  text-align: center;
+}
+
+.stats--section {
   display: flex;
   row-gap: 0px;
   flex-direction: column;
@@ -74,27 +89,32 @@ body div#page-content div#main-page .section {
   width: calc(100% - 4px);
   overflow: hidden;
 }
-body div#page-content div#main-page .section.main-section {
+
+.stats--main-section {
+  display: flex;
+  row-gap: 0px;
+  flex-direction: column;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #f62c13;
+  border-radius: 10px;
+  margin: 5px 0;
+  width: calc(100% - 4px);
+  overflow: hidden;
   border-color: #f69e13;
 }
-body div#page-content div#main-page .section.main-section h2 {
+.stats--main-section h2 {
   background-color: #f69e13;
   border-color: #f69e13;
 }
-body div#page-content div#main-page .section h2 {
-  border-width: 0 0 2px 0;
-  border-style: solid;
-  border-color: #f62c13;
-  text-align: center;
-  background-color: #f62c13;
-}
-body div#page-content div#main-page .section .content-section {
+
+.stats--sect-content {
   display: flex;
   row-gap: 5px;
   flex-direction: column;
   padding: 5px 0;
 }
-body div#page-content div#main-page .section .content-section .line {
+.stats--sect-content .stats--line {
   display: flex;
   -moz-column-gap: 0px;
        column-gap: 0px;
@@ -102,18 +122,9 @@ body div#page-content div#main-page .section .content-section .line {
   justify-content: space-between;
   padding: 0 5px;
 }
-body div#page-content div#main-page .section .content-section .line p {
-  padding: 0;
-}
-body div#page-content div#main-page .section .content-section .line p.label {
+.stats--sect-content .stats--line p.stats--label {
   text-align: left;
 }
-body div#page-content div#main-page .section .content-section .line p.value {
+.stats--sect-content .stats--line p.stats--value {
   text-align: right;
-}
-body div#page-content div#main-page .section .sub-section h3 {
-  border-width: 2px 0 2px 0;
-  border-style: solid;
-  border-color: #f62c13;
-  text-align: center;
 }/*# sourceMappingURL=styles-stats.css.map */

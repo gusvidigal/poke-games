@@ -187,23 +187,20 @@ body div#board-page div#menu div#info {
 body div#board-page div#menu div#info:hover {
   cursor: pointer;
 }
-body div#board-page div.ar1-1 {
-  width: 100%;
-}
-body div#board-page div.ar1-1 div.tabuleiro {
+body div#board-page div.tabuleiro {
   display: grid;
   grid-gap: 2px;
   width: 100%;
 }
-body div#board-page div.ar1-1 div.tabuleiro#pokenexo {
+body div#board-page div.tabuleiro#pokenexo {
   grid-template-rows: repeat(4, minmax(0, 1fr));
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
-body div#board-page div.ar1-1 div.tabuleiro#pokenexo div.celula p.nome-pokemon {
+body div#board-page div.tabuleiro#pokenexo div.celula p.nome-pokemon {
   font-size: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
   line-height: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
 }
-body div#board-page div.ar1-1 div.tabuleiro div.celula {
+body div#board-page div.tabuleiro .celula {
   display: flex;
   row-gap: 0px;
   flex-direction: column;
@@ -219,24 +216,24 @@ body div#board-page div.ar1-1 div.tabuleiro div.celula {
   height: calc(100% - 4px);
   width: calc(100% - 4px);
 }
-body div#board-page div.ar1-1 div.tabuleiro div.celula:hover {
+body div#board-page div.tabuleiro .celula:hover {
   cursor: pointer;
 }
-body div#board-page div.ar1-1 div.tabuleiro div.celula div.container-imagem-poke {
+body div#board-page div.tabuleiro .celula div.container-imagem-poke {
   /*Menos 10 do padding*/
   width: calc(100% - 10px);
   /*Menos 10 do padding*/
   height: calc(75% - 10px);
   padding: 5px;
 }
-body div#board-page div.ar1-1 div.tabuleiro div.celula div.container-imagem-poke img.imagem-poke-celula {
+body div#board-page div.tabuleiro .celula div.container-imagem-poke img.imagem-poke-celula {
   width: 100%;
   height: 100%;
   display: block;
   -o-object-fit: contain;
      object-fit: contain;
 }
-body div#board-page div.ar1-1 div.tabuleiro div.celula p.nome-pokemon {
+body div#board-page div.tabuleiro .celula p.nome-pokemon {
   background-color: #f62c13;
   color: white;
   flex-grow: 1;
@@ -245,14 +242,31 @@ body div#board-page div.ar1-1 div.tabuleiro div.celula p.nome-pokemon {
   align-content: center;
   overflow: hidden;
 }
-body div#board-page div.ar1-1 div.tabuleiro div.celula.celula-selecionada {
+body div#board-page div.tabuleiro .pn--selected-cell {
+  display: flex;
+  row-gap: 0px;
+  flex-direction: column;
+  align-items: center;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #f62c13;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  /*CÉLULAS*/
+  height: calc(100% - 4px);
+  width: calc(100% - 4px);
   border-color: #69d2ff;
 }
-body div#board-page div.ar1-1 div.tabuleiro div.celula.celula-selecionada p.nome-pokemon {
+body div#board-page div.tabuleiro .pn--selected-cell:hover {
+  cursor: pointer;
+}
+body div#board-page div.tabuleiro .pn--selected-cell p.nome-pokemon {
   color: black;
   background-color: #69d2ff;
 }
-body div#board-page div.ar1-1 div.tabuleiro div.categoria {
+body div#board-page div.tabuleiro div.categoria {
   display: flex;
   row-gap: 5px;
   flex-direction: column;
@@ -261,40 +275,33 @@ body div#board-page div.ar1-1 div.tabuleiro div.categoria {
   grid-column-end: span 4;
   padding: 10px;
 }
-body div#board-page div.ar1-1 div.tabuleiro div.categoria p {
+body div#board-page div.tabuleiro div.categoria p {
   color: white;
   align-content: center;
   overflow: hidden;
 }
-body div#board-page div.ar1-1 div.tabuleiro div.categoria p.nome-categoria {
+body div#board-page div.tabuleiro div.categoria p.nome-categoria {
   font-size: clamp(0.75rem, 0.25rem + 2.2222222222 * var(--vw, 1vw), 1rem);
 }
-body div#board-page div.ar1-1 div.tabuleiro div.categoria p.pokemon-categoria {
+body div#board-page div.tabuleiro div.categoria p.pokemon-categoria {
   font-size: clamp(0.9rem, 0.2rem + 3.11 * var(--vw, 1vw), 1.25rem);
 }
-body div#board-page div.ar1-1 div.tabuleiro div.categoria.categoria-1 {
+body div#board-page div.tabuleiro div.categoria.categoria-1 {
   grid-row-start: 1;
 }
-body div#board-page div.ar1-1 div.tabuleiro div.categoria.categoria-2 {
+body div#board-page div.tabuleiro div.categoria.categoria-2 {
   grid-row-start: 2;
 }
-body div#board-page div.ar1-1 div.tabuleiro div.categoria.categoria-3 {
+body div#board-page div.tabuleiro div.categoria.categoria-3 {
   grid-row-start: 3;
 }
-body div#board-page div.ar1-1 div.tabuleiro div.categoria.categoria-4 {
+body div#board-page div.tabuleiro div.categoria.categoria-4 {
   grid-row-start: 4;
-}
-body div.popup#popup_pokenexo {
-  text-align: center;
-  align-content: center;
-}
-body div.popup#popup_pokenexo h1 {
-  padding: 0 0 10px 0;
 }
 
 /*Diminuição de bordas e paddings*/
 @media screen and (orientation: portrait) {
-  body div#page-content div#board-page {
+  body div.page-content div#board-page {
     max-width: none;
   }
 }

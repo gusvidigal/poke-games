@@ -257,7 +257,7 @@ async function setupPokenexo(idDoPokenexo) {
     for (let poke of pokenexoData(idDoPokenexo).selecionados) {
         document.querySelectorAll(".celula").forEach(celula => {
             if (celula.dataset.poke === String(poke)) {
-                celula.classList.add("celula-selecionada");
+                celula.classList.add("pn--selected-cell");
             }
         })
     }
@@ -275,8 +275,8 @@ async function setupPokenexo(idDoPokenexo) {
 </div>`;
         document.getElementById("menu").innerHTML += icone;
         //Adiciona texto
-        document.querySelector("#popup_pokenexo h1").innerHTML = `Pokénections ${pokenexo.data} #${pokenexo.id}`;
-        document.querySelector("#popup_pokenexo p").innerHTML = pokenexo.mensagem.replaceAll(`\n`, "<br>");
+        document.querySelector(".special-message-popup h1").innerHTML = `Pokénections ${pokenexo.data} #${pokenexo.id}`;
+        document.querySelector(".special-message-popup p").innerHTML = pokenexo.mensagem.replaceAll(`\n`, "<br>");
         //Adiciona popup ao onload
         document.querySelector("body").onload = alternarPopupPokenexo();
     }
@@ -327,7 +327,7 @@ function setupStats() {
     //Cria os dados, caso não tenham sido criadas
     setupLocalStorage()
     //Obtém todos os elementos a serem substituídos
-    document.querySelectorAll("#main-page p.value").forEach(elemento => {
+    document.querySelectorAll("#main-page .stats--value").forEach(elemento => {
         if (elemento.dataset.json) {
             let caminhos = elemento.dataset.json.split(".");
             //Obtém o valor do atributo

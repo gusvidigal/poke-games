@@ -151,6 +151,7 @@ a {
 .ar1-1 {
   position: relative;
   padding-top: 100%;
+  width: 100%;
 }
 .ar1-1 > * {
   position: absolute;
@@ -261,7 +262,7 @@ body div#board-page {
   max-width: 520px;
   width: 100%;
 }
-body div#page-content {
+body div.page-content {
   display: flex;
   row-gap: 0px;
   flex-direction: column;
@@ -269,7 +270,7 @@ body div#page-content {
   padding: 10px;
   width: calc(100% - 20px);
 }
-body div#page-content div#main-page {
+body div.page-content div#main-page {
   display: flex;
   row-gap: 0px;
   flex-direction: column;
@@ -278,19 +279,17 @@ body div#page-content div#main-page {
   width: 100%;
   max-width: 500px;
 }
-body div#page-content div#main-page * {
+body div.page-content div#main-page * {
   text-align: center;
 }
-body div#page-content div#main-page h1 {
+body div.page-content div#main-page h1 {
   width: 100%;
-  padding: 20px 0;
 }
-body div#page-content div#main-page p {
+body div.page-content div#main-page p {
   width: 100%;
-  padding: 20px 0;
 }
 
-.popup, .search-popup {
+.search-popup {
   display: flex;
   row-gap: 0px;
   flex-direction: column;
@@ -310,9 +309,6 @@ body div#page-content div#main-page p {
   padding: 10px;
   z-index: 3;
   overflow: auto;
-}
-
-.search-popup {
   background-color: #8d8c85;
 }
 .search-popup p:not(.bold-resultado) {
@@ -381,17 +377,43 @@ body div#page-content div#main-page p {
   cursor: pointer;
 }
 
+.special-message-popup {
+  display: flex;
+  row-gap: 0px;
+  flex-direction: column;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  box-sizing: border-box;
+  position: fixed;
+  background-color: white;
+  top: max(10%, 50% - 250px);
+  left: max(5%, 50% - 250px);
+  width: 90%;
+  max-width: 500px;
+  height: 80%;
+  max-height: 500px;
+  padding: 10px;
+  z-index: 3;
+  overflow: auto;
+  text-align: center;
+  align-content: center;
+}
+.special-message-popup h1 {
+  padding: 0 0 10px 0;
+}
+
 @media screen and (orientation: portrait) {
-  body div#page-content div#main-page,
-  body .popup,
-  body .search-popup {
+  body div.page-content div#main-page,
+  body .popup {
     width: calc(100% - 20px);
     left: 10px;
     max-width: none;
   }
 }
 @media screen and (orientation: portrait) and (min-width: 600px) {
-  body div#page-content {
+  body div.page-content {
     width: calc(100% - 40px);
     padding: 0 20px;
   }

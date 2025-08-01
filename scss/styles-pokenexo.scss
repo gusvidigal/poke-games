@@ -119,126 +119,108 @@ body {
 			}
 		}
 
-		div.ar1-1 {
-			width: 100%;
 
-			div.tabuleiro {
-				display: grid;
-				grid-gap: 2px;
+		div.tabuleiro {
+			display: grid;
+			grid-gap: 2px;
 
-				width: calc(100%);
+			width: calc(100%);
 
-				&#pokenexo {
-					grid-template-rows: repeat(4, minmax(0, 1fr));
-					grid-template-columns: repeat(4, minmax(0, 1fr));
+			&#pokenexo {
+				grid-template-rows: repeat(4, minmax(0, 1fr));
+				grid-template-columns: repeat(4, minmax(0, 1fr));
 
-					div.celula p.nome-pokemon {
-						font-size: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
-						line-height: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
-					}
-				}
-
-				div.celula {
-					@include m.flex(column, $alignItems: center);
-					@include m.border-create(2px, solid, v.$c-red, v.$border-radius);
-					@include m.hover;
-					background-color: white;
-					position: relative;
-					overflow: hidden;
-					/*CÉLULAS*/
-					height: calc(100% - 4px);
-					width: calc(100% - 4px);
-
-					div.container-imagem-poke {
-						/*Menos 10 do padding*/
-						width: calc(100% - 10px);
-						/*Menos 10 do padding*/
-						height: calc(75% - 10px);
-						padding: 5px;
-
-						img.imagem-poke-celula {
-							width: 100%;
-							height: 100%;
-							display: block;
-							object-fit: contain;
-						}
-					}
-
-					p.nome-pokemon {
-						background-color: v.$c-red;
-						color: white;
-
-						flex-grow: 1;
-						width: calc(100% - 10px);
-						padding: 0 5px;
-
-						align-content: center;
-						overflow: hidden;
-					}
-
-					&.celula-selecionada {
-						border-color: v.$c-pc-selected;
-
-						p.nome-pokemon {
-							color: black;
-							background-color: v.$c-pc-selected;
-						}
-					}
-				}
-
-				div.categoria {
-					@include m.flex(column, 5px, $justifyContent: center);
-					border-radius: v.$border-radius;
-					grid-column-end: span 4;
-					padding: 10px;
-
-					p {
-						color: white;
-						align-content: center;
-						overflow: hidden;
-					}
-
-					p.nome-categoria {
-						font-size: f.clamp-rm(0.75, 1, 360, 540);
-					}
-
-					p.pokemon-categoria {
-						font-size: clamp(0.9rem, 0.20rem + 3.11 * var(--vw, 1vw), 1.25rem);
-					}
-
-					&.categoria-1 {
-						grid-row-start: 1;
-					}
-
-					&.categoria-2 {
-						grid-row-start: 2;
-					}
-
-					&.categoria-3 {
-						grid-row-start: 3;
-					}
-
-					&.categoria-4 {
-						grid-row-start: 4;
-					}
+				div.celula p.nome-pokemon {
+					font-size: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
+					line-height: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
 				}
 			}
-		}
-	}
 
-	div.popup#popup_pokenexo {
-		text-align: center;
-		align-content: center;
+			.celula {
+				@include m.pn--cell;
 
-		h1 {
-			padding: 0 0 10px 0;
+				div.container-imagem-poke {
+					/*Menos 10 do padding*/
+					width: calc(100% - 10px);
+					/*Menos 10 do padding*/
+					height: calc(75% - 10px);
+					padding: 5px;
+
+					img.imagem-poke-celula {
+						width: 100%;
+						height: 100%;
+						display: block;
+						object-fit: contain;
+					}
+				}
+
+				p.nome-pokemon {
+					background-color: v.$c-red;
+					color: white;
+
+					flex-grow: 1;
+					width: calc(100% - 10px);
+					padding: 0 5px;
+
+					align-content: center;
+					overflow: hidden;
+				}
+			}
+
+			.pn--selected-cell {
+				@include m.pn--cell;
+				border-color: v.$c-pc-selected;
+
+				p.nome-pokemon {
+					color: black;
+					background-color: v.$c-pc-selected;
+				}
+			}
+
+
+			div.categoria {
+				@include m.flex(column, 5px, $justifyContent: center);
+				border-radius: v.$border-radius;
+				grid-column-end: span 4;
+				padding: 10px;
+
+				p {
+					color: white;
+					align-content: center;
+					overflow: hidden;
+				}
+
+				p.nome-categoria {
+					font-size: f.clamp-rm(0.75, 1, 360, 540);
+				}
+
+				p.pokemon-categoria {
+					font-size: clamp(0.9rem, 0.20rem + 3.11 * var(--vw, 1vw), 1.25rem);
+				}
+
+				&.categoria-1 {
+					grid-row-start: 1;
+				}
+
+				&.categoria-2 {
+					grid-row-start: 2;
+				}
+
+				&.categoria-3 {
+					grid-row-start: 3;
+				}
+
+				&.categoria-4 {
+					grid-row-start: 4;
+				}
+			}
 		}
 	}
 }
 
 /*Diminuição de bordas e paddings*/
 @media screen and (orientation: portrait) {
-	body div#page-content {
+	body div.page-content {
 		div#board-page {
 			max-width: none;
 		}
