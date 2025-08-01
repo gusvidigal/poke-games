@@ -157,7 +157,7 @@ body div#board-page div.tabuleiro div.celula.celula-header p {
   align-content: center;
   overflow: hidden;
 }
-body div#board-page div.tabuleiro div.celula.celula-tentativa:not(.inativo) :hover {
+body div#board-page div.tabuleiro div.celula.celula-tentativa:not(.inativo):hover {
   cursor: pointer;
 }
 body div#board-page div.tabuleiro div.celula.celula-tentativa {
@@ -241,14 +241,14 @@ body div#board-page div#menu div#mini-menu button {
   padding: 1px 5px;
   background-color: #eceade;
 }
-body div#board-page div#menu div#mini-menu button :hover {
+body div#board-page div#menu div#mini-menu button:hover {
   cursor: pointer;
 }
-body div#board-page div#menu div#mini-menu button #comecar_novo_jogo {
+body div#board-page div#menu div#mini-menu button#comecar_novo_jogo {
   background-color: black;
   color: white;
 }
-body div#board-page div#menu div#mini-menu button #modo_dificil {
+body div#board-page div#menu div#mini-menu button#modo_dificil {
   background-color: #f62c13;
   color: white;
 }

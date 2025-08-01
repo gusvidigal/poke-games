@@ -169,7 +169,7 @@ body div#board-page div#menu button {
   padding: 1px 5px;
   background-color: #eceade;
 }
-body div#board-page div#menu button :hover {
+body div#board-page div#menu button:hover {
   cursor: pointer;
 }
 body div#board-page div#menu div#tentativas,
@@ -184,7 +184,7 @@ body div#board-page div#menu div#info {
   line-height: 11px;
   align-content: center;
 }
-body div#board-page div#menu div#info :hover {
+body div#board-page div#menu div#info:hover {
   cursor: pointer;
 }
 body div#board-page div.ar1-1 {
@@ -219,7 +219,7 @@ body div#board-page div.ar1-1 div.tabuleiro div.celula {
   height: calc(100% - 4px);
   width: calc(100% - 4px);
 }
-body div#board-page div.ar1-1 div.tabuleiro div.celula :hover {
+body div#board-page div.ar1-1 div.tabuleiro div.celula:hover {
   cursor: pointer;
 }
 body div#board-page div.ar1-1 div.tabuleiro div.celula div.container-imagem-poke {

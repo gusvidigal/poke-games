@@ -52,7 +52,7 @@
 }
 
 @mixin hover {
-    :hover {
+    &:hover {
         cursor: pointer;
     }
 }

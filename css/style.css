@@ -220,7 +220,7 @@ body nav#nav-menu div.nav-item {
   height: calc(100% - 5px);
   color: white;
 }
-body nav#nav-menu div.nav-item :hover {
+body nav#nav-menu div.nav-item:hover {
   cursor: pointer;
 }
 body nav#nav-menu div.nav-item a {
@@ -377,7 +377,7 @@ body div#page-content div#main-page p {
   height: 45px;
   background-color: #f62c13;
 }
-.search-popup ul#resultados li button :hover {
+.search-popup ul#resultados li button:hover {
   cursor: pointer;
 }
 
