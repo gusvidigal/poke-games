@@ -165,7 +165,7 @@ async function setupPokedoku(tabuleiro) {
             //Seta nome dos pokémon
             setarCoresDoNomeDoPokemon("rainbow");
             //Alterna ribbons de vitória
-            alternarRibbonsDeVitoria(true);
+            //alternarRibbonsDeVitoria(true);
         }
         //Insere os pokémon
         for (let i = 0; i < infosDoJogo[modoDeJogoPokedoku].rows; i++) {
@@ -316,7 +316,7 @@ async function setupPreviousGames() {
         let textoBotao = `
 <div class="${estado} ${especial} previous-game-button">
     <a href="../previous#${pokenexo.id}">${pokenexo.data}<br>#${pokenexo.id}</a>
-    <div class="marcadores">${marcadores}</div>
+    <div class="markers">${marcadores}</div>
 </div>`;
         document.querySelector("#previous-games").innerHTML += textoBotao;
     }

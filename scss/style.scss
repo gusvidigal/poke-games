@@ -1,311 +1,366 @@
-@import 'variables';
-@import 'reset';
-@import 'mixins';
+@use 'variables' as v;
+@use 'reset';
+@use 'mixins' as m;
+@use 'functions' as f;
 
-/* ANIMAÇÃO DO RIBBON */
+//ANIMAÇÃO DO RIBBON
 @keyframes rainbow {
-  0% {
-    background-color: #ff4d4d;
-  }
+	0% {
+		background-color: #ff4d4d;
+	}
 
-  5% {
-    background-color: #ff914d;
-  }
+	5% {
+		background-color: #ff914d;
+	}
 
-  10% {
-    background-color: #ffc04d;
-  }
+	10% {
+		background-color: #ffc04d;
+	}
 
-  15% {
-    background-color: #ffeb3b;
-  }
+	15% {
+		background-color: #ffeb3b;
+	}
 
-  20% {
-    background-color: #d4ff4d;
-  }
+	20% {
+		background-color: #d4ff4d;
+	}
 
-  25% {
-    background-color: #90ee90;
-  }
+	25% {
+		background-color: #90ee90;
+	}
 
-  30% {
-    background-color: #00e676;
-  }
+	30% {
+		background-color: #00e676;
+	}
 
-  35% {
-    background-color: #00ffc8;
-  }
+	35% {
+		background-color: #00ffc8;
+	}
 
-  40% {
-    background-color: #00e5ff;
-  }
+	40% {
+		background-color: #00e5ff;
+	}
 
-  45% {
-    background-color: #2196f3;
-  }
+	45% {
+		background-color: #2196f3;
+	}
 
-  50% {
-    background-color: #3f51b5;
-  }
+	50% {
+		background-color: #3f51b5;
+	}
 
-  55% {
-    background-color: #673ab7;
-  }
+	55% {
+		background-color: #673ab7;
+	}
 
-  60% {
-    background-color: #9c27b0;
-  }
+	60% {
+		background-color: #9c27b0;
+	}
 
-  65% {
-    background-color: #e040fb;
-  }
+	65% {
+		background-color: #e040fb;
+	}
 
-  70% {
-    background-color: #f06292;
-  }
+	70% {
+		background-color: #f06292;
+	}
 
-  75% {
-    background-color: #ec407a;
-  }
+	75% {
+		background-color: #ec407a;
+	}
 
-  80% {
-    background-color: #ff6f61;
-  }
+	80% {
+		background-color: #ff6f61;
+	}
 
-  85% {
-    background-color: #f44336;
-  }
+	85% {
+		background-color: #f44336;
+	}
 
-  90% {
-    background-color: #ff4081;
-  }
+	90% {
+		background-color: #ff4081;
+	}
 
-  95% {
-    background-color: #ff80ab;
-  }
+	95% {
+		background-color: #ff80ab;
+	}
 
-  100% {
-    background-color: #ff4d4d;
-  }
+	100% {
+		background-color: #ff4d4d;
+	}
 }
 
-/*bold-font-text*/
-.bold-font-text {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-}
-
-.font-text {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.bold-text {
-  font-weight: bold;
+.bold {
+	@include m.inheritance(font-weight, bold);
 }
 
 .invisivel {
-  visibility: hidden;
-  display: none;
+	visibility: hidden;
+	display: none;
 }
 
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  column-gap: 5px;
+.flexrow--c5 {
+	display: flex;
+	flex-direction: row;
+	column-gap: 5px;
 }
+
+
 
 /*Alternative to Aspect Ratio*/
 .ar1-1 {
-  position: relative;
-  padding-top: 100%;
+	position: relative;
+	padding-top: 100%;
 
-  &>* {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-  }
+	>* {
+		@include m.pos-absolute(left);
+		width: 100%;
+		height: 100%;
+	}
 }
 
 .verde {
-  background-color: $c-pc-green;
-  border-color: $c-pc-green;
+	background-color: v.$c-pc-green;
+	border-color: v.$c-pc-green;
 }
 
 .vermelho {
-  background-color: $c-pc-red;
-  border-color: $c-pc-red;
+	background-color: v.$c-pc-red;
+	border-color: v.$c-pc-red;
 }
 
 .azul {
-  background-color: $c-pc-blue;
-  border-color: $c-pc-blue;
+	background-color: v.$c-pc-blue;
+	border-color: v.$c-pc-blue;
 }
 
 .laranja {
-  background-color: $c-pc-orange;
-  border-color: $c-pc-orange;
+	background-color: v.$c-pc-orange;
+	border-color: v.$c-pc-orange;
 }
 
 body {
-  margin: 0;
-  /*Tamanho da scrollbar*/
-  --scroll: calc(100 * var(--vw, 1vw) - 100%);
-  width: calc(100 * var(--vw, 1vw) - var(--scroll));
+	margin: 0;
+	/*Tamanho da scrollbar*/
+	--scroll: calc(100 * var(--vw, 1vw) - 100%);
+	width: calc(100 * var(--vw, 1vw) - var(--scroll));
 
-  /*BACKGROUND TRANSPARENTE ESCURO*/
-  & div#background {
-    background-color: $c-background;
-    position: fixed;
-    width: calc(100 * var(--vw, 1vw));
-    height: calc(100 * var(--vh, 1vh));
-    top: 0;
-    left: 0;
-  }
+	/*BACKGROUND TRANSPARENTE ESCURO*/
+	div#background {
+		background-color: v.$c-background;
+		position: fixed;
+		width: calc(100 * var(--vw, 1vw));
+		height: calc(100 * var(--vh, 1vh));
+		top: 0;
+		left: 0;
+	}
 
-  & nav#nav-menu {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    /*Considerar também o scroll*/
-    width: calc(100 * var(--vw, 1vw) - 20px - var(--scroll));
-    height: 60px;
-    padding: 0 10px;
-    background-color: $c-red;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+	nav#nav-menu {
+		@include m.flex(row, $justifyContent: center);
+		position: sticky;
+		top: 0;
+		z-index: 2;
+		/*Considerar também o scroll*/
+		width: calc(100 * var(--vw, 1vw) - 20px - var(--scroll));
+		height: 60px;
+		padding: 0 10px;
+		background-color: v.$c-red;
 
-    & div.nav-item {
-      flex: 1 1 0;
-      width: 0;
-      max-width: 150px;
-      height: calc(100% - 5px);
-      border-width: 0 0 5px 0;
-      border-color: $c-red-d;
-      border-style: solid;
-      color: white;
+		div.nav-item {
+			@include m.border-create(0 0 5px 0, solid, v.$c-red-d);
+			@include m.hover;
+			flex: 1 1 0;
+			width: 0;
+			max-width: 150px;
+			height: calc(100% - 5px);
+			color: white;
 
-      & a {
-        display: block;
-        width: calc(100% - 10px);
-        height: 100%;
+			a {
+				display: block;
+				width: calc(100% - 10px);
+				height: 100%;
 
-        color: white;
-        padding: 0 5px;
+				color: white;
+				padding: 0 5px;
 
-        text-decoration: none;
-        text-align: center;
-        align-content: center;
-      }
+				text-align: center;
+				align-content: center;
+			}
 
-      &.ativo {
-        background-color: white;
-        border-color: black;
+			.ativo {
+				background-color: white;
+				border-color: black;
 
-        & a {
-          color: black;
-        }
-      }
+				a {
+					color: black;
+				}
+			}
+		}
+	}
 
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
+	nav#main-menu {
+		position: sticky;
+		top: 0;
+		z-index: 2;
+		/*Considerar também o scroll*/
+		width: calc(100 * var(--vw, 1vw) - 20px - var(--scroll));
+		height: 60px;
+		padding: 10px 10px 0 10px;
 
-  & nav#main-menu {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    /*Considerar também o scroll*/
-    width: calc(100 * var(--vw, 1vw) - 20px - var(--scroll));
-    height: 60px;
-    padding: 10px 10px 0 10px;
+		a {
+			height: 100%;
+			font-size: 2rem;
+			text-align: center;
+		}
+	}
 
-    & a {
-      height: 100%;
-      font-size: 2rem;
-      text-align: center;
-    }
-  }
+	div#board-page {
+		@include m.flex(column);
+		width: 100%;
+		max-width: 520px;
+		width: calc(100%);
+	}
 
-  & div#board-page {
-    width: 100%;
-    max-width: 520px;
-    width: calc(100%);
+	div#page-content {
+		@include m.flex(column, $alignItems: center);
+		padding: 10px;
+		width: calc(100% - 20px);
 
-    display: flex;
-    flex-direction: column;
-  }
+		div#main-page {
+			@include m.flex(column, $alignItems: center);
+			@include m.inheritance(text-align, center);
+			width: 100%;
+			max-width: 500px;
 
-  & div#page-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    width: calc(100% - 20px);
+			h1 {
+				width: 100%;
+				padding: 20px 0;
+			}
 
-    & div#main-page {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      max-width: 500px;
-
-      & h1 {
-        text-align: center;
-        width: 100%;
-        padding: 20px 0;
-      }
-
-      & p {
-        text-align: center;
-        width: 100%;
-        padding: 20px 0;
-      }
-    }
-  }
-
-  & div.popup {
-    /*Incluir borda e padding*/
-    box-sizing: border-box;
-    position: fixed;
-    background-color: white;
-
-    top: max(10%, calc(50% - 250px));
-    left: max(5%, calc(50% - 250px));
-    width: 90%;
-    max-width: 500px;
-    height: 80%;
-    max-height: 500px;
-
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    z-index: 3;
-    border: 2px solid black;
-    border-radius: 10px;
-    overflow: auto;
-  }
+			p {
+				width: 100%;
+				padding: 20px 0;
+			}
+		}
+	}
 }
 
-@media screen and (orientation: portrait) {
-  body {
+.popup {
+	@include m.flex(column);
+	@include m.border-create(2px, solid, black, v.$border-radius);
+	box-sizing: border-box;
+	position: fixed;
+	background-color: white;
+	top: max(10%, calc(50% - 250px));
+	left: max(5%, calc(50% - 250px));
+	width: 90%;
+	max-width: 500px;
+	height: 80%;
+	max-height: 500px;
+	padding: 10px;
+	z-index: 3;
+	overflow: auto;
+}
 
-    & div#page-content div#main-page,
-    & div.popup {
-      width: calc(100% - 20px);
-      left: 10px;
-      max-width: none;
-    }
-  }
+.search-popup {
+	@extend .popup;
+	background-color: v.$c-grey;
+
+	p:not(.bold-resultado) {
+		text-align: center;
+		margin: 5px 0 10px 0;
+	}
+
+	input#pesquisa_pokemon {
+		height: 30px;
+		font-size: 15px;
+		line-height: 30px;
+		padding: 0 8px;
+		color: v.$c-grey-d;
+		border: 1px solid black;
+		/*16 de padding e 2 da borda*/
+		width: calc(100% - 18px);
+	}
+
+	ul#resultados {
+		@include m.border-create(3px, solid, black, 2px);
+		width: calc(100% - 6px);
+		background-color: white;
+		overflow: auto;
+		margin: 10px 0 0 0;
+		padding: 5px 0;
+		flex-grow: 1;
+
+		li {
+			@include m.flex(row, $alignItems: center);
+			width: calc(100% - 20px);
+			height: 60px;
+			padding: 0 10px;
+
+			img.imagem-poke-lista {
+				background-color: white;
+				width: 60px;
+				height: 100%;
+				object-fit: contain;
+			}
+
+			p.bold-resultado {
+				padding: 5px 10px;
+				font-size: 15px;
+				line-height: 20px;
+				flex-grow: 1;
+				height: calc(100% - 10px);
+				align-content: center;
+
+				span.descricao {
+					color: v.$c-grey-d;
+				}
+			}
+
+			button {
+				@include m.border-create(2px, solid, v.$c-red, 5px);
+				@include m.hover;
+				height: 45px;
+				background-color: v.$c-red;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (orientation: portrait) {
+	body {
+
+		div#page-content div#main-page,
+		.popup {
+			width: calc(100% - 20px);
+			left: 10px;
+			max-width: none;
+		}
+	}
 }
 
 @media screen and (orientation: portrait) and (min-width: 600px) {
-  body div#page-content {
-    width: calc(100% - 40px);
-    padding: 0 20px;
-  }
+	body div#page-content {
+		width: calc(100% - 40px);
+		padding: 0 20px;
+	}
 }

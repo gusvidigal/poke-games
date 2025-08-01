@@ -53,8 +53,8 @@ function formatarCategoria(indiceDaCategoria) {
     let cor = obterCorDaCategoria(indiceDaCategoria);
     let texto = `
 <div class="categoria categoria-${pokenexoData(pokenexo.id).acertados.indexOf(indiceDaCategoria) + 1} ${cor}">
-    <p class="nome-categoria bold-font-text">${resposta.desc}</p>
-    <p class="pokemon-categoria font-text">${textoPokemon.toUpperCase()}</p>
+    <p class="nome-categoria bold">${resposta.desc}</p>
+    <p class="pokemon-categoria">${textoPokemon.toUpperCase()}</p>
 </div>`
     return texto;
 }

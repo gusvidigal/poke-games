@@ -1,0 +1,58 @@
+@use "sass:list";
+
+@mixin flex($direction, $gap: 0px, $alignItems: null, $justifyContent: null) {
+    display: flex;
+
+    @if $direction ==row {
+        column-gap: $gap;
+    }
+
+    @else if $direction ==column {
+        row-gap: $gap;
+    }
+
+    flex-direction: $direction;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+}
+
+@mixin pos-absolute($direction) {
+    position: absolute;
+    top: 0;
+
+    @if $direction ==left {
+        left: 0;
+    }
+
+    @else if $direction ==right {
+        right: 0;
+    }
+}
+
+@mixin border-create($widthList, $style: null, $color: null, $radius: null) {
+    @if list.length($widthList)==1 or list.length($widthList)==4  {
+        border-width: $widthList;
+    }
+
+    @else if list.length($widthList)==2 {
+        border-width: list.nth($widthList, 1) list.nth($widthList, 1) list.nth($widthList, 1) list.nth($widthList, 2);
+    }
+
+    border-style: $style;
+    border-color: $color;
+    border-radius: $radius;
+}
+
+@mixin inheritance($property, $value) {
+    #{$property}: $value;
+
+    * {
+        #{$property}: $value;
+    }
+}
+
+@mixin hover {
+    :hover {
+        cursor: pointer;
+    }
+}

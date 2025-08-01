@@ -31,6 +31,14 @@ body {
   line-height: 1;
 }
 
+html {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html * {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 ol, ul {
   list-style: none;
 }
@@ -50,24 +58,25 @@ table {
   border-spacing: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
+body div#page-content div#about {
+  text-align: center;
+}
+body div#page-content div#about * {
+  text-align: center;
+}
 body div#page-content div#about h1 {
-  text-align: center;
-  text-decoration: underline;
-  text-decoration-color: #f62c13;
-}
-body div#page-content div#about h2 {
-  text-align: center;
-}
-body div#page-content div#about p {
-  text-align: center;
+  -webkit-text-decoration: underline #f62c13;
+          text-decoration: underline #f62c13;
 }
 body div#page-content div#about ul {
   list-style-type: none;
 }
-body div#page-content div#about ul li {
-  text-align: center;
-}
-body div#page-content div#about ul li span.icone, body div#page-content div#about ul li span.data {
+body div#page-content div#about ul li span.icone,
+body div#page-content div#about ul li span.data {
   display: block;
   width: 100%;
 }

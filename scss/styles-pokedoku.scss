@@ -1,22 +1,20 @@
-@import 'variables';
-@import 'reset';
-@import 'mixins';
+@use 'variables' as v;
+@use 'reset';
+@use 'mixins' as m;
+@use 'functions' as f;
 
 //This file overwrites previous ones
 body {
-    & div#main-page {
-        & div#games {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            justify-content: center;
+    div#main-page {
+        div#games {
+            @include m.flex(column, 10px, $justifyContent: center);
             width: 75%;
-            & a {
+
+            a {
                 width: 100%;
                 aspect-ratio: 4 / 1;
-                border-radius: 10px;
-                background-color: $c-red;
-                text-decoration: none;
+                border-radius: v.$border-radius;
+                background-color: v.$c-red;
                 color: white;
                 text-align: center;
                 align-content: center;
@@ -24,89 +22,87 @@ body {
         }
     }
 
-    & div#board-page {
+    div#board-page {
         justify-content: space-around;
         align-items: center;
 
-        & div.tabuleiro {
+        div.tabuleiro {
             display: grid;
 
             width: calc(100%);
             padding: 0 0 20px 0;
             aspect-ratio: 1 / 1;
 
-            &#pokedoku-2x2 {
+            #pokedoku-2x2 {
                 max-width: 600px;
                 grid-template-rows: repeat(3, minmax(0, 1fr));
                 grid-template-columns: repeat(3, minmax(0, 1fr));
 
-                & div.celula.celula-header p {
+                div.celula.celula-header p {
                     font-size: clamp(0.85rem, 0.2rem + 2.9 * var(--vw, 1vw), 1.5rem);
                 }
 
-                & div.celula.celula-tentativa p.nome-pokemon {
+                div.celula.celula-tentativa p.nome-pokemon {
                     font-size: clamp(0.54rem, -0.10rem + 2.83 * var(--vw, 1vw), 1rem);
                     line-height: clamp(0.54rem, -0.10rem + 2.83 * var(--vw, 1vw), 1rem);
                 }
             }
 
-            &#pokedoku-3x3,
-            &#pokedoku-single {
+            #pokedoku-3x3,
+            #pokedoku-single {
                 max-width: 700px;
                 grid-template-rows: repeat(4, minmax(0, 1fr));
                 grid-template-columns: repeat(4, minmax(0, 1fr));
 
                 /* 0.65rem = 360px MINIMO 1.10rem = 720px IDEAL */
-                & div.celula.celula-header p {
+                div.celula.celula-header p {
                     font-size: clamp(0.65rem, 0.2rem + 2 * var(--vw, 1vw), 1.5rem);
                 }
 
-                & div.celula.celula-tentativa p.nome-pokemon {
+                div.celula.celula-tentativa p.nome-pokemon {
                     font-size: clamp(0.4rem, 0.18rem + 0.98 * var(--vw, 1vw), 0.65rem);
                     line-height: clamp(0.4rem, 0.18rem + 0.98 * var(--vw, 1vw), 0.65rem);
                 }
             }
 
-            &#pokedoku-4x4 {
+            #pokedoku-4x4 {
                 max-width: 750px;
                 grid-template-rows: repeat(5, minmax(0, 1fr));
                 grid-template-columns: repeat(5, minmax(0, 1fr));
 
-                & div.celula.celula-header p {
+                div.celula.celula-header p {
                     /* 0.5rem = 360px MINIMO; 1.75rem = 1440px IDEAL */
                     font-size: clamp(0.5rem, 0.08rem + 1.8 * var(--vw, 1vw), 1.2rem);
                 }
 
-                & div.celula.celula-tentativa p.nome-pokemon {
+                div.celula.celula-tentativa p.nome-pokemon {
                     font-size: clamp(0.3rem, 0.05rem + 1.09 * var(--vw, 1vw), 0.58rem);
                     line-height: clamp(0.3rem, 0.05rem + 1.09 * var(--vw, 1vw), 0.58rem);
                 }
             }
 
-            & div.celula {
+            div.celula {
                 /*CÉLULAS*/
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                @include m.flex(column, 0, center, center);
                 height: calc(100% - 2px);
                 width: calc(100% - 2px);
-                &.celula-header {
-                    background-color: $c-red;
-                    justify-content: center;
+
+                .celula-header {
+                    background-color: v.$c-red;
 
                     /*Ancorado em width do div pai: 250px*/
-                    & img,
-                    & p {
+                    img,
+                    p {
                         width: 92%;
                         padding: 4%;
                     }
 
-                    & img {
+                    img {
                         max-width: 200px;
                         max-height: 40px;
                     }
 
-                    & p {
+                    p {
                         line-height: 30px;
                         height: 60px;
                         text-align: center;
@@ -116,53 +112,29 @@ body {
                 }
 
 
-                &.celula-tentativa:not(.inativo):hover {
-                    cursor: pointer;
+                .celula-tentativa:not(.inativo) {
+                    @include m.hover;
                 }
 
-                &.celula-tentativa {
+                .celula-tentativa {
                     position: relative;
 
-                    & div.container-imagem-poke {
+                    div.container-imagem-poke {
                         /*Menos 10 da margem*/
                         width: calc(100% - 10px);
                         /*Menos 10 da margem*/
                         height: calc(75% - 10px);
                         margin: 5px;
 
-                        & img.imagem-poke-celula {
+                        img.imagem-poke-celula {
                             width: 100%;
                             height: 100%;
                             display: block;
                             object-fit: contain;
                         }
-
-                        /*& span.ribbon-tentativas {
-                            font-size: 30px;
-
-                            display: none;
-
-                            position: absolute;
-                            text-align: center;
-                            align-content: center;
-                            width: calc(100%/5);
-                            height: calc(100%/4.5);
-                            top: -20px;
-                            right: -20px;
-                            border-radius: 25px;
-                            z-index: 1;
-
-                            &.ribbon-verde {
-                                background-color: $c-green;
-                            }
-
-                            &.ribbon-amarelo {
-                                background-color: $c-yellow;
-                            }
-                        }*/
                     }
 
-                    & p.nome-pokemon {
+                    p.nome-pokemon {
                         background-color: black;
                         color: white;
 
@@ -174,22 +146,19 @@ body {
                         align-content: center;
                         overflow: hidden;
 
-                        &.rainbow {
+                        .rainbow {
                             color: black;
                             animation: rainbow 3s linear 0s infinite normal;
                         }
 
-                        &.erro {
-                            color: $c-red;
+                        .erro {
+                            color: v.$c-red;
                         }
                     }
 
-                    & div.dificuldade {
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        border-width: 0 0 2px 2px;
-                        border-style: solid;
+                    div.dificuldade {
+                        @include m.pos-absolute(right);
+                        @include m.border-create(0 0 2px 2px, solid);
                         font-size: clamp(0.45rem, 0.02rem + 1.9 * var(--vw, 1vw), 1rem);
                         width: 20%;
                         aspect-ratio: 1 / 1;
@@ -201,28 +170,21 @@ body {
             }
         }
 
-        & div#menu {
-            display: flex;
-            flex-direction: column;
-            row-gap: 20px;
-            align-items: center;
-            justify-content: center;
+        div#menu {
+            @include m.flex(column, 20px, center, center);
 
             width: 100%;
             height: 100px;
 
-            & div#mini-menu {
-                display: flex;
-                column-gap: 15px;
-                flex-direction: row;
+            div#mini-menu {
+                @include m.flex(row, 15px, center, center);
 
                 padding: 0 20px;
                 width: calc(100% - 40px);
 
-                align-items: center;
-                justify-content: center;
-
-                & button {
+                button {
+                    @include m.border-create(2px, solid, black, v.$border-radius);
+                    @include m.hover;
                     flex: 1 1 0;
                     width: 0;
                     max-width: 150px;
@@ -232,111 +194,32 @@ body {
                     font-size: clamp(0.4rem, 0.22rem + 0.79 * var(--vw, 1vw), 0.8rem);
 
                     padding: 1px 5px;
-                    border: 2px solid black;
-                    border-radius: 10px;
 
-                    background-color: $c-white;
+                    background-color: v.$c-white;
 
-                    &:hover {
-                        cursor: pointer;
-                    }
-
-                    &#comecar_novo_jogo {
+                    #comecar_novo_jogo {
                         background-color: black;
                         color: white;
                     }
 
-                    &#modo_dificil {
-                        background-color: $c-red;
+                    #modo_dificil {
+                        background-color: v.$c-red;
                         color: white;
                     }
                 }
             }
 
-            & div#estatisticas {
+            div#estatisticas {
+                @include m.flex(column);
 
                 /* 0.8rem = 360px MINIMO; 1rem = 720px IDEAL */
                 font-size: clamp(0.8rem, 0.1rem + 2.7 * var(--vw, 1vw), 1.3rem);
-                display: flex;
-                flex-direction: column;
                 /*Baseado em 20px para 1000w*/
                 padding: 0 calc(2 * var(--vw, 1vw));
                 text-align: center;
 
-                & span {
+                span {
                     font-weight: normal;
-                }
-            }
-        }
-
-        & div.popup#popup_pesquisa {
-
-            background-color: $c-grey;
-
-            & p:not(.bold-font-text-resultado) {
-                text-align: center;
-                margin: 5px 0 10px 0;
-            }
-
-            & input#pesquisa_pokemon {
-                height: 30px;
-                font-size: 15px;
-                line-height: 30px;
-                padding: 0 8px;
-                color: $c-grey-d;
-                border: 1px solid black;
-                /*16 de padding e 2 da borda*/
-                width: calc(100% - 18px);
-            }
-
-            & ul#resultados {
-                width: calc(100% - 6px);
-                background-color: white;
-                overflow: auto;
-                border: 3px solid black;
-                border-radius: 2px;
-                margin: 10px 0 0 0;
-                padding: 5px 0;
-                flex-grow: 1;
-
-                & li {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    width: calc(100% - 20px);
-                    height: 60px;
-                    padding: 0 10px;
-
-                    & img.imagem-poke-lista {
-                        background-color: white;
-                        width: 60px;
-                        height: 100%;
-                        object-fit: contain;
-                    }
-
-                    & p.bold-font-text-resultado {
-                        padding: 5px 10px;
-                        font-size: 15px;
-                        line-height: 20px;
-                        flex-grow: 1;
-                        height: calc(100% - 10px);
-                        align-content: center;
-
-                        & span.descricao {
-                            color: $c-grey-d;
-                        }
-                    }
-
-                    & button {
-                        height: 45px;
-                        border: 2px solid $c-red;
-                        border-radius: 5px;
-                        background-color: $c-red;
-
-                        &:hover {
-                            cursor: pointer;
-                        }
-                    }
                 }
             }
         }

@@ -46,7 +46,7 @@ function novoJogo(modoDificil) {
         for (let r of rows) {
             for (let c of cols) {
                 //No modo difícil, não pode haver células com mais de 3 respostas
-                if (matriz[r][c].length === 0 || (modoDificil && matriz[r][c].length > infosDoJogo[modoDeJogoPokedoku].permissividade_modo_dificil)) {
+                if (matriz[r][c].length === 0 || (modoDificil &matriz[r][c].length > infosDoJogo[modoDeJogoPokedoku].permissividade_modo_dificil)) {
                     flag = 1;
                     break;
                 } else if (matriz[r][c].length === 1) contagem1ModoDificil++;
@@ -55,7 +55,7 @@ function novoJogo(modoDificil) {
         }
         //No modo difícil, limite_modo_dificil células só têm uma resposta possível
         //Adicionalmente, todas as células possuem permissividade_modo_possível respostas no máximo
-        if (flag === 1 || (modoDificil && contagem1ModoDificil < infosDoJogo[modoDeJogoPokedoku].limite_modo_dificil))
+        if (flag === 1 || (modoDificil &contagem1ModoDificil < infosDoJogo[modoDeJogoPokedoku].limite_modo_dificil))
             continue;
         break;
     }
@@ -86,7 +86,7 @@ function mostrarPopupDePesquisa(idDoFoco) {
     if (elementoTemClasse(`#${modoDeJogoPokedoku} .${idDoFoco}`, "inativo")) return;
     //Ativa o background e o popup
     delClasseDeElemento("#background", "invisivel");
-    delClasseDeElemento("#popup_pesquisa", "invisivel");
+    delClasseDeElemento(".search-popup", "invisivel");
     //Limpa o campo da pesquisa e coloca o elemento automaticamente focado
     setarAtributoEmHTML("#resultados", "innerHTML");
     setarAtributoEmHTML("#pesquisa_pokemon", "value");
@@ -97,17 +97,17 @@ function mostrarPopupDePesquisa(idDoFoco) {
 function fecharPopupDePesquisa() {
     //Desativa o background
     addClasseAElemento("#background", "invisivel");
-    addClasseAElemento("#popup_pesquisa", "invisivel");
+    addClasseAElemento(".search-popup", "invisivel");
 }
 //Formata o resultado de pesquisa
 function formatarResultadoDaPesquisa(pokemon) {
     let texto = `
 <li class="item-resultado">
     <img class="imagem-poke-lista" src="${pokemon.imagem}">
-    <p class="bold-font-text bold-font-text-resultado" >${pokemon.nome.toUpperCase()}<br>
+    <p class="bold bold-resultado" >${pokemon.nome.toUpperCase()}<br>
         <span class="descricao">${camelCase(pokemon.desc)}</span>
     </p>
-    <button class="bold-font-text" onclick="chutarPokemon(${pokemon.id})">Selecionar</button>
+    <button class="bold" onclick="chutarPokemon(${pokemon.id})">Selecionar</button>
 </li>`;
     return texto;
 }
@@ -208,7 +208,7 @@ function chutarPokemon(id, chuteEmulado) {
             if (!elementoTemClasse(`#${modoDeJogoPokedoku} .D${i + 1}${j + 1}`, "inativo")) acertouTodas = false;
         }
     }
-    if (acertouTodas && !chuteEmulado) tabuleiroCompletado();
+    if (acertouTodas &!chuteEmulado) tabuleiroCompletado();
 }
 
 //Mostra um possível tabuleiro
@@ -249,5 +249,5 @@ function tabuleiroCompletado() {
     //Muda todos os textos para arco-íris
     setarCoresDoNomeDoPokemon("rainbow");
     //Mostra os ribbons
-    alternarRibbonsDeVitoria(true);
+    //alternarRibbonsDeVitoria(true);
 }

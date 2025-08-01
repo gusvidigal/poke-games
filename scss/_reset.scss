@@ -2,6 +2,8 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@use 'variables' as v;
+@use 'mixins' as m;
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -29,6 +31,10 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+html {
+	font-size: 16px;
+	@include m.inheritance(font-family, v.$font);
+}
 ol, ul {
 	list-style: none;
 }
@@ -43,4 +49,7 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+a {
+	text-decoration: none;
 }

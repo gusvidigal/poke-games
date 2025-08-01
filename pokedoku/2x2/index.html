@@ -15,76 +15,76 @@
 
 <body onload="setupPokedoku('pokedoku-2x2')">
     <nav id="nav-menu">
-        <div class="nav-item bold-font-text"><a href="../">Menu</a></div>
-        <div class="nav-item bold-font-text ativo"><a href="../2x2/">2X2</a></div>
-        <div class="nav-item bold-font-text"><a href="../3x3/">3X3</a></div>
-        <div class="nav-item bold-font-text"><a href="../4x4/">4X4</a></div>
-        <div class="nav-item bold-font-text"><a href="../single/">SINGLE</a></div>
+        <div class="nav-item bold"><a href="../">Menu</a></div>
+        <div class="nav-item bold ativo"><a href="../2x2/">2X2</a></div>
+        <div class="nav-item bold"><a href="../3x3/">3X3</a></div>
+        <div class="nav-item bold"><a href="../4x4/">4X4</a></div>
+        <div class="nav-item bold"><a href="../single/">SINGLE</a></div>
     </nav>
     <div id="page-content">
         <div id="board-page">
             <div id="pokedoku-2x2" class="tabuleiro">
                 <div class="celula"></div>
-                <div class="celula celula-header bold-font-text C1">
+                <div class="celula celula-header bold C1">
                 </div>
-                <div class="celula celula-header bold-font-text C2">
+                <div class="celula celula-header bold C2">
                 </div>
-                <div class="celula celula-header bold-font-text R1">
+                <div class="celula celula-header bold R1">
                 </div>
                 <div class="D11 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D11')">
                     <div class="container-imagem-poke">
                         <img class="imagem-poke-celula invisivel" src="">
-                        <span class="ribbon-tentativas invisivel bold-font-text"></span>
+                        <span class="ribbon-tentativas invisivel bold"></span>
                     </div>
-                    <p class="nome-pokemon bold-font-text"></p>
-                    <div class="dificuldade bold-font-text invisivel"></div>
+                    <p class="nome-pokemon bold"></p>
+                    <div class="dificuldade bold invisivel"></div>
                 </div>
                 <div class="D12 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D12')">
                     <div class="container-imagem-poke">
                         <img class="imagem-poke-celula invisivel" src="">
-                        <span class="ribbon-tentativas invisivel bold-font-text"></span>
+                        <span class="ribbon-tentativas invisivel bold"></span>
                     </div>
-                    <p class="nome-pokemon bold-font-text"></p>
-                    <div class="dificuldade bold-font-text invisivel"></div>
+                    <p class="nome-pokemon bold"></p>
+                    <div class="dificuldade bold invisivel"></div>
                 </div>
-                <div class="celula celula-header bold-font-text R2">
+                <div class="celula celula-header bold R2">
                 </div>
                 <div class="D21 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D21')">
                     <div class="container-imagem-poke">
                         <img class="imagem-poke-celula invisivel" src="">
-                        <span class="ribbon-tentativas invisivel bold-font-text"></span>
+                        <span class="ribbon-tentativas invisivel bold"></span>
                     </div>
-                    <p class="nome-pokemon bold-font-text"></p>
-                    <div class="dificuldade bold-font-text invisivel"></div>
+                    <p class="nome-pokemon bold"></p>
+                    <div class="dificuldade bold invisivel"></div>
                 </div>
                 <div class="D22 celula celula-tentativa" onclick="mostrarPopupDePesquisa('D22')">
                     <div class="container-imagem-poke">
                         <img class="imagem-poke-celula invisivel" src="">
-                        <span class="ribbon-tentativas invisivel bold-font-text"></span>
+                        <span class="ribbon-tentativas invisivel bold"></span>
                     </div>
-                    <p class="nome-pokemon bold-font-text"></p>
-                    <div class="dificuldade bold-font-text invisivel"></div>
+                    <p class="nome-pokemon bold"></p>
+                    <div class="dificuldade bold invisivel"></div>
                 </div>
             </div>
             <div id="menu">
                 <div id="mini-menu">
-                    <button id="comecar_novo_jogo" class="bold-font-text" onclick="novoJogo()">Start New Game</button>
-                    <button class="bold-font-text" onclick="removerRespostas()">Clear Board</button>
-                    <button class="bold-font-text" id="botao_dificuldade" onclick="alternarDificuldade(true)">Show Total
+                    <button id="comecar_novo_jogo" class="bold" onclick="novoJogo()">Start New Game</button>
+                    <button class="bold" onclick="removerRespostas()">Clear Board</button>
+                    <button class="bold" id="botao_dificuldade" onclick="alternarDificuldade(true)">Show Total
                         Answers</button>
-                    <button class="bold-font-text" onclick="revelarTabuleiro()">Reveal Possible Board</button>
-                    <button id="modo_dificil" class="bold-font-text" onclick="novoJogo(true)">HARD MODE</button>
+                    <button class="bold" onclick="revelarTabuleiro()">Reveal Possible Board</button>
+                    <button id="modo_dificil" class="bold" onclick="novoJogo(true)">HARD MODE</button>
                 </div>
                 <div id="estatisticas">
                     <div id="tentativas">
-                        <p class="bold-font-text">Tentativas:</br><span>0</span></p>
+                        <p class="bold">Tentativas:</br><span>0</span></p>
                     </div>
                 </div>
             </div>
             <div id="background" class="invisivel" onclick="fecharPopupDePesquisa()"></div>
-            <div id="popup_pesquisa" class="popup invisivel">
-                <p class="bold-font-text">SEARCH POKÉMON</p>
-                <input autofocus class="bold-font-text" type="text" id="pesquisa_pokemon" value=""
+            <div class="search-popup invisivel">
+                <p class="bold">SEARCH POKÉMON</p>
+                <input autofocus class="bold" type="text" id="pesquisa_pokemon" value=""
                     oninput="mostrarResultadosDaPesquisa()">
                 <ul id="resultados">
                 </ul>

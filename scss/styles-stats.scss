@@ -1,63 +1,61 @@
-@import 'variables';
-@import 'reset';
-@import 'mixins';
+@use 'variables' as v;
+@use 'reset';
+@use 'mixins' as m;
+@use 'functions' as f;
 
 //This file overwrites previous ones
 body {
-    & div#page-content div#main-page {
+    div#page-content div#main-page {
 
-        & .section {
-            border: 2px solid $c-red;
+        .section {
+            @include m.flex(column);
+            @include m.border-create(2px, solid, v.$c-red, v.$border-radius);
             margin: 5px 0;
             width: calc(100% - 4px);
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
             overflow: hidden;
 
-            &.main-section {
-                border-color: $c-yellow;
-                & h2 {
-                    background-color: $c-yellow;
-                    border-color: $c-yellow;
+            .main-section {
+                border-color: v.$c-yellow;
+
+                h2 {
+                    background-color: v.$c-yellow;
+                    border-color: v.$c-yellow;
                 }
             }
-            & h2 {
+
+            h2 {
+                @include m.border-create(0 0 2px 0, solid, v.$c-red);
                 text-align: center;
-                background-color: $c-red;
-                border-color: $c-red;
-                border-style: solid;
-                border-width: 0 0 2px 0;
+                background-color: v.$c-red;
             }
-            & .content-section {
-                display: flex;
-                flex-direction: column;
-                row-gap: 5px;
+
+            .content-section {
+                @include m.flex(column, 5px);
                 padding: 5px 0;
-                & .line {
+
+                .line {
+                    @include m.flex(row, $justifyContent: space-between);
                     padding: 0 5px;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    & p {
+
+                    p {
                         padding: 0;
 
-                        &.label {
+                        .label {
                             text-align: left;
                         }
-                        &.value {
+
+                        .value {
                             text-align: right;
                         }
                     }
 
                 }
             }
-            & .sub-section {
-                & h3 {
+
+            .sub-section {
+                h3 {
+                    @include m.border-create(2px 0, solid, v.$c-red);
                     text-align: center;
-                    border-color: $c-red;
-                    border-style: solid;
-                    border-width: 2px 0;
                 }
             }
         }

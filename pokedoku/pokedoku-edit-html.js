@@ -113,6 +113,7 @@ function inserirDificuldadesNoTabuleiro(idDoTabuleiro) {
     }
 }
 //Mostra os ribbons
+/*
 function alternarRibbonsDeVitoria(acao) {
     //Se for pokedoku-single, para
     if (modoDeJogoPokedoku === "pokedoku-single") return;
@@ -139,6 +140,7 @@ function alternarRibbonsDeVitoria(acao) {
         addClasseAElemento(`#${modoDeJogoPokedoku} span.ribbon-tentativas`, "invisivel", true);
     }
 }
+*/
 
 
 //Reseta o tabuleiro, sem limpar o jogo
@@ -155,7 +157,7 @@ function removerRespostas() {
     //Ativa todas as células novamente
     delClasseDeElemento(`#${modoDeJogoPokedoku} div.celula-tentativa`, "inativo", true);
     //Remove ribbons de vitória
-    alternarRibbonsDeVitoria(false);
+    //alternarRibbonsDeVitoria(false);
 
     //Reseta localStorage
     let data = gameData(modoDeJogoPokedoku);
@@ -194,7 +196,7 @@ function limparTabuleiro() {
     //Remove as dificuldades
     alternarDificuldade(false);
     //Remove ribbons de vitória
-    alternarRibbonsDeVitoria(false);
+    //alternarRibbonsDeVitoria(false);
 
     //Reseta localStorage
     let data = gameData(modoDeJogoPokedoku);

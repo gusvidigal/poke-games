@@ -1,0 +1,11 @@
+@function clamp-rm($min, $max, $wmin, $wmax) {
+    $slope: calc(($max - $min)/(($wmax - $wmin)/16));
+    $y: calc($wmin * $slope / -16 + $min);
+    @return clamp($min * 1rem, $y * 1rem + $slope * 100 * var(--vw, 1vw), $max * 1rem);
+}
+
+@function clamp-px($min, $max, $wmin, $wmax) {
+    $slope: calc(($max - $min)/($wmax - $wmin));
+    $y: calc(-$wmin * $slope + $min);
+    @return clamp($min * 1px, $y * 1px + $slope * 100 * var(--vw, 1vw), $max * 1px);
+}
