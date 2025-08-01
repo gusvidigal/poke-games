@@ -176,7 +176,7 @@ body {
 						overflow: hidden;
 					}
 
-					.celula-selecionada {
+					&.celula-selecionada {
 						border-color: v.$c-pc-selected;
 
 						p.nome-pokemon {

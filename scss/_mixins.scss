@@ -35,7 +35,7 @@
     }
 
     @else if list.length($widthList)==2 {
-        border-width: list.nth($widthList, 1) list.nth($widthList, 1) list.nth($widthList, 1) list.nth($widthList, 2);
+        border-width: list.nth($widthList, 1) list.nth($widthList, 2) list.nth($widthList, 1) list.nth($widthList, 2);
     }
 
     border-style: $style;

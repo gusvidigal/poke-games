@@ -112,7 +112,7 @@ body div#page-content div#main-page .section .content-section .line p.value {
   text-align: right;
 }
 body div#page-content div#main-page .section .sub-section h3 {
-  border-width: 2px 2px 2px 0;
+  border-width: 2px 0 2px 0;
   border-style: solid;
   border-color: #f62c13;
   text-align: center;

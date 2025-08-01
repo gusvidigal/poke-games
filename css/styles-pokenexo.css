@@ -245,10 +245,10 @@ body div#board-page div.ar1-1 div.tabuleiro div.celula p.nome-pokemon {
   align-content: center;
   overflow: hidden;
 }
-body div#board-page div.ar1-1 div.tabuleiro div.celula .celula-selecionada {
+body div#board-page div.ar1-1 div.tabuleiro div.celula.celula-selecionada {
   border-color: #69d2ff;
 }
-body div#board-page div.ar1-1 div.tabuleiro div.celula .celula-selecionada p.nome-pokemon {
+body div#board-page div.ar1-1 div.tabuleiro div.celula.celula-selecionada p.nome-pokemon {
   color: black;
   background-color: #69d2ff;
 }
