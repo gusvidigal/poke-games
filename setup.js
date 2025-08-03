@@ -233,13 +233,13 @@ async function setupPokenexo(idDoPokenexo) {
         listaDePokemon = listaDePokemon.concat(resposta.pokemon);
     }
     //Adiciona as células
-    let celulas = document.querySelectorAll("#pokenexo .celula")
+    let celulas = document.querySelectorAll(".pn--tabuleiro .pn--cell")
     let contador = 0;
     for (let celula of celulas) {
         //Obtém pokémon
         let pokemon = obterPokemonPorId(listaDePokemon[pokenexo["ordem-inicial"][contador]]);
         //Insere na célula
-        celula.querySelector("img.imagem-poke-celula").src = pokemon.imagem;
+        celula.querySelector(".pn-cell-img img").src = pokemon.imagem;
         let nomePokemonFormatado = pokemon.nome.toUpperCase();
         if (pokemon.desc !== "") nomePokemonFormatado += " - " + camelCase(pokemon.desc);
         celula.querySelector("p").innerHTML = nomePokemonFormatado;
@@ -255,8 +255,9 @@ async function setupPokenexo(idDoPokenexo) {
     }
     //Adiciona células selecionadas
     for (let poke of pokenexoData(idDoPokenexo).selecionados) {
-        document.querySelectorAll(".celula").forEach(celula => {
+        document.querySelectorAll(".pn--cell").forEach(celula => {
             if (celula.dataset.poke === String(poke)) {
+                celula.classList.remove("pn--cell");
                 celula.classList.add("pn--selected-cell");
             }
         })
@@ -293,32 +294,31 @@ async function setupPreviousGames() {
         let pokenexo = listaDePokenexo[i];
         let pokenexoData = gameData("pokenexo").jogos[String(pokenexo.id)];
 
-        let estado = "";
-        let especial = "";
+        let classeBotao = "pn--previous-game-button";
         let marcadores = "";
         //Se o jogo já tiver sido iniciado
         if (pokenexoData) {
             //Obtém classe
             if (pokenexoData.vitoria) {
-                estado = "concluido";
-                if (pokenexo.especial) especial = "rainbow";
+                classeBotao = "pn--finished-previous-game-button";
+                if (pokenexo.especial) classeBotao = "pn--rainbow-previous-game-button";
             }
-            else if (pokenexoData["string-tentativas"].length > 0) estado = "iniciado";
+            else if (pokenexoData["string-tentativas"].length > 0) classeBotao = "pn--started-previous-game-button";;
             //Obtém marcadores
             let acertadosCopia = copiar(pokenexoData.acertados);
             for (let categoriaAcertada of acertadosCopia.sort()) {
                 let cor = obterCorDaCategoria(categoriaAcertada);
-                marcadores += `<div class="pn-${cor} button-marker"></div>`
+                marcadores += `<div class="pn--${cor}"></div>`
             }
         }
 
         //Formata o texto
         let textoBotao = `
-<div class="${estado} ${especial} previous-game-button">
+<div class="${classeBotao}">
     <a href="../previous#${pokenexo.id}">${pokenexo.data}<br>#${pokenexo.id}</a>
     <div class="markers">${marcadores}</div>
 </div>`;
-        document.querySelector("#previous-games").innerHTML += textoBotao;
+        document.querySelector(".pn--previous-games-menu").innerHTML += textoBotao;
     }
 }
 

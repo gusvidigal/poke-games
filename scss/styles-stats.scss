@@ -3,7 +3,7 @@
 @use 'mixins' as m;
 @use 'functions' as f;
 
-div.page-content {
+.page-content {
     h2 {
         @include m.border-create(0 0 2px 0, solid, v.$c-red);
         text-align: center;
@@ -41,12 +41,12 @@ div.page-content {
             @include m.flex(row, $justifyContent: space-between);
             padding: 0 5px;
 
-            p.stats--label {
+            .stats--label {
                 text-align: left;
                 @include m.bold;
             }
 
-            p.stats--value {
+            .stats--value {
                 text-align: right;
             }
         }

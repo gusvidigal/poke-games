@@ -63,14 +63,38 @@ a {
   text-decoration: none;
 }
 
-body div.page--stretch div#previous-games {
+.pn--green {
+  background-color: #3aac4a;
+  border-color: #3aac4a;
+}
+
+.pn--blue {
+  background-color: #245ca6;
+  border-color: #245ca6;
+}
+
+.pn--orange {
+  background-color: #e25822;
+  border-color: #e25822;
+}
+
+.pn--red {
+  background-color: #b41e22;
+  border-color: #b41e22;
+}
+
+.page-content .pn--previous-games-menu {
+  font-weight: bold;
   display: flex;
   row-gap: 10px;
   flex-direction: column;
   justify-content: center;
   width: 75%;
 }
-body div.page--stretch div#previous-games div.previous-game-button {
+.page-content .pn--previous-games-menu * {
+  font-weight: bold;
+}
+.page-content .pn--previous-games-menu .pn--previous-game-button, .page-content .pn--previous-games-menu .pn--rainbow-previous-game-button, .page-content .pn--previous-games-menu .pn--finished-previous-game-button, .page-content .pn--previous-games-menu .pn--started-previous-game-button {
   display: flex;
   -moz-column-gap: 0px;
        column-gap: 0px;
@@ -82,14 +106,14 @@ body div.page--stretch div#previous-games div.previous-game-button {
   background-color: #f62c13;
   overflow: hidden;
 }
-body div.page--stretch div#previous-games div.previous-game-button a {
+.page-content .pn--previous-games-menu .pn--previous-game-button a, .page-content .pn--previous-games-menu .pn--rainbow-previous-game-button a, .page-content .pn--previous-games-menu .pn--finished-previous-game-button a, .page-content .pn--previous-games-menu .pn--started-previous-game-button a {
   width: 100%;
   height: 100%;
   text-align: center;
   align-content: center;
   color: white;
 }
-body div.page--stretch div#previous-games div.previous-game-button .markers {
+.page-content .pn--previous-games-menu .pn--previous-game-button .markers, .page-content .pn--previous-games-menu .pn--rainbow-previous-game-button .markers, .page-content .pn--previous-games-menu .pn--finished-previous-game-button .markers, .page-content .pn--previous-games-menu .pn--started-previous-game-button .markers {
   display: flex;
   -moz-column-gap: 0px;
        column-gap: 0px;
@@ -102,37 +126,38 @@ body div.page--stretch div#previous-games div.previous-game-button .markers {
   width: 28px;
   height: 100%;
 }
-body div.page--stretch div#previous-games div.previous-game-button .markers .button-marker {
+.page-content .pn--previous-games-menu .pn--previous-game-button .markers div, .page-content .pn--previous-games-menu .pn--rainbow-previous-game-button .markers div, .page-content .pn--previous-games-menu .pn--finished-previous-game-button .markers div, .page-content .pn--previous-games-menu .pn--started-previous-game-button .markers div {
   width: 7px;
   height: 100%;
 }
-body div.page--stretch div#previous-games div.previous-game-button.iniciado {
+.page-content .pn--previous-games-menu .pn--started-previous-game-button {
   background-color: #f69e13;
   color: black;
 }
-body div.page--stretch div#previous-games div.previous-game-button.concluido {
+.page-content .pn--previous-games-menu .pn--finished-previous-game-button {
   background-color: #13f62c;
   color: black;
 }
-body div.page--stretch div#previous-games div.previous-game-button.rainbow {
+.page-content .pn--previous-games-menu .pn--rainbow-previous-game-button {
   animation: rainbow 3s linear 0s infinite normal;
   color: black;
 }
-body div#board-page {
+
+div#board-page {
   text-align: center;
   justify-content: space-around;
   align-items: center;
 }
-body div#board-page * {
+div#board-page * {
   text-align: center;
 }
-body div#board-page div#game-resume {
+div#board-page .pn--game-resume {
   width: 100%;
   padding: 15px 0 0 0;
   word-break: break-all;
   align-content: center;
 }
-body div#board-page div#menu {
+div#board-page div#menu {
   display: flex;
   -moz-column-gap: 5px;
        column-gap: 5px;
@@ -143,7 +168,7 @@ body div#board-page div#menu {
   padding: 10px 0;
   height: 22px;
 }
-body div#board-page div#menu button {
+div#board-page div#menu button {
   border-width: 2px;
   border-style: solid;
   border-color: black;
@@ -153,38 +178,32 @@ body div#board-page div#menu button {
   padding: 1px 5px;
   background-color: #eceade;
 }
-body div#board-page div#menu button:hover {
+div#board-page div#menu button:hover {
   cursor: pointer;
 }
-body div#board-page div#menu div#tentativas,
-body div#board-page div#menu div#dicas,
-body div#board-page div#menu div#pokenexo-data {
+div#board-page div#menu div#tentativas,
+div#board-page div#menu div#dicas,
+div#board-page div#menu div#pokenexo-data {
   font-size: 1.2rem;
 }
-body div#board-page div#menu div#info {
+div#board-page div#menu div#info {
   width: 22px;
   height: 22px;
   font-size: 11px;
   line-height: 11px;
   align-content: center;
 }
-body div#board-page div#menu div#info:hover {
+div#board-page div#menu div#info:hover {
   cursor: pointer;
 }
-body div#board-page div.tabuleiro {
+div#board-page .pn--tabuleiro {
   display: grid;
   grid-gap: 2px;
-  width: 100%;
-}
-body div#board-page div.tabuleiro#pokenexo {
   grid-template-rows: repeat(4, minmax(0, 1fr));
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
 }
-body div#board-page div.tabuleiro#pokenexo div.celula p.nome-pokemon {
-  font-size: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
-  line-height: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
-}
-body div#board-page div.tabuleiro .celula {
+div#board-page .pn--tabuleiro .pn--cell, div#board-page .pn--tabuleiro .pn--selected-cell {
   display: flex;
   row-gap: 0px;
   flex-direction: column;
@@ -200,57 +219,46 @@ body div#board-page div.tabuleiro .celula {
   height: calc(100% - 4px);
   width: calc(100% - 4px);
 }
-body div#board-page div.tabuleiro .celula:hover {
+div#board-page .pn--tabuleiro .pn--cell:hover, div#board-page .pn--tabuleiro .pn--selected-cell:hover {
   cursor: pointer;
 }
-body div#board-page div.tabuleiro .celula div.container-imagem-poke {
+div#board-page .pn--tabuleiro .pn--cell .pn-cell-img, div#board-page .pn--tabuleiro .pn--selected-cell .pn-cell-img {
   /*Menos 10 do padding*/
   width: calc(100% - 10px);
   /*Menos 10 do padding*/
   height: calc(75% - 10px);
   padding: 5px;
 }
-body div#board-page div.tabuleiro .celula div.container-imagem-poke img.imagem-poke-celula {
+div#board-page .pn--tabuleiro .pn--cell .pn-cell-img img, div#board-page .pn--tabuleiro .pn--selected-cell .pn-cell-img img {
   width: 100%;
   height: 100%;
   display: block;
   -o-object-fit: contain;
      object-fit: contain;
 }
-body div#board-page div.tabuleiro .celula p.nome-pokemon {
+div#board-page .pn--tabuleiro .pn--cell .pn--cell-name, div#board-page .pn--tabuleiro .pn--selected-cell .pn--cell-name {
+  font-weight: bold;
   background-color: #f62c13;
   color: white;
+  font-size: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
+  line-height: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
   flex-grow: 1;
   width: calc(100% - 10px);
   padding: 0 5px;
   align-content: center;
   overflow: hidden;
 }
-body div#board-page div.tabuleiro .pn--selected-cell {
-  display: flex;
-  row-gap: 0px;
-  flex-direction: column;
-  align-items: center;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #f62c13;
-  border-radius: 10px;
-  background-color: white;
-  position: relative;
-  overflow: hidden;
-  /*CÉLULAS*/
-  height: calc(100% - 4px);
-  width: calc(100% - 4px);
+div#board-page .pn--tabuleiro .pn--cell .pn--cell-name *, div#board-page .pn--tabuleiro .pn--selected-cell .pn--cell-name * {
+  font-weight: bold;
+}
+div#board-page .pn--tabuleiro .pn--selected-cell {
   border-color: #69d2ff;
 }
-body div#board-page div.tabuleiro .pn--selected-cell:hover {
-  cursor: pointer;
-}
-body div#board-page div.tabuleiro .pn--selected-cell p.nome-pokemon {
+div#board-page .pn--tabuleiro .pn--selected-cell .pn--cell-name {
   color: black;
   background-color: #69d2ff;
 }
-body div#board-page div.tabuleiro .pn--category, body div#board-page div.tabuleiro .pn--category-4, body div#board-page div.tabuleiro .pn--category-3, body div#board-page div.tabuleiro .pn--category-2, body div#board-page div.tabuleiro .pn--category-1 {
+div#board-page .pn--tabuleiro .pn--category, div#board-page .pn--tabuleiro .pn--category-4, div#board-page .pn--tabuleiro .pn--category-3, div#board-page .pn--tabuleiro .pn--category-2, div#board-page .pn--tabuleiro .pn--category-1 {
   display: flex;
   row-gap: 5px;
   flex-direction: column;
@@ -259,27 +267,31 @@ body div#board-page div.tabuleiro .pn--category, body div#board-page div.tabulei
   grid-column-end: span 4;
   padding: 10px;
 }
-body div#board-page div.tabuleiro .pn--category p, body div#board-page div.tabuleiro .pn--category-4 p, body div#board-page div.tabuleiro .pn--category-3 p, body div#board-page div.tabuleiro .pn--category-2 p, body div#board-page div.tabuleiro .pn--category-1 p {
+div#board-page .pn--tabuleiro .pn--category p, div#board-page .pn--tabuleiro .pn--category-4 p, div#board-page .pn--tabuleiro .pn--category-3 p, div#board-page .pn--tabuleiro .pn--category-2 p, div#board-page .pn--tabuleiro .pn--category-1 p {
   color: white;
   align-content: center;
   overflow: hidden;
 }
-body div#board-page div.tabuleiro .pn--category-1 {
+div#board-page .pn--tabuleiro .pn--category-1 {
   grid-row-start: 1;
 }
-body div#board-page div.tabuleiro .pn--category-2 {
+div#board-page .pn--tabuleiro .pn--category-2 {
   grid-row-start: 2;
 }
-body div#board-page div.tabuleiro .pn--category-3 {
+div#board-page .pn--tabuleiro .pn--category-3 {
   grid-row-start: 3;
 }
-body div#board-page div.tabuleiro .pn--category-4 {
+div#board-page .pn--tabuleiro .pn--category-4 {
   grid-row-start: 4;
 }
-body div#board-page div.tabuleiro .pn--category-name {
+div#board-page .pn--tabuleiro .pn--category-name {
+  font-weight: bold;
   font-size: clamp(0.75rem, 0.25rem + 2.2222222222 * var(--vw, 1vw), 1rem);
 }
-body div#board-page div.tabuleiro .pn--category-pokemon {
+div#board-page .pn--tabuleiro .pn--category-name * {
+  font-weight: bold;
+}
+div#board-page .pn--tabuleiro .pn--category-pokemon {
   font-size: clamp(0.9rem, 0.2rem + 3.11 * var(--vw, 1vw), 1.25rem);
 }
 
@@ -290,25 +302,25 @@ body div#board-page div.tabuleiro .pn--category-pokemon {
   }
 }
 @media screen and (max-width: 550px) {
-  body div#board-page div.tabuleiro div.celula {
+  body div#board-page .pn--tabuleiro .pn--cell, body div#board-page .pn--tabuleiro .pn--selected-cell {
     border-width: 1px;
     height: calc(100% - 2px);
     width: calc(100% - 2px);
   }
-  body div#board-page div.tabuleiro div.celula div.container-imagem-poke {
+  body div#board-page .pn--tabuleiro .pn--cell .pn-cell-img, body div#board-page .pn--tabuleiro .pn--selected-cell .pn-cell-img {
     width: calc(100% - 2px);
     height: calc(75% - 2px);
     padding: 1px;
   }
-  body div#board-page div.tabuleiro div.celula div.container-imagem-poke img.imagem-poke-celula {
+  body div#board-page .pn--tabuleiro .pn--cell .pn-cell-img img, body div#board-page .pn--tabuleiro .pn--selected-cell .pn-cell-img img {
     width: 100%;
     height: 100%;
   }
-  body div#board-page div.tabuleiro div.celula p.nome-pokemon {
+  body div#board-page .pn--tabuleiro .pn--cell .pn--cell-name, body div#board-page .pn--tabuleiro .pn--selected-cell .pn--cell-name {
     width: calc(100% - 2px);
     padding: 0 1px;
   }
-  body div#board-page div.tabuleiro div.categoria {
+  body div#board-page .pn--tabuleiro .pn--category, body div#board-page .pn--tabuleiro .pn--category-1, body div#board-page .pn--tabuleiro .pn--category-2, body div#board-page .pn--tabuleiro .pn--category-3, body div#board-page .pn--tabuleiro .pn--category-4 {
     border-width: 1px;
   }
 }/*# sourceMappingURL=styles-pokenexo.css.map */

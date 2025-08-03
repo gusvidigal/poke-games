@@ -126,26 +126,6 @@
 	}
 }
 
-.pn-green {
-	background-color: v.$c-pn-green;
-	border-color: v.$c-pn-green;
-}
-
-.pn-blue {
-	background-color: v.$c-pn-blue;
-	border-color: v.$c-pn-blue;
-}
-
-.pn-orange {
-	background-color: v.$c-pn-orange;
-	border-color: v.$c-pn-orange;
-}
-
-.pn-red {
-	background-color: v.$c-pn-red;
-	border-color: v.$c-pn-red;
-}
-
 
 .main-menu {
 	@include m.flex(row, $justifyContent: center);

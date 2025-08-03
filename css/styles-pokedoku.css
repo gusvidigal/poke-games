@@ -110,7 +110,7 @@ body div#board-page div.tabuleiro#pokedoku-4x4 .pd--try-cell p.nome-pokemon {
   font-size: clamp(0.3rem, 0.05rem + 1.09 * var(--vw, 1vw), 0.58rem);
   line-height: clamp(0.3rem, 0.05rem + 1.09 * var(--vw, 1vw), 0.58rem);
 }
-body div#board-page div.tabuleiro .celula {
+body div#board-page div.tabuleiro .pn--cell {
   display: flex;
   row-gap: 0;
   flex-direction: column;

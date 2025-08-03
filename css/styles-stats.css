@@ -62,20 +62,20 @@ a {
   text-decoration: none;
 }
 
-div.page-content h2 {
+.page-content h2 {
   border-width: 0 0 2px 0;
   border-style: solid;
   border-color: #f62c13;
   text-align: center;
   background-color: #f62c13;
 }
-div.page-content h3 {
+.page-content h3 {
   border-width: 2px 0 2px 0;
   border-style: solid;
   border-color: #f62c13;
   text-align: center;
 }
-div.page-content .stats--section, div.page-content .stats--main-section {
+.page-content .stats--section, .page-content .stats--main-section {
   display: flex;
   row-gap: 0px;
   flex-direction: column;
@@ -87,20 +87,20 @@ div.page-content .stats--section, div.page-content .stats--main-section {
   width: calc(100% - 4px);
   overflow: hidden;
 }
-div.page-content .stats--main-section {
+.page-content .stats--main-section {
   border-color: #f69e13;
 }
-div.page-content .stats--main-section h2 {
+.page-content .stats--main-section h2 {
   background-color: #f69e13;
   border-color: #f69e13;
 }
-div.page-content .stats--sect-content {
+.page-content .stats--sect-content {
   display: flex;
   row-gap: 5px;
   flex-direction: column;
   padding: 5px 0;
 }
-div.page-content .stats--sect-content .stats--line {
+.page-content .stats--sect-content .stats--line {
   display: flex;
   -moz-column-gap: 0px;
        column-gap: 0px;
@@ -108,13 +108,13 @@ div.page-content .stats--sect-content .stats--line {
   justify-content: space-between;
   padding: 0 5px;
 }
-div.page-content .stats--sect-content .stats--line p.stats--label {
+.page-content .stats--sect-content .stats--line .stats--label {
   text-align: left;
   font-weight: bold;
 }
-div.page-content .stats--sect-content .stats--line p.stats--label * {
+.page-content .stats--sect-content .stats--line .stats--label * {
   font-weight: bold;
 }
-div.page-content .stats--sect-content .stats--line p.stats--value {
+.page-content .stats--sect-content .stats--line .stats--value {
   text-align: right;
 }/*# sourceMappingURL=styles-stats.css.map */

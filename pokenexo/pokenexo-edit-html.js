@@ -3,6 +3,7 @@ function alternarCelula(idDaCelula) {
     let celula = document.querySelector(`.${idDaCelula}`);
     //Se já estiver sido selecionada, remove a seleção
     if (celula.classList.contains("pn--selected-cell")) {
+        celula.classList.add("pn--cell");
         celula.classList.remove("pn--selected-cell");
         //Remove da lista de seleção
         let indice = pokenexoData(pokenexo.id).selecionados.indexOf(Number(celula.dataset.poke));
@@ -11,6 +12,7 @@ function alternarCelula(idDaCelula) {
         setGameData("pokenexo", data);
     } else {
         celula.classList.add("pn--selected-cell");
+        celula.classList.remove("pn--cell");
         //Adiciona na lista de seleção
         let data = gameData("pokenexo");
         data.jogos[String(pokenexo.id)].selecionados.push(Number(celula.dataset.poke));
@@ -25,7 +27,8 @@ function alternarCelula(idDaCelula) {
 //Limpa o tabuleiro
 function removerCelulasSelecionadas() {
     //Para cada célula, remove a seleção
-    delClasseDeElemento("#pokenexo .celula", "pn--selected-cell", true);
+    addClasseAElemento(".pn--selected-cell", "pn--cell", true);
+    delClasseDeElemento(".pn--selected-cell", "pn--selected-cell", true);
 }
 //Atualiza o número de tentativas
 function atualizarTentativasPokenexo(numero) {
@@ -78,14 +81,14 @@ function atualizarResumoPokenexo(texto, adicionarTexto) {
         }
         setGameData("pokenexo", data);
     }
-    setarAtributoEmHTML(`#game-resume p`, "innerHTML", String(pokenexoData(pokenexo.id)["string-tentativas"]));
+    setarAtributoEmHTML(`.pn--game-resume`, "innerHTML", String(pokenexoData(pokenexo.id)["string-tentativas"]));
 }
 //Insere a categoria no tabuleiro
 function inserirCategoriaNoTabuleiro(indiceDaCategoria) {
     let celulas = [];
     let resposta = pokenexo.respostas[indiceDaCategoria];
     //Obtém as células dos pokémon da categoria acertada
-    document.querySelectorAll("#pokenexo .celula").forEach(celula => {
+    document.querySelectorAll(".pn--tabuleiro .pn--cell").forEach(celula => {
         if (resposta.pokemon.includes(Number(celula.dataset.poke))) celulas.push(celula);
     })
     //Para cada célula, a remove do tabuleiro
@@ -93,7 +96,7 @@ function inserirCategoriaNoTabuleiro(indiceDaCategoria) {
         celula.remove();
     }
     //Insere a categoria no tabuleiro
-    document.getElementById("pokenexo").innerHTML += formatarCategoria(indiceDaCategoria);
+    document.querySelector(".pn--tabuleiro").innerHTML += formatarCategoria(indiceDaCategoria);
 }
 //Alterna o estado do popup do pokénexo
 function alternarPopupPokenexo() {

@@ -3,7 +3,7 @@
 @use 'mixins' as m;
 @use 'functions' as f;
 
-div.page-content {
+.page-content {
     @include m.inheritance(text-align, center);
 
     h1 {

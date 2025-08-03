@@ -62,13 +62,13 @@ a {
   text-decoration: none;
 }
 
-div.page-content {
+.page-content {
   text-align: center;
 }
-div.page-content * {
+.page-content * {
   text-align: center;
 }
-div.page-content h1 {
+.page-content h1 {
   -webkit-text-decoration: underline #f62c13;
           text-decoration: underline #f62c13;
 }/*# sourceMappingURL=styles-about.css.map */

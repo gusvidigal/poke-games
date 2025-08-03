@@ -172,26 +172,6 @@ a {
   height: 100%;
 }
 
-.pn-green {
-  background-color: #3aac4a;
-  border-color: #3aac4a;
-}
-
-.pn-blue {
-  background-color: #245ca6;
-  border-color: #245ca6;
-}
-
-.pn-orange {
-  background-color: #e25822;
-  border-color: #e25822;
-}
-
-.pn-red {
-  background-color: #b41e22;
-  border-color: #b41e22;
-}
-
 .main-menu {
   display: flex;
   -moz-column-gap: 0px;
