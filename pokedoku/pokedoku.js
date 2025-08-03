@@ -104,7 +104,7 @@ function formatarResultadoDaPesquisa(pokemon) {
     let texto = `
 <li class="item-resultado">
     <img src="${pokemon.imagem}">
-    <p class="bold bold-resultado" >${pokemon.nome.toUpperCase()}<br>
+    <p class="bold bold-resultado">${pokemon.nome.toUpperCase()}<br>
         <span class="descricao">${camelCase(pokemon.desc)}</span>
     </p>
     <button class="bold" onclick="chutarPokemon(${pokemon.id})">Selecionar</button>

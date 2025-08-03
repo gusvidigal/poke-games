@@ -71,4 +71,15 @@ a {
 .page-content h1 {
   -webkit-text-decoration: underline #f62c13;
           text-decoration: underline #f62c13;
+  margin: 30px 0 10px 0;
+}
+.page-content h2 {
+  margin: 20px 0;
+}
+.page-content li,
+.page-content .subtitle {
+  margin-bottom: 30px;
+}
+.page-content .page--stretch {
+  padding-bottom: 50vh;
 }/*# sourceMappingURL=styles-about.css.map */
