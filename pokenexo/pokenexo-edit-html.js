@@ -99,11 +99,11 @@ function inserirCategoriaNoTabuleiro(indiceDaCategoria) {
 function alternarPopupPokenexo() {
     if (elementoTemClasse(".special-message-popup", "invisivel")) {
         //Ativa o background e o popup
-        delClasseDeElemento("#background", "invisivel");
+        delClasseDeElemento(".background", "invisivel");
         delClasseDeElemento(".special-message-popup", "invisivel");
     } else {
         //Ativa o background e o popup
-        addClasseAElemento("#background", "invisivel");
+        addClasseAElemento(".background", "invisivel");
         addClasseAElemento(".special-message-popup", "invisivel");
     }
 }

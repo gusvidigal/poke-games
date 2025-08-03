@@ -85,7 +85,7 @@ function mostrarPopupDePesquisa(idDoFoco) {
     //Se a célula estiver inativa, para
     if (elementoTemClasse(`#${modoDeJogoPokedoku} .${idDoFoco}`, "inativo")) return;
     //Ativa o background e o popup
-    delClasseDeElemento("#background", "invisivel");
+    delClasseDeElemento(".background", "invisivel");
     delClasseDeElemento(".search-popup", "invisivel");
     //Limpa o campo da pesquisa e coloca o elemento automaticamente focado
     setarAtributoEmHTML("#resultados", "innerHTML");
@@ -96,7 +96,7 @@ function mostrarPopupDePesquisa(idDoFoco) {
 //Fecha o popup de pesquisa
 function fecharPopupDePesquisa() {
     //Desativa o background
-    addClasseAElemento("#background", "invisivel");
+    addClasseAElemento(".background", "invisivel");
     addClasseAElemento(".search-popup", "invisivel");
 }
 //Formata o resultado de pesquisa

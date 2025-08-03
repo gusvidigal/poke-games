@@ -19,8 +19,8 @@
     justify-content: $justifyContent;
 }
 
-@mixin pos-absolute($direction) {
-    position: absolute;
+@mixin pos($type, $direction) {
+    position: $type;
     top: 0;
 
     @if $direction ==left {

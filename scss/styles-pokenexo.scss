@@ -29,7 +29,7 @@ body {
 
 				div.markers {
 					@include m.flex(row, $justifyContent: end);
-					@include m.pos-absolute(right);
+					@include m.pos(absolute, right);
 					z-index: 1;
 					width: 28px;
 					height: 100%;
