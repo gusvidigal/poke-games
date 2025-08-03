@@ -85,16 +85,11 @@ function atualizarResumoPokenexo(texto, adicionarTexto) {
 }
 //Insere a categoria no tabuleiro
 function inserirCategoriaNoTabuleiro(indiceDaCategoria) {
-    let celulas = [];
     let resposta = pokenexo.respostas[indiceDaCategoria];
-    //Obtém as células dos pokémon da categoria acertada
+    //Obtém as células dos pokémon da categoria acertada e as remove
     document.querySelectorAll(".pn--tabuleiro .pn--cell").forEach(celula => {
-        if (resposta.pokemon.includes(Number(celula.dataset.poke))) celulas.push(celula);
+        if (resposta.pokemon.includes(Number(celula.dataset.poke))) celula.remove();
     })
-    //Para cada célula, a remove do tabuleiro
-    for (let celula of celulas) {
-        celula.remove();
-    }
     //Insere a categoria no tabuleiro
     document.querySelector(".pn--tabuleiro").innerHTML += formatarCategoria(indiceDaCategoria);
 }
