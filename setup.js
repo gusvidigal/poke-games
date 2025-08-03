@@ -308,7 +308,7 @@ async function setupPreviousGames() {
             let acertadosCopia = copiar(pokenexoData.acertados);
             for (let categoriaAcertada of acertadosCopia.sort()) {
                 let cor = obterCorDaCategoria(categoriaAcertada);
-                marcadores += `<div class="marcador ${cor}"></div>`
+                marcadores += `<div class="pn-${cor} button-marker"></div>`
             }
         }
 

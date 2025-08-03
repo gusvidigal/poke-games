@@ -166,16 +166,16 @@ function obterCorDaCategoria(indiceDaCategoria) {
     let cor;
     switch (indiceDaCategoria) {
         case 0:
-            cor = "verde";
+            cor = "green";
             break;
         case 1:
-            cor = "azul";
+            cor = "blue";
             break;
         case 2:
-            cor = "laranja";
+            cor = "orange";
             break;
         case 3:
-            cor = "vermelho";
+            cor = "red";
             break;
     }
     return cor;

@@ -172,24 +172,24 @@ a {
   height: 100%;
 }
 
-.verde {
+.pn-green {
   background-color: #3aac4a;
   border-color: #3aac4a;
 }
 
-.vermelho {
-  background-color: #b41e22;
-  border-color: #b41e22;
-}
-
-.azul {
+.pn-blue {
   background-color: #245ca6;
   border-color: #245ca6;
 }
 
-.laranja {
+.pn-orange {
   background-color: #e25822;
   border-color: #e25822;
+}
+
+.pn-red {
+  background-color: #b41e22;
+  border-color: #b41e22;
 }
 
 .main-menu {

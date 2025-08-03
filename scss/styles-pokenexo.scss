@@ -27,14 +27,14 @@ body {
 					color: white;
 				}
 
-				div.markers {
+				.markers {
 					@include m.flex(row, $justifyContent: end);
 					@include m.pos(absolute, right);
 					z-index: 1;
 					width: 28px;
 					height: 100%;
 
-					div.marcador {
+					.button-marker {
 						width: 7px;
 						height: 100%;
 					}
@@ -154,16 +154,16 @@ body {
 
 			.pn--selected-cell {
 				@include m.pn--cell;
-				border-color: v.$c-pc-selected;
+				border-color: v.$c-pn-selected;
 
 				p.nome-pokemon {
 					color: black;
-					background-color: v.$c-pc-selected;
+					background-color: v.$c-pn-selected;
 				}
 			}
 
 
-			div.categoria {
+			.pn--category {
 				@include m.flex(column, 5px, $justifyContent: center);
 				border-radius: v.$border-radius;
 				grid-column-end: span 4;
@@ -174,30 +174,34 @@ body {
 					align-content: center;
 					overflow: hidden;
 				}
+			}
 
-				p.nome-categoria {
-					font-size: f.clamp-rm(0.75, 1, 360, 540);
-				}
+			.pn--category-1 {
+				@extend .pn--category;
+				grid-row-start: 1;
+			}
 
-				p.pokemon-categoria {
-					font-size: clamp(0.9rem, 0.20rem + 3.11 * var(--vw, 1vw), 1.25rem);
-				}
+			.pn--category-2 {
+				@extend .pn--category;
+				grid-row-start: 2;
+			}
 
-				&.categoria-1 {
-					grid-row-start: 1;
-				}
+			.pn--category-3 {
+				@extend .pn--category;
+				grid-row-start: 3;
+			}
 
-				&.categoria-2 {
-					grid-row-start: 2;
-				}
+			.pn--category-4 {
+				@extend .pn--category;
+				grid-row-start: 4;
+			}
 
-				&.categoria-3 {
-					grid-row-start: 3;
-				}
+			.pn--category-name {
+				font-size: f.clamp-rm(0.75, 1, 360, 540);
+			}
 
-				&.categoria-4 {
-					grid-row-start: 4;
-				}
+			.pn--category-pokemon {
+				font-size: clamp(0.9rem, 0.20rem + 3.11 * var(--vw, 1vw), 1.25rem);
 			}
 		}
 	}

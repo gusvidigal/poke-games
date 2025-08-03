@@ -89,7 +89,7 @@ body div.page--stretch div#previous-games div.previous-game-button a {
   align-content: center;
   color: white;
 }
-body div.page--stretch div#previous-games div.previous-game-button div.markers {
+body div.page--stretch div#previous-games div.previous-game-button .markers {
   display: flex;
   -moz-column-gap: 0px;
        column-gap: 0px;
@@ -102,7 +102,7 @@ body div.page--stretch div#previous-games div.previous-game-button div.markers {
   width: 28px;
   height: 100%;
 }
-body div.page--stretch div#previous-games div.previous-game-button div.markers div.marcador {
+body div.page--stretch div#previous-games div.previous-game-button .markers .button-marker {
   width: 7px;
   height: 100%;
 }
@@ -250,7 +250,7 @@ body div#board-page div.tabuleiro .pn--selected-cell p.nome-pokemon {
   color: black;
   background-color: #69d2ff;
 }
-body div#board-page div.tabuleiro div.categoria {
+body div#board-page div.tabuleiro .pn--category, body div#board-page div.tabuleiro .pn--category-4, body div#board-page div.tabuleiro .pn--category-3, body div#board-page div.tabuleiro .pn--category-2, body div#board-page div.tabuleiro .pn--category-1 {
   display: flex;
   row-gap: 5px;
   flex-direction: column;
@@ -259,28 +259,28 @@ body div#board-page div.tabuleiro div.categoria {
   grid-column-end: span 4;
   padding: 10px;
 }
-body div#board-page div.tabuleiro div.categoria p {
+body div#board-page div.tabuleiro .pn--category p, body div#board-page div.tabuleiro .pn--category-4 p, body div#board-page div.tabuleiro .pn--category-3 p, body div#board-page div.tabuleiro .pn--category-2 p, body div#board-page div.tabuleiro .pn--category-1 p {
   color: white;
   align-content: center;
   overflow: hidden;
 }
-body div#board-page div.tabuleiro div.categoria p.nome-categoria {
-  font-size: clamp(0.75rem, 0.25rem + 2.2222222222 * var(--vw, 1vw), 1rem);
-}
-body div#board-page div.tabuleiro div.categoria p.pokemon-categoria {
-  font-size: clamp(0.9rem, 0.2rem + 3.11 * var(--vw, 1vw), 1.25rem);
-}
-body div#board-page div.tabuleiro div.categoria.categoria-1 {
+body div#board-page div.tabuleiro .pn--category-1 {
   grid-row-start: 1;
 }
-body div#board-page div.tabuleiro div.categoria.categoria-2 {
+body div#board-page div.tabuleiro .pn--category-2 {
   grid-row-start: 2;
 }
-body div#board-page div.tabuleiro div.categoria.categoria-3 {
+body div#board-page div.tabuleiro .pn--category-3 {
   grid-row-start: 3;
 }
-body div#board-page div.tabuleiro div.categoria.categoria-4 {
+body div#board-page div.tabuleiro .pn--category-4 {
   grid-row-start: 4;
+}
+body div#board-page div.tabuleiro .pn--category-name {
+  font-size: clamp(0.75rem, 0.25rem + 2.2222222222 * var(--vw, 1vw), 1rem);
+}
+body div#board-page div.tabuleiro .pn--category-pokemon {
+  font-size: clamp(0.9rem, 0.2rem + 3.11 * var(--vw, 1vw), 1.25rem);
 }
 
 /*Diminuição de bordas e paddings*/
