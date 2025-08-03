@@ -76,20 +76,18 @@
                     <button id="modo_dificil" class="bold" onclick="novoJogo(true)">HARD MODE</button>
                 </div>
                 <div id="estatisticas">
-                    <div id="tentativas">
-                        <p class="bold">Tentativas:</br><span>0</span></p>
-                    </div>
+                    <p class="pd--attempts">Attempts:</br><span class="bold">0</span></p>
                 </div>
             </div>
-            <div class="background invisivel" onclick="fecharPopupDePesquisa()"></div>
-            <div class="search-popup invisivel">
-                <p class="bold">SEARCH POKÉMON</p>
-                <input autofocus class="bold" type="text" id="pesquisa_pokemon" value=""
-                    oninput="mostrarResultadosDaPesquisa()">
-                <ul id="resultados">
-                </ul>
-            </div>
         </div>
+    </div>
+    <div class="background invisivel" onclick="fecharPopupDePesquisa()"></div>
+    <div class="search-popup invisivel">
+        <p class="bold">SEARCH POKÉMON</p>
+        <input autofocus class="bold" type="text" id="pesquisa_pokemon" value=""
+            oninput="mostrarResultadosDaPesquisa()">
+        <ul id="resultados">
+        </ul>
     </div>
 </body>
 

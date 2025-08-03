@@ -146,18 +146,14 @@
 		width: 0;
 		max-width: 150px;
 		height: calc(100% - 5px);
-		color: white;
 
 		a {
+			@include m.centerText();
 			display: block;
 			width: calc(100% - 10px);
 			height: 100%;
-
 			color: white;
 			padding: 0 5px;
-
-			text-align: center;
-			align-content: center;
 		}
 	}
 
@@ -242,7 +238,7 @@ body {
 	background-color: v.$c-grey;
 
 	p:not(.bold-resultado) {
-		text-align: center;
+		@include m.centerText();
 		margin: 5px 0 10px 0;
 	}
 
@@ -272,7 +268,7 @@ body {
 			height: 60px;
 			padding: 0 10px;
 
-			img.imagem-poke-lista {
+			img {
 				background-color: white;
 				width: 60px;
 				height: 100%;
@@ -304,8 +300,7 @@ body {
 
 .special-message-popup {
 	@extend .popup;
-	text-align: center;
-	align-content: center;
+	@include m.centerText();
 
 	h1 {
 		padding: 0 0 10px 0;
@@ -318,13 +313,12 @@ body {
 	width: 75%;
 
 	a {
+		@include m.centerText();
 		width: 100%;
 		aspect-ratio: 4 / 1;
 		border-radius: v.$border-radius;
 		background-color: v.$c-red;
 		color: white;
-		text-align: center;
-		align-content: center;
 	}
 }
 
@@ -348,14 +342,14 @@ body {
 @media screen and (orientation: portrait) {
 
 	.page-content .page--board,
-	.page-content .page--stretch {
+	.page-content .page--stretch,
+	.page-content .popup {
 		max-width: none;
 	}
 
-	.popup {
+	.page-content .popup {
 		width: calc(100% - 20px);
 		left: 10px;
-		max-width: none;
 	}
 }
 

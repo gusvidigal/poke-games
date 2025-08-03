@@ -86,10 +86,9 @@ body {
                 }
 
                 p {
+                    @include m.centerText();
                     line-height: 30px;
                     height: 60px;
-                    text-align: center;
-                    align-content: center;
                     overflow: hidden;
                 }
 
@@ -119,6 +118,7 @@ body {
                 }
 
                 p.nome-pokemon {
+                    @include m.centerText();
                     background-color: black;
                     color: white;
 
@@ -126,8 +126,6 @@ body {
                     width: calc(100% - 10px);
                     padding: 0 5px;
 
-                    text-align: center;
-                    align-content: center;
                     overflow: hidden;
 
                     &.rainbow {
@@ -143,11 +141,10 @@ body {
                 div.dificuldade {
                     @include m.pos(absolute, right);
                     @include m.border-create(0 0 2px 2px, solid);
+                    @include m.centerText();
                     font-size: clamp(0.45rem, 0.02rem + 1.9 * var(--vw, 1vw), 1rem);
                     width: 20%;
                     aspect-ratio: 1 / 1;
-                    align-content: center;
-                    text-align: center;
                     background-color: white;
 
                 }
@@ -195,16 +192,12 @@ body {
 
             div#estatisticas {
                 @include m.flex(column);
+                @include m.centerText();
 
                 /* 0.8rem = 360px MINIMO; 1rem = 720px IDEAL */
                 font-size: clamp(0.8rem, 0.1rem + 2.7 * var(--vw, 1vw), 1.3rem);
                 /*Baseado em 20px para 1000w*/
                 padding: 0 calc(2 * var(--vw, 1vw));
-                text-align: center;
-
-                span {
-                    font-weight: normal;
-                }
             }
         }
     }

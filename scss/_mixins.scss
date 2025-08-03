@@ -77,8 +77,22 @@
     @include inheritance(font-weight, bolder);
 }
 
+@mixin color($color) {
+    background-color: $color;
+    border-color: $color;
+}
 
+@mixin centerText($inheritance: false) {
+    text-align: center;
+    align-content: center;
 
+    @if $inheritance ==true {
+        * {
+            text-align: center;
+            align-content: center;
+        }
+    }
+}
 
 
 //BLOCKS
@@ -90,7 +104,6 @@
     background-color: white;
     position: relative;
     overflow: hidden;
-    /*CÉLULAS*/
     height: calc(100% - 4px);
     width: calc(100% - 4px);
 }

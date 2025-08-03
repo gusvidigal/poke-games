@@ -62,18 +62,24 @@ a {
   text-decoration: none;
 }
 
+.page-content {
+  text-align: center;
+  align-content: center;
+}
+.page-content * {
+  text-align: center;
+  align-content: center;
+}
 .page-content h2 {
   border-width: 0 0 2px 0;
   border-style: solid;
   border-color: #f62c13;
-  text-align: center;
   background-color: #f62c13;
 }
 .page-content h3 {
   border-width: 2px 0 2px 0;
   border-style: solid;
   border-color: #f62c13;
-  text-align: center;
 }
 .page-content .stats--section, .page-content .stats--main-section {
   display: flex;
@@ -109,8 +115,8 @@ a {
   padding: 0 5px;
 }
 .page-content .stats--sect-content .stats--line .stats--label {
-  text-align: left;
   font-weight: bold;
+  text-align: left;
 }
 .page-content .stats--sect-content .stats--line .stats--label * {
   font-weight: bold;

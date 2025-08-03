@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -107,10 +106,10 @@ a {
   overflow: hidden;
 }
 .page-content .pn--previous-games-menu .pn--previous-game-button a, .page-content .pn--previous-games-menu .pn--rainbow-previous-game-button a, .page-content .pn--previous-games-menu .pn--finished-previous-game-button a, .page-content .pn--previous-games-menu .pn--started-previous-game-button a {
-  width: 100%;
-  height: 100%;
   text-align: center;
   align-content: center;
+  width: 100%;
+  height: 100%;
   color: white;
 }
 .page-content .pn--previous-games-menu .pn--previous-game-button .markers, .page-content .pn--previous-games-menu .pn--rainbow-previous-game-button .markers, .page-content .pn--previous-games-menu .pn--finished-previous-game-button .markers, .page-content .pn--previous-games-menu .pn--started-previous-game-button .markers {
@@ -192,7 +191,6 @@ a {
   background-color: white;
   position: relative;
   overflow: hidden;
-  /*CÉLULAS*/
   height: calc(100% - 4px);
   width: calc(100% - 4px);
 }
@@ -200,9 +198,7 @@ a {
   cursor: pointer;
 }
 .page-content .pn--tabuleiro .pn--cell .pn-cell-img, .page-content .pn--tabuleiro .pn--selected-cell .pn-cell-img {
-  /*Menos 10 do padding*/
   width: calc(100% - 10px);
-  /*Menos 10 do padding*/
   height: calc(75% - 10px);
   padding: 5px;
 }

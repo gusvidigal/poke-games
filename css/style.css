@@ -196,7 +196,6 @@ a {
   width: 0;
   max-width: 150px;
   height: calc(100% - 5px);
-  color: white;
 }
 .main-menu .main-menu-item:hover, .main-menu .main-menu-active-item:hover {
   cursor: pointer;
@@ -205,13 +204,13 @@ a {
   font-weight: bold;
 }
 .main-menu .main-menu-item a, .main-menu .main-menu-active-item a {
+  text-align: center;
+  align-content: center;
   display: block;
   width: calc(100% - 10px);
   height: 100%;
   color: white;
   padding: 0 5px;
-  text-align: center;
-  align-content: center;
 }
 .main-menu .main-menu-active-item {
   background-color: white;
@@ -308,6 +307,7 @@ body {
 }
 .search-popup p:not(.bold-resultado) {
   text-align: center;
+  align-content: center;
   margin: 5px 0 10px 0;
 }
 .search-popup input#pesquisa_pokemon {
@@ -342,7 +342,7 @@ body {
   height: 60px;
   padding: 0 10px;
 }
-.search-popup ul#resultados li img.imagem-poke-lista {
+.search-popup ul#resultados li img {
   background-color: white;
   width: 60px;
   height: 100%;
@@ -392,24 +392,26 @@ body {
   font-weight: bold;
 }
 .button-menu a {
+  text-align: center;
+  align-content: center;
   width: 100%;
   aspect-ratio: 4/1;
   border-radius: 10px;
   background-color: #f62c13;
   color: white;
-  text-align: center;
-  align-content: center;
 }
 
 @media screen and (orientation: portrait) {
   .page-content .page--board,
-  .page-content .page--stretch {
+  .page-content .page--stretch,
+  .page-content .popup,
+  .page-content .search-popup,
+  .page-content .special-message-popup {
     max-width: none;
   }
-  .popup, .search-popup, .special-message-popup {
+  .page-content .popup, .page-content .search-popup, .page-content .special-message-popup {
     width: calc(100% - 20px);
     left: 10px;
-    max-width: none;
   }
 }
 @media screen and (orientation: portrait) and (min-width: 600px) {
