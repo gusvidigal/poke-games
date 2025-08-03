@@ -23,8 +23,9 @@
 	border-color: v.$c-pn-red;
 }
 
-//PREVIOUS GAMES PAGE
 .page-content {
+
+	//PREVIOUS GAMES PAGE
 	.pn--previous-games-menu {
 		@include m.bold;
 		@include m.flex(column, 10px, $justifyContent: center);
@@ -79,146 +80,136 @@
 			color: black;
 		}
 	}
-}
 
-//BOARD PAGES
-div#board-page {
-	@include m.inheritance(text-align, center);
-	justify-content: space-around;
-	align-items: center;
+	//BOARD PAGES
+	.page--board {
+		@include m.inheritance(text-align, center);
+		justify-content: space-around;
+		align-items: center;
 
-	.pn--game-resume {
-		width: 100%;
-		padding: 15px 0 0 0;
-		word-break: break-all;
-		align-content: center;
-	}
-
-	div#menu {
-		@include m.flex(row, 5px, end, space-between);
-		width: 100%;
-		padding: 10px 0;
-		height: 22px;
-
-		button {
-			@include m.border-create(2px, solid, black, v.$border-radius);
-			@include m.hover;
-			height: 80%;
-			aspect-ratio: 2 / 1;
-			padding: 1px 5px;
-			background-color: v.$c-white;
-		}
-
-		div#tentativas,
-		div#dicas,
-		div#pokenexo-data {
-			font-size: 1.2rem;
-		}
-
-		div#info {
-			@include m.hover;
-			width: 22px;
-			height: 22px;
-			font-size: 11px;
-			line-height: 11px;
+		.pn--game-resume {
+			width: 100%;
+			padding: 15px 0 0 0;
+			word-break: break-all;
 			align-content: center;
 		}
-	}
+
+		.pn--game-menu {
+			@include m.flex(row, 5px, end, space-between);
+			font-size: 1.2rem;
+			width: 100%;
+			padding: 10px 0;
+			height: 22px;
+
+			.pn--date {
+				@include m.bold;
+			}
+
+			.pn--info-icon {
+				@include m.hover;
+				width: 22px;
+				height: 22px;
+				font-size: 11px;
+				line-height: 11px;
+				align-content: center;
+			}
+		}
 
 
-	.pn--tabuleiro {
-		display: grid;
-		grid-gap: 2px;
-		grid-template-rows: repeat(4, minmax(0, 1fr));
-		grid-template-columns: repeat(4, minmax(0, 1fr));
+		.pn--tabuleiro {
+			display: grid;
+			grid-gap: 2px;
+			grid-template-rows: repeat(4, minmax(0, 1fr));
+			grid-template-columns: repeat(4, minmax(0, 1fr));
 
-		width: calc(100%);
+			width: calc(100%);
 
-		.pn--cell {
-			@include m.pn--cell;
+			.pn--cell {
+				@include m.pn--cell;
 
-			.pn-cell-img {
-				/*Menos 10 do padding*/
-				width: calc(100% - 10px);
-				/*Menos 10 do padding*/
-				height: calc(75% - 10px);
-				padding: 5px;
+				.pn-cell-img {
+					/*Menos 10 do padding*/
+					width: calc(100% - 10px);
+					/*Menos 10 do padding*/
+					height: calc(75% - 10px);
+					padding: 5px;
 
-				img {
-					width: 100%;
-					height: 100%;
-					display: block;
-					object-fit: contain;
+					img {
+						width: 100%;
+						height: 100%;
+						display: block;
+						object-fit: contain;
+					}
+				}
+
+				.pn--cell-name {
+					@include m.bold;
+					background-color: v.$c-red;
+					color: white;
+					font-size: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
+					line-height: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
+
+					flex-grow: 1;
+					width: calc(100% - 10px);
+					padding: 0 5px;
+
+					align-content: center;
+					overflow: hidden;
 				}
 			}
 
-			.pn--cell-name {
+			.pn--selected-cell {
+				@extend .pn--cell;
+				border-color: v.$c-pn-selected;
+
+				.pn--cell-name {
+					color: black;
+					background-color: v.$c-pn-selected;
+				}
+			}
+
+
+			.pn--category {
+				@include m.flex(column, 5px, $justifyContent: center);
+				border-radius: v.$border-radius;
+				grid-column-end: span 4;
+				padding: 10px;
+
+				p {
+					color: white;
+					align-content: center;
+					overflow: hidden;
+				}
+			}
+
+			.pn--category-1 {
+				@extend .pn--category;
+				grid-row-start: 1;
+			}
+
+			.pn--category-2 {
+				@extend .pn--category;
+				grid-row-start: 2;
+			}
+
+			.pn--category-3 {
+				@extend .pn--category;
+				grid-row-start: 3;
+			}
+
+			.pn--category-4 {
+				@extend .pn--category;
+				grid-row-start: 4;
+			}
+
+			.pn--category-name {
 				@include m.bold;
-				background-color: v.$c-red;
-				color: white;
-				font-size: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
-				line-height: clamp(0.42rem, 0.19rem + 1.02 * var(--vw, 1vw), 0.65rem);
-
-				flex-grow: 1;
-				width: calc(100% - 10px);
-				padding: 0 5px;
-
-				align-content: center;
-				overflow: hidden;
+				font-size: f.clamp-rm(0.75, 1, 360, 540);
 			}
-		}
 
-		.pn--selected-cell {
-			@extend .pn--cell;
-			border-color: v.$c-pn-selected;
-
-			.pn--cell-name {
-				color: black;
-				background-color: v.$c-pn-selected;
+			.pn--category-pokemon {
+				font-size: clamp(0.9rem, 0.20rem + 3.11 * var(--vw, 1vw), 1.25rem);
 			}
-		}
-
-
-		.pn--category {
-			@include m.flex(column, 5px, $justifyContent: center);
-			border-radius: v.$border-radius;
-			grid-column-end: span 4;
-			padding: 10px;
-
-			p {
-				color: white;
-				align-content: center;
-				overflow: hidden;
-			}
-		}
-
-		.pn--category-1 {
-			@extend .pn--category;
-			grid-row-start: 1;
-		}
-
-		.pn--category-2 {
-			@extend .pn--category;
-			grid-row-start: 2;
-		}
-
-		.pn--category-3 {
-			@extend .pn--category;
-			grid-row-start: 3;
-		}
-
-		.pn--category-4 {
-			@extend .pn--category;
-			grid-row-start: 4;
-		}
-
-		.pn--category-name {
-			@include m.bold;
-			font-size: f.clamp-rm(0.75, 1, 360, 540);
-		}
-
-		.pn--category-pokemon {
-			font-size: clamp(0.9rem, 0.20rem + 3.11 * var(--vw, 1vw), 1.25rem);
 		}
 	}
 }
@@ -226,43 +217,37 @@ div#board-page {
 
 /*Diminuição de bordas e paddings*/
 @media screen and (orientation: portrait) {
-	body div.page-content {
-		div#board-page {
-			max-width: none;
-		}
+	.page-content .page--board {
+		max-width: none;
 	}
 }
 
 @media screen and (max-width: 550px) {
-	body {
-		div#board-page {
-			.pn--tabuleiro {
-				.pn--cell {
-					border-width: 1px;
-					height: calc(100% - 2px);
-					width: calc(100% - 2px);
+	.page-content .page--board .pn--tabuleiro {
+		.pn--cell {
+			border-width: 1px;
+			height: calc(100% - 2px);
+			width: calc(100% - 2px);
 
-					.pn-cell-img {
-						width: calc(100% - 2px);
-						height: calc(75% - 2px);
-						padding: 1px;
+			.pn-cell-img {
+				width: calc(100% - 2px);
+				height: calc(75% - 2px);
+				padding: 1px;
 
-						img {
-							width: 100%;
-							height: 100%;
-						}
-					}
-
-					.pn--cell-name {
-						width: calc(100% - 2px);
-						padding: 0 1px;
-					}
-				}
-
-				.pn--category {
-					border-width: 1px;
+				img {
+					width: 100%;
+					height: 100%;
 				}
 			}
+
+			.pn--cell-name {
+				width: calc(100% - 2px);
+				padding: 0 1px;
+			}
+		}
+
+		.pn--category {
+			border-width: 1px;
 		}
 	}
 }

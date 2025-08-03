@@ -38,7 +38,7 @@ function atualizarTentativasPokenexo(numero) {
         data.jogos[String(pokenexo.id)].tentativas = numero;
         setGameData("pokenexo", data);
     }
-    setarAtributoEmHTML(`#tentativas span`, "innerHTML", String(pokenexoData(pokenexo.id).tentativas));
+    setarAtributoEmHTML(`.pn--attempts span`, "innerHTML", String(pokenexoData(pokenexo.id).tentativas));
 }
 //Atualiza o número de dicas
 function atualizarDicasPokenexo(numero) {

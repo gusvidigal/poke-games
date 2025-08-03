@@ -6,7 +6,7 @@ function atualizarTentativasPokedoku(numero) {
         data.tentativas = numero;
         setGameData(modoDeJogoPokedoku, data);
     }
-    setarAtributoEmHTML(`#tentativas span`, "innerHTML", String(gameData(modoDeJogoPokedoku).tentativas));
+    setarAtributoEmHTML(`.pn--attempts span`, "innerHTML", String(gameData(modoDeJogoPokedoku).tentativas));
 }
 //Seta as cores
 function setarCoresDoNomeDoPokemon(cor, idCelula) {

@@ -62,55 +62,55 @@ a {
   text-decoration: none;
 }
 
-body div#board-page {
+body .page--board {
   justify-content: space-around;
   align-items: center;
 }
-body div#board-page div.tabuleiro {
+body .page--board div.tabuleiro {
   display: grid;
   width: 100%;
   padding: 0 0 20px 0;
   aspect-ratio: 1/1;
 }
-body div#board-page div.tabuleiro#pokedoku-2x2 {
+body .page--board div.tabuleiro#pokedoku-2x2 {
   max-width: 600px;
   grid-template-rows: repeat(3, minmax(0, 1fr));
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-body div#board-page div.tabuleiro#pokedoku-2x2 div.pd--header-cell p {
+body .page--board div.tabuleiro#pokedoku-2x2 div.pd--header-cell p {
   font-size: clamp(0.85rem, 0.2rem + 2.9 * var(--vw, 1vw), 1.5rem);
 }
-body div#board-page div.tabuleiro#pokedoku-2x2 div.pd--try-cell p.nome-pokemon {
+body .page--board div.tabuleiro#pokedoku-2x2 div.pd--try-cell p.nome-pokemon {
   font-size: clamp(0.54rem, -0.1rem + 2.83 * var(--vw, 1vw), 1rem);
   line-height: clamp(0.54rem, -0.1rem + 2.83 * var(--vw, 1vw), 1rem);
 }
-body div#board-page div.tabuleiro#pokedoku-3x3, body div#board-page div.tabuleiro#pokedoku-single {
+body .page--board div.tabuleiro#pokedoku-3x3, body .page--board div.tabuleiro#pokedoku-single {
   max-width: 700px;
   grid-template-rows: repeat(4, minmax(0, 1fr));
   grid-template-columns: repeat(4, minmax(0, 1fr));
   /* 0.65rem = 360px MINIMO 1.10rem = 720px IDEAL */
 }
-body div#board-page div.tabuleiro#pokedoku-3x3 div.pd--header-cell p, body div#board-page div.tabuleiro#pokedoku-single div.pd--header-cell p {
+body .page--board div.tabuleiro#pokedoku-3x3 div.pd--header-cell p, body .page--board div.tabuleiro#pokedoku-single div.pd--header-cell p {
   font-size: clamp(0.65rem, 0.2rem + 2 * var(--vw, 1vw), 1.5rem);
 }
-body div#board-page div.tabuleiro#pokedoku-3x3 div.pd--try-cell p.nome-pokemon, body div#board-page div.tabuleiro#pokedoku-single div.pd--try-cell p.nome-pokemon {
+body .page--board div.tabuleiro#pokedoku-3x3 div.pd--try-cell p.nome-pokemon, body .page--board div.tabuleiro#pokedoku-single div.pd--try-cell p.nome-pokemon {
   font-size: clamp(0.4rem, 0.18rem + 0.98 * var(--vw, 1vw), 0.65rem);
   line-height: clamp(0.4rem, 0.18rem + 0.98 * var(--vw, 1vw), 0.65rem);
 }
-body div#board-page div.tabuleiro#pokedoku-4x4 {
+body .page--board div.tabuleiro#pokedoku-4x4 {
   max-width: 750px;
   grid-template-rows: repeat(5, minmax(0, 1fr));
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
-body div#board-page div.tabuleiro#pokedoku-4x4 .pd--header-cell p {
+body .page--board div.tabuleiro#pokedoku-4x4 .pd--header-cell p {
   /* 0.5rem = 360px MINIMO; 1.75rem = 1440px IDEAL */
   font-size: clamp(0.5rem, 0.08rem + 1.8 * var(--vw, 1vw), 1.2rem);
 }
-body div#board-page div.tabuleiro#pokedoku-4x4 .pd--try-cell p.nome-pokemon {
+body .page--board div.tabuleiro#pokedoku-4x4 .pd--try-cell p.nome-pokemon {
   font-size: clamp(0.3rem, 0.05rem + 1.09 * var(--vw, 1vw), 0.58rem);
   line-height: clamp(0.3rem, 0.05rem + 1.09 * var(--vw, 1vw), 0.58rem);
 }
-body div#board-page div.tabuleiro .pn--cell {
+body .page--board div.tabuleiro .pn--cell {
   display: flex;
   row-gap: 0;
   flex-direction: column;
@@ -119,7 +119,7 @@ body div#board-page div.tabuleiro .pn--cell {
   height: calc(100% - 2px);
   width: calc(100% - 2px);
 }
-body div#board-page div.tabuleiro .pd--header-cell {
+body .page--board div.tabuleiro .pd--header-cell {
   display: flex;
   row-gap: 0;
   flex-direction: column;
@@ -129,26 +129,26 @@ body div#board-page div.tabuleiro .pd--header-cell {
   width: calc(100% - 2px);
   background-color: #f62c13;
 }
-body div#board-page div.tabuleiro .pd--header-cell img,
-body div#board-page div.tabuleiro .pd--header-cell p {
+body .page--board div.tabuleiro .pd--header-cell img,
+body .page--board div.tabuleiro .pd--header-cell p {
   width: 92%;
   padding: 4%;
 }
-body div#board-page div.tabuleiro .pd--header-cell img {
+body .page--board div.tabuleiro .pd--header-cell img {
   max-width: 200px;
   max-height: 40px;
 }
-body div#board-page div.tabuleiro .pd--header-cell p {
+body .page--board div.tabuleiro .pd--header-cell p {
   line-height: 30px;
   height: 60px;
   text-align: center;
   align-content: center;
   overflow: hidden;
 }
-body div#board-page div.tabuleiro .pd--try-cell:not(.inativo):hover {
+body .page--board div.tabuleiro .pd--try-cell:not(.inativo):hover {
   cursor: pointer;
 }
-body div#board-page div.tabuleiro .pd--try-cell {
+body .page--board div.tabuleiro .pd--try-cell {
   display: flex;
   row-gap: 0;
   flex-direction: column;
@@ -158,21 +158,21 @@ body div#board-page div.tabuleiro .pd--try-cell {
   width: calc(100% - 2px);
   position: relative;
 }
-body div#board-page div.tabuleiro .pd--try-cell div.container-imagem-poke {
+body .page--board div.tabuleiro .pd--try-cell div.container-imagem-poke {
   /*Menos 10 da margem*/
   width: calc(100% - 10px);
   /*Menos 10 da margem*/
   height: calc(75% - 10px);
   margin: 5px;
 }
-body div#board-page div.tabuleiro .pd--try-cell div.container-imagem-poke img.imagem-poke-celula {
+body .page--board div.tabuleiro .pd--try-cell div.container-imagem-poke img.imagem-poke-celula {
   width: 100%;
   height: 100%;
   display: block;
   -o-object-fit: contain;
      object-fit: contain;
 }
-body div#board-page div.tabuleiro .pd--try-cell p.nome-pokemon {
+body .page--board div.tabuleiro .pd--try-cell p.nome-pokemon {
   background-color: black;
   color: white;
   height: 25%;
@@ -182,14 +182,14 @@ body div#board-page div.tabuleiro .pd--try-cell p.nome-pokemon {
   align-content: center;
   overflow: hidden;
 }
-body div#board-page div.tabuleiro .pd--try-cell p.nome-pokemon.rainbow {
+body .page--board div.tabuleiro .pd--try-cell p.nome-pokemon.rainbow {
   color: black;
   animation: rainbow 3s linear 0s infinite normal;
 }
-body div#board-page div.tabuleiro .pd--try-cell p.nome-pokemon.erro {
+body .page--board div.tabuleiro .pd--try-cell p.nome-pokemon.erro {
   color: #f62c13;
 }
-body div#board-page div.tabuleiro .pd--try-cell div.dificuldade {
+body .page--board div.tabuleiro .pd--try-cell div.dificuldade {
   position: absolute;
   top: 0;
   right: 0;
@@ -202,7 +202,7 @@ body div#board-page div.tabuleiro .pd--try-cell div.dificuldade {
   text-align: center;
   background-color: white;
 }
-body div#board-page div#menu {
+body .page--board div#menu {
   display: flex;
   row-gap: 20px;
   flex-direction: column;
@@ -211,7 +211,7 @@ body div#board-page div#menu {
   width: 100%;
   height: 100px;
 }
-body div#board-page div#menu div#mini-menu {
+body .page--board div#menu div#mini-menu {
   display: flex;
   -moz-column-gap: 15px;
        column-gap: 15px;
@@ -221,7 +221,7 @@ body div#board-page div#menu div#mini-menu {
   padding: 0 20px;
   width: calc(100% - 40px);
 }
-body div#board-page div#menu div#mini-menu button {
+body .page--board div#menu div#mini-menu button {
   border-width: 2px;
   border-style: solid;
   border-color: black;
@@ -236,18 +236,18 @@ body div#board-page div#menu div#mini-menu button {
   padding: 1px 5px;
   background-color: #eceade;
 }
-body div#board-page div#menu div#mini-menu button:hover {
+body .page--board div#menu div#mini-menu button:hover {
   cursor: pointer;
 }
-body div#board-page div#menu div#mini-menu button#comecar_novo_jogo {
+body .page--board div#menu div#mini-menu button#comecar_novo_jogo {
   background-color: black;
   color: white;
 }
-body div#board-page div#menu div#mini-menu button#modo_dificil {
+body .page--board div#menu div#mini-menu button#modo_dificil {
   background-color: #f62c13;
   color: white;
 }
-body div#board-page div#menu div#estatisticas {
+body .page--board div#menu div#estatisticas {
   display: flex;
   row-gap: 0px;
   flex-direction: column;
@@ -257,6 +257,6 @@ body div#board-page div#menu div#estatisticas {
   padding: 0 calc(2 * var(--vw, 1vw));
   text-align: center;
 }
-body div#board-page div#menu div#estatisticas span {
+body .page--board div#menu div#estatisticas span {
   font-weight: normal;
 }/*# sourceMappingURL=styles-pokedoku.css.map */

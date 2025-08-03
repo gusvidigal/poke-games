@@ -251,15 +251,7 @@ body nav#main-menu a {
   font-size: 2rem;
   text-align: center;
 }
-body div#board-page {
-  display: flex;
-  row-gap: 0px;
-  flex-direction: column;
-  width: 100%;
-  max-width: 520px;
-  width: 100%;
-}
-body div.page-content {
+body .page-content {
   display: flex;
   row-gap: 0px;
   flex-direction: column;
@@ -267,7 +259,7 @@ body div.page-content {
   padding: 10px;
   width: calc(100% - 20px);
 }
-body div.page-content div.page--stretch {
+body .page-content div.page--stretch {
   display: flex;
   row-gap: 0px;
   flex-direction: column;
@@ -276,11 +268,19 @@ body div.page-content div.page--stretch {
   width: 100%;
   max-width: 500px;
 }
-body div.page-content div.page--stretch * {
+body .page-content div.page--stretch * {
   text-align: center;
 }
-body div.page-content div.page--stretch h1,
-body div.page-content div.page--stretch p {
+body .page-content div.page--stretch h1,
+body .page-content div.page--stretch p {
+  width: 100%;
+}
+body .page-content .page--board {
+  display: flex;
+  row-gap: 0px;
+  flex-direction: column;
+  width: 100%;
+  max-width: 520px;
   width: 100%;
 }
 
@@ -421,7 +421,7 @@ body div.page-content div.page--stretch p {
 }
 
 @media screen and (orientation: portrait) {
-  body div.page-content div.page--stretch,
+  body .page-content div.page--stretch,
   body .popup {
     width: calc(100% - 20px);
     left: 10px;
@@ -429,7 +429,7 @@ body div.page-content div.page--stretch p {
   }
 }
 @media screen and (orientation: portrait) and (min-width: 600px) {
-  body div.page-content {
+  body .page-content {
     width: calc(100% - 40px);
     padding: 0 20px;
   }

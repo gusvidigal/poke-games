@@ -263,18 +263,18 @@ async function setupPokenexo(idDoPokenexo) {
         })
     }
     //Adiciona dados no menu
-    document.querySelector("#pokenexo-data p").innerHTML = `<span>#${pokenexo.id}</span> ${pokenexo.data}`;
+    document.querySelector(".pn--date").innerHTML = `#${pokenexo.id} ${pokenexo.data}`;
     //Se for especial
     if (pokenexo.especial) {
         //Adiciona ícone
         let icone = `
-<div id="info" onclick="alternarPopupPokenexo()">
+<div class="pn--info-icon" onclick="alternarPopupPokenexo()">
     <span class="fa-stack fa-fw">
         <i class="fa fa-circle fa-stack-2x fa-fw"></i>
         <i class="fa fa-info fa-stack-1x fa-inverse fa-fw"></i>
     </span>
 </div>`;
-        document.getElementById("menu").innerHTML += icone;
+        document.querySelector(".pn--game-menu").innerHTML += icone;
         //Adiciona texto
         document.querySelector(".special-message-popup h1").innerHTML = `Pokénections ${pokenexo.data} #${pokenexo.id}`;
         document.querySelector(".special-message-popup p").innerHTML = pokenexo.mensagem.replaceAll(`\n`, "<br>");

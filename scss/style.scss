@@ -208,14 +208,7 @@ body {
 		}
 	}
 
-	div#board-page {
-		@include m.flex(column);
-		width: 100%;
-		max-width: 520px;
-		width: calc(100%);
-	}
-
-	div.page-content {
+	.page-content {
 		@include m.flex(column, $alignItems: center);
 		padding: 10px;
 		width: calc(100% - 20px);
@@ -230,6 +223,13 @@ body {
 			p {
 				width: 100%;
 			}
+		}
+
+		.page--board {
+			@include m.flex(column);
+			width: 100%;
+			max-width: 520px;
+			width: calc(100%);
 		}
 	}
 }
@@ -345,7 +345,7 @@ body {
 @media screen and (orientation: portrait) {
 	body {
 
-		div.page-content div.page--stretch,
+		.page-content div.page--stretch,
 		.popup {
 			width: calc(100% - 20px);
 			left: 10px;
@@ -355,7 +355,7 @@ body {
 }
 
 @media screen and (orientation: portrait) and (min-width: 600px) {
-	body div.page-content {
+	body .page-content {
 		width: calc(100% - 40px);
 		padding: 0 20px;
 	}
