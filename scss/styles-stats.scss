@@ -11,13 +11,13 @@
     }
 
     h2 {
-        @include m.h2;
         @include m.border-create(0 0 2px 0, solid, v.$c-red);
         background-color: v.$c-red;
+        line-height: f.line-height(1.5);
     }
 
     h3 {
-        @include m.h3;
+        line-height: f.line-height(1.3);
         @include m.border-create(2px 0, solid, v.$c-red);
     }
 
