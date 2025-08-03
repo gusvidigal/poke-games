@@ -70,6 +70,9 @@ a {
   text-align: center;
   align-content: center;
 }
+.page-content h1 {
+  margin: 30px 0;
+}
 .page-content h2 {
   border-width: 0 0 2px 0;
   border-style: solid;

@@ -197,6 +197,7 @@ body {
 		@include m.inheritance(text-align, center);
 		width: 100%;
 		max-width: 500px;
+		padding-bottom: calc(50 * var(--vh, 1vh));
 
 		h1,
 		p {

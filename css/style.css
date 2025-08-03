@@ -253,6 +253,7 @@ body {
   text-align: center;
   width: 100%;
   max-width: 500px;
+  padding-bottom: calc(50 * var(--vh, 1vh));
 }
 .page-content .page--stretch * {
   text-align: center;
