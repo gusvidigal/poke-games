@@ -189,53 +189,56 @@ body {
 	/*Tamanho da scrollbar*/
 	--scroll: calc(100 * var(--vw, 1vw) - 100%);
 	width: calc(100 * var(--vw, 1vw) - var(--scroll));
+}
 
+.page-content {
+	@include m.flex(column, $alignItems: center);
+	padding: 10px;
+	width: calc(100% - 20px);
 
+	.page--stretch {
+		@include m.flex(column, $alignItems: center);
+		@include m.inheritance(text-align, center);
+		width: 100%;
+		max-width: 500px;
 
-	nav#main-menu {
-		position: sticky;
-		top: 0;
-		z-index: 2;
-		/*Considerar também o scroll*/
-		width: calc(100 * var(--vw, 1vw) - 20px - var(--scroll));
-		height: 60px;
-		padding: 10px 10px 0 10px;
-
-		a {
-			height: 100%;
-			font-size: 2rem;
-			text-align: center;
+		h1,
+		p {
+			width: 100%;
 		}
 	}
 
-	.page-content {
-		@include m.flex(column, $alignItems: center);
-		padding: 10px;
-		width: calc(100% - 20px);
-
-		div.page--stretch {
-			@include m.flex(column, $alignItems: center);
-			@include m.inheritance(text-align, center);
-			width: 100%;
-			max-width: 500px;
-
-			h1,
-			p {
-				width: 100%;
-			}
-		}
-
-		.page--board {
-			@include m.flex(column);
-			width: 100%;
-			max-width: 520px;
-			width: calc(100%);
-		}
+	.page--board {
+		@include m.flex(column);
+		@include m.inheritance(text-align, center);
+		@include m.inheritance(width, 100%, true);
+		justify-content: space-around;
+		align-items: center;
+		width: 100%;
+		max-width: 520px;
+		width: calc(100%);
 	}
 }
 
+.popup {
+	@include m.flex(column);
+	@include m.border-create(2px, solid, black, v.$border-radius);
+	box-sizing: border-box;
+	position: fixed;
+	background-color: white;
+	top: max(10%, calc(50% - 250px));
+	left: max(5%, calc(50% - 250px));
+	width: 90%;
+	max-width: 500px;
+	height: 80%;
+	max-height: 500px;
+	padding: 10px;
+	z-index: 3;
+	overflow: auto;
+}
+
 .search-popup {
-	@include m.popup;
+	@extend .popup;
 	background-color: v.$c-grey;
 
 	p:not(.bold-resultado) {
@@ -300,7 +303,7 @@ body {
 }
 
 .special-message-popup {
-	@include m.popup;
+	@extend .popup;
 	text-align: center;
 	align-content: center;
 
@@ -343,20 +346,27 @@ body {
 
 
 @media screen and (orientation: portrait) {
-	body {
 
-		.page-content div.page--stretch,
-		.popup {
-			width: calc(100% - 20px);
-			left: 10px;
-			max-width: none;
-		}
+	.page-content .page--board,
+	.page-content .page--stretch {
+		max-width: none;
+	}
+
+	.popup {
+		width: calc(100% - 20px);
+		left: 10px;
+		max-width: none;
 	}
 }
 
 @media screen and (orientation: portrait) and (min-width: 600px) {
-	body .page-content {
+	.page-content {
 		width: calc(100% - 40px);
 		padding: 0 20px;
+	}
+
+	.popup {
+		width: calc(100% - 40px);
+		left: 20px;
 	}
 }
