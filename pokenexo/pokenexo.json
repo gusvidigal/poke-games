@@ -382,5 +382,30 @@
                 "pokemon": [951, 1070, 961, 870]
             }
         ]
+    },
+    {
+        "id": 17,
+        "especial": false,
+        "mensagem": "",
+        "data": "2025/08/03",
+        "ordem-inicial": [9, 5, 1, 0, 14, 13, 10, 12, 4, 15, 6, 8, 11, 7, 2, 3],
+        "respostas": [
+            {
+                "desc": "Represent items we have at home",
+                "pokemon": [846, 691, 732, 1017]
+            },
+            {
+                "desc": "Team Rocket Pokémon",
+                "pokemon": [539, 557, 242, 338]
+            },
+            {
+                "desc": "Seen from the front",
+                "pokemon": [477, 261, 575, 968]
+            },
+            {
+                "desc": "Have disturbing Pokédex Entries",
+                "pokemon": [525, 928, 937, 131]
+            }
+        ]
     }
 ]
