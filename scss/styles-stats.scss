@@ -16,11 +16,15 @@ div.page-content {
     }
 
     .stats--section {
-        @include m.stats--section;
+        @include m.flex(column);
+        @include m.border-create(2px, solid, v.$c-red, v.$border-radius);
+        margin: 5px 0;
+        width: calc(100% - 4px);
+        overflow: hidden;
     }
 
     .stats--main-section {
-        @include m.stats--section;
+        @extend .stats--section;
         border-color: v.$c-yellow;
 
         h2 {
@@ -39,6 +43,7 @@ div.page-content {
 
             p.stats--label {
                 text-align: left;
+                @include m.bold;
             }
 
             p.stats--value {

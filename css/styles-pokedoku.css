@@ -62,22 +62,6 @@ a {
   text-decoration: none;
 }
 
-body div.page--stretch div#games {
-  display: flex;
-  row-gap: 10px;
-  flex-direction: column;
-  justify-content: center;
-  width: 75%;
-}
-body div.page--stretch div#games a {
-  width: 100%;
-  aspect-ratio: 4/1;
-  border-radius: 10px;
-  background-color: #f62c13;
-  color: white;
-  text-align: center;
-  align-content: center;
-}
 body div#board-page {
   justify-content: space-around;
   align-items: center;

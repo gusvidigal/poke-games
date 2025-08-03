@@ -6,21 +6,6 @@
 //This file overwrites previous ones
 body {
 	div.page--stretch {
-		div#games {
-			@include m.flex(column, 10px, $justifyContent: center);
-			width: 75%;
-
-			a {
-				width: 100%;
-				aspect-ratio: 4 / 1;
-				border-radius: v.$border-radius;
-				background-color: v.$c-red;
-				color: white;
-				text-align: center;
-				align-content: center;
-			}
-		}
-
 		div#previous-games {
 			@include m.flex(column, 10px, $justifyContent: center);
 			width: 75%;

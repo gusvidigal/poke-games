@@ -357,5 +357,30 @@
                 "pokemon": [253, 837, 252, 369]
             }
         ]
+    },
+    {
+        "id": 16,
+        "especial": false,
+        "mensagem": "",
+        "data": "2025/08/03",
+        "ordem-inicial": [10, 15, 8, 1, 9, 7, 6, 11, 13, 0, 5, 2, 14, 3, 12, 4],
+        "respostas": [
+            {
+                "desc": "Female-only Pokémon",
+                "pokemon": [756, 305, 1021, 1031]
+            },
+            {
+                "desc": "Male-only Pokémon",
+                "pokemon": [654, 753, 301, 578]
+            },
+            {
+                "desc": "Legendary/Mythic Pokémon that evolve",
+                "pokemon": [948, 601, 1060, 949]
+            },
+            {
+                "desc": "Psychic-Ghost Pokémon",
+                "pokemon": [951, 1070, 961, 870]
+            }
+        ]
     }
 ]

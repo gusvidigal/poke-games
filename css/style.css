@@ -192,22 +192,7 @@ a {
   border-color: #245ca6;
 }
 
-body {
-  margin: 0;
-  /*Tamanho da scrollbar*/
-  --scroll: calc(100 * var(--vw, 1vw) - 100%);
-  width: calc(100 * var(--vw, 1vw) - var(--scroll));
-  /*BACKGROUND TRANSPARENTE ESCURO*/
-}
-body div#background {
-  background-color: rgba(42, 42, 39, 0.878);
-  position: fixed;
-  width: calc(100 * var(--vw, 1vw));
-  height: calc(100 * var(--vh, 1vh));
-  top: 0;
-  left: 0;
-}
-body nav#nav-menu {
+.main-menu {
   display: flex;
   -moz-column-gap: 0px;
        column-gap: 0px;
@@ -222,20 +207,24 @@ body nav#nav-menu {
   padding: 0 10px;
   background-color: #f62c13;
 }
-body nav#nav-menu div.nav-item {
+.main-menu .main-menu-item, .main-menu .main-menu-active-item {
   border-width: 0 0 5px 0;
   border-style: solid;
   border-color: #ac1e0d;
+  font-weight: bold;
   flex: 1 1 0;
   width: 0;
   max-width: 150px;
   height: calc(100% - 5px);
   color: white;
 }
-body nav#nav-menu div.nav-item:hover {
+.main-menu .main-menu-item:hover, .main-menu .main-menu-active-item:hover {
   cursor: pointer;
 }
-body nav#nav-menu div.nav-item a {
+.main-menu .main-menu-item *, .main-menu .main-menu-active-item * {
+  font-weight: bold;
+}
+.main-menu .main-menu-item a, .main-menu .main-menu-active-item a {
   display: block;
   width: calc(100% - 10px);
   height: 100%;
@@ -244,12 +233,28 @@ body nav#nav-menu div.nav-item a {
   text-align: center;
   align-content: center;
 }
-body nav#nav-menu div.nav-item.ativo {
+.main-menu .main-menu-active-item {
   background-color: white;
   border-color: black;
 }
-body nav#nav-menu div.nav-item.ativo a {
+.main-menu .main-menu-active-item a {
   color: black;
+}
+
+body {
+  margin: 0;
+  /*Tamanho da scrollbar*/
+  --scroll: calc(100 * var(--vw, 1vw) - 100%);
+  width: calc(100 * var(--vw, 1vw) - var(--scroll));
+  /*BACKGROUND TRANSPARENTE ESCURO*/
+}
+body div#background {
+  background-color: rgba(42, 42, 39, 0.878);
+  position: fixed;
+  width: calc(100 * var(--vw, 1vw));
+  height: calc(100 * var(--vh, 1vh));
+  top: 0;
+  left: 0;
 }
 body nav#main-menu {
   position: sticky;
@@ -413,6 +418,27 @@ body div.page-content div.page--stretch p {
 }
 .special-message-popup h1 {
   padding: 0 0 10px 0;
+}
+
+.button-menu {
+  display: flex;
+  row-gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: bold;
+  width: 75%;
+}
+.button-menu * {
+  font-weight: bold;
+}
+.button-menu a {
+  width: 100%;
+  aspect-ratio: 4/1;
+  border-radius: 10px;
+  background-color: #f62c13;
+  color: white;
+  text-align: center;
+  align-content: center;
 }
 
 @media screen and (orientation: portrait) {

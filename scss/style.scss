@@ -91,11 +91,11 @@
 }
 
 .bold {
-	@include m.inheritance(font-weight, bold);
+	@include m.bold;
 }
 
 .bolder {
-	@include m.inheritance(font-weight, bolder);
+	@include m.bolder;
 }
 
 .red {
@@ -148,6 +148,53 @@
 	border-color: v.$c-pc-orange;
 }
 
+
+.main-menu {
+	@include m.flex(row, $justifyContent: center);
+	position: sticky;
+	top: 0;
+	z-index: 2;
+	/*Considerar também o scroll*/
+	width: calc(100 * var(--vw, 1vw) - 20px - var(--scroll));
+	height: 60px;
+	padding: 0 10px;
+	background-color: v.$c-red;
+
+	.main-menu-item {
+		@include m.border-create(0 0 5px 0, solid, v.$c-red-d);
+		@include m.hover;
+		@include m.bold;
+		flex: 1 1 0;
+		width: 0;
+		max-width: 150px;
+		height: calc(100% - 5px);
+		color: white;
+
+		a {
+			display: block;
+			width: calc(100% - 10px);
+			height: 100%;
+
+			color: white;
+			padding: 0 5px;
+
+			text-align: center;
+			align-content: center;
+		}
+	}
+
+	.main-menu-active-item {
+		@extend .main-menu-item;
+		background-color: white;
+		border-color: black;
+
+		a {
+			color: black;
+		}
+	}
+}
+
+
 body {
 	margin: 0;
 	/*Tamanho da scrollbar*/
@@ -162,49 +209,6 @@ body {
 		height: calc(100 * var(--vh, 1vh));
 		top: 0;
 		left: 0;
-	}
-
-	nav#nav-menu {
-		@include m.flex(row, $justifyContent: center);
-		position: sticky;
-		top: 0;
-		z-index: 2;
-		/*Considerar também o scroll*/
-		width: calc(100 * var(--vw, 1vw) - 20px - var(--scroll));
-		height: 60px;
-		padding: 0 10px;
-		background-color: v.$c-red;
-
-		div.nav-item {
-			@include m.border-create(0 0 5px 0, solid, v.$c-red-d);
-			@include m.hover;
-			flex: 1 1 0;
-			width: 0;
-			max-width: 150px;
-			height: calc(100% - 5px);
-			color: white;
-
-			a {
-				display: block;
-				width: calc(100% - 10px);
-				height: 100%;
-
-				color: white;
-				padding: 0 5px;
-
-				text-align: center;
-				align-content: center;
-			}
-
-			&.ativo {
-				background-color: white;
-				border-color: black;
-
-				a {
-					color: black;
-				}
-			}
-		}
 	}
 
 	nav#main-menu {
@@ -327,6 +331,21 @@ body {
 	}
 }
 
+.button-menu {
+	@include m.flex(column, 10px, $justifyContent: center);
+	@include m.bold;
+	width: 75%;
+
+	a {
+		width: 100%;
+		aspect-ratio: 4 / 1;
+		border-radius: v.$border-radius;
+		background-color: v.$c-red;
+		color: white;
+		text-align: center;
+		align-content: center;
+	}
+}
 
 
 

@@ -75,7 +75,7 @@ div.page-content h3 {
   border-color: #f62c13;
   text-align: center;
 }
-div.page-content .stats--section {
+div.page-content .stats--section, div.page-content .stats--main-section {
   display: flex;
   row-gap: 0px;
   flex-direction: column;
@@ -88,16 +88,6 @@ div.page-content .stats--section {
   overflow: hidden;
 }
 div.page-content .stats--main-section {
-  display: flex;
-  row-gap: 0px;
-  flex-direction: column;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #f62c13;
-  border-radius: 10px;
-  margin: 5px 0;
-  width: calc(100% - 4px);
-  overflow: hidden;
   border-color: #f69e13;
 }
 div.page-content .stats--main-section h2 {
@@ -120,6 +110,10 @@ div.page-content .stats--sect-content .stats--line {
 }
 div.page-content .stats--sect-content .stats--line p.stats--label {
   text-align: left;
+  font-weight: bold;
+}
+div.page-content .stats--sect-content .stats--line p.stats--label * {
+  font-weight: bold;
 }
 div.page-content .stats--sect-content .stats--line p.stats--value {
   text-align: right;

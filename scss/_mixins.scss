@@ -60,6 +60,14 @@
     }
 }
 
+@mixin bold {
+    @include inheritance(font-weight, bold);
+}
+
+@mixin bolder {
+    @include inheritance(font-weight, bolder);
+}
+
 
 
 
@@ -100,13 +108,4 @@
     padding: 10px;
     z-index: 3;
     overflow: auto;
-}
-
-@mixin stats--section {
-
-    @include flex(column);
-    @include border-create(2px, solid, v.$c-red, v.$border-radius);
-    margin: 5px 0;
-    width: calc(100% - 4px);
-    overflow: hidden;
 }
