@@ -11,6 +11,11 @@
 }
 
 @function line-height($lineHeight) {
-    $margin: calc(calc($lineHeight / 2) * 6px);
-    @return calc($lineHeight * 16px + $margin);
+    $lineMargin: calc(calc($lineHeight / 2) * 6px);
+    @return calc($lineHeight * 16px + $lineMargin);
+}
+
+@function margin($lineHeight) {
+    $margin: calc(calc($lineHeight / 2) * 30px);
+    @return $margin 0;
 }

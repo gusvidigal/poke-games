@@ -13,8 +13,7 @@
     }
 
     h2 {
-        margin: 20px 0;
-        line-height: f.line-height(1.5);
+        @include m.h2;
     }
 
     li {

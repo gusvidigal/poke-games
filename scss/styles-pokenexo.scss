@@ -21,6 +21,10 @@
 
 .page-content {
 
+	h1 {
+		@include m.h1;
+	}
+
 	//PREVIOUS GAMES PAGE
 	.pn--previous-games-menu {
 		@include m.bold;
@@ -192,7 +196,7 @@
 		}
 
 		.pn--category-pokemon {
-			font-size: clamp(0.9rem, 0.20rem + 3.11 * var(--vw, 1vw), 1.25rem);
+			font-size: f.clamp-rm(0.9, 1.25, 360, 540);
 		}
 	}
 }

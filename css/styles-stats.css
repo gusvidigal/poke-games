@@ -75,17 +75,19 @@ a {
   line-height: 38px;
 }
 .page-content h2 {
+  margin: 22.5px 0;
+  line-height: 28.5px;
   border-width: 0 0 2px 0;
   border-style: solid;
   border-color: #f62c13;
   background-color: #f62c13;
-  line-height: 28.5px;
 }
 .page-content h3 {
+  margin: 19.5px 0;
+  line-height: 24.7px;
   border-width: 2px 0 2px 0;
   border-style: solid;
   border-color: #f62c13;
-  line-height: 24.7px;
 }
 .page-content .stats--section, .page-content .stats--main-section {
   display: flex;

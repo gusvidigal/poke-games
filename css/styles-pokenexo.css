@@ -82,6 +82,10 @@ a {
   border-color: #b41e22;
 }
 
+.page-content h1 {
+  margin: 30px 0;
+  line-height: 38px;
+}
 .page-content .pn--previous-games-menu {
   font-weight: bold;
   display: flex;
@@ -265,7 +269,7 @@ a {
   font-weight: bold;
 }
 .page-content .pn--tabuleiro .pn--category-pokemon {
-  font-size: clamp(0.9rem, 0.2rem + 3.11 * var(--vw, 1vw), 1.25rem);
+  font-size: clamp(0.9rem, 0.2rem + 3.1111111111 * var(--vw, 1vw), 1.25rem);
 }
 
 @media screen and (max-width: 550px) {
