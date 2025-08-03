@@ -72,11 +72,21 @@ a {
   -webkit-text-decoration: underline #f62c13;
           text-decoration: underline #f62c13;
   margin: 30px 0 10px 0;
+  line-height: 38px;
 }
 .page-content h2 {
   margin: 20px 0;
+  line-height: 28.5px;
 }
-.page-content li,
-.page-content .subtitle {
+.page-content li {
   margin-bottom: 30px;
+}
+.page-content p {
+  line-height: 19px;
+}
+.page-content p.subtitle {
+  margin-bottom: 30px;
+}
+.page-content p.bolder {
+  margin-bottom: 5px;
 }/*# sourceMappingURL=styles-about.css.map */

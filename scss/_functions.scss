@@ -9,3 +9,8 @@
     $y: calc(-$wmin * $slope + $min);
     @return clamp($min * 1px, $y * 1px + $slope * 100 * var(--vw, 1vw), $max * 1px);
 }
+
+@function line-height($lineHeight) {
+    $margin: calc(calc($lineHeight / 2) * 6px);
+    @return calc($lineHeight * 16px + $margin);
+}
