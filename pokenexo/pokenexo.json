@@ -5,11 +5,11 @@
         "ordem-inicial": [1, 15, 7, 3, 2, 9, 10, 8, 14, 0, 6, 11, 13, 4, 5, 12],
         "respostas": [
             {
-                "desc": "Dragons of Unova",
+                "desc": "Dragon Pokémon of Unova",
                 "pokemon": [747, 735, 760, 689]
             },
             {
-                "desc": "Have Two Arms",
+                "desc": "Have two arms",
                 "pokemon": [682, 648, 162, 89]
             },
             {
@@ -17,7 +17,7 @@
                 "pokemon": [477, 204, 316, 606]
             },
             {
-                "desc": "Their Names Start With 'Z'",
+                "desc": "Their names start with 'Z'",
                 "pokemon": [969, 761, 693, 414]
             }
         ]
@@ -28,20 +28,20 @@
         "ordem-inicial": [1, 15, 7, 3, 2, 9, 10, 8, 14, 0, 6, 11, 13, 4, 5, 12],
         "respostas": [
             {
-                "desc": "Start With Worldwide Companies (Meta, Intel, Apple, Shell)",
-                "pokemon": [461, 980, 1004, 123]
-            },
-            {
-                "desc": "Final Stage Steel Pokémon",
+                "desc": "Final stage Steel Pokémon",
                 "pokemon": [490, 1139, 462, 845]
             },
             {
-                "desc": "Have Evolutions Introduced In Sinnoh",
+                "desc": "Have evolutions introduced in Sinnoh",
                 "pokemon": [153, 112, 276, 370]
             },
             {
-                "desc": "Can Learn HM Surf",
+                "desc": "Can learn HM Surf",
                 "pokemon": [46, 355, 517, 368]
+            },
+            {
+                "desc": "Start with Worldwide companies (Meta, Intel, Apple, Shell)",
+                "pokemon": [461, 980, 1004, 123]
             }
         ]
     },
@@ -55,15 +55,15 @@
                 "pokemon": [194, 712, 587, 771]
             },
             {
-                "desc": "Have Galarian Forms",
+                "desc": "Have Galarian forms",
                 "pokemon": [192, 113, 684, 68]
             },
             {
-                "desc": "Have Long Beaks",
+                "desc": "Have long beaks",
                 "pokemon": [196, 1007, 884, 706]
             },
             {
-                "desc": "Related To Giovanni (Team Rocket)",
+                "desc": "Owned/Caught by Giovanni (from Team Rocket)",
                 "pokemon": [71, 201, 43, 150]
             }
         ]
@@ -74,19 +74,19 @@
         "ordem-inicial": [3, 11, 1, 15, 13, 10, 9, 0, 2, 4, 12, 7, 8, 6, 14, 5],
         "respostas": [
             {
-                "desc": "Related To Pigs",
+                "desc": "Pig Pokémon",
                 "pokemon": [403, 613, 1091, 612]
             },
             {
-                "desc": "Found In Safari Zones",
+                "desc": "Found in Safari Zones",
                 "pokemon": [260, 295, 636, 803]
             },
             {
-                "desc": "Have Counterparts",
+                "desc": "Have counterparts",
                 "pokemon": [388, 390, 951, 41]
             },
             {
-                "desc": "Mistreated as Mythic/Legendaries",
+                "desc": "Mistaken as Mythic/Legendaries",
                 "pokemon": [442, 1185, 971, 200]
             }
         ]
@@ -101,15 +101,15 @@
                 "pokemon": [608, 1084, 205, 321]
             },
             {
-                "desc": "Evolved Using Fire Stone",
+                "desc": "Evolved using Fire Stone",
                 "pokemon": [183, 51, 79, 628]
             },
             {
-                "desc": "Fire Pokémon Of Unova",
+                "desc": "Fire Pokémon of Unova",
                 "pokemon": [611, 734, 607, 627]
             },
             {
-                "desc": "Pokémon Caught By Ash",
+                "desc": "Pokémon caught by Ash",
                 "pokemon": [170, 121, 635, 517]
             }
         ]
@@ -120,7 +120,7 @@
         "ordem-inicial": [9, 5, 13, 15, 4, 14, 3, 8, 10, 2, 0, 11, 12, 1, 7, 6],
         "respostas": [
             {
-                "desc": "Grass-Dark Type Pokémon",
+                "desc": "Grass-Dark Pokémon",
                 "pokemon": [410, 1083, 345, 1063]
             },
             {
@@ -128,11 +128,11 @@
                 "pokemon": [158, 558, 1159, 727]
             },
             {
-                "desc": "Have Branched Evolutions",
+                "desc": "Have branched evolutions",
                 "pokemon": [351, 335, 58, 106]
             },
             {
-                "desc": "Appear On Game Titles ['Let's Go, Pikachu/Eevee!', 'Legends: Arceus', 'Togepi's Great Adventure']",
+                "desc": "Have games based on them ['Let's Go, Pikachu/Eevee!', 'Legends: Arceus', 'Togepi's Great Adventure']",
                 "pokemon": [33, 179, 229, 606]
             }
         ]
@@ -143,19 +143,19 @@
         "ordem-inicial": [15, 11, 10, 5, 1, 0, 14, 13, 12, 9, 8, 6, 3, 2, 7, 4],
         "respostas": [
             {
-                "desc": "Can Megaevolve",
+                "desc": "Can megaevolve",
                 "pokemon": [436, 475, 385, 645]
             },
             {
-                "desc": "Related To Songs/Dances",
+                "desc": "Related to songs/dances",
                 "pokemon": [53, 541, 781, 892]
             },
             {
-                "desc": "Have More Than One Individual",
+                "desc": "Have more than one individual",
                 "pokemon": [519, 1101, 138, 904]
             },
             {
-                "desc": "Not Obvious Flying Pokémon",
+                "desc": "Not obvious Flying Pokémon",
                 "pokemon": [956, 289, 175, 683]
             }
         ]
@@ -170,15 +170,15 @@
                 "pokemon": [357, 891, 765, 1162]
             },
             {
-                "desc": "Evolve By Trading",
+                "desc": "Evolve by trading",
                 "pokemon": [847, 297, 428, 99]
             },
             {
-                "desc": "Have Yellow Rings",
+                "desc": "Have yellow rings",
                 "pokemon": [624, 869, 253, 425]
             },
             {
-                "desc": "Contains Another Pokémon In Their Names [Klang, Muk, Abra, Mew]",
+                "desc": "Contain another Pokémon in their names [Klang, Muk, Abra, Mew]",
                 "pokemon": [726, 929, 85, 201]
             }
         ]
@@ -191,11 +191,11 @@
         "ordem-inicial": [0, 5, 3, 15, 8, 10, 1, 7, 14, 2, 11, 12, 4, 13, 9, 6],
         "respostas": [
             {
-                "desc": "Have Paradox versions on Pokémon Scarlet",
+                "desc": "Have Paradox versions in Pokémon Scarlet",
                 "pokemon": [53, 716, 257, 764]
             },
             {
-                "desc": "Have Paradox versions on Pokémon Violet",
+                "desc": "Have Paradox versions in Pokémon Violet",
                 "pokemon": [767, 765, 296, 288]
             },
             {
@@ -220,15 +220,15 @@
                 "pokemon": [829, 862, 787, 811]
             },
             {
-                "desc": "Have Yellow Eyes",
+                "desc": "Have yellow eyes",
                 "pokemon": [791, 857, 799, 849]
             },
             {
-                "desc": "Owned By Champion Diantha",
+                "desc": "Owned by Champion Diantha",
                 "pokemon": [834, 836, 838, 853]
             },
             {
-                "desc": "Appear On 'Volcanion And The Mechanical Marvel' Movie Poster",
+                "desc": "Appear in 'Volcanion And The Mechanical Marvel' poster",
                 "pokemon": [871, 822, 784, 865]
             }
         ]
@@ -249,7 +249,7 @@
                 "pokemon": [1075, 1079, 1078, 1072]
             },
             {
-                "desc": "Have unique type combination",
+                "desc": "Have unique type combinations",
                 "pokemon": [1191, 677, 495, 52]
             },
             {
@@ -316,11 +316,11 @@
         "ordem-inicial": [11, 4, 0, 9, 12, 6, 1, 14, 5, 3, 8, 13, 10, 2, 7, 15],
         "respostas": [
             {
-                "desc": "Second stage early birds",
+                "desc": "Second stage birds",
                 "pokemon": [873, 492, 883, 22]
             },
             {
-                "desc": "Evolve by Dusk Stone",
+                "desc": "Evolve using Dusk Stone",
                 "pokemon": [733, 816, 254, 257]
             },
             {
@@ -403,8 +403,33 @@
                 "pokemon": [477, 261, 575, 968]
             },
             {
-                "desc": "Have disturbing Pokédex Entries",
+                "desc": "Have disturbing Pokédex entries",
                 "pokemon": [525, 928, 937, 131]
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "especial": false,
+        "mensagem": "",
+        "data": "2025/08/03",
+        "ordem-inicial": [2, 7, 0, 13, 4, 15, 14, 6, 1, 11, 3, 10, 5, 12, 8, 9],
+        "respostas": [
+            {
+                "desc": "Have a gem in their foreheads",
+                "pokemon": [74, 71, 252, 590]
+            },
+            {
+                "desc": "Hold an object",
+                "pokemon": [647, 1188, 788, 817]
+            },
+            {
+                "desc": "Have Gigantamax versions",
+                "pokemon": [692, 191, 971, 133]
+            },
+            {
+                "desc": "Have hyphen ('-') in their names",
+                "pokemon": [1186, 1187, 1189, 315]
             }
         ]
     }
