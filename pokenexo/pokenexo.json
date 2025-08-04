@@ -432,5 +432,30 @@
                 "pokemon": [1186, 1187, 1189, 315]
             }
         ]
+    },
+    {
+        "id": 19,
+        "especial": false,
+        "mensagem": "",
+        "data": "2025/08/04",
+        "ordem-inicial": [3, 13, 2, 14, 1, 4, 0, 9, 7, 12, 10, 15, 11, 6, 8, 5],
+        "respostas": [
+            {
+                "desc": "Legendary Pokémon of Sinnoh",
+                "pokemon": [597, 592, 600, 596]
+            },
+            {
+                "desc": "Have red wings",
+                "pokemon": [754, 467, 458, 315]
+            },
+            {
+                "desc": "Ground Pokémon",
+                "pokemon": [473, 774, 408, 864]
+            },
+            {
+                "desc": "4 Heaviest Pokémon",
+                "pokemon": [1058, 474, 949, 956]
+            }
+        ]
     }
 ]
