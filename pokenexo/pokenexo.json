@@ -457,5 +457,30 @@
                 "pokemon": [1058, 474, 949, 956]
             }
         ]
+    },
+    {
+        "id": 20,
+        "especial": true,
+        "mensagem": "It's hard to believe that I am launching the 20th edition of Pokénections today! I am sure that, since the last SPECIAL EDITION, you have thought of killing me at least 5 times. It may be unfair to release a board with all the 8 Eevolutions, or even to spend all day long just to discover that, by chance, Ursaring and Cascoon have green shiny versions...\n\nThe last Pokénection was such a surprise for many of you! While forgetting that innocent Cosmoem weighs the same as a STAR, you tried to connect the 'mons of every way, EXCEPT FOR the \"red wings\" category. Indeed, it was a vile one.\n\nCelesteela made an astonishing appearance at that game, being the HEAVIEST Pokémon ever! 999 kg of pure BEAST, resembling a Steven Universe Gem and dueling with Skarmory for the title of \"Best Flying-Steel Pokémon\".\n\nTalking about Steel, I am glad to announce that this is my favorite type - this POKÉNECTION SPECIAL EDITION is based on all the fellow Steel Pokémon that enhances the games. Unfortunately, I am not talking about Steelix. Go find some teeth, Steelix!\n\nThank you so much for your attention. Good luck on this one! Keep calm and keep playing!\n\n- Vidigal",
+        "data": "2025/08/05",
+        "ordem-inicial": [15, 10, 1, 13, 11, 3, 12, 14, 4, 0, 5, 6, 9, 2, 7, 8],
+        "respostas": [
+            {
+                "desc": "Have just one eye",
+                "pokemon": [815, 725, 111, 460]
+            },
+            {
+                "desc": "Steel + (Starter Type) Pokémon",
+                "pokemon": [957, 596, 490, 722]
+            },
+            {
+                "desc": "Have sharp teeth",
+                "pokemon": [290, 379, 375, 1026]
+            },
+            {
+                "desc": "Chess [Knight, Pawn, Crown, Cavalier]",
+                "pokemon": [985, 750, 1211, 714]
+            }
+        ]
     }
 ]
