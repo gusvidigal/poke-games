@@ -6,7 +6,7 @@
         "respostas": [
             {
                 "desc": "Dragon Pokémon of Unova",
-                "pokemon": [747, 735, 760, 689]
+                "pokemon": [747, 735, 760, 772]
             },
             {
                 "desc": "Have two arms",
@@ -480,6 +480,31 @@
             {
                 "desc": "Chess [Knight, Pawn, Crown, Cavalier]",
                 "pokemon": [985, 750, 1211, 714]
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "data": "2025/08/06",
+        "especial": false,
+        "mensagem": "",
+        "ordem-inicial": [11, 4, 12, 6, 8, 2, 0, 7, 3, 9, 5, 13, 10, 14, 1, 15],
+        "respostas": [
+            {
+                "desc": "Pokémon that have their types changed later",
+                "pokemon": [267, 53, 375, 111]
+            },
+            {
+                "desc": "Purple Pokémon",
+                "pokemon": [178, 204, 1010, 812]
+            },
+            {
+                "desc": "Have ribbons",
+                "pokemon": [700, 837, 699, 701]
+            },
+            {
+                "desc": "Resemble female figures",
+                "pokemon": [527, 165, 921, 352]
             }
         ]
     }
