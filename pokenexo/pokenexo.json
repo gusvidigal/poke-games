@@ -507,5 +507,30 @@
                 "pokemon": [527, 165, 921, 352]
             }
         ]
+    },
+    {
+        "id": 22,
+        "data": "2025/08/07",
+        "especial": false,
+        "mensagem": "",
+        "ordem-inicial": [6, 4, 5, 11, 9, 7, 15, 13, 8, 2, 1, 10, 14, 0, 12, 3],
+        "respostas": [
+            {
+                "desc": "Applin evolutionary tree",
+                "pokemon": [1196, 1207, 1004, 1003]
+            },
+            {
+                "desc": "Control weather",
+                "pokemon": [471, 473, 475, 430]
+            },
+            {
+                "desc": "Animals of Madagascar",
+                "pokemon": [1038, 551, 636, 803]
+            },
+            {
+                "desc": "Not trivial types",
+                "pokemon": [240, 188, 940, 1034]
+            }
+        ]
     }
 ]
