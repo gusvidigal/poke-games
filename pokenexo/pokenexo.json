@@ -532,5 +532,30 @@
                 "pokemon": [240, 188, 940, 1034]
             }
         ]
+    },
+    {
+        "id": 23,
+        "data": "2025/08/08",
+        "especial": false,
+        "mensagem": "",
+        "ordem-inicial": [14, 12, 1, 0, 11, 8, 7, 10, 5, 3, 13, 15, 9, 4, 6, 2],
+        "respostas": [
+            {
+                "desc": "Snake Pokémon",
+                "pokemon": [610, 415, 1006, 32]
+            },
+            {
+                "desc": "Related to sound",
+                "pokemon": [365, 860, 55, 1108]
+            },
+            {
+                "desc": "Psychic-Flying Pokémon",
+                "pokemon": [314, 641, 231, 232]
+            },
+            {
+                "desc": "Have units of measurement in their names [Volt, Watt, Ton, Inch]",
+                "pokemon": [889, 1121, 1153, 406]
+            }
+        ]
     }
 ]
